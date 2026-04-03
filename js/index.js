@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   if (typeof gsap === "undefined") return;
 
-  // ── Element references ────────────────────────────────────────────────────
+  // ── Tham chiếu phần tử ───────────────────────────────────────────────────
   var overlay = document.getElementById("nw-intro-overlay");
   var introText = document.getElementById("nw-intro-text");
   var wipeLayer = document.querySelector(".nw-it-wipe");
   var anchor = document.getElementById("nw-dt-anchor");
-  var dtTitle = document.getElementById("nw-dt-title");   // real page title
+  var dtTitle = document.getElementById("nw-dt-title");   // tiêu đề thật của trang
 
   if (!overlay || !introText || !wipeLayer || !anchor) return;
 
@@ -17,86 +17,87 @@ document.addEventListener("DOMContentLoaded", function () {
   var revealTweenEls = revealEls.filter(function (el) {
     return el !== anchorRevealEl;
   });
+  var revealScaleEls = revealTweenEls.filter(function (el) {
+    // Không scale phần tử cha của điểm neo để tiêu đề đích không bị ảnh hưởng.
+    return !el.contains(anchor);
+  });
 
-  // Hide the real page title immediately; it will be shown instantly at final handoff.
-  if (dtTitle) gsap.set(dtTitle, { autoAlpha: 0 });
+  // Giữ tiêu đề thật luôn sẵn sàng để tránh hiệu ứng biến mất rồi hiện lại.
   gsap.set(introText, { transformOrigin: "center center", force3D: true });
 
-  // Set all line-inner elements to their hidden start state.
-  // y: '110%' slides them just below the .nw-line-wrap overflow:hidden clip.
-  // They become visible only when the parent section autoAlpha hits 1 in Phase 3.
+  // Đưa toàn bộ line-inner về trạng thái ẩn ban đầu.
+  // y: "110%" đặt chúng nằm ngay dưới vùng cắt overflow của .nw-line-wrap.
+  // Chúng chỉ hiện khi section cha được bật autoAlpha = 1 ở Giai đoạn 3.
   gsap.set(".nw-line-inner", { y: "110%" });
 
-  // Ruler split-vertical-out: starts collapsed at center (scaleY:0),
-  // spans are pre-positioned toward center so they slide OUT up/down when revealed.
+  // Hiệu ứng thước tách dọc: bắt đầu co ở giữa (scaleY: 0),
+  // các span được đặt lệch sẵn để khi hiện sẽ tách dọc lên/xuống.
   gsap.set(".nw-ruler", { scaleY: 0, autoAlpha: 0 });
-  // First span moves upward to its resting position, second moves downward.
+  // Span đầu đi lên vị trí chuẩn, span sau đi xuống vị trí chuẩn.
   gsap.set(".nw-ruler-inner span:first-child", { y: 16 });
   gsap.set(".nw-ruler-inner span:last-child", { y: -16 });
 
   // ════════════════════════════════════════════════════════════════════════════
-  //  MASTER CINEMATIC TIMELINE  (continuous, no dead frames between phases)
+  //  DÒNG THỜI GIAN CHÍNH (liền mạch, không có khung hình chết)
   //
-  //  Phase map:
-  //   Phase 1: soft entrance (opacity 0→1, y -80→0, dark gray base visible)
-  //   Phase 2: short hold (0.4s max) with no abrupt stop
-  //   Phase 3: move+scale to anchor while wipe runs in parallel and ends earlier
+  //  Bản đồ giai đoạn:
+  //   Giai đoạn 1: vào mềm (opacity 0→1, y -80→0, thấy lớp nền xám đậm)
+  //   Giai đoạn 2: giữ nhịp ngắn (tối đa 0.4s), không dừng gắt
+  //   Giai đoạn 3: di chuyển + thu phóng về điểm neo, lớp quét lộ chạy song song và kết thúc sớm hơn
   // ════════════════════════════════════════════════════════════════════════════
   var master = gsap.timeline({
-    defaults: { ease: "power2.out" },
     delay: 0.06,
   });
 
-  // ── PHASE 1 — Soft Entrance (fade + float down) ──────────────────────────
+  // ── GIAI ĐOẠN 1 — Vào cảnh mềm (mờ dần + trôi xuống) ─────────────────────
   master.fromTo(
     introText,
-    { y: -80, opacity: 0 },
+    { y: -100, opacity: 0 },
     {
       y: 0,
       opacity: 1,
-      duration: 1.05,
-      ease: "expo.out",
+      duration: 2,
     }
   );
 
-  // ── PHASE 2 — Short cinematic hold (kept subtle and brief) ───────────────
-  master.to(introText, {
-    duration: 0.4,
-    ease: "none",
-  });
-
-  // ── PHASE 3 — Move + Scale + Wipe (fully overlapped, no pause) ───────────
+  // ── GIAI ĐOẠN 3 — Di chuyển + Thu phóng + Quét lộ (chồng hoàn toàn, không nghỉ) ──
   master.add(function () {
+    // Chọn đích để "bay tới": ưu tiên dtTitle, nếu không có thì dùng điểm neo.
     var targetEl = dtTitle || anchor;
-    var tRect = targetEl.getBoundingClientRect();
-    var iRect = introText.getBoundingClientRect();
-    var introBase = introText.querySelector(".nw-it-base");
 
-    // Align centre-to-centre so final position matches the real title.
+    // Tọa độ/kích thước của phần tử đích trong khung nhìn.
+    var tRect = targetEl.getBoundingClientRect();
+
+    // Tọa độ/kích thước hiện tại của chữ mở đầu trong khung nhìn.
+    var iRect = introText.getBoundingClientRect();
+
+    // Căn tâm chữ mở đầu trùng tâm đích để điểm kết thúc khớp tiêu đề thật.
     var moveX = (tRect.left + tRect.width / 2) - (iRect.left + iRect.width / 2);
     var moveY = (tRect.top + tRect.height / 2) - (iRect.top + iRect.height / 2);
 
-    // Match final size by font-size ratio first; fallback to width ratio if needed.
-    var sourceFont = introBase ? parseFloat(getComputedStyle(introBase).fontSize) : 0;
+    // Ưu tiên tính thu phóng theo tỷ lệ cỡ chữ; thiếu dữ liệu thì dùng phương án dự phòng theo chiều rộng.
+    var sourceFont = wipeLayer ? parseFloat(getComputedStyle(wipeLayer).fontSize) : 0;
     var targetFont = dtTitle ? parseFloat(getComputedStyle(dtTitle).fontSize) : 0;
     var rawScale = (sourceFont > 0 && targetFont > 0)
       ? targetFont / sourceFont
       : (tRect.width / iRect.width);
+
+    // Kẹp hệ số thu phóng trong ngưỡng an toàn để tránh phóng/thu quá cực đoan.
     var scaleTarget = Math.min(Math.max(rawScale, 0.25), 4);
 
+    // Dòng thời gian con dành riêng cho Giai đoạn 3.
     var tl3 = gsap.timeline();
+
+    // Thời lượng chuyển động chính của chữ mở đầu.
     var moveDuration = 1.12;
+
+    // Lớp quét lộ ngắn hơn chuyển động chính để giữ cảm giác tiến về phía trước.
     var wipeDuration = 0.58;
 
-    // Micro pre-roll keeps the handoff from Phase 2 organic.
-    tl3.to(introText, {
-      scale: 1.03,
-      duration: 0.18,
-      ease: "power2.out",
-    });
-
-    // Main cinematic morph: movement continues after wipe completes.
+    // Tạo nhãn mốc thời gian để đồng bộ nhiều đoạn chuyển động bắt đầu cùng lúc.
     tl3.add("introMoveStart");
+
+    // Chuyển động chính: di chuyển + thu phóng chữ mở đầu về đúng vị trí/kích thước đích.
     tl3.to(
       introText,
       {
@@ -104,63 +105,68 @@ document.addEventListener("DOMContentLoaded", function () {
         y: moveY,
         scale: scaleTarget,
         duration: moveDuration,
-        ease: "expo.inOut",
+        // ease: "expo.inOut",
+
+        // Bật kết hợp 3D để phép biến đổi mượt hơn trên GPU.
         force3D: true,
       },
       "introMoveStart"
     );
 
-    // Wipe starts with movement and ends earlier to preserve forward momentum.
+    // Lớp quét lộ chạy đồng thời với chuyển động nhưng kết thúc sớm hơn để giữ nhịp tiến.
     tl3.to(
       wipeLayer,
       {
-        clipPath: "inset(-0.5em 0% -0.3em 0)",
+        // Mở lớp trắng từ phải (100%) về 0% bằng biến CSS của pseudo-element ::after.
+        "--nw-wipe-right": "0%",
         duration: wipeDuration,
         ease: "power3.inOut",
       },
       "introMoveStart"
     );
 
-    // Hero reveal can begin only after intro text animation is done.
+    // Mốc hoàn tất chữ mở đầu: các hiệu ứng lộ nội dung chính chỉ chạy sau mốc này.
     tl3.add("introTextDone", "introMoveStart+=" + moveDuration);
 
-    // ── Page reveal: zoom-in only (no fade-up) ───────────────────────────────
-    //    Step A – Make sections visible immediately, then scale from 0.94 → 1.
-    tl3.set(revealTweenEls, { autoAlpha: 1 }, "introTextDone+=0.05");
-    tl3.fromTo(
-      revealTweenEls,
-      { scale: 0.94 },
-      {
-        scale: 1,
-        duration: 0.75,
-        ease: "power3.out",
-        stagger: 0.09,
-        clearProps: "transform",
-      },
-      "introTextDone+=0.05"
-    );
+    // ── Lộ trang: chỉ thu phóng vào (không mờ-trồi) ──────────────────────────
+    //    Bước A: bật hiển thị khối ngay, sau đó thu phóng từ 0.94 lên 1.
+    tl3.set(revealTweenEls, { autoAlpha: 1 }, "introTextDone");
+    if (revealScaleEls.length) {
+      tl3.fromTo(
+        revealScaleEls,
+        { scale: 0.94 },
+        {
+          scale: 1,
+          duration: 0.75,
+          // ease: "power3.out",
+          stagger: 0.09,
+          // clearProps: "transform",
+        },
+        "introTextDone"
+      );
+    }
 
-    //    Step B – Wipe-up: line inners slide from 110% → 0 with stagger.
-    //             Start after text intro completes so the handoff is explicit.
-    //             Each line is offset by 0.1s for a cascading cinematic feel.
+    //    Bước B: quét lộ từ dưới lên, mỗi line-inner trượt từ 110% về 0 theo nhịp lệch.
+    //             Bắt đầu sau khi phần mở đầu hoàn tất để điểm bàn giao rõ ràng.
+    //             Mỗi dòng lệch 0.1s để tạo hiệu ứng đổ tầng điện ảnh.
     tl3.fromTo(
       ".nw-line-inner",
       { y: "110%" },
       {
         y: "0%",
-        duration: 0.85,
+        duration: 0.65,
         ease: "power4.out",
         stagger: 0.10,
       },
-      "introTextDone+=0.22"
+      "introTextDone+=1"
     );
 
-    // ── Ruler split-vertical-out ─────────────────────────────────────────────
-    //    Timing: same label as the page reveal (introTextDone+=0.05)
-    //    Effect: the .nw-ruler bar expands from center by scaleY:0 → 1,
-    //            while text spans split vertically (up and down) to natural positions.
+    // ── Thước tách dọc ───────────────────────────────────────────────────────
+    //    Nhịp: dùng cùng mốc với phần lộ trang (introTextDone+=0.05).
+    //    Hiệu ứng: .nw-ruler bung dọc từ giữa (scaleY: 0 → 1),
+    //              đồng thời hai span chữ tách dọc lên/xuống về vị trí tự nhiên.
     //
-    //    Step i  — make ruler visible + expand the bar from center vertically
+    //    Bước i: hiện ruler + bung thanh theo trục dọc từ tâm.
     tl3.to(
       ".nw-ruler",
       {
@@ -168,12 +174,12 @@ document.addEventListener("DOMContentLoaded", function () {
         autoAlpha: 1,
         duration: 0.65,
         ease: "power3.out",
-        clearProps: "transform",  // clean up so layout is unaffected afterwards
+        clearProps: "transform",  // dọn thuộc tính biến đổi nội tuyến để không ảnh hưởng bố cục về sau
       },
-      "introTextDone+=0.05"   // SAME start as the page reveal
+      "introTextDone+=1"   // bắt đầu cùng thời điểm với phần lộ trang
     );
 
-    //    Step ii — first span slides from y:16 → 0 (outward upward feel)
+    //    Bước ii: span đầu trượt từ y:16 về 0 (cảm giác bung lên).
     tl3.to(
       ".nw-ruler-inner span:first-child",
       {
@@ -181,10 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.55,
         ease: "expo.out",
       },
-      "introTextDone+=0.05"   // starts simultaneously with bar expansion
+      "introTextDone+=0.5"   // chạy đồng thời với lúc thanh ruler bung ra
     );
 
-    //    Step iii — last span slides from y:-16 → 0 (outward downward feel)
+    //    Bước iii: span cuối trượt từ y:-16 về 0 (cảm giác bung xuống).
     tl3.to(
       ".nw-ruler-inner span:last-child",
       {
@@ -192,23 +198,18 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.55,
         ease: "expo.out",
       },
-      "introTextDone+=0.05"   // starts simultaneously with bar expansion
+      "introTextDone+=0.5"   // cũng bắt đầu đồng thời với phần bung thanh
     );
 
-    // Keep anchor static for position matching, but still reveal it.
+    // Bật cứng tiêu đề đích ngay tại mốc bàn giao để "TIN TỨC ONLINE" không bị ẩn lại.
     if (anchorRevealEl) {
-      tl3.to(
-        anchorRevealEl,
-        {
-          autoAlpha: 1,
-          duration: 0.75,
-          ease: "power2.out",
-        },
-        "<"
-      );
+      tl3.set(anchorRevealEl, { autoAlpha: 1 }, "introTextDone");
+    }
+    if (dtTitle) {
+      tl3.set(dtTitle, { autoAlpha: 1 }, "introTextDone");
     }
 
-    // Dissolve overlay right after intro text completes so wipe-up is visible.
+    // Làm mờ lớp phủ ngay sau khi phần mở đầu xong để người dùng thấy nội dung quét lộ.
     tl3.to(
       overlay,
       {
@@ -216,32 +217,22 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.42,
         ease: "power2.out",
         onComplete: function () {
+          // Gỡ hẳn lớp phủ khỏi cây vẽ để không chặn tương tác phía dưới.
           overlay.style.display = "none";
         },
       },
-      "introTextDone+=0.05"
+      "introTextDone"
     );
 
-    // Show real display title instantly at the exact overlay fade start (no fade-in).
-    if (dtTitle) {
-      tl3.set(
-        dtTitle,
-        {
-          autoAlpha: 1,
-        },
-        "<"
-      );
-    }
-
+    // Gắn dòng thời gian con của Giai đoạn 3 vào dòng thời gian chính.
     master.add(tl3);
   });
 
   // ════════════════════════════════════════════════════════════════════════════
-  //  POST-INTRO interactions (nav hover + 3D card tilt)
-  //  Registered now so listeners are ready the moment the page reveals.
+  //  TƯƠNG TÁC SAU MỞ ĐẦU (di chuột menu + nghiêng thẻ 3D)
   // ════════════════════════════════════════════════════════════════════════════
 
-  // Nav link micro lift
+  // Nhấc nhẹ liên kết menu khi di chuột
   document.querySelectorAll(".nw-menu-link").forEach(function (link) {
     link.addEventListener("mouseenter", function () {
       gsap.to(link, { y: -2, duration: 0.2, overwrite: true });
@@ -251,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 3D tilt on the video card
+  // Nghiêng 3D cho thẻ video
   var card = document.querySelector(".nw-video-card");
   if (card) {
     var MAX_TILT = 5;
@@ -284,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ── Circle Mask Reveal (scroll-based cinematic transition) ───────────────
+  // ── Lộ bằng mặt nạ tròn (chuyển cảnh điện ảnh theo cuộn trang) ───────────
   if (typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -294,12 +285,12 @@ document.addEventListener("DOMContentLoaded", function () {
       var cmRing = cmSection.querySelector(".nw-cm-ring");
       var cmRevealItems = cmSection.querySelectorAll("[data-cm-reveal]");
 
-      // Initial content state: hidden and shifted down for reveal motion.
+      // Trạng thái ban đầu: ẩn nội dung và đẩy xuống để chuẩn bị lộ ra.
       gsap.set(cmRevealItems, { autoAlpha: 0, y: 40, filter: "blur(8px)" });
 
       var cmTl = gsap.timeline({
         scrollTrigger: {
-          // Pin the transition section while timeline progress follows scroll.
+          // Ghim khối chuyển cảnh, dòng thời gian tiến theo vị trí cuộn.
           trigger: cmSection,
           start: "top top",
           end: "+=200%",
@@ -310,8 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
 
-      // Circle expansion logic: animate clip-path only (no width/height animation)
-      // to keep the transition smooth and avoid layout reflows.
+      // Cơ chế mở rộng vòng tròn: chỉ chạy hiệu ứng clip-path (không chạy width/height)
+      // để chuyển cảnh mượt và tránh tính lại bố cục.
       cmTl.to(
         cmNextLayer,
         {
@@ -322,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
         0
       );
 
-      // Optional polish: subtle ring glow fades while the mask grows.
+      // Nhấn nhá thêm: ánh sáng vòng tròn mờ dần khi mặt nạ đang mở rộng.
       cmTl.to(
         cmRing,
         {
@@ -334,8 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
         0.24
       );
 
-      // Overlap timing: start content reveal BEFORE circle expansion ends.
-      // This removes dead frames and keeps motion continuous.
+      // Chồng nhịp thời gian: bắt đầu lộ nội dung TRƯỚC khi vòng tròn mở xong.
+      // Cách này loại bỏ khung hình chết và giữ chuyển động liên tục.
       cmTl.to(
         cmRevealItems,
         {
@@ -353,41 +344,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ── Custom circular cursor (GSAP + rAF lerp) ───────────────────────────────
+// ── Con trỏ tròn tùy biến (GSAP + rAF nội suy) ─────────────────────────────
 (function () {
   var cursor = document.getElementById("nw-cursor");
   if (!cursor) return;
 
-  // Current rendered position (lerp target)
+  // Vị trí đang hiển thị (đích nội suy)
   var posX = window.innerWidth / 2;
   var posY = window.innerHeight / 2;
 
-  // Raw mouse position
+  // Vị trí chuột thô
   var mouseX = posX;
   var mouseY = posY;
 
-  // Base smoothing factor tuned for 60fps (converted to frame-rate independent alpha below)
+  // Hệ số làm mượt gốc cho 60fps (sau đó đổi sang alpha độc lập tốc độ khung hình ở dưới)
   var BASE_EASE = 0.6;
   var lastTime = performance.now();
 
-  // Update mouse coordinates on every move
+  // Cập nhật tọa độ chuột ở mỗi lần di chuyển
   document.addEventListener("mousemove", function (e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
   }, { passive: true });
 
-  // rAF loop – lerp toward mouse then update cursor position
+  // Vòng lặp rAF: nội suy về phía chuột rồi cập nhật vị trí con trỏ
   function tick(now) {
-    // Frame-rate independent smoothing keeps motion consistent across different FPS values.
+    // Làm mượt độc lập FPS giúp chuyển động ổn định trên nhiều tốc độ khung hình.
     var dt = Math.min(now - lastTime, 40);
     lastTime = now;
     var alpha = 1 - Math.pow(1 - BASE_EASE, dt / 16.67);
 
-    // Linear interpolation for smooth trailing
+    // Nội suy tuyến tính để tạo đuôi bám mượt
     posX += (mouseX - posX) * alpha;
     posY += (mouseY - posY) * alpha;
 
-    // Use GSAP set for GPU-composited transform (no layout thrash)
+    // Dùng GSAP set để biến đổi trên GPU, tránh rung lắc bố cục
     if (typeof gsap !== "undefined") {
       gsap.set(cursor, { x: posX, y: posY, force3D: true });
     } else {
@@ -399,12 +390,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   requestAnimationFrame(tick);
 
-  // ── Hover scale: enlarge on interactive elements ──────────────────
+  // ── Phóng to khi di chuột trên phần tử tương tác ───────────────────
   var interactiveSelectors = "a, button, [role='button'], input, textarea, select, label, .nw-video-card";
 
   document.querySelectorAll(interactiveSelectors).forEach(addHoverListeners);
 
-  // Also support dynamically added elements via event delegation
+  // Hỗ trợ cả phần tử được thêm động bằng cơ chế ủy quyền sự kiện
   document.addEventListener("mouseover", function (e) {
     if (e.target.matches(interactiveSelectors) || e.target.closest(interactiveSelectors)) {
       cursor.classList.add("nw-cursor--hover");
@@ -426,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ── Hide cursor when it leaves the window ─────────────────────────
+  // ── Ẩn con trỏ khi rời khỏi cửa sổ ─────────────────────────────────
   document.addEventListener("mouseleave", function () {
     gsap && gsap.to(cursor, { opacity: 0, duration: 0.2 });
   });

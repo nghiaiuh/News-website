@@ -963,7 +963,9 @@ hr {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 50px;
-  padding: 50px 40px;
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 }
@@ -971,12 +973,13 @@ hr {
 .nw-display-title {
   font-family: "Oswald", sans-serif;
   font-size: clamp(3.8rem, 17vw, 14rem);
-  line-height: 0.9;
+  line-height: 1;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #f1f1f1;
   text-transform: uppercase;
   white-space: nowrap;
+  text-align: center;
 }
 
 .nw-cm-prelude {
@@ -1175,16 +1178,15 @@ hr {
   /* Removed from the paint tree by JS after Phase 3 */
 }
 
-/* ── 3. Text wrapper: stacking context for the two text layers ─────────────── */
+/* ── 3. Text wrapper: stacking context for intro text animation ─────────────── */
 #nw-intro-text {
-  position: relative; /* lets the absolute top layer register perfectly */
+  position: relative;
   display: inline-block; /* shrink-wraps to the text content */
   transform-origin: center center; /* Phase 3 scale pivots from the centre */
   will-change: transform; /* GPU layer hint */
 }
 
-/* ── 4. Shared Oswald typography (matches .nw-display-title on the page) ──── */
-.nw-it-base,
+/* ── 4. Overlay title typography (matches .nw-display-title on the page) ───── */
 .nw-it-wipe {
   font-family: "Oswald", sans-serif;
   font-size: clamp(3rem, 10vw, 11rem);
@@ -1200,18 +1202,21 @@ hr {
   user-select: none;
 }
 
-/* ── 5. Bottom layer — dark gray (#333) always visible base ──────────────── */
-.nw-it-base {
+/* ── 5. Base text remains dark gray; white reveal is drawn by ::after ─────── */
+.nw-it-wipe {
   color: #333;
   display: block;
+  position: relative;
+  --nw-wipe-right: 100%;
 }
 
-/* ── 6. Top layer — white text, clipped fully to the right at start ──────── */
-.nw-it-wipe {
+/* ── 6. White layer sits above base text and is clipped from right to left ── */
+.nw-it-wipe::after {
+  content: attr(data-text);
   color: #fff;
-  /* Perfect pixel alignment on top of the base layer */
   position: absolute;
   inset: 0;
+  pointer-events: none;
   /*
    * clip-path: inset(top right bottom left)
    *
@@ -1223,7 +1228,7 @@ hr {
    * -0.5em top / -0.3em bottom = safe margin for stacked diacritics.
    * right: 100% = fully hidden at start (wipe will animate this to 0%).
    */
-  clip-path: inset(-0.5em 100% -0.3em 0);
+  clip-path: inset(-0.5em var(--nw-wipe-right) -0.3em 0);
   will-change: clip-path; /* GPU-composited, zero layout cost */
 }
 

@@ -177,14 +177,9 @@
        Overlay is removed from the paint tree after Phase 3 completes.
   ════════════════════════════════════════════════════════════════════ -->
     <div id="nw-intro-overlay" aria-hidden="true">
-      <!-- Dual-layer text wrapper (Phase 1 drop target, Phase 2 wipe source,
-         Phase 3 fly-to-anchor target) -->
+      <!-- Single text node in overlay; white wipe layer is rendered via CSS ::after -->
       <div id="nw-intro-text">
-        <!-- Layer 1 – bottom: dark gray, always visible -->
-        <h2 class="nw-it-base" aria-hidden="true">TIN TỨC ONLINE</h2>
-
-        <!-- Layer 2 – top: white, hidden behind clip-path until Phase 2 -->
-        <h2 class="nw-it-wipe" aria-label="TIN TỨC ONLINE">TIN TỨC ONLINE</h2>
+        <h2 class="nw-it-wipe" data-text="TIN TỨC ONLINE">TIN TỨC ONLINE</h2>
       </div>
     </div>
 
