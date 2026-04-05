@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Website</title>
+    <link rel="stylesheet" href="../css/local-fonts.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/sport.css">
+
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
+    <script src="../js/gsap.min.js" defer></script>
+    <script src="../js/ScrollTrigger.min.js" defer></script>
+    <script src="../js/smoothscroll.js" defer></script>
+    <script src="../js/index.js" defer></script>
+    <script src="../js/cursor.js" defer></script>
+  </head>
+
+  <body class="nw-body">
+    <!-- Custom circular cursor -->
+    <div id="nw-cursor" aria-hidden="true"></div>
+
+    <header class="nw-header sticky-top" data-page-reveal>
+      <nav class="navbar navbar-expand-xl navbar-dark nw-navbar py-0">
+        <div class="container-fluid px-4 px-xl-5">
+          <a class="navbar-brand nw-logo py-3" href="../html/Home.html">
+            <span>BÁO CHÍ</span>
+            <span class="nw-logo-accent"> DESIGN</span>
+          </a>
+          <button
+            class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#nwMenu"
+            aria-controls="nwMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="nwMenu">
+            <ul class="navbar-nav mx-auto mb-2 mb-xl-0 gap-xl-4">
+              <li class="nav-item">
+                <a class="nav-link nw-menu-link" href="#"
+                  >Kinh tế &amp; Chính trị</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nw-menu-link border-bottom border-2 border-warning" href="../html/sport.html">Thể thao</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nw-menu-link" href="#"
+                  >Giải trí &amp; Đời sống</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nw-menu-link" href="#">Khoa học vũ trụ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nw-menu-link" href="#"
+                  >Khám phá thiên nhiên</a
+                >
+              </li>
+            </ul>
+            <a href="#" class="btn nw-login-btn rounded-0 px-4 py-4"
+              >Đăng nhập</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="nw-main">
+      <section class="nw-hero position-relative" data-page-reveal>
+        <div class="container-fluid px-4 px-xl-5">
+          <div class="row align-items-center gx-4 gx-xl-5 nw-hero-upper">
+            <div class="col-lg-7">
+              <div class="nw-copy">
+                <!-- nw-kicker -->
+                <p class="nw-kicker mb-2">
+                  <span class="nw-line-wrap"
+                    ><span class="nw-line-inner">BÁO CHÍ</span></span
+                  >
+                </p>
+
+                <!-- nw-title: two visual lines, each gets its own wipe-up clip -->
+                <p class="nw-title mb-0">
+                  <span class="nw-line-wrap"
+                    ><span class="nw-line-inner"
+                      >Không chỉ dừng lạifffffff ở</span
+                    ></span
+                  >
+                  <span class="nw-line-wrap"
+                    ><span class="nw-line-inner nw-title-sub"
+                      >Nội dung</span
+                    ></span
+                  >
+                </p>
+
+                <!-- nw-subtitle -->
+                <p class="nw-subtitle mt-4 mb-2">
+                  <span class="nw-line-wrap"
+                    ><span class="nw-line-inner"
+                      >Mà bắt đầu từ cách bạn</span
+                    ></span
+                  >
+                </p>
+
+                <!-- nw-highlight -->
+                <p class="nw-highlight mb-1">
+                  <span class="nw-line-wrap"
+                    ><span class="nw-line-inner">Thể hiện</span></span
+                  >
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-lg-5 d-flex justify-content-lg-end mt-4 mt-lg-0 nw-video-col"
+            >
+              <article class="nw-video-card" data-animate="video-card">
+                <div class="nw-video-media">
+                  <video
+                    src="../images/videos/2025lookback.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  ></video>
+                  <span class="nw-year-badge">2025</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="nw-ruler" data-animate="ruler">
+          <div
+            class="container-fluid px-4 px-xl-5 d-flex align-items-center nw-ruler-inner"
+          >
+            <span>UI/UX Design</span>
+            <span>Sự tương phản</span>
+          </div>
+        </div>
+
+        <!-- display-title: invisible anchor – acts as final landing target for the overlay text -->
+        <div class="container-fluid px-4 px-xl-5" data-page-reveal>
+          <div id="nw-dt-anchor">
+            <!-- Real title: starts hidden (autoAlpha:0), revealed by JS when overlay fades -->
+            <h2 class="nw-display-title mb-0" id="nw-dt-title">
+              TIN TỨC ONLINE
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="main py-5">
+        <div class="container-fluid px-4 px-xl-5">
+          
+          <h3 class="mb-4 text-dark fw-bold"><a href="../html/sport.html" style="color: black; text-decoration: none;">TIN THỂ THAO 24H</a></h3>
+
+          <div class="row">
+            <div class="col-12">
+                <h1 class="text-dark fw-bold">Cuộc đua số 1 thế giới giữa Sinner và Alcaraz đảo chiều</h1>
+
+                <p>Carlos Alcaraz và Jannik Sinner chưa đối đầu trong năm 2026, nhưng cuộc cạnh tranh vẫn diễn ra gay gắt trong cuộc đua đến ngôi số 1 thế giới.</p>
+
+                <p>Trước khi bước vào BNP Paribas Open ở Indian Wells hồi đầu tháng 3, Alcaraz dẫn trước Sinner tới 3.150 điểm trên bảng điểm ATP. Tuy nhiên, Sinner đã xoay chuyển tình thế trước khi mùa sân đất nện khởi tranh. Nhờ chức vô địch tại Miami Mở rộng cuối tháng 3, tay vợt Italy thu hẹp khoảng cách với số 1 thế giới còn 1.190 điểm.                </p>
+
+                <img src="../images/sport/img2.webp" class="d-block mx-auto m-2 w-75" alt="tenis">
+
+                <p>Tay vợt Italy không phải bảo vệ điểm nào tại Indian Wells hay Miami tháng qua, trong khi Alcaraz phải bảo vệ 410 điểm. Điều này chưa tạo ra khác biệt lớn, mà kết quả thi đấu sau đó mới là yếu tố quyết định.</p>
+
+                <p>Alcaraz dừng bước ở bán kết Indian Wells trước Daniil Medvedev và bị loại ở vòng ba Miami bởi Sebastian Korda, mở ra cơ hội cho đối thủ. Sinner đã tận dụng triệt để, giành thêm 2.000 điểm nhờ màn trình diễn hoàn hảo trong tháng 3.</p>
+
+                <p>Sinner đang có thành tích 19 thắng - 2 thua trong mùa giải và bứt phá mạnh mẽ khi trở thành tay vợt đầu tiên trong lịch sử hoàn tất "Sunshine Double" (vô địch ở cả Indian Wells và Miami) mà không thua một set nào.</p>
+
+                <p>Áp lực lúc này lại thuộc về tay vợt số 1 thế giới Alcaraz, người sẽ phải bảo vệ tới 4.300 điểm trong mùa sân đất nện châu Âu sắp tới. Năm ngoái, tay vợt Tây Ban Nha vô địch Monte-Carlo Masters, Rome Masters và Roland Garros, đồng thời vào chung kết Barcelona Mở rộng.</p>
+
+                <p>Trong khi đó, Sinner chỉ phải bảo vệ 1.950 điểm, thậm chí không có điểm nào cần bảo vệ cho đến giải Rome vào tháng 5. Năm ngoái, tay vợt 24 tuổi bị cấm thi đấu ba tháng vì dương tính với chất cấm, vắng mặt ở bốn giải Masters, gồm Indian Wells, Miami, Monte-Carlo và Madrid Mở rộng.</p>
+
+                <p>Alcaraz đang bước vào tuần thứ 65 ở vị trí số 1 thế giới, chỉ còn kém một tuần để cân bằng thành tích 66 tuần của Sinner. Tuy nhiên, tay vợt 22 tuổi đang chịu sức ép lớn từ Sinner, người bước vào mùa sân đất nện với vị thế thuận lợi để cạnh tranh và giành lại ngôi số 1 thế giới.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+       CINEMATIC INTRO OVERLAY
+       Full-viewport black stage. Phases 1-3 animate automatically.
+       Overlay is removed from the paint tree after Phase 3 completes.
+  ════════════════════════════════════════════════════════════════════ -->
+    <div id="nw-intro-overlay" aria-hidden="true">
+      <!-- Single text node in overlay; white wipe layer is rendered via CSS ::after -->
+      <div id="nw-intro-text">
+        <h2 class="nw-it-wipe" data-text="TIN TỨC ONLINE">TIN TỨC ONLINE</h2>
+      </div>
+    </div>
+  </body>
+</html>
