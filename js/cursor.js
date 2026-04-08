@@ -17,9 +17,9 @@
   // Lưu thời điểm frame trước để tính delta time
   var lastTime = performance.now();
 
-  // Lắng nghe sự kiện di chuyển chuột
+  // Lắng nghe sự kiện di chuyển chuột, lấy toạ độ của chuột thật realtime
   document.addEventListener(
-    "mousemove",
+    "mousemove",      //mousemove, mouseover, mouseleave, mouseenter,...
     function (e) {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -42,15 +42,15 @@
       gsap.set(cursor, { x: posX, y: posY, force3D: true });
     }
     else { //css truyền thống
-      cursor.style.transform =
-        "translate(" +
+      cursor.style.transform ="translate(" +
         (posX - cursor.offsetWidth / 2) +
         "px, " +
         (posY - cursor.offsetHeight / 2) +
         "px)";
+        //translate(Xpx, Ypy);
     }
 
-    requestAnimationFrame(tick);
+    requestAnimationFrame(tick);  //callback
   }
 
   requestAnimationFrame(tick);

@@ -11,8 +11,9 @@
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <script src="../js/gsap.min.js" defer></script>
     <script src="../js/ScrollTrigger.min.js" defer></script>
-    <script src="../js/smoothscroll.js" defer></script>
+    <script src="../js/SplitText.min.js" defer></script>
     <script src="../js/index.js" defer></script>
+    <script src="../js/section2.js" defer></script>
     <script src="../js/cursor.js" defer></script>
   </head>
 
@@ -75,15 +76,12 @@
         <div class="container-fluid px-4 px-xl-5">
           <div class="row align-items-center gx-4 gx-xl-5 nw-hero-upper">
             <div class="col-lg-7">
-              <div class="nw-copy">
-                <!-- nw-kicker -->
+              <div class="nw-slogan">
                 <p class="nw-kicker mb-2">
                   <span class="nw-line-wrap"
                     ><span class="nw-line-inner">BÁO CHÍ</span></span
                   >
                 </p>
-
-                <!-- nw-title: two visual lines, each gets its own wipe-up clip -->
                 <p class="nw-title mb-0">
                   <span class="nw-line-wrap"
                     ><span class="nw-line-inner"
@@ -96,8 +94,6 @@
                     ></span
                   >
                 </p>
-
-                <!-- nw-subtitle -->
                 <p class="nw-subtitle mt-4 mb-2">
                   <span class="nw-line-wrap"
                     ><span class="nw-line-inner"
@@ -105,8 +101,6 @@
                     ></span
                   >
                 </p>
-
-                <!-- nw-highlight -->
                 <p class="nw-highlight mb-1">
                   <span class="nw-line-wrap"
                     ><span class="nw-line-inner">Thể hiện</span></span
@@ -141,11 +135,8 @@
             <span>Sự tương phản</span>
           </div>
         </div>
-
-        <!-- display-title: invisible anchor – acts as final landing target for the overlay text -->
         <div class="container-fluid px-4 px-xl-5" data-page-reveal>
           <div id="nw-dt-anchor">
-            <!-- Real title: starts hidden (autoAlpha:0), revealed by JS when overlay fades -->
             <h2 class="nw-display-title mb-0" id="nw-dt-title">
               TIN TỨC ONLINE
             </h2>
@@ -173,13 +164,8 @@
       </section>
     </main>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-       CINEMATIC INTRO OVERLAY
-       Full-viewport black stage. Phases 1-3 animate automatically.
-       Overlay is removed from the paint tree after Phase 3 completes.
-  ════════════════════════════════════════════════════════════════════ -->
+    <!--CINEMATIC INTRO OVERLAY -->
     <div id="nw-intro-overlay" aria-hidden="true">
-      <!-- Single text node in overlay; white wipe layer is rendered via CSS ::after -->
       <div id="nw-intro-text">
         <h2 class="nw-it-wipe" data-text="TIN TỨC ONLINE">TIN TỨC ONLINE</h2>
       </div>
