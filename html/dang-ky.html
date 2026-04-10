@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - News Website</title>
+
+    <link rel="stylesheet" href="../css/local-fonts.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
+    <script src="../js/gsap/gsap.min.js" defer></script>
+    <script src="../js/login.js" defer></script>
+    <script src="../js/dang-ky.js" defer></script>
+  </head>
+
+  <body class="nw-body nw-auth-body">
+    <div id="nw-auth-intro" aria-hidden="true">
+      <div class="nw-auth-intro-text">
+        <span class="nw-auth-intro-line">BÁO CHÍ</span>
+        <span class="nw-auth-intro-line">Đăng ký</span>
+      </div>
+    </div>
+
+    <header class="nw-header sticky-top">
+      <nav class="navbar navbar-expand-xl navbar-dark nw-navbar py-0">
+        <div class="container-fluid px-4 px-xl-5">
+          <a class="navbar-brand nw-logo py-3" href="./Home.html">
+            <span>BÁO CHÍ</span>
+            <span class="nw-logo-accent"> DESIGN</span>
+          </a>
+          <button
+            class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#nwMenuAuth"
+            aria-controls="nwMenuAuth"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="nwMenuAuth">
+            <ul class="navbar-nav ms-auto mb-2 mb-xl-0 gap-3">
+              <li class="nav-item" id="register-link">
+                <a class="nav-link nw-menu-link" href="./dang-ky.html">
+                  Đăng ký
+                </a>
+              </li>
+              <li class="nav-item" id="login-link">
+                <a class="nav-link nw-menu-link" href="./dang-nhap.html">
+                  Đăng nhập
+                </a>
+              </li>
+            </ul>
+            <ul
+              class="navbar-nav list-inline mb-0 ms-xl-3"
+              id="user-options"
+            ></ul>
+            <a href="./Home.html" class="btn nw-login-btn rounded-0 px-4 py-3">
+              Trang chủ
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="nw-auth-bg" aria-hidden="true">
+      <span class="nw-auth-shape nw-auth-shape--one"></span>
+      <span class="nw-auth-shape nw-auth-shape--two"></span>
+      <span class="nw-auth-shape nw-auth-shape--three"></span>
+    </div>
+
+    <main class="nw-auth-page">
+      <div class="container-fluid px-4 px-xl-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <div class="nw-auth-copy">
+              <p class="nw-auth-kicker">Tin tức online</p>
+              <h1 class="nw-auth-title">
+                Bắt đầu <span>ngay hôm nay</span>
+              </h1>
+              <p class="nw-auth-subtitle">
+                Tạo tài khoản để lưu bài viết, theo dõi chủ đề yêu thích và nhận
+                thông báo độc quyền.
+              </p>
+              <div class="nw-auth-stat">
+                <div>
+                  <strong>500+</strong>
+                  Bài viết mỗi ngày
+                </div>
+                <div>
+                  <strong>15</strong>
+                  Chủ đề nổi bật
+                </div>
+              </div>
+
+              <ul class="nw-auth-feature-list">
+                <li class="nw-auth-feature-item">
+                  <span class="nw-auth-feature-icon">01</span>
+                  <span>Cá nhân hoá nội dung theo sở thích đọc của bạn.</span>
+                </li>
+                <li class="nw-auth-feature-item">
+                  <span class="nw-auth-feature-icon">02</span>
+                  <span>Lưu danh sách đọc và tiếp tục ở bất kỳ đâu.</span>
+                </li>
+                <li class="nw-auth-feature-item">
+                  <span class="nw-auth-feature-icon">03</span>
+                  <span>Nhận gợi ý tin tức phù hợp mỗi ngày.</span>
+                </li>
+              </ul>
+
+              <div class="nw-auth-trust">
+                <span class="nw-auth-badge">Đăng ký miễn phí</span>
+                <span class="nw-auth-badge">Không spam email</span>
+                <span class="nw-auth-badge">Dữ liệu riêng tư</span>
+              </div>
+
+              <div class="nw-auth-quote">
+                “Tài khoản giúp tôi lưu lại các bài phân tích dài.”
+                <strong>— Đức Huy</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 offset-lg-1">
+            <div class="nw-auth-card">
+              <h2>Đăng ký</h2>
+              <form id="registerForm" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="uname">Tên đăng nhập</label>
+                  <input
+                    class="form-control nw-auth-input"
+                    id="uname"
+                    type="text"
+                    placeholder="Nhập tên đăng nhập"
+                    autocomplete="username"
+                  />
+                  <div class="nw-auth-message" id="txt_uname"></div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="password">Mật khẩu</label>
+                  <input
+                    class="form-control nw-auth-input"
+                    id="password"
+                    type="password"
+                    placeholder="Nhập mật khẩu"
+                    autocomplete="new-password"
+                  />
+                  <div class="nw-auth-message" id="txt_password"></div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="passauth">Xác nhận mật khẩu</label>
+                  <input
+                    class="form-control nw-auth-input"
+                    id="passauth"
+                    type="password"
+                    placeholder="Nhập lại mật khẩu"
+                    autocomplete="new-password"
+                  />
+                  <div class="nw-auth-message" id="txt_passauth"></div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    class="form-control nw-auth-input"
+                    id="email"
+                    type="email"
+                    placeholder="ten@email.com"
+                    autocomplete="email"
+                  />
+                  <div class="nw-auth-message" id="txt_email"></div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="phone">Số điện thoại</label>
+                  <input
+                    class="form-control nw-auth-input"
+                    id="phone"
+                    type="tel"
+                    placeholder="0xxxxxxxxx"
+                    autocomplete="tel"
+                  />
+                  <div class="nw-auth-message" id="txt_phone"></div>
+                </div>
+
+                <div id="registerMessage" class="nw-auth-message" aria-live="polite"></div>
+
+                <button type="submit" class="btn nw-auth-submit w-100">
+                  <span class="nw-auth-submit-text">Tạo tài khoản</span>
+                  <span class="nw-auth-submit-spinner" aria-hidden="true"></span>
+                </button>
+              </form>
+
+              <div class="nw-auth-help">
+                Đã có tài khoản?
+                <a class="nw-auth-link" href="./dang-nhap.html">Đăng nhập</a>
+              </div>
+
+              <div class="nw-auth-mini">
+                <span>Ưu tiên mật khẩu mạnh, khó đoán.</span>
+                <span>Có thể cập nhật email bất kỳ lúc nào.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

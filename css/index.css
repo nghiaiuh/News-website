@@ -1005,12 +1005,12 @@ hr {
 
 /* ───────────── Custom cursor ──────────────*/
 
-/* Ẩn con trỏ mặc định */
-* {
-  cursor: none !important;
+/* Giữ con trỏ mặc định luôn hiển thị */
+*,
+*::before,
+*::after {
+  cursor: auto;
 }
-
-#nw-cursor {
   width: 20px;
   height: 20px;
   border-radius: 50%;

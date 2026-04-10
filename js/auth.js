@@ -6,35 +6,58 @@ document.addEventListener("DOMContentLoaded", function () {
         displayUserOptions(username);
     }
 
-    // Xử lý đăng nhậpf
-    $('#loginForm').submit(function (event) {
+    // Xử lý đăng nhập
+    $("#loginForm").submit(function (event) {
         event.preventDefault();
-        const storedUser = JSON.parse(localStorage.getItem('user'));
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const messageEl = $("#loginMessage");
+        const submitBtn = $(".nw-auth-submit");
+
+        submitBtn.addClass("is-loading").attr("disabled", true);
+
+        messageEl.text("").removeClass("is-error is-success");
 
         if (!storedUser) {
-            alert("Không tìm thấy người dùng. Hãy đăng ký tài khoản.");
+            messageEl
+                .text("Không tìm thấy người dùng. Hãy đăng ký tài khoản.")
+                .addClass("is-error");
+            submitBtn.removeClass("is-loading").attr("disabled", false);
             return;
         }
 
-        const enteredUsername = $('#uname').val();
-        const enteredPassword = $('#password').val();
+        const enteredUsername = $("#uname").val().trim();
+        const enteredPassword = $("#password").val().trim();
 
-        if (storedUser.username === enteredUsername && storedUser.password === enteredPassword) {
-            alert('Đăng nhập thành công!');
+        if (!enteredUsername || !enteredPassword) {
+            messageEl
+                .text("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.")
+                .addClass("is-error");
+            submitBtn.removeClass("is-loading").attr("disabled", false);
+            return;
+        }
+
+        if (
+            storedUser.username === enteredUsername &&
+            storedUser.password === enteredPassword
+        ) {
+            messageEl.text("Đăng nhập thành công!").addClass("is-success");
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("username", enteredUsername);
             displayUserOptions(enteredUsername);
-            window.location.href = 'index.html';
+            setTimeout(function () {
+                window.location.href = "Home.html";
+            }, 500);
         } else {
-            alert('Thông tin đăng nhập không đúng.');
+            messageEl.text("Thông tin đăng nhập không đúng.").addClass("is-error");
+            submitBtn.removeClass("is-loading").attr("disabled", false);
         }
     });
 
     // Hàm hiển thị tên người dùng và tùy chọn Đăng xuất
     function displayUserOptions(username) {
-        $('#register-link').hide();
-        $('#login-link').hide();
-        $('#user-options').html(`
+        $("#register-link").hide();
+        $("#login-link").hide();
+        $("#user-options").html(`
             <li class="list-inline-item mx-2"><span><i class="fa fa-user"></i> ${username}</span></li>
             <li class="list-inline-item mx-2" style="padding-right:15px;"><a href="#" id="logout">Đăng xuất</a></li>
         `);
@@ -44,6 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $(document).on("click", "#logout", function () {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("username");
-        window.location.href = 'dang-nhap.html';
+        window.location.href = "dang-nhap.html";
     });
 });

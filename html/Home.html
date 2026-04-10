@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/section2.css" />
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <!-- bootstrap -->
     <script src="../js/bootstrap.bundle.min.js" defer></script>
 
@@ -37,6 +39,7 @@
     <script src="../js/heroSection.js" defer></script>
     <script src="../js/components/section2.js" defer></script>
     <script src="../js/cursor.js" defer></script>
+    <script src="../js/auth.js" defer></script>
   </head>
 
   <body class="nw-body">
@@ -85,9 +88,22 @@
                 >
               </li>
             </ul>
-            <a href="#" class="btn nw-login-btn rounded-0 px-4 py-4"
-              >Đăng nhập</a
-            >
+            <ul class="navbar-nav ms-auto mb-2 mb-xl-0 gap-3">
+              <li class="nav-item" id="register-link">
+                <a class="nav-link nw-menu-link" href="./dang-ky.html">
+                  Đăng ký
+                </a>
+              </li>
+              <li class="nav-item" id="login-link">
+                <a class="nav-link nw-menu-link" href="./dang-nhap.html">
+                  Đăng nhập
+                </a>
+              </li>
+            </ul>
+            <ul
+              class="navbar-nav list-inline mb-0 ms-xl-3"
+              id="user-options"
+            ></ul>
           </div>
         </div>
       </nav>

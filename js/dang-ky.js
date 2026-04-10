@@ -1,153 +1,137 @@
-// Hàm định dạng ngày hiện tại
-function getCurrentDate() {
-    var today = new Date();
-    var weekday = today.toLocaleDateString("vi-VN", { weekday: "long" });
-    var day = today.getDate();
-    var month = today.toLocaleDateString("vi-VN", { month: "long" });
-    var year = today.getFullYear();
+document.addEventListener("DOMContentLoaded", function () {
+    const messageEl = $("#registerMessage");
+    const submitBtn = $(".nw-auth-submit");
 
-    return weekday + ", " + day + " " + month + " " + year;
-}
+    function setFieldMessage(target, text) {
+        if (!text) {
+            target.text("").removeClass("is-error");
+            return;
+        }
 
-// Cập nhật ngày khi tải trangf
-window.onload = function () {
-    var currentDate = getCurrentDate();
-    document.getElementById("dateNow").textContent = currentDate;
-}
+        target.text(text).addClass("is-error");
+    }
 
-
-
-
-// Hàm kiểm tra Username
-function validateUsername() {
-    const unameInput = $('#uname');
-    const errorUname = $('#txt_uname');
-    if (unameInput.val().trim() === '') {
-        errorUname.text('tên người dùng không được bỏ trống');
-        errorUname.css('display', 'inline');
-        return false;
-    } else {
-        errorUname.css('display', 'none');
+    function validateUsername() {
+        const unameInput = $("#uname");
+        const errorUname = $("#txt_uname");
+        if (unameInput.val().trim() === "") {
+            setFieldMessage(errorUname, "Tên người dùng không được bỏ trống.");
+            return false;
+        }
+        setFieldMessage(errorUname, "");
         return true;
     }
-}
 
-// Hàm kiểm tra Password
-function validatePassword() {
-    const passwordInput = $('#password');
-    const errorPassword = $('#txt_password');
-    const passwordValue = passwordInput.val();
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+    function validatePassword() {
+        const passwordInput = $("#password");
+        const errorPassword = $("#txt_password");
+        const passwordValue = passwordInput.val().trim();
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,20}$/;
 
-    if (!passwordRegex.test(passwordValue)) {
-        errorPassword.text('Mật khẩu phải có từ 6 đến 20 ký tự, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, và 1 số.');
-        errorPassword.css('display', 'inline');
-        return false;
-    } else {
-        errorPassword.css('display', 'none');
+        if (!passwordRegex.test(passwordValue)) {
+            setFieldMessage(
+                errorPassword,
+                "Mật khẩu 6-20 ký tự, có chữ hoa, chữ thường và số."
+            );
+            return false;
+        }
+        setFieldMessage(errorPassword, "");
         return true;
     }
-}
 
+    function validatePasswordAuth() {
+        const passwordInput = $("#password");
+        const passAuthInput = $("#passauth");
+        const errorPassauth = $("#txt_passauth");
 
-// Hàm kiểm tra Password Authentication
-function validatePasswordAuth() {
-    const passwordInput = $('#password');
-    const passAuthInput = $('#passauth');
-    const errorPassauth = $('#txt_passauth');
-    if (passAuthInput.val() !== passwordInput.val()) {
-        errorPassauth.text('Password nhập lại phải khớp với Password.');
-        errorPassauth.css('display', 'inline');
-        return false;
-    } else {
-        errorPassauth.css('display', 'none');
+        if (passAuthInput.val().trim() !== passwordInput.val().trim()) {
+            setFieldMessage(errorPassauth, "Mật khẩu nhập lại phải khớp.");
+            return false;
+        }
+        setFieldMessage(errorPassauth, "");
         return true;
     }
-}
 
+    function validateEmail() {
+        const emailInput = $("#email");
+        const errorEmail = $("#txt_email");
+        const emailValue = emailInput.val().trim();
+        const regx = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-// Hàm kiểm tra Email
-function validateEmail() {
-    const emailInput = $('#email');
-    const errorEmail = $('#txt_email');
-    const emailValue = emailInput.val();
-    const regx = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.com$/;
-
-    if (!regx.test(emailValue)) {
-        errorEmail.text('Email phải chứa ký tự "@" và kết thúc bằng ".com".');
-        errorEmail.css('display', 'inline');
-        return false;
-    } else {
-        errorEmail.css('display', 'none');
+        if (!regx.test(emailValue)) {
+            setFieldMessage(errorEmail, "Email chưa đúng định dạng.");
+            return false;
+        }
+        setFieldMessage(errorEmail, "");
         return true;
     }
-}
 
-// Hàm kiểm tra Phone
-function validatePhone() {
-    const phoneInput = $('#phone');
-    const errorPhone = $('#txt_phone');
-    const phoneValue = phoneInput.val();
-    const phoneRegex = /^0\d{9,10}$/;
+    function validatePhone() {
+        const phoneInput = $("#phone");
+        const errorPhone = $("#txt_phone");
+        const phoneValue = phoneInput.val().trim();
+        const phoneRegex = /^0\d{9,10}$/;
 
-    if (!phoneRegex.test(phoneValue)) {
-        errorPhone.text('Số điện thoại phải bắt đầu bằng "0" và có 10 hoặc 11 chữ số.');
-        errorPhone.css('display', 'inline');
-        return false;
-    } else {
-        errorPhone.css('display', 'none');
+        if (!phoneRegex.test(phoneValue)) {
+            setFieldMessage(
+                errorPhone,
+                "Số điện thoại phải bắt đầu bằng 0 và có 10-11 chữ số."
+            );
+            return false;
+        }
+        setFieldMessage(errorPhone, "");
         return true;
     }
-}
 
+    $("#uname").focusout(validateUsername);
+    $("#password").focusout(validatePassword);
+    $("#passauth").focusout(validatePasswordAuth);
+    $("#email").focusout(validateEmail);
+    $("#phone").focusout(validatePhone);
 
-//hàm kiểm tra ngày tháng năm sinh
-function validateDOB() {
-    const dobInput = $('#dob');
-    const errorDOB = $('#txt_dob');
-    const dobValue = dobInput.val();
-    const currentDate = new Date();
-    const dobDate = new Date(dobValue);
+    $("#registerForm").on("submit", function (event) {
+        event.preventDefault();
+        messageEl.text("").removeClass("is-error is-success");
+        submitBtn.addClass("is-loading").attr("disabled", true);
 
-    // Kiểm tra nếu người dùng chưa chọn ngày sinh hoặc ngày sinh lớn hơn hiện tại
-    if (!dobValue || dobDate > currentDate) {
-        errorDOB.text('Ngày tháng năm sinh không được lớn hơn ngày hiện tại.');
-        errorDOB.css('display', 'inline');
-        return false;
-    } else {
-        errorDOB.css('display', 'none');
-        return true;
-    }
-}
+        const validUsername = validateUsername();
+        const validPassword = validatePassword();
+        const validPassauth = validatePasswordAuth();
+        const validEmail = validateEmail();
+        const validPhone = validatePhone();
 
+        if (!(validUsername && validPassword && validPassauth && validEmail && validPhone)) {
+            messageEl.text("Vui lòng kiểm tra lại thông tin.").addClass("is-error");
+            submitBtn.removeClass("is-loading").attr("disabled", false);
+            return;
+        }
 
-// Gắn sự kiện focusout cho các ô nhập
-$('#uname').focusout(validateUsername);
-$('#password').focusout(validatePassword);
-$('#passauth').focusout(validatePasswordAuth);
-$('#email').focusout(validateEmail);
-$('#phone').focusout(validatePhone);
-$('#dob').focusout(validateDOB);
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const username = $("#uname").val().trim();
 
-// Sự kiện đăng ký
-$('.btn').click(function () {
-    const validUsername = validateUsername();
-    const validPassword = validatePassword();
-    const validPassauth = validatePasswordAuth();
-    const validEmail = validateEmail();
-    const validPhone = validatePhone();
-    const validDOB = validateDOB();
+        if (storedUser && storedUser.username === username) {
+            messageEl
+                .text("Tên đăng nhập đã tồn tại. Hãy chọn tên khác.")
+                .addClass("is-error");
+            submitBtn.removeClass("is-loading").attr("disabled", false);
+            return;
+        }
 
-    if (validUsername && validPassword && validPassauth && validEmail && validPhone && validDOB) {
         const user = {
-            username: $('#uname').val(),
-            password: $('#password').val(),
-            email: $('#email').val(),
-            phone: $('#phone').val()
+            username: username,
+            password: $("#password").val().trim(),
+            email: $("#email").val().trim(),
+            phone: $("#phone").val().trim(),
         };
-        localStorage.setItem('user', JSON.stringify(user));
-        alert('Đăng ký thành công! Bạn có thể đăng nhập với thông tin đã cung cấp.');
 
-    }
+        localStorage.setItem("user", JSON.stringify(user));
+        messageEl
+            .text("Đăng ký thành công! Đang chuyển tới đăng nhập...")
+            .addClass("is-success");
+
+        setTimeout(function () {
+            window.location.href = "dang-nhap.html";
+        }, 700);
+    });
 });
 
