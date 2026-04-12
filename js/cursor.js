@@ -4,6 +4,16 @@
   var cursor = document.getElementById("news-cursor");
   if (!cursor) return;
 
+  var supportsMatchMedia = typeof window.matchMedia === "function";
+  var prefersReducedMotion = supportsMatchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+  var coarsePointer = supportsMatchMedia
+    ? window.matchMedia("(hover: none) and (pointer: coarse)").matches
+    : false;
+
+  if (prefersReducedMotion || coarsePointer) return;
+
   // Vị trí đang hiển thị, khởi tạo giữa màn hình
   var posX = window.innerWidth / 2;
   var posY = window.innerHeight / 2;
@@ -28,6 +38,12 @@
   );
 
   function tick(now) {
+    if (document.hidden) {
+      lastTime = now;
+      requestAnimationFrame(tick);
+      return;
+    }
+
     var dt = Math.min(now - lastTime, 40);  //Tính time giữa 2 frame, đặt max là 40 (tránh lag khi time giữa 2 frame quá lớn (bị lag))
     lastTime = now; //Cập nhật lại cột mốc tgian
     //Tính hệ só di chuyển theo thời gian (tối ưu hoá BASE_EASE cho mọi fps)

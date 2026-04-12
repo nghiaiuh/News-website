@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var startX = 0;
     var dragStartTranslateX = 0;
     var currentTranslateX = 0;
+    var targetTranslateX = 0;
+    var rafId = 0;
 
     function markReady() {
       if (isReady) return;
@@ -36,6 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
       track.style.transform = "translate3d(" + x + "px, 0, 0)";
     }
 
+    function scheduleTranslate() {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function () {
+        rafId = 0;
+        currentTranslateX = targetTranslateX;
+        applyTranslate(currentTranslateX);
+      });
+    }
+
     function getCenterCardTranslateX() {
       if (!centerCard) return 0;
 
@@ -50,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       currentTranslateX = clampTranslateX(currentTranslateX);
+      targetTranslateX = currentTranslateX;
       applyTranslate(currentTranslateX);
     }
 
@@ -65,49 +77,33 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isDragging) return;
 
       var delta = (pointerX - startX) * 1.2;
-      currentTranslateX = clampTranslateX(dragStartTranslateX + delta);
-      applyTranslate(currentTranslateX);
+      targetTranslateX = clampTranslateX(dragStartTranslateX + delta);
+      scheduleTranslate();
     }
 
     function endDrag() {
       if (!isDragging) return;
       isDragging = false;
       container.classList.remove("is-dragging");
+      currentTranslateX = targetTranslateX;
     }
 
-    container.addEventListener("mousedown", function (event) {
-      if (event.button !== 0) return;
-      startDrag(event.pageX);
-      event.preventDefault();
+    container.addEventListener("pointerdown", function (event) {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      startDrag(event.clientX);
+      container.setPointerCapture(event.pointerId);
+      if (event.pointerType === "mouse") {
+        event.preventDefault();
+      }
     });
 
-    window.addEventListener("mousemove", function (event) {
-      moveDrag(event.pageX);
+    container.addEventListener("pointermove", function (event) {
+      moveDrag(event.clientX);
     });
 
-    window.addEventListener("mouseup", endDrag);
-    container.addEventListener("mouseleave", endDrag);
-
-    container.addEventListener(
-      "touchstart",
-      function (event) {
-        if (!event.touches.length) return;
-        startDrag(event.touches[0].pageX);
-      },
-      { passive: true }
-    );
-
-    container.addEventListener(
-      "touchmove",
-      function (event) {
-        if (!event.touches.length) return;
-        moveDrag(event.touches[0].pageX);
-      },
-      { passive: true }
-    );
-
-    container.addEventListener("touchend", endDrag, { passive: true });
-    container.addEventListener("touchcancel", endDrag, { passive: true });
+    container.addEventListener("pointerup", endDrag);
+    container.addEventListener("pointercancel", endDrag);
+    container.addEventListener("lostpointercapture", endDrag);
 
     [].slice.call(track.querySelectorAll("img")).forEach(function (img) {
       img.addEventListener("dragstart", function (event) {
@@ -116,7 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener("resize", function () {
-      refreshBounds(true);
+      requestAnimationFrame(function () {
+        refreshBounds(true);
+      });
     });
 
     // Compute centered anchor before reveal to avoid first-paint jump from x=0.

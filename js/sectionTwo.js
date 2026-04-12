@@ -18,11 +18,20 @@
   if (!viewport || !track) return;
 
   var mm = gsap.matchMedia();
+  var supportsMatchMedia = typeof window.matchMedia === "function";
+  var prefersReducedMotion = supportsMatchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
 
   function setProgress(value) {
     if (!progressBar) return;
     var safe = Math.max(0, Math.min(1, value));
     progressBar.style.transform = "scaleX(" + safe + ")";
+  }
+
+  if (prefersReducedMotion) {
+    setProgress(1);
+    return;
   }
 
   mm.add("(min-width: 992px)", function () {
@@ -46,6 +55,7 @@
         scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
+        fastScrollEnd: true,
         onUpdate: function (self) {
           setProgress(self.progress);
         },
