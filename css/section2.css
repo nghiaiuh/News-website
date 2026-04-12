@@ -1,122 +1,168 @@
-﻿/* ===== SECTION 2 WRAPPER ===== */
+/* SECTION 2 WRAPPER */
 .news-s2-wrapper {
-  margin-top: clamp(5px, 2vw, 120px);
+  margin-top: 60px;
 }
 
-/* ===== SECTION 2 ===== */
+/* SECTION 2 */
 .news-section-two {
   --news-s2-card: #f4f4f2;
-  --news-s2-line: #d2d0cb;
-  --news-s2-text: #111111;
   --news-s2-skin-text: #f2d2b1;
-  --news-s2-image-height: clamp(260px, 90vh, 900px);
   background: var(--news-bg);
-  color: var(--news-s2-text);
+  color: #111;
   overflow: clip;
 }
 
-/* ===== VIEWPORT & TRACK ===== */
+/* VIEWPORT */
 .news-s2-viewport {
   width: 100%;
   overflow: hidden;
-  padding-inline: clamp(14px, 2vw, 28px);
+  padding: 0 20px;
 }
 
+/* TRACK - hàng ngang chứa các panel */
 .news-s2-track {
   display: flex;
-  gap: clamp(18px, 2vw, 34px);
+  gap: 24px;
   width: max-content;
   will-change: transform;
 }
 
-/* ===== PANEL (card chung) ===== */
-.news-s2-panel {
+/* PANEL - card chung */
+.s2-panel {
   position: relative;
   flex: 0 0 auto;
-  width: fit-content;
   background: var(--news-s2-card);
-  min-height: clamp(420px, 72vh, 820px);
+  min-height: 75vh;
 }
 
-/* ===== PANEL LEAD ===== */
-.news-s2-panel--lead {
-  display: grid;
-  grid-template-columns: minmax(180px, 240px) auto;
-  gap: clamp(14px, 2vw, 24px);
-  padding: clamp(18px, 2.2vw, 30px);
+/* PANEL LEAD - panel chữ đầu tiên */
+.s2-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 180px;
 }
 
-@media (min-width: 992px) {
-  .news-s2-panel--article-1 {
-    min-width: clamp(560px, 46vw, 760px);
-  }
-
-  .news-s2-panel--article-1 + .news-s2-panel--photo .news-s2-image {
-    max-width: min(64vw, 720px);
-  }
+/* Panel đầu tiên (s2-first) rộng hơn để có không gian */
+.s2-first {
+  min-width: 500px;
 }
 
-/* ===== Ná»˜I DUNG EDITORIAL ===== */
+/* EDITORIAL - nội dung bên trong panel lead */
 .news-s2-editorial {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
-  padding-right: clamp(8px, 1.1vw, 14px);
+  gap: 1.5rem;
+  height: 100%;
 }
 
+/* Tiêu đề lớn chuyên mục */
 .news-s2-mark {
-  font-family: "Merriweather", serif;
-  font-size: clamp(2.4rem, 6vw, 5.1rem);
+  margin-top: 0.5em;
+  display: inline-block;
+  transform: scaleY(1.5);
+  font-family: "Playfair Display", "Merriweather", serif;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 0.9;
+  line-height: 1.25;
   color: #0a0a0a;
 }
 
-.news-s2-editorial-text {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(0.9rem, 1.12vw, 1.05rem);
-  line-height: 1.65;
-  color: rgba(17, 17, 17, 0.87);
-  max-width: 26ch;
+/* Mỗi dòng có đường kẻ ngang nằm ở giữa text */
+.s2-mark-line {
+  display: block;
+  position: relative;
+  line-height: 1.1;
 }
 
-/* ===== PANEL áº¢NH ===== */
+/* Đường kẻ nằm tại giữa chiều cao dòng text */
+.s2-mark-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Đoạn mô tả */
+.news-s2-editorial-text {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  align-content: justify;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.87);
+}
+
+/* Biến thể typography kiểu editorial với chữ cái đầu nền đen */
+.news-s2-editorial-text--dropcap {
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1.95rem, 3vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.012em;
+  color: #1a1a1a;
+  margin: 0;
+  max-width: 18ch;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.news-s2-editorial-text--dropcap .news-initial-block {
+  float: left;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.8em;
+  height: 1.06em;
+  margin: 0.17em 0.08em 0 0;
+  background: #111;
+  color: #f4f4f2;
+  font-family: "Playfair Display", "Merriweather", serif;
+  font-size: clamp(1.95rem, 7vw, 7rem);
+  line-height: 1;
+}
+
+/* PANEL ẢNH */
 .news-s2-panel--photo {
   display: block;
   padding: 0;
   overflow: hidden;
 }
 
+/* Ảnh bên trong panel */
 .news-s2-image {
+  display: block;
   width: auto;
-  max-width: min(92vw, 1000px);
-  height: var(--news-s2-image-height);
-  min-height: 0;
+  max-width: 900px;
+  height: 75vh;
   object-fit: contain;
   object-position: center;
-  display: block;
 }
 
-/* ===== META (hiện khi hover) ===== */
+/* META BAR - hiện lên khi hover vào ảnh */
 .news-s2-meta {
   position: absolute;
-  left: clamp(10px, 1.3vw, 16px);
-  right: clamp(10px, 1.3vw, 16px);
-  bottom: clamp(10px, 1.3vw, 16px);
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  padding: clamp(10px, 1.3vw, 14px) clamp(12px, 1.6vw, 18px);
+  padding: 12px 16px;
   background: #000;
   color: var(--news-s2-skin-text);
   font-family: "Times New Roman", Times, serif;
   letter-spacing: -0.05em;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
   pointer-events: none;
 }
 
@@ -126,27 +172,28 @@
   transform: translateY(0);
 }
 
+/* Số thứ tự */
 .news-s2-index {
   font-family: "Times New Roman", Times, serif;
-  font-size: clamp(0.92rem, 1.05vw, 1.06rem);
+  font-size: 1rem;
   letter-spacing: -0.05em;
   color: var(--news-s2-skin-text);
 }
 
+/* Tiêu đề card */
 .news-s2-card-title {
   margin: 0;
   font-family: "Times New Roman", Times, serif;
-  font-size: clamp(1rem, 1.6vw, 1.55rem);
+  font-size: 1.3rem;
   line-height: 1.25;
   letter-spacing: -0.05em;
   color: var(--news-s2-skin-text);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE: Tablet ===== */
 @media (max-width: 991.98px) {
   .news-section-two {
-    --news-s2-image-height: clamp(220px, 44vh, 380px);
-    padding: clamp(64px, 12vw, 120px) 0 clamp(24px, 5vw, 34px);
+    padding: 80px 0 30px;
   }
 
   .news-s2-viewport {
@@ -156,31 +203,38 @@
     scrollbar-width: thin;
   }
 
+  /* Tắt GSAP transform trên mobile */
   .news-s2-track {
     transform: none !important;
   }
 
-  .news-s2-panel--lead {
-    grid-template-columns: 1fr;
+  .s2-first {
+    min-width: auto;
+  }
+
+  .s2-lead {
+    width: auto;
+    min-width: 280px;
   }
 
   .news-s2-image {
     max-width: 88vw;
+    height: 40vh;
   }
 
-  .news-s2-editorial {
-    gap: 0.8rem;
-    padding-right: 0;
-  }
-
-  .news-s2-editorial-text {
-    max-width: none;
+  .news-s2-editorial-text--dropcap {
+    font-size: clamp(1.6rem, 6vw, 2.25rem);
+    max-width: 100%;
   }
 }
 
+/* ===== RESPONSIVE: Mobile ===== */
 @media (max-width: 575.98px) {
+  .news-s2-mark {
+    font-size: 2.5rem;
+  }
+
   .news-s2-card-title {
-    font-size: 1.02rem;
+    font-size: 1rem;
   }
 }
-
