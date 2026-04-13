@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thể thao & Sức khoẻ - News Website</title>
+
+  <!-- SCROLL RESET -->
+  <script>
+    document.documentElement.classList.add("news-feed-js");
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = "auto";
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/local-fonts.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/section2.css" />
+  <link rel="stylesheet" href="../css/horizontal-feed.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="../js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- GSAP -->
+  <script src="../js/gsap/gsap.min.js" defer></script>
+  <script src="../js/gsap/ScrollTrigger.min.js" defer></script>
+
+  <!-- JS sections -->
+  <script src="../js/heroSection.js" defer></script>
+  <script src="../js/sectionTwo.js" defer></script>
+  <script src="../js/components/horizontalFeed.js" defer></script>
+  <script src="../js/cursor.js" defer></script>
+  <script src="../js/auth.js" defer></script>
+</head>
+
+<body class="news-body">
+  <!-- Con trỏ tuỳ chỉnh -->
+  <div id="news-cursor" aria-hidden="true"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="news-header sticky-top">
+    <nav class="navbar navbar-dark news-navbar py-0">
+      <div class="container-fluid px-3 px-xl-4">
+        <div class="news-navbar-shell w-100">
+          <span class="news-team-tag">Nhóm 7</span>
+
+          <ul class="navbar-nav mb-0 news-main-menu news-main-menu-left">
+            <li class="nav-item news-menu-item">
+              <a class="nav-link news-menu-link" href="./Home.html">Kinh tế &amp; Chính trị</a>
+            </li>
+            <li class="nav-item news-menu-item active">
+              <a class="nav-link news-menu-link" href="./the-thao-suc-khoe.html">Thể thao &amp; Sức khoẻ</a>
+            </li>
+          </ul>
+
+          <a class="news-logo py-3 mb-0" href="./Home.html">
+            <span>
+              BÁO CHÍ
+              <span aria-label="DESIGN">
+                <span style="color: #c30000">D</span>
+                <span style="color: #1c9a3f">E</span>
+                <span style="color: #f2c200">S</span>
+                <span style="color: #7a3bd6">I</span>
+                <span style="color: #ff8a00">G</span>
+                <span style="color: #1262ff">N</span>
+              </span>
+            </span>
+          </a>
+
+          <ul class="navbar-nav mb-0 news-main-menu news-main-menu-right">
+            <li class="nav-item news-menu-item">
+              <a class="nav-link news-menu-link" href="./Home.html">Giải trí &amp; Đời sống</a>
+            </li>
+            <li class="nav-item news-menu-item">
+              <a class="nav-link news-menu-link" href="./Home.html">Vũ trụ &amp; Thiên nhiên</a>
+            </li>
+          </ul>
+
+          <!-- Nút hamburger (mobile) -->
+          <button class="navbar-toggler border-0 shadow-none news-hamburger-btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#nwMenu">
+            <span class="news-hamburger" aria-hidden="true">
+              <span class="news-ham-line news-ham-top"></span>
+              <span class="news-ham-line news-ham-bottom"></span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Menu collapse (mobile) -->
+        <div class="collapse navbar-collapse justify-content-end" id="nwMenu">
+          <!-- Auth checks will be handled by auth.js -->
+          <div class="d-flex justify-content-center justify-content-lg-end w-100 mb-2 news-menu-actions">
+            <a class="btn news-login-btn rounded-0 px-4 py-4" id="login-link" href="./dang-nhap.html">Đăng nhập</a>
+          </div>
+          <ul class="navbar-nav list-inline mb-0 justify-content-center justify-content-lg-end w-100" id="user-options">
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="news-main">
+    <!-- SECTION 1: Thể thao Hero -->
+    <section class="news-hero position-relative">
+      <div class="feed-container">
+        <div class="feed-track">
+
+          <article class="proj-card">
+            <img src="../images/thethao1.png" alt="Bóng đá" loading="lazy" />
+            <div class="proj-content">
+              <div class="proj-title-row">
+                <h3 class="proj-title">Bóng đá quốc tế</h3>
+                <span class="proj-badge">HOT</span>
+              </div>
+              <p class="proj-desc">Cập nhật những diễn biến mới nhất từ các giải đấu hàng đầu châu Âu.</p>
+              <a href="./the-thao-football-detail.html" class="stretched-link"></a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <img src="../images/thethao2.png" alt="Tennis" loading="lazy" />
+            <div class="proj-content">
+              <div class="proj-title-row">
+                <h3 class="proj-title">Grand Slam 2024</h3>
+                <span class="proj-badge">NEW</span>
+              </div>
+              <p class="proj-desc">Những bất ngờ tại giải đấu quần vợt lớn nhất năm.</p>
+              <a href="./the-thao-tennis-detail.html" class="stretched-link"></a>
+            </div>
+          </article>
+
+          <!-- Card trung tâm -->
+          <article class="center-card">
+            <h3 class="center-title">THỂ THAO</h3>
+            <p class="center-subtitle mt-3">
+              ĐAM MÊ ! <br /><span class="news-khorap">SỨC MẠNH</span><br />
+              VÀ <br />
+              <span class="news-highlight">CHIẾN THẮNG</span>.
+            </p>
+            <p class="center-tip">
+              <span class="news-tip">TIP!</span> Kéo ngang để xem thêm tin tức thể thao
+            </p>
+          </article>
+
+          <article class="proj-card">
+            <img src="../images/thethao3.png" alt="NBA" loading="lazy" />
+            <div class="proj-content">
+              <div class="proj-title-row">
+                <h3 class="proj-title">Nhịp đập NBA</h3>
+                <span class="proj-badge">NEW</span>
+              </div>
+              <p class="proj-desc">Cuộc đua giành ngôi vô địch bóng rổ nhà nghề Mỹ.</p>
+              <a href="./the-thao-nba-detail.html" class="stretched-link"></a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <img src="../images/thethao4.png" alt="F1" loading="lazy" />
+            <div class="proj-content">
+              <div class="proj-title-row">
+                <h3 class="proj-title">Tốc độ F1</h3>
+                <span class="proj-badge">NEW</span>
+              </div>
+              <p class="proj-desc">Những màn rượt đuổi nghẹt thở trên đường đua tử thần.</p>
+              <a href="./the-thao-f1-detail.html" class="stretched-link"></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="container-fluid px-3 px-xl-4">
+        <div class="news-title-wrap">
+          <h2 class="news-display-title mb-0">THỂ THAO & SỨC KHỎE</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Sức khỏe với GSAP -->
+    <div class="news-s2-wrapper">
+      <section class="news-section-two">
+        <div class="news-s2-viewport">
+          <div class="news-s2-track">
+            <!-- Panel 1: Sức khỏe -->
+            <article class="news-s2-panel news-s2-panel--lead news-s2-panel--article-1">
+              <div class="news-s2-editorial">
+                <div class="news-s2-mark" aria-hidden="true">
+                  SỨC KHỎE & <br /> ĐỜI SỐNG
+                </div>
+                <p class="news-s2-editorial-text">
+                  Chăm sóc sức khỏe toàn diện từ dinh dưỡng đến tinh thần. Khám phá các bí quyết sống khỏe mỗi ngày cùng
+                  chuyên gia.
+                </p>
+              </div>
+            </article>
+
+            <!-- Panel 2 -->
+            <article class="news-s2-panel news-s2-panel--photo">
+              <img class="news-s2-image" src="../images/suckhoe1.png" alt="Dinh dưỡng" loading="lazy" />
+              <div class="news-s2-meta">
+                <span class="news-s2-index">01</span>
+                <h3 class="news-s2-card-title">Dinh dưỡng cân bằng cho phái đẹp</h3>
+              </div>
+              <a href="./suc-khoe-nutrition-detail.html" class="stretched-link"></a>
+            </article>
+
+            <!-- Panel 3 -->
+            <article class="news-s2-panel news-s2-panel--photo">
+              <img class="news-s2-image" src="../images/suckhoe2.png" alt="Yoga" loading="lazy" />
+              <div class="news-s2-meta">
+                <span class="news-s2-index">02</span>
+                <h3 class="news-s2-card-title">Yoga: Chìa khóa của sự tĩnh lặng</h3>
+              </div>
+              <a href="./suc-khoe-yoga-detail.html" class="stretched-link"></a>
+            </article>
+
+            <!-- Panel 4 -->
+            <article class="news-s2-panel news-s2-panel--photo">
+              <img class="news-s2-image" src="../images/suckhoe3.png" alt="Mental Health" loading="lazy" />
+              <div class="news-s2-meta">
+                <span class="news-s2-index">03</span>
+                <h3 class="news-s2-card-title">Chăm sóc sức khỏe tinh thần</h3>
+              </div>
+              <a href="./suc-khoe-mental-detail.html" class="stretched-link"></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
