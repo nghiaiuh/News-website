@@ -72,6 +72,11 @@ $(function () {
     const passwordValue = passwordInput.val().trim();
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,20}$/;
 
+    if (!passwordValue) {
+      setFieldMessage(errorPassword, "Vui lòng nhập mật khẩu.");
+      return false;
+    }
+
     if (!passwordRegex.test(passwordValue)) {
       setFieldMessage(
         errorPassword,
@@ -88,6 +93,11 @@ $(function () {
     const passwordInput = $("#password");
     const passAuthInput = $("#passauth");
     const errorPassauth = $("#txt_passauth");
+
+    if (!passAuthInput.val().trim()) {
+      setFieldMessage(errorPassauth, "Vui lòng nhập lại mật khẩu.");
+      return false;
+    }
 
     if (passAuthInput.val().trim() !== passwordInput.val().trim()) {
       setFieldMessage(errorPassauth, "Mật khẩu nhập lại phải khớp.");
@@ -132,7 +142,10 @@ $(function () {
   }
 
   $("#uname").on("blur", validateUsername);
-  $("#password").on("blur", validatePassword);
+  $("#password").on("blur", function () {
+    validatePassword();
+    validatePasswordAuth();
+  });
   $("#passauth").on("blur", validatePasswordAuth);
   $("#email").on("blur", validateEmail);
   $("#phone").on("blur", validatePhone);
