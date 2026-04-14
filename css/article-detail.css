@@ -32,7 +32,7 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #1c1c1a;
+  color: var(--news-text);
   margin-bottom: 20px;
 }
 
@@ -52,7 +52,7 @@
   width: 100%;
   height: auto;
   margin-bottom: 40px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .article-content {

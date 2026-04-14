@@ -1,6 +1,6 @@
 /* SECTION 4: Sticky lead story + right rail list */
 .news-section-four {
-  background: #ffffff;
+  background: var(--news-white);
   padding: clamp(36px, 4.8vw, 72px) 0 clamp(42px, 5.2vw, 82px);
 }
 
@@ -27,7 +27,7 @@
   border-radius: 14px;
   overflow: hidden;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--news-white);
   isolation: isolate;
   box-shadow: 0 24px 46px rgba(8, 10, 16, 0.2);
 }

@@ -1,7 +1,7 @@
 /* SECTION 3: Crafting Culture collage */
 .news-section-three {
   margin-top: 3vw;
-  background: white;
+  background: var(--news-white);
   padding: clamp(44px, 5vw, 68px) 0 clamp(32px, 4vw, 60px);
   overflow: clip;
   display: block;
@@ -108,8 +108,8 @@
 .news-s3-sport-btn:hover,
 .news-s3-sport-btn:focus-visible,
 .news-s3-sport-btn.is-active {
-  background: #1c1c1a;
-  color: #fff;
+  background: var(--news-text);
+  color: var(--news-white);
   transform: translateY(-1px) scale(1.08);
   outline: none;
 }
@@ -160,7 +160,7 @@
   opacity: 0;
   border: 1px solid rgba(28, 28, 26, 0.15);
   box-shadow: 0 20px 44px rgba(10, 10, 10, 0.2);
-  background: #fff;
+  background: var(--news-white);
   overflow: hidden;
   transition:
     opacity 0.32s ease,
@@ -191,7 +191,7 @@
 
 .box-horizontal {
   margin-top: 0.5vw;
-  background: #1c1c1a;
+  background: var(--news-text);
   width: 80%;
   margin-right: auto;
   padding: clamp(16px, 2vw, 24px);
@@ -210,8 +210,8 @@
   height: clamp(36px, 2.8vw, 48px);
   border: 1px solid rgba(0, 0, 0, 0.24);
   border-radius: 999px;
-  background: #ffffff;
-  color: #111;
+  background: var(--news-white);
+  color: var(--news-ink-strong);
   font-family: "Oswald", sans-serif;
   font-size: clamp(1rem, 1.25vw, 1.35rem);
   line-height: 1;
@@ -303,7 +303,7 @@
 
 .sports-feed-title {
   margin: 0;
-  color: #fff;
+  color: var(--news-white);
   font-family: "Oswald", sans-serif;
   font-size: clamp(1.2rem, 1.3vw, 1.7rem);
   font-weight: 700;
@@ -316,7 +316,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: var(--news-white);
   font-family: "Oswald", sans-serif;
   font-size: clamp(0.9rem, 0.8vw, 1.1rem);
   font-weight: 600;
@@ -338,7 +338,7 @@
   top: 9px;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 10px solid #fff;
+  border-left: 10px solid var(--news-white);
 }
 /* ===== RESPONSIVE: Large Tablet ===== */
 @media (max-width: 1199.98px) {

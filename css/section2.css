@@ -11,14 +11,14 @@
 
 /* SECTION */
 .news-section-two {
-  --s2-bg: #ffffff;
-  --s2-separator: #1c1c1a;
-  --s2-cell-bg: #ffffff;
-  --s2-border: #ffffff;
+  --s2-bg: var(--news-white);
+  --s2-separator: var(--news-text);
+  --s2-cell-bg: var(--news-white);
+  --s2-border: var(--news-white);
   --s2-muted: #78716c;
 
   background: var(--s2-bg);
-  color: #111;
+  color: var(--news-ink-strong);
   overflow: clip;
 }
 
@@ -138,7 +138,7 @@
   width: 0.8em;
   height: 1.06em;
   margin: 0.17em 0.08em 0 0;
-  background: #111;
+  background: var(--news-ink-strong);
   color: #f4f4f2;
   font-family: "Playfair Display", "Merriweather", serif;
   font-size: clamp(1.95rem, 7vw, 7rem);
@@ -211,7 +211,7 @@
   font-size: clamp(2rem, 3.6vw, 3.8rem);
   font-weight: 700;
   line-height: 1.05;
-  color: #1c1c1a;
+  color: var(--news-text);
   max-width: 42rem;
 }
 
@@ -222,7 +222,7 @@
   font-size: clamp(0.95rem, 1.1vw, 1.15rem);
   font-weight: 500;
   line-height: 1.7;
-  color: #1c1c1a;
+  color: var(--news-text);
   max-width: 80%;
 }
 
@@ -243,7 +243,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1c1c1a;
+  color: var(--news-text);
 }
 
 .s2-lead-cta-time {
@@ -294,7 +294,7 @@
   font-family: "Space Mono", "Courier New", monospace;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #1c1c1a;
+  color: var(--news-text);
 }
 
 .s2-ticker-value {
@@ -312,7 +312,7 @@
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  color: #1c1c1a;
+  color: var(--news-text);
 }
 
 /* ------- Row 2: Image ------- */
@@ -374,7 +374,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #3d3d3d #1c1c1a;
+    scrollbar-color: #3d3d3d var(--news-text);
   }
 
   /* Tắt GSAP transform trên mobile */

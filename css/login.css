@@ -1,18 +1,16 @@
-﻿:root {
-  --news-auth-card: #0b0b0b;
-  --news-auth-border: rgba(255, 255, 255, 0.12);
-  --news-auth-muted: rgba(255, 255, 255, 0.7);
-  --news-auth-field: #121212;
-}
-
-.news-auth-body {
-  background: radial-gradient(
+﻿.news-auth-body {
+  background:
+    radial-gradient(
       circle at 20% 10%,
       rgba(255, 221, 0, 0.12),
       transparent 45%
     ),
-    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.06), transparent 40%),
-    #000000;
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    ),
+    var(--news-black);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -22,7 +20,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #000000;
+  background: var(--news-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +39,7 @@
   font-size: clamp(2.6rem, 8vw, 6rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--news-white);
 }
 
 .news-auth-bg {
@@ -56,7 +54,11 @@
   border-radius: 999px;
   filter: blur(0);
   opacity: 0.35;
-  background: radial-gradient(circle at 30% 30%, #ffdd00, transparent 70%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--news-accent),
+    transparent 70%
+  );
 }
 
 .news-auth-shape--one {
@@ -72,7 +74,11 @@
   height: 280px;
   bottom: 10%;
   right: -40px;
-  background: radial-gradient(circle at 30% 30%, #ffffff, transparent 70%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--news-white),
+    transparent 70%
+  );
   opacity: 0.18;
 }
 
@@ -81,7 +87,11 @@
   height: 220px;
   top: 45%;
   right: 22%;
-  background: radial-gradient(circle at 30% 30%, #ffdd00, transparent 70%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--news-accent),
+    transparent 70%
+  );
   opacity: 0.24;
 }
 
@@ -133,7 +143,7 @@
 }
 
 .news-auth-stat strong {
-  color: #ffffff;
+  color: var(--news-white);
   font-size: 1.15rem;
   font-weight: 700;
   display: block;
@@ -180,7 +190,7 @@
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #ffffff;
+  color: var(--news-white);
   font-size: 0.82rem;
   background: rgba(255, 255, 255, 0.05);
 }
@@ -196,7 +206,7 @@
 }
 
 .news-auth-quote strong {
-  color: #ffffff;
+  color: var(--news-white);
   font-weight: 600;
 }
 
@@ -227,7 +237,7 @@
 .news-auth-input {
   background: var(--news-auth-field);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #ffffff;
+  color: var(--news-white);
   padding: 0.85rem 1rem;
   border-radius: 8px;
   transition:
@@ -244,7 +254,7 @@
 
 .news-auth-submit {
   background: var(--news-accent);
-  color: #000;
+  color: var(--news-black);
   font-weight: 700;
   padding: 0.85rem 1rem;
   border: none;
@@ -255,8 +265,8 @@
 }
 
 .news-auth-submit:hover {
-  background: #f4c900;
-  color: #000;
+  background: var(--news-accent-hover);
+  color: var(--news-black);
 }
 
 .news-auth-submit-text {
@@ -274,7 +284,7 @@
   margin-top: -9px;
   border-radius: 50%;
   border: 2px solid rgba(0, 0, 0, 0.25);
-  border-top-color: #000000;
+  border-top-color: var(--news-black);
   opacity: 0;
   transform: scale(0.7);
 }
@@ -344,7 +354,7 @@
 }
 
 .news-auth-link:hover {
-  color: #f4c900;
+  color: var(--news-accent-hover);
 }
 
 @media (max-width: 991.98px) {
@@ -356,5 +366,3 @@
     margin-top: 1rem;
   }
 }
-
-

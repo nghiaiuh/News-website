@@ -1,0 +1,14 @@
+:root {
+  --news-text: #1c1c1a;
+  --news-bg: #ffffff;
+  --news-white: #ffffff;
+  --news-black: #000000;
+  --news-ink-strong: #111111;
+  --news-accent: #ffdd00;
+  --news-accent-hover: #f4c900;
+
+  --news-auth-card: #0b0b0b;
+  --news-auth-border: rgba(255, 255, 255, 0.12);
+  --news-auth-muted: rgba(255, 255, 255, 0.7);
+  --news-auth-field: #121212;
+}

@@ -8,23 +8,17 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #1c1c1a;
+  color: var(--news-text);
 }
 
 ::selection {
-  background-color: white;
-  color: black;
-}
-
-/* ===== CSS VARIABLES ===== */
-:root {
-  --news-text: #1c1c1a;
-  --news-accent: #ffdd00;
+  background-color: var(--news-white);
+  color: var(--news-black);
 }
 
 /* ===== BODY & BACKGROUND ===== */
 .news-body {
-  background: white;
+  background: var(--news-bg);
   color: var(--news-text);
 }
 
@@ -39,7 +33,7 @@ body {
 }
 
 .news-navbar {
-  background: #ffffff;
+  background: var(--news-white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -68,7 +62,7 @@ body {
 }
 
 .news-navbar .navbar-collapse {
-  background: #ffffff;
+  background: var(--news-white);
   margin-top: 0.35rem;
   padding-bottom: 0.75rem;
 }
@@ -116,7 +110,7 @@ body {
 }
 
 .news-menu-link {
-  color: #1c1c1a;
+  color: var(--news-text);
   font-family: "Merriweather", serif;
   font-size: 1rem;
   font-weight: 600;
@@ -133,20 +127,20 @@ body {
 .navbar-dark .nav-link:focus,
 .navbar-dark .nav-link.active,
 .navbar-dark .nav-link:active {
-  color: #1c1c1a !important;
+  color: var(--news-text) !important;
 }
 
 /* ===== LOGIN BUTTON ===== */
 .news-login-btn {
   background: var(--news-text);
-  color: #000;
+  color: var(--news-black);
   font-weight: 700;
   border: none;
 }
 
 .news-login-btn:hover {
   background: var(--news-text);
-  color: #000;
+  color: var(--news-black);
 }
 
 /* ===== HAMBURGER ICON ===== */
@@ -167,7 +161,7 @@ body {
 .news-ham-line {
   display: block;
   height: 1.5px;
-  background-color: #1c1c1a;
+  background-color: var(--news-text);
   border-radius: 2px;
   width: 100%;
   will-change: transform;
@@ -183,7 +177,7 @@ body {
 .news-hero {
   margin-top: -25px;
   min-height: calc(100vh - 63px);
-  background: white;
+  background: var(--news-white);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -197,14 +191,14 @@ body {
   font-size: clamp(3.8rem, 10.6vw, 14rem);
   font-weight: 600;
   line-height: 1.33;
-  color: white;
+  color: var(--news-white);
   margin: 0;
   width: 100%;
   text-align: center;
 }
 
 .news-title-wrap {
-  background: #1c1c1a;
+  background: var(--news-text);
   margin-top: 40px;
   padding: 140px clamp(16px, 2vw, 24px) 80px;
   min-height: clamp(150px, 18vw, 260px);
@@ -213,8 +207,6 @@ body {
   justify-content: center;
   text-align: center;
 }
-
-
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1199.98px) {

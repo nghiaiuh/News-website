@@ -2,7 +2,7 @@
 .feed-container {
   --feed-border: rgba(74, 65, 53, 0.28);
   --feed-text: #1f1b17;
-  --feed-muted: #1c1c1a;
+  --feed-muted: var(--news-text);
 
   position: relative;
   z-index: 2;
@@ -58,7 +58,7 @@
   height: clamp(140px, 18vw, 210px);
   object-fit: cover;
   display: block;
-  border: 1px solid #000;
+  border: 1px solid var(--news-black);
   pointer-events: none;
   -webkit-user-drag: none;
 }
@@ -86,7 +86,7 @@
 
 .proj-badge {
   background: #c0392b;
-  color: #fff;
+  color: var(--news-white);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 700;
