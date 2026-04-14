@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/section2.css" />
+    <link rel="stylesheet" href="../css/section3.css" />
+    <link rel="stylesheet" href="../css/section4.css" />
     <link rel="stylesheet" href="../css/horizontal-feed.css" />
 
     <!-- jQuery -->
@@ -38,6 +40,7 @@
     <!-- JS sections -->
     <script src="../js/heroSection.js" defer></script>
     <script src="../js/sectionTwo.js" defer></script>
+    <script src="../js/sectionThree.js" defer></script>
     <script src="../js/components/horizontalFeed.js" defer></script>
     <script src="../js/cursor.js" defer></script>
     <script src="../js/auth.js" defer></script>
@@ -57,7 +60,7 @@
 
             <ul class="navbar-nav mb-0 news-main-menu news-main-menu-left">
               <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="#"
+                <a class="nav-link news-menu-link" href="./Home.html"
                   >Kinh tế &amp; Chính trị</a
                 >
               </li>
@@ -68,7 +71,7 @@
               </li>
             </ul>
 
-            <a class="news-logo py-3 mb-0" href="#">
+            <a class="news-logo py-3 mb-0" href="./Home.html">
               <span>
                 BÁO CHÍ
                 <span aria-label="DESIGN">
@@ -84,12 +87,12 @@
 
             <ul class="navbar-nav mb-0 news-main-menu news-main-menu-right">
               <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="#"
+                <a class="nav-link news-menu-link" href="./Home.html"
                   >Giải trí &amp; Đời sống</a
                 >
               </li>
               <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="#"
+                <a class="nav-link news-menu-link" href="./Home.html"
                   >Vũ trụ &amp; Thiên nhiên</a
                 >
               </li>
@@ -151,8 +154,7 @@
                   <span class="proj-badge">NEW</span>
                 </div>
                 <p class="proj-desc">
-                  Editorial package tracking high-stakes diplomacy with layered
-                  timeline blocks and fast-turn updates.
+                  Editorial package tracking high-stakes diplomacy.
                 </p>
               </div>
             </article>
@@ -165,8 +167,7 @@
                   <span class="proj-badge">NEW</span>
                 </div>
                 <p class="proj-desc">
-                  Longform layout balancing data callouts, concise context, and
-                  narrative pacing for decision-centric readers.
+                  Longform layout balancing data callouts and context.
                 </p>
               </div>
             </article>
@@ -214,8 +215,7 @@
                   <span class="proj-badge">NEW</span>
                 </div>
                 <p class="proj-desc">
-                  Financial briefing flow with compact summaries, confidence
-                  markers, and sector-by-sector snapshots.
+                  Financial briefing flow with sector-by-sector snapshots.
                 </p>
               </div>
             </article>
@@ -228,8 +228,7 @@
                   <span class="proj-badge">NEW</span>
                 </div>
                 <p class="proj-desc">
-                  Compact newsroom module for tracking brief alerts, response
-                  windows, and rolling commentary.
+                  Compact newsroom module for tracking brief alerts.
                 </p>
               </div>
             </article>
@@ -242,9 +241,10 @@
                   <span class="proj-badge">NEW</span>
                 </div>
                 <p class="proj-desc">
-                  Feature storytelling canvas designed for slower reading, rich
-                  pull-quotes, and visual breathing room.
+                  Chuyên mục Thể thao & Sức khỏe: Những câu chuyện truyền cảm
+                  hứng.
                 </p>
+                <a href="./the-thao-suc-khoe.html" class="stretched-link"></a>
               </div>
             </article>
           </div>
@@ -262,8 +262,8 @@
         <section class="news-section-two">
           <div class="news-s2-viewport">
             <div class="news-s2-track">
-              <!-- Panel 1: Giới thiệu chuyên mục -->
-              <article class="s2-panel s2-lead s2-first">
+              <!-- ▸ Panel 1: Title Block -->
+              <article class="s2-panel s2-title-block s2-first">
                 <div class="news-s2-editorial">
                   <div class="news-s2-mark" aria-hidden="true">
                     <span class="s2-mark-line">KINH TẾ &amp;</span>
@@ -340,6 +340,440 @@
           </div>
         </section>
       </div>
+
+      <!-- SECTION 3: Crafting Culture collage -->
+      <section class="news-section-three">
+        <div class="news-s3-header">
+          <div class="news-s3-copy">
+            <h2 class="news-s3-title">
+              <span class="s2-mark-line">THỂ THAO</span>
+            </h2>
+
+            <div
+              class="news-s3-sports-line"
+              id="news-s3-sports-line"
+              role="list"
+              aria-label="Danh mục thể thao"
+            >
+              <button
+                type="button"
+                class="news-s3-sport-btn is-active"
+                role="listitem"
+                data-sport="bong-da"
+                data-preview1="../images/thethao1.png"
+                data-preview2="../images/football.png"
+                data-preview3="../images/atletico_madrid.jpg"
+                style="--sport-icon: url(&quot;../images/football.png&quot;)"
+              >
+                <span class="news-s3-sport-text">BÓNG ĐÁ</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+
+              <button
+                type="button"
+                class="news-s3-sport-btn"
+                role="listitem"
+                data-sport="bong-ro"
+                data-preview1="../images/basketball.png"
+                data-preview2="../images/thethao3.png"
+                data-preview3="../images/thethao4.png"
+                style="--sport-icon: url(&quot;../images/basketball.png&quot;)"
+              >
+                <span class="news-s3-sport-text">BÓNG RỔ</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+
+              <button
+                type="button"
+                class="news-s3-sport-btn"
+                role="listitem"
+                data-sport="bong-bau-duc"
+                data-preview1="../images/thethao2.png"
+                data-preview2="../images/Fomular1.png"
+                data-preview3="../images/thethao4.png"
+                style="--sport-icon: url(&quot;../images/thethao2.png&quot;)"
+              >
+                <span class="news-s3-sport-text">BÓNG BẦU DỤC</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+
+              <button
+                type="button"
+                class="news-s3-sport-btn"
+                role="listitem"
+                data-sport="f1"
+                data-preview1="../images/Fomular1.png"
+                data-preview2="../images/thethao4.png"
+                data-preview3="../images/F1er.png"
+                style="--sport-icon: url(&quot;../images/F1.png&quot;)"
+              >
+                <span class="news-s3-sport-text">F1</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+
+              <button
+                type="button"
+                class="news-s3-sport-btn"
+                role="listitem"
+                data-sport="cau-long"
+                data-preview1="../images/thethao3.png"
+                data-preview2="../images/suckhoe2.png"
+                data-preview3="../images/suckhoe1.png"
+                style="--sport-icon: url(&quot;../images/thethao3.png&quot;)"
+              >
+                <span class="news-s3-sport-text">CẦU LÔNG</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+
+              <button
+                type="button"
+                class="news-s3-sport-btn"
+                role="listitem"
+                data-sport="quan-vot"
+                data-preview1="../images/suckhoe3.png"
+                data-preview2="../images/suckhoe2.png"
+                data-preview3="../images/thethao1.png"
+                style="--sport-icon: url(&quot;../images/suckhoe3.png&quot;)"
+              >
+                <span class="news-s3-sport-text">QUẦN VỢT</span>
+                <span class="news-s3-sport-sep" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <p class="news-s3-kicker">
+              - CẬP NHẬT MỌI TIN TỨC THỂ THAO SỚM NHẤT -
+            </p>
+          </div>
+
+          <div class="news-s3-hover-gallery" aria-hidden="true">
+            <figure
+              class="news-s3-preview-card news-s3-preview-card--1 is-visible"
+              style="--x: 0%; --y: 24%; --w: 185px; --r: -8deg"
+            >
+              <img
+                src="../images/thethao1.png"
+                alt="Ảnh thể thao 1"
+                loading="lazy"
+              />
+            </figure>
+            <figure
+              class="news-s3-preview-card news-s3-preview-card--2 is-visible"
+              style="--x: 25%; --y: 44%; --w: 205px; --r: 6deg"
+            >
+              <img
+                src="../images/football.png"
+                alt="Ảnh thể thao 2"
+                loading="lazy"
+              />
+            </figure>
+            <figure
+              class="news-s3-preview-card news-s3-preview-card--3 is-visible"
+              style="--x: 56%; --y: 20%; --w: 200px; --r: 11deg"
+            >
+              <img
+                src="../images/atletico_madrid.jpg"
+                alt="Ảnh thể thao 3"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="container-fluid px-3 px-xl-4">
+          <div class="box-horizontal">
+            <div class="sports-feed-shell">
+              <button
+                type="button"
+                class="sports-feed-nav sports-feed-nav--prev"
+                aria-label="Xem mục trước"
+              >
+                &lt;
+              </button>
+
+              <div class="sports-feed-viewport" aria-label="Sports video feed">
+                <div class="sports-feed-track">
+                  <article class="sports-feed-card">
+                    <img
+                      src="../images/thethao3.png"
+                      alt="Rwanda tries to protect farmland"
+                      loading="lazy"
+                    />
+                    <div class="sports-feed-body">
+                      <h3 class="sports-feed-title">
+                        Rwanda tries to protect farmland in Africa's most
+                        densely populated nation
+                      </h3>
+                      <p class="sports-feed-meta">
+                        <span class="sports-play" aria-hidden="true"></span
+                        ><span>0:50</span>
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="sports-feed-card">
+                    <img
+                      src="../images/atletico_madrid.jpg"
+                      alt="Prediction market reacts to ceasefire update"
+                      loading="lazy"
+                    />
+                    <div class="sports-feed-body">
+                      <h3 class="sports-feed-title">
+                        Polymarket bets on Iran ceasefire surged before Trump's
+                        announcement
+                      </h3>
+                      <p class="sports-feed-meta">
+                        <span class="sports-play" aria-hidden="true"></span
+                        ><span>1:12</span>
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="sports-feed-card">
+                    <img
+                      src="../images/Fomular1.png"
+                      alt="Large fire in central Beirut"
+                      loading="lazy"
+                    />
+                    <div class="sports-feed-body">
+                      <h3 class="sports-feed-title">
+                        Huge fire burns in central Beirut after consecutive
+                        Israeli airstrikes hit the city
+                      </h3>
+                      <p class="sports-feed-meta">
+                        <span class="sports-play" aria-hidden="true"></span
+                        ><span>0:26</span>
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="sports-feed-card">
+                    <img
+                      src="../images/tennis.jpg"
+                      alt="Temporary ceasefire briefing"
+                      loading="lazy"
+                    />
+                    <div class="sports-feed-body">
+                      <h3 class="sports-feed-title">
+                        Iran, the US and Israel agree to a temporary ceasefire
+                      </h3>
+                      <p class="sports-feed-meta">
+                        <span class="sports-play" aria-hidden="true"></span
+                        ><span>1:41</span>
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="sports-feed-card">
+                    <img
+                      src="../images/volleyball.jpg"
+                      alt="Infrastructure threat statement"
+                      loading="lazy"
+                    />
+                    <div class="sports-feed-body">
+                      <h3 class="sports-feed-title">
+                        Trump says it would take 4 hours to destroy Iran's
+                        bridges and power plants
+                      </h3>
+                      <p class="sports-feed-meta">
+                        <span class="sports-play" aria-hidden="true"></span
+                        ><span>0:28</span>
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="sports-feed-nav sports-feed-nav--next"
+                aria-label="Xem mục tiếp theo"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Sticky lead story + right rail list -->
+      <section class="news-section-four" id="news-section-four">
+        <div class="container-fluid px-3 px-xl-4">
+          <div class="news-s4-layout">
+            <div class="news-s4-feature-wrap">
+              <article class="news-s4-feature">
+                <a
+                  class="news-s4-feature-link"
+                  href="./the-thao-football-detail.html"
+                >
+                  <img
+                    src="../images/Dune_Part_2_.png"
+                    alt="Felicien Kabuga: Rwanda genocide suspect unfit to stand trial"
+                    loading="lazy"
+                  />
+                  <div class="news-s4-feature-overlay">
+                    <p class="news-s4-feature-tag">Tin nổi bật</p>
+                    <h3 class="news-s4-feature-title">
+                      Felicien Kabuga: Rwanda genocide suspect unfit to stand
+                      trial, UN court rules
+                    </h3>
+                    <p class="news-s4-feature-excerpt">
+                      International court delivers verdict on one of the most
+                      wanted suspects in the 1994 Rwanda genocide.
+                    </p>
+                    <p class="news-s4-feature-meta">
+                      <span>Jack Harksom</span>
+                      <span>12 hours ago</span>
+                    </p>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <aside class="news-s4-list" aria-label="Danh sach tin nhanh">
+              <article class="news-s4-item">
+                <a class="news-s4-item-link" href="./the-thao-suc-khoe.html">
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/Trump.png"
+                      alt="Tokyo and Seoul want a closer relationship"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Jane Hilson <span>• 5 hours ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >Tokyo and Seoul want a closer relationship so does
+                      Beijing</span
+                    >
+                    <span class="news-s4-item-read">7 min read</span>
+                  </span>
+                </a>
+              </article>
+
+              <article class="news-s4-item">
+                <a
+                  class="news-s4-item-link"
+                  href="./suc-khoe-mental-detail.html"
+                >
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/Dune3.jpg"
+                      alt="Pope Francis undergoes abdominal surgery"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Mac Thaer <span>• 3 hours ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >Pope Francis undergoes abdominal surgery in latest
+                      health</span
+                    >
+                    <span class="news-s4-item-read">5 min read</span>
+                  </span>
+                </a>
+              </article>
+
+              <article class="news-s4-item">
+                <a
+                  class="news-s4-item-link"
+                  href="./the-thao-tennis-detail.html"
+                >
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/thethao1.png"
+                      alt="At least one killed in shooting during protest"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Wake Hilcher <span>• 1 hour ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >At least one killed in shooting during a protest that
+                      clash happened</span
+                    >
+                    <span class="news-s4-item-read">4 min read</span>
+                  </span>
+                </a>
+              </article>
+
+              <article class="news-s4-item">
+                <a class="news-s4-item-link" href="./the-thao-f1-detail.html">
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/Fomular1.png"
+                      alt="Formula 1 battle tightens"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Anna Crest <span>• 58 minutes ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >Formula 1 title race tightens after dramatic final-lap
+                      overtake</span
+                    >
+                    <span class="news-s4-item-read">6 min read</span>
+                  </span>
+                </a>
+              </article>
+
+              <article class="news-s4-item">
+                <a class="news-s4-item-link" href="./suc-khoe-yoga-detail.html">
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/suckhoe2.png"
+                      alt="How breathwork helps reduce daily stress"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Lina Park <span>• 36 minutes ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >How breathwork routines can reduce daily stress in urban
+                      life</span
+                    >
+                    <span class="news-s4-item-read">5 min read</span>
+                  </span>
+                </a>
+              </article>
+
+              <article class="news-s4-item">
+                <a
+                  class="news-s4-item-link"
+                  href="./suc-khoe-nutrition-detail.html"
+                >
+                  <span class="news-s4-item-media">
+                    <img
+                      src="../images/suckhoe3.png"
+                      alt="Food inflation pushes families to new habits"
+                      loading="lazy"
+                    />
+                  </span>
+                  <span class="news-s4-item-body">
+                    <span class="news-s4-item-author"
+                      >Nina Stone <span>• 20 minutes ago</span></span
+                    >
+                    <span class="news-s4-item-title"
+                      >Food inflation pushes families to rebuild weekly shopping
+                      habits</span
+                    >
+                    <span class="news-s4-item-read">3 min read</span>
+                  </span>
+                </a>
+              </article>
+            </aside>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

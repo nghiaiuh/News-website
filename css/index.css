@@ -20,18 +20,26 @@ body {
 :root {
   --news-text: #1c1c1a;
   --news-accent: #ffdd00;
-  --news-bg: url("../images/bg.png") center / 101% 101% no-repeat;
 }
 
 /* ===== BODY & BACKGROUND ===== */
 .news-body {
-  background: var(--news-bg);
+  background: white;
   color: var(--news-text);
 }
 
 /* ===== NAVBAR ===== */
+.news-header {
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.news-header.news-header--hidden {
+  transform: translateY(-105%);
+}
+
 .news-navbar {
-  background-image: url("../images/bg.png");
+  background: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -60,6 +68,7 @@ body {
 }
 
 .news-navbar .navbar-collapse {
+  background: #ffffff;
   margin-top: 0.35rem;
   padding-bottom: 0.75rem;
 }
@@ -174,7 +183,7 @@ body {
 .news-hero {
   margin-top: -25px;
   min-height: calc(100vh - 63px);
-  background: var(--news-bg);
+  background: white;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -188,12 +197,7 @@ body {
   font-size: clamp(3.8rem, 10.6vw, 14rem);
   font-weight: 600;
   line-height: 1.33;
-  color: transparent;
-  background: var(--news-bg);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
+  color: white;
   margin: 0;
   width: 100%;
   text-align: center;

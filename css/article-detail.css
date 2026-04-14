@@ -1,0 +1,123 @@
+/* ===== ARTICLE DETAIL PAGE ===== */
+.news-article-detail {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  background: var(--news-bg);
+  min-height: 100vh;
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.article-category {
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c30000;
+  margin-bottom: 15px;
+}
+
+.article-title {
+  font-family: "Merriweather", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1c1c1a;
+  margin-bottom: 20px;
+}
+
+.article-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.article-featured-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.article-content {
+  font-family: "Merriweather", serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.article-content p {
+  margin-bottom: 25px;
+}
+
+.article-content h2 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.article-footer {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.related-news-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.related-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+}
+
+.related-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.related-card h4 {
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 2.2rem;
+  }
+}

@@ -1,13 +1,23 @@
-/* SECTION 2 WRAPPER */
+/* ============================================================
+   SECTION 2 — Kinh tế & Chính trị
+   Layout: GSAP horizontal scroll (3 panels inside .news-s2-track)
+   Design: Adapted from React Economics grid template
+   ============================================================ */
+
+/* WRAPPER */
 .news-s2-wrapper {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
-/* SECTION 2 */
+/* SECTION */
 .news-section-two {
-  --news-s2-card: #f4f4f2;
-  --news-s2-skin-text: #f2d2b1;
-  background: var(--news-bg);
+  --s2-bg: #ffffff;
+  --s2-separator: #1c1c1a;
+  --s2-cell-bg: #ffffff;
+  --s2-border: #ffffff;
+  --s2-muted: #78716c;
+
+  background: var(--s2-bg);
   color: #111;
   overflow: clip;
 }
@@ -16,68 +26,84 @@
 .news-s2-viewport {
   width: 100%;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0;
 }
 
-/* TRACK - hàng ngang chứa các panel */
+/* TRACK — flex row, 1px gap mimics grid border effect */
 .news-s2-track {
   display: flex;
-  gap: 24px;
+  gap: 1px;
   width: max-content;
   will-change: transform;
+  background: var(--s2-separator);
 }
 
-/* PANEL - card chung */
+/* ===== SHARED PANEL BASE ===== */
 .s2-panel {
   position: relative;
   flex: 0 0 auto;
+<<<<<<< HEAD
   background: var(--news-s2-card);
   min-height: clamp(320px, 75vh, 720px);
+=======
+  background: var(--s2-bg);
+  height: 102vh;
+  box-sizing: border-box;
+  --s2-image-filter-default: none;
+  --s2-image-filter-hover: none;
+  --s2-image-blend-default: normal;
+  --s2-image-blend-hover: normal;
+  --s2-image-scale-hover: 1.02;
+>>>>>>> c254ac3285022979b04efe4a7c1402e099483e8c
 }
 
-/* PANEL LEAD - panel chữ đầu tiên */
-.s2-lead {
+/* =============================================================
+   PANEL 1 — TITLE BLOCK
+   ============================================================= */
+.s2-title-block,
+.s2-lead-panel {
+  padding: clamp(24px, 3vw, 40px);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  width: 180px;
 }
 
-/* Panel đầu tiên (s2-first) rộng hơn để có không gian */
+.s2-title-block {
+  width: clamp(320px, 26vw, 460px);
+  justify-content: space-between;
+}
+
 .s2-first {
-  min-width: 500px;
+  min-width: 550px;
 }
 
-/* EDITORIAL - nội dung bên trong panel lead */
+/* Editorial content inside title block */
 .news-s2-editorial {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.75rem);
   height: 100%;
 }
 
-/* Tiêu đề lớn chuyên mục */
 .news-s2-mark {
-  margin-top: 0.5em;
+  margin-top: clamp(0.55em, 1.5vw, 2em);
   display: inline-block;
-  transform: scaleY(1.5);
+  transform: scaleY(1.35);
   font-family: "Playfair Display", "Merriweather", serif;
-  font-size: 4rem;
+  font-size: clamp(2.4rem, 3.8vw, 4rem);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   color: #0a0a0a;
 }
 
-/* Mỗi dòng có đường kẻ ngang nằm ở giữa text */
 .s2-mark-line {
   display: block;
   position: relative;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
-/* Đường kẻ nằm tại giữa chiều cao dòng text */
 .s2-mark-line::after {
   content: "";
   position: absolute;
@@ -88,23 +114,21 @@
   background: rgba(0, 0, 0, 0.25);
 }
 
-/* Đoạn mô tả */
 .news-s2-editorial-text {
+  margin: 0 0 clamp(14px, 1.8vw, 50px) 0;
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.5rem;
-  align-content: justify;
+  font-size: clamp(1.15rem, 1.35vw, 1.5rem);
   line-height: 1.65;
-  color: rgba(17, 17, 17, 0.87);
+  text-align: justify;
+  color: rgba(17, 17, 17, 0.88);
 }
 
-/* Biến thể typography kiểu editorial với chữ cái đầu nền đen */
 .news-s2-editorial-text--dropcap {
-  font-family: "Times New Roman", Times, serif;
   font-size: clamp(1.95rem, 3vw, 3rem);
   line-height: 1.06;
   letter-spacing: -0.012em;
   color: #1a1a1a;
-  margin: 0;
+  margin: 0 0 clamp(30px, 10vw, 200px) 0;
   max-width: 18ch;
   text-align: justify;
   text-justify: inter-word;
@@ -126,26 +150,19 @@
   line-height: 1;
 }
 
-/* PANEL ẢNH */
-.news-s2-panel--photo {
-  display: block;
-  padding: 0;
-  overflow: hidden;
+/* =============================================================
+   PANEL 2 — LEAD STORY
+   ============================================================= */
+.s2-lead-panel {
+  width: clamp(500px, 48vw, 820px);
+  --s2-image-filter-default: grayscale(100%);
+  --s2-image-filter-hover: grayscale(60%);
 }
 
-/* Ảnh bên trong panel */
-.news-s2-image {
-  display: block;
-  width: auto;
-  max-width: 900px;
-  height: 75vh;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* META BAR - hiện lên khi hover vào ảnh */
-.news-s2-meta {
+/* Badge — top right */
+.s2-lead-badge {
   position: absolute;
+<<<<<<< HEAD
   left: 16px;
   right: 16px;
   bottom: 16px;
@@ -163,47 +180,240 @@
   letter-spacing: -0.05em;
   opacity: 0;
   transform: translateY(16px);
+=======
+  top: clamp(20px, 2.5vw, 36px);
+  right: clamp(20px, 2.5vw, 36px);
+  z-index: 10;
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid var(--s2-border);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #44403c;
+}
+
+/* Image container */
+.s2-lead-image-wrap {
+  width: 100%;
+  height: clamp(240px, 34vw, 450px);
+  overflow: hidden;
+  margin-bottom: clamp(20px, 2.5vw, 36px);
+}
+
+.s2-lead-image,
+.s2-data-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--s2-image-filter-default);
+  mix-blend-mode: var(--s2-image-blend-default);
+>>>>>>> c254ac3285022979b04efe4a7c1402e099483e8c
   transition:
-    opacity 0.28s ease,
-    transform 0.28s ease;
-  pointer-events: none;
+    filter 0.4s ease,
+    transform 0.45s ease;
 }
 
-.news-s2-panel--photo:hover .news-s2-meta,
-.news-s2-panel--photo:focus-within .news-s2-meta {
-  opacity: 1;
-  transform: translateY(0);
+.s2-lead-panel:hover .s2-lead-image,
+.s2-data-panel:hover .s2-data-image {
+  filter: var(--s2-image-filter-hover);
+  mix-blend-mode: var(--s2-image-blend-hover);
+  transform: scale(var(--s2-image-scale-hover));
 }
 
+<<<<<<< HEAD
 /* Số thứ tự */
 .news-s2-index {
   font-family: "Times New Roman", Times, serif;
   font-size: 0.95rem;
   letter-spacing: -0.05em;
   color: var(--news-s2-skin-text);
+=======
+/* Headline */
+.s2-lead-headline {
+  margin: 0 0 clamp(16px, 2vw, 28px);
+  font-family: "Playfair Display", "Merriweather", serif;
+  font-size: clamp(2rem, 3.6vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #1c1c1a;
+  max-width: 42rem;
+>>>>>>> c254ac3285022979b04efe4a7c1402e099483e8c
 }
 
-/* Tiêu đề card */
-.news-s2-card-title {
+/* Description */
+.s2-lead-desc {
   margin: 0;
+<<<<<<< HEAD
   font-family: "Times New Roman", Times, serif;
   font-size: 1.35rem;
   line-height: 1.3;
   letter-spacing: -0.05em;
   color: var(--news-s2-skin-text);
+=======
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: #1c1c1a;
+  max-width: 80%;
+>>>>>>> c254ac3285022979b04efe4a7c1402e099483e8c
 }
 
-/* ===== RESPONSIVE: Tablet ===== */
+/* CTA bar */
+.s2-lead-cta {
+  margin-top: auto;
+  padding-top: clamp(18px, 2vw, 28px);
+  border-top: 1px solid var(--s2-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+}
+
+.s2-lead-cta-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1c1c1a;
+}
+
+.s2-lead-cta-time {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  color: var(--s2-muted);
+}
+
+/* =============================================================
+   PANEL 3 — DATA / SECONDARY COLUMN
+   ============================================================= */
+.s2-data-panel {
+  width: clamp(280px, 22vw, 400px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1px;
+  background: var(--s2-separator);
+  height: 102vh;
+  --s2-image-filter-default: grayscale(100%) contrast(1.25);
+  --s2-image-filter-hover: grayscale(60%) contrast(1.1);
+  --s2-image-blend-default: multiply;
+}
+
+/* Shared cell base */
+.s2-data-cell {
+  background: var(--s2-cell-bg);
+  box-sizing: border-box;
+}
+
+/* ------- Row 1: Tickers ------- */
+.s2-data-tickers {
+  padding: clamp(20px, 2.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.s2-ticker-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--s2-border);
+}
+
+.s2-ticker-symbol {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1c1c1a;
+}
+
+.s2-ticker-value {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: var(--s2-muted);
+}
+
+.s2-data-heading {
+  margin: auto 0 0;
+  padding-top: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.45rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #1c1c1a;
+}
+
+/* ------- Row 2: Image ------- */
+.s2-data-image-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.s2-data-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 28, 26, 0.1);
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+
+.s2-data-panel:hover .s2-data-image-overlay {
+  background: rgba(28, 28, 26, 0.02);
+}
+
+/* ------- Row 3: Briefing ------- */
+.s2-data-briefing {
+  padding: clamp(20px, 2.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.s2-briefing-label {
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--s2-muted);
+  margin-bottom: 14px;
+}
+
+.s2-briefing-text {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: #292524;
+}
+
+/* =============================================================
+   RESPONSIVE — TABLET (< 992px)
+   Disable GSAP pin, stack vertically or allow native scroll
+   ============================================================= */
 @media (max-width: 991.98px) {
   .news-section-two {
-    padding: 80px 0 30px;
+    padding: 0;
   }
 
   .news-s2-viewport {
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 0.5rem;
     scrollbar-width: thin;
+    scrollbar-color: #3d3d3d #1c1c1a;
   }
 
   /* Tắt GSAP transform trên mobile */
@@ -211,25 +421,80 @@
     transform: none !important;
   }
 
+  .s2-title-block {
+    width: 280px;
+    min-height: 56vh;
+  }
+
   .s2-first {
     min-width: auto;
   }
 
-  .s2-lead {
-    width: auto;
-    min-width: 280px;
+  .news-s2-mark {
+    font-size: clamp(2rem, 6vw, 2.7rem);
   }
 
-  .news-s2-image {
-    max-width: 88vw;
-    height: 40vh;
+  .news-s2-editorial-text {
+    font-size: 1.15rem;
   }
 
-  .news-s2-editorial-text--dropcap {
-    font-size: clamp(1.6rem, 6vw, 2.25rem);
+  .s2-lead-panel {
+    width: 440px;
+    min-height: 56vh;
+  }
+
+  .s2-data-panel {
+    width: 280px;
+    min-height: 56vh;
+  }
+
+  .s2-lead-image-wrap {
+    height: 220px;
+  }
+}
+
+/* =============================================================
+   RESPONSIVE — MOBILE (< 576px)
+   ============================================================= */
+@media (max-width: 575.98px) {
+  .s2-title-block {
+    width: 240px;
+  }
+
+  .news-s2-mark {
+    font-size: 1.9rem;
+  }
+
+  .news-s2-editorial-text {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .news-s2-editorial-text--dropcap .news-initial-block {
+    font-size: clamp(1.95rem, 9vw, 3.2rem);
+  }
+
+  .s2-lead-panel {
+    width: 340px;
+  }
+
+  .s2-lead-headline {
+    font-size: 1.6rem;
+  }
+
+  .s2-data-panel {
+    width: 240px;
+  }
+
+  .s2-lead-desc {
+    max-width: 100%;
+  }
+
+  .s2-lead-cta {
     max-width: 100%;
   }
 }
+<<<<<<< HEAD
 
 @media (max-width: 767.98px) {
   .news-s2-viewport {
@@ -293,3 +558,5 @@
     transform: translateY(0);
   }
 }
+=======
+>>>>>>> c254ac3285022979b04efe4a7c1402e099483e8c

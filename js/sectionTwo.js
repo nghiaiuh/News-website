@@ -6,10 +6,8 @@
   gsap.registerPlugin(ScrollTrigger);
 
   var section = document.querySelector(".news-section-two");
-  var titleWrap = document.querySelector(".news-title-wrap");
-  var navbar = document.querySelector(".news-header");
 
-  if (!section || !titleWrap) return;
+  if (!section) return;
 
   var viewport = section.querySelector(".news-s2-viewport");
   var track = section.querySelector(".news-s2-track");
@@ -43,11 +41,8 @@
       },
       ease: "none",
       scrollTrigger: {
-        trigger: titleWrap,
-        start: function () {
-          var navH = navbar ? navbar.offsetHeight : 0;
-          return "bottom top+=" + navH;
-        },
+        trigger: section,
+        start: "top top",
         end: function () {
           return "+=" + Math.max(0, track.scrollWidth - viewport.clientWidth);
         },

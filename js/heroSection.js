@@ -13,6 +13,60 @@
     });
   }
 
+  var header = document.querySelector(".news-header");
+  var mobileMenu = document.getElementById("nwMenu");
+
+  if (header) {
+    var lastScrollY = window.scrollY || window.pageYOffset || 0;
+    var ticking = false;
+    var hideAfter = 2;
+    var delta = 1;
+
+    function syncHeaderOnScroll() {
+      var currentY = window.scrollY || window.pageYOffset || 0;
+      var isMenuOpen = mobileMenu && mobileMenu.classList.contains("show");
+
+      if (currentY <= 2) {
+        header.classList.remove("news-header--hidden");
+        lastScrollY = currentY;
+        ticking = false;
+        return;
+      }
+
+      if (!isMenuOpen) {
+        var diff = currentY - lastScrollY;
+
+        if (diff > delta && currentY > hideAfter) {
+          header.classList.add("news-header--hidden");
+        } else if (diff < -delta) {
+          header.classList.remove("news-header--hidden");
+        }
+      } else {
+        header.classList.remove("news-header--hidden");
+      }
+
+      lastScrollY = currentY;
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(syncHeaderOnScroll);
+        }
+      },
+      { passive: true }
+    );
+
+    if (mobileMenu) {
+      mobileMenu.addEventListener("show.bs.collapse", function () {
+        header.classList.remove("news-header--hidden");
+      });
+    }
+  }
+
   // ── GSAP Hover cho menu items (trừ logo) ──────────────────────────────
   if (typeof gsap !== "undefined") {
     const menuItems = document.querySelectorAll(
@@ -78,5 +132,6 @@
       });
     }
   }
-});
+});
+
 

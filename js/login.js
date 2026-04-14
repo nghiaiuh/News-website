@@ -1,90 +1,109 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-  if (!window.gsap) {
-    return;
-  }
+$(function () {
+  const storageKeys = {
+    users: "users",
+    isLoggedIn: "isLoggedIn",
+    username: "username",
+  };
 
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  const messageEl = $("#loginMessage");
+  const submitBtn = $(".news-auth-submit");
 
-  if (reduceMotion) {
-    const intro = document.getElementById("news-auth-intro");
-    if (intro) {
-      intro.style.display = "none";
+  function getUsers() {
+    const rawUsers = localStorage.getItem(storageKeys.users);
+    if (rawUsers) {
+      try {
+        const parsed = JSON.parse(rawUsers);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
     }
-    return;
+
+    const legacyUser = localStorage.getItem("user");
+    if (legacyUser) {
+      try {
+        const parsed = JSON.parse(legacyUser);
+        if (parsed && parsed.username) {
+          const migrated = [parsed];
+          localStorage.setItem(storageKeys.users, JSON.stringify(migrated));
+          return migrated;
+        }
+      } catch (error) {
+        return [];
+      }
+    }
+
+    return [];
   }
 
-  const intro = document.getElementById("news-auth-intro");
-
-  gsap.set(".news-auth-copy, .news-auth-card", { autoAlpha: 0 });
-  gsap.set(".news-auth-card .mb-3, .news-auth-submit, .news-auth-help", {
-    autoAlpha: 0,
-  });
-
-  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-  if (intro) {
-    tl.fromTo(
-      ".news-auth-intro-line",
-      { y: 28, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12 }
-    )
-      .to(
-        ".news-auth-intro-line",
-        { y: -18, autoAlpha: 0, duration: 0.45, stagger: 0.08 },
-        "+=0.15"
-      )
-      .to(
-        "#news-auth-intro",
-        { autoAlpha: 0, duration: 0.4 },
-        "-=0.1"
-      )
-      .set("#news-auth-intro", { display: "none" });
+  function setMessage(text, type) {
+    messageEl.text(text).removeClass("is-error is-success");
+    if (type) {
+      messageEl.addClass(type);
+    }
   }
 
-  tl.fromTo(
-      ".news-auth-copy",
-      { y: 30, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 0.8 },
-      "-=0.1"
-    )
-    .fromTo(
-      ".news-auth-card",
-      { y: 40, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 0.8 },
-      "-=0.5"
-    )
-    .fromTo(
-      ".news-auth-card .mb-3, .news-auth-submit, .news-auth-help",
-      { y: 16, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 0.45, stagger: 0.08 },
-      "-=0.3"
+  function displayUserOptions(username) {
+    $("#register-link").hide();
+    $("#login-link").hide();
+    $("#user-options").html(
+      `
+      <li class="list-inline-item mx-2"><span>${username}</span></li>
+      <li class="list-inline-item mx-2" style="padding-right:15px;">
+        <a href="#" id="logout">Đăng xuất</a>
+      </li>
+    `
     );
+  }
 
-  gsap.to(".news-auth-shape--one", {
-    x: 30,
-    y: 20,
-    duration: 8,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
+  const isLoggedIn = localStorage.getItem(storageKeys.isLoggedIn);
+  const username = localStorage.getItem(storageKeys.username);
+  if (isLoggedIn === "true" && username) {
+    displayUserOptions(username);
+  }
+
+  $("#loginForm").on("submit", function (event) {
+    event.preventDefault();
+    submitBtn.addClass("is-loading").attr("disabled", true);
+    setMessage("", null);
+
+    const enteredUsername = $("#uname").val().trim();
+    const enteredPassword = $("#password").val().trim();
+
+    if (!enteredUsername || !enteredPassword) {
+      setMessage("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.", "is-error");
+      submitBtn.removeClass("is-loading").attr("disabled", false);
+      return;
+    }
+
+    const users = getUsers();
+    if (users.length === 0) {
+      setMessage("Không tìm thấy người dùng. Hãy đăng ký tài khoản.", "is-error");
+      submitBtn.removeClass("is-loading").attr("disabled", false);
+      return;
+    }
+
+    const foundUser = users.find((user) => user.username === enteredUsername);
+    if (!foundUser || foundUser.password !== enteredPassword) {
+      setMessage("Thông tin đăng nhập không đúng.", "is-error");
+      submitBtn.removeClass("is-loading").attr("disabled", false);
+      return;
+    }
+
+    setMessage("Đăng nhập thành công!", "is-success");
+    localStorage.setItem(storageKeys.isLoggedIn, "true");
+    localStorage.setItem(storageKeys.username, enteredUsername);
+    displayUserOptions(enteredUsername);
+
+    setTimeout(function () {
+      window.location.href = "Home.html";
+    }, 500);
   });
-  gsap.to(".news-auth-shape--two", {
-    x: -28,
-    y: -18,
-    duration: 9,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
-  });
-  gsap.to(".news-auth-shape--three", {
-    x: 18,
-    y: -24,
-    duration: 7,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
+
+  $(document).on("click", "#logout", function (event) {
+    event.preventDefault();
+    localStorage.removeItem(storageKeys.isLoggedIn);
+    localStorage.removeItem(storageKeys.username);
+    window.location.href = "dang-nhap.html";
   });
 });
-

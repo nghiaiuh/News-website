@@ -1,4 +1,4 @@
-﻿/* ===== FEED CONTAINER ===== */
+/* ===== FEED CONTAINER ===== */
 .feed-container {
   --feed-border: rgba(74, 65, 53, 0.28);
   --feed-text: #1f1b17;
@@ -46,6 +46,7 @@
 
 /* ===== PROJ CARD (card tin tuc) ===== */
 .proj-card {
+  position: relative;
   width: 36%;
   display: flex;
   flex-direction: column;
