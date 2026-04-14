@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initSportsPreview() {
-	var sportsLine = document.getElementById("news-s3-sports-line");
-	var previewCards = document.querySelectorAll(".news-s3-preview-card");
+	let sportsLine = document.getElementById("news-s3-sports-line");
+	let previewCards = document.querySelectorAll(".news-s3-preview-card");
 
 	if (!sportsLine || !previewCards.length) return;
 
-	var sportButtons = sportsLine.querySelectorAll(".news-s3-sport-btn");
+	let sportButtons = sportsLine.querySelectorAll(".news-s3-sport-btn");
 
 	if (!sportButtons.length) return;
 
-	var activeButton =
+	let activeButton =
 		sportsLine.querySelector(".news-s3-sport-btn.is-active") || sportButtons[0];
 
 	function updatePreview(button, animate) {
@@ -25,9 +25,9 @@ function initSportsPreview() {
 
 		function applySources() {
 			previewCards.forEach(function (card, index) {
-				var img = card.querySelector("img");
-				var key = "preview" + String(index + 1);
-				var src = button.dataset[key];
+				let img = card.querySelector("img");
+				let key = "preview" + String(index + 1);
+				let src = button.dataset[key];
 
 				if (!img || !src) {
 					card.classList.remove("is-visible");
@@ -38,8 +38,8 @@ function initSportsPreview() {
 				card.hidden = false;
 				img.src = src;
 
-				var sportTextEl = button.querySelector(".news-s3-sport-text");
-				var sportText = sportTextEl ? sportTextEl.textContent : "Ảnh thể thao";
+				let sportTextEl = button.querySelector(".news-s3-sport-text");
+				let sportText = sportTextEl ? sportTextEl.textContent : "Ảnh thể thao";
 				img.alt = sportText + " " + String(index + 1);
 			});
 
@@ -83,9 +83,9 @@ function initSportsPreview() {
 }
 
 function initSportsFeedNavigation() {
-	var viewport = document.querySelector(".sports-feed-viewport");
-	var prevButton = document.querySelector(".sports-feed-nav--prev");
-	var nextButton = document.querySelector(".sports-feed-nav--next");
+	let viewport = document.querySelector(".sports-feed-viewport");
+	let prevButton = document.querySelector(".sports-feed-nav--prev");
+	let nextButton = document.querySelector(".sports-feed-nav--next");
 
 	if (!viewport || !prevButton || !nextButton) return;
 
@@ -94,7 +94,7 @@ function initSportsFeedNavigation() {
 	}
 
 	function updateNavState() {
-		var maxScrollLeft = Math.max(viewport.scrollWidth - viewport.clientWidth, 0);
+		let maxScrollLeft = Math.max(viewport.scrollWidth - viewport.clientWidth, 0);
 		prevButton.disabled = viewport.scrollLeft <= 4;
 		nextButton.disabled = viewport.scrollLeft >= maxScrollLeft - 4;
 	}

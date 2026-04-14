@@ -214,35 +214,7 @@ body {
   text-align: center;
 }
 
-/* ===== CUSTOM CURSOR ===== */
-*,
-*::before,
-*::after {
-  cursor: none !important;
-}
 
-#news-cursor {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ffffff;
-  mix-blend-mode: difference;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  pointer-events: none;
-  will-change: transform;
-  transition:
-    width 0.2s ease,
-    height 0.2s ease;
-}
-
-#news-cursor.news-cursor--hover {
-  width: 26px;
-  height: 26px;
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1199.98px) {

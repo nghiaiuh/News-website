@@ -5,28 +5,28 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  var section = document.querySelector(".news-section-two");
+  let section = document.querySelector(".news-section-two");
 
   if (!section) return;
 
-  var viewport = section.querySelector(".news-s2-viewport");
-  var track = section.querySelector(".news-s2-track");
-  var progressBar = section.querySelector(".news-s2-progress-bar");
+  let viewport = section.querySelector(".news-s2-viewport");
+  let track = section.querySelector(".news-s2-track");
+  let progressBar = section.querySelector(".news-s2-progress-bar");
 
   if (!viewport || !track) return;
 
-  var mm = gsap.matchMedia();
+  let mm = gsap.matchMedia();
 
   function setProgress(value) {
     if (!progressBar) return;
-    var safe = Math.max(0, Math.min(1, value));
+    let safe = Math.max(0, Math.min(1, value));
     progressBar.style.transform = "scaleX(" + safe + ")";
   }
 
   mm.add("(min-width: 992px)", function () {
     setProgress(0);
 
-    var tween = gsap.to(track, {
+    let tween = gsap.to(track, {
       x: function () {
         return -Math.max(0, track.scrollWidth - viewport.clientWidth);
       },

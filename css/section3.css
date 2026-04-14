@@ -340,6 +340,28 @@
   border-bottom: 7px solid transparent;
   border-left: 10px solid #fff;
 }
+/* ===== RESPONSIVE: Extra Large Desktop ===== */
+@media (min-width: 1400px) {
+  .news-s3-title {
+    font-size: 14.5rem;
+  }
+
+  .news-s3-kicker {
+    font-size: 2.6rem;
+  }
+}
+
+/* ===== RESPONSIVE: Large Desktop (1200px - 1399px) ===== */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .news-s3-title {
+    font-size: clamp(10rem, 12vw, 12rem);
+  }
+
+  .news-s3-kicker {
+    font-size: clamp(1.95rem, 2vw, 2.3rem);
+  }
+}
+
 /* ===== RESPONSIVE: Large Tablet ===== */
 @media (max-width: 1199.98px) {
   .news-s3-copy {
@@ -359,7 +381,132 @@
   }
 }
 
-/* ===== RESPONSIVE: Tablet ===== */
+/* ===== RESPONSIVE: Tablet (768px - 991px) ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .news-section-three {
+    padding: 32px 16px 40px;
+  }
+
+  .news-s3-header {
+    min-height: auto;
+  }
+
+  .news-s3-copy {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .news-s3-title {
+    font-size: clamp(3.5rem, 15vw, 7rem);
+    line-height: 0.85;
+    transform: scaleX(0.87);
+  }
+
+  .news-s3-kicker {
+    margin-top: 16px;
+    max-width: 35ch;
+    font-size: clamp(1rem, 2.8vw, 1.4rem);
+    width: 100%;
+  }
+
+  .news-s3-sports-line {
+    gap: 8px;
+  }
+
+  .news-s3-sport-btn {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    padding: 0.4rem 0.76rem;
+  }
+
+  .news-s3-services {
+    font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+  }
+
+  .news-s3-hover-gallery {
+    display: none;
+  }
+
+  .box-horizontal {
+    width: 100%;
+  }
+
+  .sports-feed-card {
+    flex-basis: min(45vw, 240px);
+    height: 48vw;
+  }
+}
+
+/* ===== RESPONSIVE: Large Mobile (576px - 767px) ===== */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .news-section-three {
+    padding: 26px 12px 36px;
+  }
+
+  .news-s3-header {
+    min-height: auto;
+  }
+
+  .news-s3-copy {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .news-s3-title {
+    font-size: clamp(2.8rem, 18vw, 5rem);
+    line-height: 0.86;
+    transform: scaleX(0.88);
+  }
+
+  .news-s3-kicker {
+    margin-top: 12px;
+    max-width: 100%;
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+    width: 100%;
+  }
+
+  .news-s3-sports-line {
+    gap: 7px;
+  }
+
+  .news-s3-sport-btn {
+    font-size: clamp(0.88rem, 2.8vw, 1rem);
+    padding: 0.36rem 0.68rem;
+  }
+
+  .news-s3-services {
+    font-size: clamp(0.92rem, 2.6vw, 1.1rem);
+  }
+
+  .news-s3-hover-gallery {
+    display: none;
+  }
+
+  .box-horizontal {
+    width: 100%;
+  }
+
+  .sports-feed-card {
+    flex-basis: min(55vw, 220px);
+    height: 51vw;
+  }
+
+  .sports-feed-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    top: 8px;
+  }
+
+  .sports-feed-nav--prev {
+    left: 8px;
+  }
+
+  .sports-feed-nav--next {
+    right: 8px;
+  }
+}
+
+/* ===== RESPONSIVE: Medium Tablet (max-width: 991.98px) ===== */
 @media (max-width: 991.98px) {
   .news-section-three {
     padding: 28px 12px 44px;
@@ -406,7 +553,7 @@
   }
 }
 
-/* ===== RESPONSIVE: Mobile ===== */
+/* ===== RESPONSIVE: Mobile (max-width: 575.98px) ===== */
 @media (max-width: 575.98px) {
   .news-section-three {
     padding: 22px 10px 34px;
@@ -456,5 +603,52 @@
 
   .news-s3-services {
     font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+  }
+}
+
+/* ===== RESPONSIVE: Ultra Small Mobile (max-width: 360px) ===== */
+@media (max-width: 360px) {
+  .news-section-three::before {
+    display: none;
+  }
+
+  .news-s3-title {
+    font-size: clamp(2.4rem, 18vw, 3.5rem);
+    line-height: 0.88;
+    transform: scaleX(0.9);
+  }
+
+  .news-s3-kicker {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+
+  .news-s3-sport-btn {
+    font-size: clamp(0.75rem, 2.2vw, 0.85rem);
+    padding: 0.3rem 0.55rem;
+  }
+
+  .news-s3-services {
+    font-size: clamp(0.8rem, 3.2vw, 0.95rem);
+  }
+
+  .sports-feed-card {
+    flex-basis: min(80vw, 280px);
+    height: 60vw;
+  }
+}
+
+/* ===== RESPONSIVE: Landscape Mobile ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .news-s3-header {
+    min-height: auto;
+    margin-bottom: 10px;
+  }
+
+  .news-s3-title {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .sports-feed-card {
+    height: 80vh;
   }
 }
