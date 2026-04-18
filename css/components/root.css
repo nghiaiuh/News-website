@@ -1,0 +1,135 @@
+/* =============================================================
+   ROOT.CSS — Global Design Tokens
+   Single source of truth for all colors, typography, spacing.
+   Every component stylesheet must use these variables instead
+   of hardcoding values.
+   ============================================================= */
+
+:root {
+  /* ── Colors ─────────────────────────────────────────────── */
+  --nw-text: #1c1c1a;
+  --nw-bg: #ffffff;
+  --nw-white: #ffffff;
+  --nw-black: #000000;
+  --nw-ink-strong: #111111;
+  --nw-ink-dark: #0a0a0a;
+  --nw-ink-rich: #1a1a1a;
+
+  /* Brand & accent */
+  --nw-accent: #ffdd00;
+  --nw-accent-hover: #f4c900;
+  --nw-accent-red: #c30000; /* NEW badge, badge-danger */
+
+  /* Muted / supporting */
+  --nw-muted: #78716c;
+  --nw-muted-dark: #44403c;
+  --nw-muted-light: #5d646e;
+  --nw-subtle: #6e7480;
+
+  /* Logo / footer grey */
+  --nw-logo-color: #4e4d4d;
+
+  /* Borders */
+  --nw-border: rgba(0, 0, 0, 0.14);
+  --nw-border-strong: rgba(0, 0, 0, 0.26);
+  --nw-border-light: rgba(255, 255, 255, 0.1);
+  --nw-border-mid: rgba(255, 255, 255, 0.2);
+
+  /* Overlays */
+  --nw-overlay-dark: rgba(28, 28, 26, 0.1);
+
+  /* Auth page */
+  --nw-auth-card: #0b0b0b;
+  --nw-auth-border: rgba(255, 255, 255, 0.12);
+  --nw-auth-muted: rgba(255, 255, 255, 0.7);
+  --nw-auth-field: #121212;
+
+  /* Section 2 internal tokens */
+  --nw-s2-muted: #78716c;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --nw-font-sans: "Inter", sans-serif;
+  --nw-font-serif: "Merriweather", serif;
+  --nw-font-display: "Playfair Display", "Merriweather", serif;
+  --nw-font-heading: "Oswald", sans-serif;
+  --nw-font-mono: "Space Mono", "Courier New", monospace;
+  --nw-font-news: "Newsreader", sans-serif;
+  --nw-font-time: "Times New Roman", Times, serif;
+  --nw-font-script: "Dancing Script", cursive;
+
+  /* Font sizes */
+  --nw-text-xs: 0.75rem;
+  --nw-text-sm: 0.875rem;
+  --nw-text-base: 1rem;
+  --nw-text-md: 1.125rem;
+  --nw-text-lg: 1.25rem;
+  --nw-text-xl: 1.5rem;
+  --nw-text-2xl: 2rem;
+
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --nw-space-xs: 0.25rem;
+  --nw-space-sm: 0.5rem;
+  --nw-space-md: 1rem;
+  --nw-space-lg: 1.5rem;
+  --nw-space-xl: 2rem;
+  --nw-space-2xl: 3rem;
+
+  /* ── Radius ──────────────────────────────────────────────── */
+  --nw-radius-sm: 4px;
+  --nw-radius-md: 8px;
+  --nw-radius-lg: 12px;
+  --nw-radius-xl: 16px;
+  --nw-radius-pill: 999px;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --nw-shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.14);
+  --nw-shadow-md: 0 14px 26px rgba(0, 0, 0, 0.14);
+  --nw-shadow-lg: 0 24px 46px rgba(8, 10, 16, 0.2);
+  --nw-shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  /* ── Transitions ─────────────────────────────────────────── */
+  --nw-transition-fast: 0.2s ease;
+  --nw-transition-base: 0.3s ease;
+  --nw-transition-slow: 0.4s ease;
+
+  /* ── Backwards-compat aliases (legacy names, do not add new ones) ── */
+  --news-text: var(--nw-text);
+  --news-bg: var(--nw-bg);
+  --news-white: var(--nw-white);
+  --news-black: var(--nw-black);
+  --news-ink-strong: var(--nw-ink-strong);
+  --news-accent: var(--nw-accent);
+  --news-accent-hover: var(--nw-accent-hover);
+
+  --news-auth-card: var(--nw-auth-card);
+  --news-auth-border: var(--nw-auth-border);
+  --news-auth-muted: var(--nw-auth-muted);
+  --news-auth-field: var(--nw-auth-field);
+}
+
+/* ===== GLOBAL BASE & SHARED LAYOUT (migrated from index.css) ===== */
+/* Bootstrap normalize covers the global reset; only apply box-sizing here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--news-text);
+}
+
+::selection {
+  background-color: var(--news-black);
+  color: var(--news-white);
+}
+
+/* ===== BODY & BACKGROUND ===== */
+.news-body,
+.body {
+  background: var(--news-bg);
+  color: var(--news-text);
+}

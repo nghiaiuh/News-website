@@ -1,4 +1,4 @@
-﻿.news-auth-body {
+.news-auth-body {
   background:
     radial-gradient(
       circle at 20% 10%,
@@ -35,11 +35,11 @@
 }
 
 .news-auth-intro-line {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--nw-font-heading);
   font-size: clamp(2.6rem, 8vw, 6rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--news-white);
+  color: var(--nw-white);
 }
 
 .news-auth-bg {
@@ -109,7 +109,7 @@
 }
 
 .news-auth-kicker {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--nw-font-heading);
   font-size: 0.95rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -118,7 +118,7 @@
 }
 
 .news-auth-title {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--nw-font-heading);
   font-size: clamp(2.6rem, 5vw, 4.2rem);
   line-height: 1.05;
   margin-bottom: 0.8rem;
@@ -229,8 +229,8 @@
 }
 
 .news-auth-card h2 {
-  font-family: "Oswald", sans-serif;
-  font-size: 2rem;
+  font-family: var(--nw-font-heading);
+  font-size: var(--nw-text-2xl);
   margin-bottom: 1.2rem;
 }
 

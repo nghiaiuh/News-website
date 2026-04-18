@@ -5,32 +5,32 @@
    ============================================================ */
 
 /* WRAPPER */
-.news-s2-wrapper {
+.s2-wrapper {
   margin-top: 30px;
 }
 
 /* SECTION */
-.news-section-two {
-  --s2-bg: var(--news-white);
-  --s2-separator: var(--news-text);
-  --s2-cell-bg: var(--news-white);
-  --s2-border: var(--news-white);
-  --s2-muted: #78716c;
+.section-two {
+  --s2-bg: var(--nw-white);
+  --s2-separator: var(--nw-text);
+  --s2-cell-bg: var(--nw-white);
+  --s2-border: var(--nw-white);
+  --s2-muted: var(--nw-muted);
 
   background: var(--s2-bg);
-  color: var(--news-ink-strong);
+  color: var(--nw-ink-strong);
   overflow: clip;
 }
 
 /* VIEWPORT */
-.news-s2-viewport {
+.s2-viewport {
   width: 100%;
   overflow: hidden;
   padding: 0;
 }
 
 /* TRACK — flex row, 1px gap mimics grid border effect */
-.news-s2-track {
+.s2-track {
   display: flex;
   gap: 1px;
   width: max-content;
@@ -72,7 +72,7 @@
 }
 
 /* Editorial content inside title block */
-.news-s2-editorial {
+.s2-editorial {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,17 +80,17 @@
   height: 100%;
 }
 
-.news-s2-mark {
+.s2-mark {
   margin-top: clamp(0.55em, 1.5vw, 2em);
   display: inline-block;
   transform: scaleY(1.35);
-  font-family: "Playfair Display", "Merriweather", serif;
+  font-family: var(--nw-font-display);
   font-size: clamp(2.4rem, 3.8vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  color: var(--nw-ink-dark);
 }
 
 .s2-mark-line {
@@ -109,20 +109,20 @@
   background: rgba(0, 0, 0, 0.25);
 }
 
-.news-s2-editorial-text {
+.s2-editorial-text {
   margin: 0 0 clamp(14px, 1.8vw, 50px) 0;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--nw-font-time);
   font-size: clamp(1.15rem, 1.35vw, 1.5rem);
   line-height: 1.65;
   text-align: justify;
   color: rgba(17, 17, 17, 0.88);
 }
 
-.news-s2-editorial-text--dropcap {
+.s2-editorial-text--dropcap {
   font-size: clamp(1.95rem, 3vw, 3rem);
   line-height: 1.06;
   letter-spacing: -0.012em;
-  color: #1a1a1a;
+  color: var(--nw-ink-rich);
   margin: 0 0 clamp(30px, 10vw, 200px) 0;
   max-width: 18ch;
   text-align: justify;
@@ -130,7 +130,7 @@
   hyphens: auto;
 }
 
-.news-s2-editorial-text--dropcap .news-initial-block {
+.s2-editorial-text--dropcap .initial-block {
   float: left;
   display: inline-flex;
   align-items: center;
@@ -138,9 +138,9 @@
   width: 0.8em;
   height: 1.06em;
   margin: 0.17em 0.08em 0 0;
-  background: var(--news-ink-strong);
+  background: var(--nw-ink-strong);
   color: #f4f4f2;
-  font-family: "Playfair Display", "Merriweather", serif;
+  font-family: var(--nw-font-display);
   font-size: clamp(1.95rem, 7vw, 7rem);
   line-height: 1;
 }
@@ -160,18 +160,18 @@
   top: clamp(20px, 2.5vw, 36px);
   right: clamp(20px, 2.5vw, 36px);
   z-index: 10;
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--nw-font-mono);
   font-size: 0.625rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   border: 1px solid var(--s2-border);
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--nw-radius-pill);
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  color: #44403c;
+  color: var(--nw-muted-dark);
 }
 
 /* Image container */
@@ -207,22 +207,22 @@
 /* Headline */
 .s2-lead-headline {
   margin: 0 0 clamp(16px, 2vw, 28px);
-  font-family: "Playfair Display", "Merriweather", serif;
+  font-family: var(--nw-font-display);
   font-size: clamp(2rem, 3.6vw, 3.8rem);
   font-weight: 700;
   line-height: 1.05;
-  color: var(--news-text);
+  color: var(--nw-text);
   max-width: 42rem;
 }
 
 /* Description */
 .s2-lead-desc {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: clamp(0.95rem, 1.1vw, 1.15rem);
   font-weight: 500;
   line-height: 1.7;
-  color: var(--news-text);
+  color: var(--nw-text);
   max-width: 80%;
 }
 
@@ -238,16 +238,16 @@
 }
 
 .s2-lead-cta-text {
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--news-text);
+  color: var(--nw-text);
 }
 
 .s2-lead-cta-time {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--nw-font-mono);
   font-size: 0.72rem;
   color: var(--s2-muted);
 }
@@ -291,14 +291,14 @@
 }
 
 .s2-ticker-symbol {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--nw-font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--news-text);
+  color: var(--nw-text);
 }
 
 .s2-ticker-value {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--nw-font-mono);
   font-size: 0.85rem;
   color: var(--s2-muted);
 }
@@ -306,13 +306,13 @@
 .s2-data-heading {
   margin: auto 0 0;
   padding-top: 8px;
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: clamp(1.1rem, 1.4vw, 1.45rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  color: var(--news-text);
+  color: var(--nw-text);
 }
 
 /* ------- Row 2: Image ------- */
@@ -344,7 +344,7 @@
 }
 
 .s2-briefing-label {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--nw-font-mono);
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -354,11 +354,11 @@
 
 .s2-briefing-text {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: clamp(0.9rem, 1vw, 1.05rem);
   font-weight: 500;
   line-height: 1.55;
-  color: #292524;
+  color: var(--nw-ink-rich);
 }
 
 /* =============================================================
@@ -366,11 +366,11 @@
    Disable GSAP pin, stack vertically or allow native scroll
    ============================================================= */
 @media (max-width: 991.98px) {
-  .news-section-two {
+  .section-two {
     padding: 0;
   }
 
-  .news-s2-viewport {
+  .s2-viewport {
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
@@ -378,7 +378,7 @@
   }
 
   /* Tắt GSAP transform trên mobile */
-  .news-s2-track {
+  .s2-track {
     transform: none !important;
   }
 
@@ -391,11 +391,11 @@
     min-width: auto;
   }
 
-  .news-s2-mark {
+  .s2-mark {
     font-size: clamp(2rem, 6vw, 2.7rem);
   }
 
-  .news-s2-editorial-text {
+  .s2-editorial-text {
     font-size: 1.15rem;
   }
 
@@ -422,16 +422,16 @@
     width: 240px;
   }
 
-  .news-s2-mark {
+  .s2-mark {
     font-size: 1.9rem;
   }
 
-  .news-s2-editorial-text {
+  .s2-editorial-text {
     font-size: 1rem;
     line-height: 1.55;
   }
 
-  .news-s2-editorial-text--dropcap .news-initial-block {
+  .s2-editorial-text--dropcap .initial-block {
     font-size: clamp(1.95rem, 9vw, 3.2rem);
   }
 

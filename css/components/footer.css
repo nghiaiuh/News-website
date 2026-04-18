@@ -1,0 +1,47 @@
+/* =========================================================
+   FOOTER STYLE
+   ========================================================= */
+.footer {
+  background-color: var(--nw-logo-color);
+  color: var(--nw-white);
+}
+
+/* Chữ BÁO CHÍ DESIGN */
+.footer-logo-text {
+  font-family: var(--nw-font-display);
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* Tên trường */
+.footer-school {
+  font-size: var(--nw-text-base);
+}
+
+/* Cột thông tin liên hệ (Địa chỉ, ĐT, Email) */
+.footer-icon {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  border-left: 1px solid var(--nw-border-mid);
+  padding-left: 12px;
+}
+
+/* Khung bản đồ */
+.footer-map-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  border-radius: var(--nw-radius-md);
+  overflow: hidden;
+}
+
+/* Dải băng dưới cùng (Thống kê & Bản quyền) */
+.footer-bottom {
+  border-top: 1px solid var(--nw-border-light);
+  font-size: 14px;
+}

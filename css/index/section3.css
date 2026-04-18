@@ -44,10 +44,9 @@
 }
 
 .news-s3-title {
-  margin: 0;
-  color: var(--news-text);
+  color: var(--nw-text);
   text-transform: uppercase;
-  font-family: "Playfair Display", "Merriweather", serif;
+  font-family: var(--nw-font-display);
   font-size: clamp(4.8rem, 10vw, 13.9rem);
   font-weight: 700;
   line-height: 0.82;
@@ -64,9 +63,9 @@
   padding-left: 2vw;
   margin: clamp(20px, 5vw, 100px) auto 0 0;
   width: 80%;
-  color: var(--news-text);
+  color: var(--nw-text);
   text-transform: uppercase;
-  font-family: "Merriweather", serif;
+  font-family: var(--nw-font-serif);
   font-size: clamp(1.3rem, 1.7vw, 2.5rem);
   font-weight: 700;
   line-height: 1.25;
@@ -89,27 +88,27 @@
   gap: 0.66rem;
   padding: 0.44rem 0.95rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--nw-radius-pill);
   background: transparent;
-  color: var(--news-text);
+  color: var(--nw-text);
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: var(--nw-font-heading);
   font-size: clamp(1.06rem, 2vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
   transition:
-    background-color 0.28s ease,
-    color 0.28s ease,
+    background-color var(--nw-transition-base),
+    color var(--nw-transition-base),
     transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .news-s3-sport-btn:hover,
 .news-s3-sport-btn:focus-visible,
 .news-s3-sport-btn.is-active {
-  background: var(--news-text);
-  color: var(--news-white);
+  background: var(--nw-text);
+  color: var(--nw-white);
   transform: translateY(-1px) scale(1.08);
   outline: none;
 }
@@ -158,12 +157,12 @@
   aspect-ratio: 4 / 5;
   transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.92);
   opacity: 0;
-  border: 1px solid rgba(28, 28, 26, 0.15);
-  box-shadow: 0 20px 44px rgba(10, 10, 10, 0.2);
-  background: var(--news-white);
+  border: 1px solid var(--nw-overlay-dark);
+  box-shadow: var(--nw-shadow-lg);
+  background: var(--nw-white);
   overflow: hidden;
   transition:
-    opacity 0.32s ease,
+    opacity var(--nw-transition-slow),
     transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -191,7 +190,7 @@
 
 .box-horizontal {
   margin-top: 0.5vw;
-  background: var(--news-text);
+  background: var(--nw-text);
   width: 80%;
   margin-right: auto;
   padding: clamp(16px, 2vw, 24px);
@@ -208,22 +207,22 @@
   z-index: 4;
   width: clamp(36px, 2.8vw, 48px);
   height: clamp(36px, 2.8vw, 48px);
-  border: 1px solid rgba(0, 0, 0, 0.24);
-  border-radius: 999px;
-  background: var(--news-white);
-  color: var(--news-ink-strong);
-  font-family: "Oswald", sans-serif;
+  border: 1px solid var(--nw-border);
+  border-radius: var(--nw-radius-pill);
+  background: var(--nw-white);
+  color: var(--nw-ink-strong);
+  font-family: var(--nw-font-heading);
   font-size: clamp(1rem, 1.25vw, 1.35rem);
   line-height: 1;
   display: inline-grid;
   place-items: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--nw-shadow-sm);
   cursor: pointer;
   transition:
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease,
-    opacity 0.2s ease;
+    background-color var(--nw-transition-fast),
+    box-shadow var(--nw-transition-fast),
+    transform var(--nw-transition-fast),
+    opacity var(--nw-transition-fast);
 }
 
 .sports-feed-nav--prev {
@@ -302,9 +301,8 @@
 }
 
 .sports-feed-title {
-  margin: 0;
-  color: var(--news-white);
-  font-family: "Oswald", sans-serif;
+  color: var(--nw-white);
+  font-family: var(--nw-font-heading);
   font-size: clamp(1.2rem, 1.3vw, 1.7rem);
   font-weight: 700;
   line-height: 1.08;
@@ -316,8 +314,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--news-white);
-  font-family: "Oswald", sans-serif;
+  color: var(--nw-white);
+  font-family: var(--nw-font-heading);
   font-size: clamp(0.9rem, 0.8vw, 1.1rem);
   font-weight: 600;
 }
@@ -340,6 +338,7 @@
   border-bottom: 7px solid transparent;
   border-left: 10px solid var(--news-white);
 }
+
 /* ===== RESPONSIVE: Large Tablet ===== */
 @media (max-width: 1199.98px) {
   .news-s3-copy {

@@ -1,0 +1,37 @@
+/* =============================================================
+	 SECTION 1 — Hero block and display title
+	 ============================================================= */
+
+/* ===== HERO SECTION ===== */
+.hero {
+  margin-top: -25px;
+  min-height: calc(100vh - 63px);
+  background: var(--nw-white);
+  border-top: 1px solid var(--nw-border-light);
+  border-bottom: 1px solid var(--nw-border-light);
+  overflow: hidden;
+}
+
+/* ===== TITLE (text clip effect) ===== */
+.display-title {
+  display: inline-block;
+  transform: scaleY(2);
+  font-family: var(--nw-font-serif);
+  font-size: clamp(3.8rem, 10.6vw, 14rem);
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--nw-white);
+  width: 100%;
+  text-align: center;
+}
+
+.title-wrap {
+  background: var(--nw-text);
+  margin-top: 40px;
+  padding: 140px 1.5rem 80px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

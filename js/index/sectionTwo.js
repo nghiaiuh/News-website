@@ -1,17 +1,17 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let section = document.querySelector(".news-section-two");
+  let section = document.querySelector(".section-two, .news-section-two");
 
   if (!section) return;
 
-  let viewport = section.querySelector(".news-s2-viewport");
-  let track = section.querySelector(".news-s2-track");
-  let progressBar = section.querySelector(".news-s2-progress-bar");
+  let viewport = section.querySelector(".s2-viewport, .news-s2-viewport");
+  let track = section.querySelector(".s2-track, .news-s2-track");
+  let progressBar = section.querySelector(".s2-progress-bar, .news-s2-progress-bar");
   let hoverPanelSelector = ".s2-lead-panel, .s2-data-panel";
   let hoverActiveClass = "s2-hover-active";
   let lastPointerX = null;

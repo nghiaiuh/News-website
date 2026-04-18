@@ -6,66 +6,26 @@
     <title>Grand Slam 2024 - Tin tức chi tiết</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/local-fonts.css" />
-    <link rel="stylesheet" href="../css/root.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/article-detail.css" />
+    <link rel="stylesheet" href="../../css/local-fonts.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/components/root.css" />
+    <link rel="stylesheet" href="../../css/components/navbar.css" />
+    <link rel="stylesheet" href="../../css/article-detail.css" />
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../js/lib/jquery/jquery-4.0.0.js" defer></script>
 
     <!-- JS -->
-    <script src="../js/cursor.js" defer></script>
-    <script src="../js/auth.js" defer></script>
+    <script src="../../js/components/navbar.js" defer></script>
+    <script src="../../js/auth.js" defer></script>
   </head>
 
   <body class="news-body">
     <!-- Con trỏ tuỳ chỉnh -->
     <div id="news-cursor" aria-hidden="true"></div>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="news-header sticky-top">
-      <nav class="navbar navbar-dark news-navbar py-0">
-        <div class="container-fluid px-3 px-xl-4">
-          <div class="news-navbar-shell w-100">
-            <span class="news-team-tag">Nhóm 7</span>
-
-            <ul class="navbar-nav mb-0 news-main-menu news-main-menu-left">
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./Home.html"
-                  >Kinh tế &amp; Chính trị</a
-                >
-              </li>
-              <li class="nav-item news-menu-item active">
-                <a
-                  class="nav-link news-menu-link"
-                  href="./the-thao-suc-khoe.html"
-                  >Thể thao &amp; Sức khoẻ</a
-                >
-              </li>
-            </ul>
-
-            <a class="news-logo py-3 mb-0" href="./Home.html">
-              <span>BÁO CHÍ <span>DESIGN</span></span>
-            </a>
-
-            <ul class="navbar-nav mb-0 news-main-menu news-main-menu-right">
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./Home.html"
-                  >Giải trí &amp; Đời sống</a
-                >
-              </li>
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./Home.html"
-                  >Vũ trụ &amp; Thiên nhiên</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <!-- HEADER: injected by js/components/navbar.js -->
+    <div id="site-header"></div>
 
     <main class="news-article-detail">
       <article class="article-container">
@@ -82,7 +42,7 @@
         </header>
 
         <img
-          src="../images/thethao2.png"
+          src="../../images/thethao2.png"
           alt="Featured Image"
           class="article-featured-img"
         />
@@ -122,14 +82,14 @@
           <h3 class="related-news-title">Tin liên quan</h3>
           <div class="related-grid">
             <a href="./the-thao-football-detail.html" class="related-card">
-              <img src="../images/thethao1.png" alt="Related News" />
+              <img src="../../images/thethao1.png" alt="Related News" />
               <h4>
                 Bóng đá quốc tế: Những diễn biến kịch tính tại vòng loại World
                 Cup
               </h4>
             </a>
             <a href="./the-thao-nba-detail.html" class="related-card">
-              <img src="../images/thethao3.png" alt="Related News" />
+              <img src="../../images/thethao3.png" alt="Related News" />
               <h4>
                 Nhịp đập NBA: Cuộc đua giành ngôi vô địch bóng rổ nhà nghề Mỹ
               </h4>

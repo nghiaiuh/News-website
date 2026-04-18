@@ -5,19 +5,15 @@
 }
 
 .news-s4-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.56fr) minmax(280px, 0.9fr);
-  gap: clamp(14px, 2vw, 24px);
+  display: flex;
   align-items: start;
 }
 
 .news-s4-feature-wrap {
   position: sticky;
   top: max(84px, 7vh);
-}
-
-.news-s4-feature {
-  margin: 0;
+  flex: 1.56 1 0;
+  min-width: 0;
 }
 
 .news-s4-feature-link {
@@ -60,7 +56,6 @@
 }
 
 .news-s4-feature-tag {
-  margin: 0;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-size: clamp(0.86rem, 0.95vw, 1rem);
@@ -105,7 +100,9 @@
 .news-s4-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1vw, 14px);
+  gap: 12px;
+  flex: 1 1 280px;
+  min-width: 280px;
 }
 
 .news-s4-item {
@@ -125,20 +122,20 @@
 }
 
 .news-s4-item-link {
-  display: grid;
-  grid-template-columns: clamp(82px, 8.7vw, 124px) minmax(0, 1fr);
+  display: flex;
   gap: 12px;
   align-items: start;
   text-decoration: none;
-  color: var(--news-text);
-  padding: clamp(8px, 0.7vw, 12px);
+  color: var(--nw-text);
+  padding: 10px;
 }
 
 .news-s4-item-media {
   display: block;
-  width: 100%;
+  width: 100px;
+  flex-shrink: 0;
   aspect-ratio: 4 / 3;
-  border-radius: 8px;
+  border-radius: var(--nw-radius-md);
   overflow: hidden;
   background: #cacaca;
 }
@@ -157,23 +154,22 @@
 
 .news-s4-item-author {
   display: block;
-  margin: 0;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(0.9rem, 0.85vw, 1rem);
+  font-family: var(--nw-font-heading);
+  font-size: var(--nw-text-sm);
   font-weight: 600;
-  color: #242424;
+  color: var(--nw-ink-strong);
 }
 
 .news-s4-item-author span {
-  color: #5d646e;
+  color: var(--nw-muted-light);
   font-weight: 500;
 }
 
 .news-s4-item-title {
   display: block;
   margin: 4px 0 0;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(1.1rem, 1.1vw, 1.45rem);
+  font-family: var(--nw-font-sans);
+  font-size: 1.1rem;
   line-height: 1.25;
   font-weight: 800;
 }
@@ -182,11 +178,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-top: clamp(7px, 0.7vw, 10px);
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(0.87rem, 0.82vw, 1rem);
+  margin-top: 8px;
+  font-family: var(--nw-font-heading);
+  font-size: var(--nw-text-sm);
   font-weight: 500;
-  color: #6e7480;
+  color: var(--nw-subtle);
 }
 
 .news-s4-item-read::before {
@@ -197,45 +193,26 @@
   border-radius: 50%;
 }
 
-/* ===== RESPONSIVE: Extra Large Desktop ===== */
-@media (min-width: 1400px) {
-  .news-s4-feature-title {
-    font-size: 3.5rem;
-  }
-
-  .news-s4-item-title {
-    font-size: 1.55rem;
-  }
-}
-
-/* ===== RESPONSIVE: Large Desktop (1200px - 1399px) ===== */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
+/* ===== RESPONSIVE: Tablet / Mobile ===== */
+@media (max-width: 991.98px) {
   .news-s4-layout {
-    grid-template-columns: minmax(0, 1.48fr) minmax(260px, 0.92fr);
-    gap: clamp(16px, 2.2vw, 28px);
+    flex-direction: column;
   }
 
-  .news-s4-feature-title {
-    font-size: clamp(2.5rem, 3.2vw, 3.2rem);
+  .news-s4-feature-wrap {
+    position: static;
+    flex: none;
+    width: 100%;
   }
 
-  .news-s4-item-title {
-    font-size: clamp(1.1rem, 1.15vw, 1.4rem);
-  }
-}
-
-/* ===== RESPONSIVE: Desktop to Tablet (1200px+) ===== */
-@media (max-width: 1199.98px) {
-  .news-s4-layout {
-    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.95fr);
+  .news-s4-list {
+    flex: none;
+    min-width: 0;
+    width: 100%;
   }
 
   .news-s4-feature-link {
-    min-height: clamp(390px, 69vh, 680px);
-  }
-
-  .news-s4-feature-title {
-    max-width: 24ch;
+    min-height: clamp(330px, 58vh, 560px);
   }
 }
 
@@ -320,22 +297,7 @@
   }
 }
 
-/* ===== RESPONSIVE: Medium Tablet (max-width: 991px) ===== */
-@media (max-width: 991.98px) {
-  .news-s4-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .news-s4-feature-wrap {
-    position: static;
-  }
-
-  .news-s4-feature-link {
-    min-height: clamp(330px, 58vh, 560px);
-  }
-}
-
-/* ===== RESPONSIVE: Mobile (max-width: 575px) ===== */
+/* ===== RESPONSIVE: Medium Tablet (max-width: 991px) ===== */ /* ===== RESPONSIVE: Mobile (max-width: 575px) ===== */
 @media (max-width: 575.98px) {
   .news-section-four {
     padding: 24px 0 32px;
