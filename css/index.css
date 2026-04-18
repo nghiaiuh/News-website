@@ -24,17 +24,38 @@ body {
 
 /* ===== NAVBAR ===== */
 .news-header {
-  transition: transform 0.35s ease;
-  will-change: transform;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: none;
+  will-change: auto;
+  transform: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
+/* Header should always stay visible on every page */
 .news-header.news-header--hidden {
-  transform: translateY(-105%);
+  transform: none !important;
 }
 
 .news-navbar {
   background: var(--news-white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Force dark nav text on white header even when navbar-dark is used */
+.news-navbar .nav-link,
+.news-navbar .navbar-brand,
+.news-navbar .navbar-text,
+.news-navbar .navbar-toggler-icon {
+  color: #222 !important;
+  filter: none !important;
+}
+
+.news-navbar .nav-link:hover,
+.news-navbar .nav-link:focus {
+  color: #000 !important;
 }
 
 .news-navbar-shell {

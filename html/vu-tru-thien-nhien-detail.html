@@ -3,128 +3,303 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Khám phá Hố đen - Tin tức chi tiết</title>
+    <title>Vũ trụ & Thiên nhiên - Tin tức</title>
 
     <link rel="stylesheet" href="../css/local-fonts.css" />
     <link rel="stylesheet" href="../css/root.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/article-detail.css" />
+    <link rel="stylesheet" href="../css/styles_giaitridoisong.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <style>
+      .page-vu-tru .tgt-card {
+        border-radius: 24px !important;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        background: #ffffff;
+      }
+      .page-vu-tru .tgt-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+        border-radius: 24px 24px 0 0;
+      }
+      .page-vu-tru .tgt-card .p-4 {
+        padding: 1.5rem !important;
+      }
+      .page-vu-tru .tgt-card .text-uppercase {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: #6c757d;
+      }
+      .page-vu-tru .tgt-card h3 {
+        line-height: 1.15;
+        font-size: 1.75rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1rem;
+      }
+      .page-vu-tru .tgt-card p {
+        margin-bottom: 1rem;
+        color: #6c757d;
+      }
+      .page-vu-tru .tgt-card small {
+        color: #6c757d;
+      }
+      .page-vu-tru .tgt-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        background-color: #fcfcfc;
+      }
+      .page-vu-tru .tgt-card:hover img {
+        transform: scale(1.02);
+      }
+    </style>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
     <script src="../js/cursor.js" defer></script>
     <script src="../js/auth.js" defer></script>
   </head>
 
-  <body class="news-body">
-    <div id="news-cursor" aria-hidden="true"></div>
-
-    <header class="news-header sticky-top">
+  <body class="news-body page-vu-tru">
+    <div id="news-cursor"></div>
+    <header class="news-header sticky-top" style="background: white; border-bottom: 2px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <nav class="navbar navbar-dark news-navbar py-0">
         <div class="container-fluid px-3 px-xl-4">
           <div class="news-navbar-shell w-100">
             <span class="news-team-tag">Nhóm 7</span>
 
             <ul class="navbar-nav mb-0 news-main-menu news-main-menu-left">
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./Home.html"
-                  >Kinh tế &amp; Chính trị</a
-                >
-              </li>
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./the-thao-suc-khoe.html"
-                  >Thể thao &amp; Sức khoẻ</a
-                >
-              </li>
+              <li class="nav-item"><a class="nav-link" href="./Home.html">Kinh tế & Chính trị</a></li>
+              <li class="nav-item"><a class="nav-link" href="./the-thao-suc-khoe.html">Thể thao & Sức khoẻ</a></li>
             </ul>
 
             <a class="news-logo py-3 mb-0" href="./Home.html">
-              <span>BÁO CHÍ <span>DESIGN</span></span>
+              <span>BÁO CHÍ 
+                <span aria-label="DESIGN" class="d-inline-flex">
+                  <span style="color: #c30000">D</span>
+                  <span style="color: #1c9a3f">E</span>
+                  <span style="color: #f2c200">S</span>
+                  <span style="color: #7a3bd6">I</span>
+                  <span style="color: #ff8a00">G</span>
+                  <span style="color: #1262ff">N</span>
+                </span>
+              </span>
             </a>
 
             <ul class="navbar-nav mb-0 news-main-menu news-main-menu-right">
-              <li class="nav-item news-menu-item">
-                <a class="nav-link news-menu-link" href="./giai-tri-doi-song.html"
-                  >Giải trí &amp; Đời sống</a
-                >
-              </li>
-              <li class="nav-item news-menu-item active">
-                <a class="nav-link news-menu-link" href="./vu-tru-thien-nhien.html"
-                  >Vũ trụ &amp; Thiên nhiên</a
-                >
-              </li>
+              <li class="nav-item"><a class="nav-link" href="./giai-tri-doi-song.html">Giải trí & Đời sống</a></li>
+              <li class="nav-item active"><a class="nav-link" href="./vu-tru-thien-nhien.html">Vũ trụ & Thiên nhiên</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="news-article-detail">
-      <article class="article-container">
-        <header class="article-header">
-          <span class="article-category">Vũ trụ</span>
-          <h1 class="article-title">
-            Kính viễn vọng James Webb công bố hình ảnh mới về tinh vân Lạp Hộ
-          </h1>
-          <div class="article-meta">
-            <span>Tác giả: Trần Khoa Y</span>
-            <span>Ngày đăng: 16/04/2026</span>
-            <span>6 phút đọc</span>
+    <main style="background:#fbf9f6; padding:40px 0;">
+      <div class="container">
+        <h1 class="text-center fw-bold mb-5">Vũ trụ & Thiên nhiên</h1>
+        <section class="mb-5">
+          <div class="text-center mb-4">
+            <h2 class="h4 fw-bold text-primary">Bài Viết Nổi Bật</h2>
+            <p class="text-muted">Khám phá những tin tức khoa học và thiên nhiên hấp dẫn nhất</p>
           </div>
-        </header>
+          <div class="row">
+            <div class="col-lg-8">
+              <article class="tgt-card bg-white" style="border-radius: 24px;">
+                <img src="../images/vutru-featured.jpg" alt="Featured" class="w-100" style="height: 300px; object-fit: cover; border-radius: 24px 24px 0 0;">
+                <div class="p-4">
+                  <span class="text-uppercase fw-bold text-secondary small">Nổi bật</span>
+                  <h3 class="mt-2 fw-bold">Khám phá bí ẩn vũ trụ: Từ Big Bang đến tương lai</h3>
+                  <p class="text-muted">Hành trình khám phá vũ trụ từ vụ nổ lớn đến những khám phá mới nhất về vật chất tối và năng lượng tối.</p>
+                  <small class="text-muted">Nguyễn Văn A • 8 phút</small>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex flex-column gap-3">
+                <article class="tgt-card bg-white p-3" style="border-radius: 16px;">
+                  <img src="../images/nature-vietnam.webp" alt="Thiên nhiên Việt Nam" class="w-100 mb-2" style="height: 120px; object-fit: cover; border-radius: 12px;">
+                  <h5 class="fw-bold">Thiên nhiên Việt Nam</h5>
+                  <p class="text-muted small">Bảo tồn đa dạng sinh học trong thời đại biến đổi khí hậu.</p>
+                </article>
+                <article class="tgt-card bg-white p-3" style="border-radius: 16px;">
+                  <img src="../images/space-tech.jpg" alt="Công nghệ vũ trụ" class="w-100 mb-2" style="height: 120px; object-fit: cover; border-radius: 12px;">
+                  <h5 class="fw-bold">Công nghệ vũ trụ</h5>
+                  <p class="text-muted small">Những tiến bộ mới trong công nghệ thám hiểm không gian.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <img
-          src="../images/vutru1.png"
-          alt="Featured Image"
-          class="article-featured-img"
-        />
+        <section class="mb-5">
+          <div class="text-center mb-4">
+            <h2 class="h4 fw-bold text-primary">Danh Sách Bài Viết</h2>
+            <p class="text-muted">Tất cả bài viết về vũ trụ và thiên nhiên</p>
+          </div>
+        </section>
 
-        <div class="article-content">
-          <p>
-            Cơ quan Hàng không và Vũ trụ Hoa Kỳ (NASA) vừa công bố những hình ảnh 
-            độ phân giải cao chưa từng có về tinh vân Lạp Hộ (Orion Nebula), được 
-            chụp bởi siêu kính viễn vọng không gian James Webb. Đây là một bước tiến 
-            lớn trong việc nghiên cứu quá trình hình thành sao.
-          </p>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
 
-          <h2>Bức tranh rực rỡ của các vườn ươm sao</h2>
-          <p>
-            Nằm cách Trái Đất khoảng 1.350 năm ánh sáng, tinh vân Lạp Hộ là một 
-            trong những khu vực hình thành sao gần nhất và dễ quan sát nhất. Nhờ hệ 
-            thống camera hồng ngoại tối tân, James Webb đã có thể nhìn xuyên qua các 
-            đám mây bụi khí dày đặc – điều mà kính Hubble trước đây không thể làm được.
-          </p>
+          <div class="col">
+            <article class="tgt-card h-100 bg-white">
+              <img src="../images/vutru-one.jpg" alt="James Webb" class="w-100">
+              <div class="p-4">
+                <span class="text-uppercase fw-bold text-secondary small">Không gian</span>
+                <h3 class="mt-2 fw-bold">James Webb phát hiện dấu hiệu sự sống ngoài Trái Đất</h3>
+                <p class="text-muted">Dữ liệu từ James Webb Space Telescope cho thấy sự tồn tại của hơi nước và một số hợp chất hữu cơ trong khí quyển của các ngoại hành tinh gần Trái Đất. Đây là bước tiến quan trọng trong việc tìm kiếm sự sống ngoài hành tinh. Các nhà khoa học đánh giá rằng những phát hiện này có thể giúp hiểu rõ hơn về điều kiện hình thành và phát triển của sự sống. Đồng thời, nó mở ra cơ hội cho các sứ mệnh thám hiểm không gian trong tương lai. Việt Nam cũng đang từng bước tham gia vào các chương trình nghiên cứu vũ trụ thông qua hợp tác quốc tế.</p>
+                <small class="text-muted">Trần Khoa Y • 6 phút</small>
+              </div>
+            </article>
+          </div>
 
-          <p>
-            Các nhà thiên văn học cho biết, dữ liệu mới này cung cấp manh mối quan 
-            trọng về cách thức các ngôi sao trẻ, tương tự như Mặt Trời của chúng ta, 
-            được sinh ra và phát triển trong những triệu năm đầu tiên của vòng đời.
-          </p>
+          <div class="col">
+            <article class="tgt-card h-100 bg-white">
+              <img src="../images/vutru-two.jpg" alt="Sóng hấp dẫn" class="w-100">
+              <div class="p-4">
+                <span class="text-uppercase fw-bold text-secondary small">Thiên văn</span>
+                <h3 class="mt-2 fw-bold">Sóng hấp dẫn hé lộ bí ẩn va chạm hố đen</h3>
+                <p class="text-muted">LIGO đã ghi nhận thêm nhiều tín hiệu sóng hấp dẫn phát ra từ các vụ va chạm giữa các hố đen trong vũ trụ. Những tín hiệu này cung cấp thông tin quý giá về khối lượng, tốc độ và cấu trúc của các vật thể cực lớn. Nhờ đó, các nhà khoa học có thể hiểu rõ hơn về quá trình tiến hóa của vũ trụ. Công nghệ đo sóng hấp dẫn cũng góp phần thúc đẩy nhiều lĩnh vực khoa học hiện đại. Đây được xem là một trong những thành tựu nổi bật của vật lý thiên văn thế kỷ 21</p>
+                <small class="text-muted">Lê Minh Huy • 5 phút</small>
+              </div>
+            </article>
+          </div>
 
-          <h2>Tương lai của công cuộc khám phá không gian</h2>
-          <p>
-            Không chỉ dừng lại ở tinh vân Lạp Hộ, James Webb còn đang tiếp tục hướng 
-            ống kính đến các ngoại hành tinh xa xôi để tìm kiếm dấu hiệu của nước 
-            và các phân tử hữu cơ. Các khám phá tiếp theo hứa hẹn sẽ định hình lại 
-            hiểu biết của nhân loại về nguồn gốc của vũ trụ.
-          </p>
+          <div class="col">
+            <article class="tgt-card h-100 bg-white">
+              <img src="../images/vutru-three.jpg" alt="Bão Mặt Trời" class="w-100">
+              <div class="p-4">
+                <span class="text-uppercase fw-bold text-secondary small">Thời tiết vũ trụ</span>
+                <h3 class="mt-2 fw-bold">Bão Mặt Trời có thể làm gián đoạn GPS</h3>
+                <p class="text-muted">Các chuyên gia cảnh báo những đợt bão Mặt Trời mạnh có thể gây nhiễu tín hiệu vệ tinh và hệ thống định vị toàn cầu (GPS). Hiện tượng này xảy ra khi các luồng plasma từ Mặt Trời va chạm với từ trường Trái Đất. Hậu quả có thể ảnh hưởng đến hàng không, vận tải biển và các hệ thống liên lạc. Trong bối cảnh phụ thuộc lớn vào công nghệ, rủi ro này ngày càng được quan tâm. Việt Nam cũng đang theo dõi sát sao các dự báo để đảm bảo an toàn cho hạ tầng số.</p>
+                <small class="text-muted">Phạm Lan Anh • 4 phút</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="tgt-card h-100 bg-white">
+              <img src="../images/vutru-four.jpg" alt="Biến đổi khí hậu" class="w-100">
+              <div class="p-4">
+                <span class="text-uppercase fw-bold text-secondary small">Môi trường</span>
+                <h3 class="mt-2 fw-bold">Biến đổi khí hậu gây thời tiết cực đoan tại Việt Nam</h3>
+                <p class="text-muted">Theo IPCC, biến đổi khí hậu đang làm gia tăng tần suất và cường độ của các hiện tượng thời tiết cực đoan trên toàn cầu. Tại Việt Nam, tình trạng nắng nóng kéo dài, mưa lớn và xâm nhập mặn ngày càng nghiêm trọng. Điều này ảnh hưởng trực tiếp đến đời sống người dân và hoạt động sản xuất. Các chuyên gia nhấn mạnh cần có giải pháp phát triển bền vững và bảo vệ môi trường. Đồng thời, nâng cao nhận thức cộng đồng là yếu tố then chốt để ứng phó lâu dài.</p>
+                <small class="text-muted">Nguyễn Đức Vinh • 7 phút</small>
+              </div>
+            </article>
+          </div>
+
         </div>
 
-        <footer class="article-footer">
-          <h3 class="related-news-title">Tin liên quan</h3>
-          <div class="related-grid">
-            <a href="#" class="related-card">
-              <img src="../images/thiennhien1.png" alt="Related News" />
-              <h4>Báo cáo mới về tình trạng tan băng tại Bắc Cực</h4>
-            </a>
-            <a href="#" class="related-card">
-              <img src="../images/vutru2.png" alt="Related News" />
-              <h4>Tàu thăm dò Perseverance tìm thấy cấu trúc đá lạ trên Sao Hỏa</h4>
-            </a>
+        <section class="mb-5" style="margin-top: 3rem;">
+          <div class="text-center mb-4">
+            <h2 class="h4 fw-bold text-primary">Phân Tích Sâu</h2>
+            <p class="text-muted">Những bài phân tích chuyên sâu về khoa học và môi trường</p>
           </div>
-        </footer>
-      </article>
+          <div class="row">
+            <div class="col-md-6">
+              <article class="tgt-card bg-white p-4" style="border-radius: 24px;">
+                <h4 class="fw-bold">Tác động của biến đổi khí hậu đến hệ sinh thái Việt Nam</h4>
+                <p class="text-muted">Phân tích chi tiết về những thay đổi trong hệ sinh thái và đề xuất giải pháp bảo tồn.</p>
+                <small class="text-muted">Phân tích • 12 phút đọc</small>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="tgt-card bg-white p-4" style="border-radius: 24px;">
+                <h4 class="fw-bold">Công nghệ AI trong nghiên cứu vũ trụ</h4>
+                <p class="text-muted">Cách AI đang thay đổi cách chúng ta khám phá và hiểu về vũ trụ.</p>
+                <small class="text-muted">Phân tích • 10 phút đọc</small>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5 text-center">
+          <div class="tgt-card bg-light text-dark p-5" style="border-radius: 24px;">
+            <h3 class="fw-bold mb-3">Theo Dõi Tin Tức Mới Nhất</h3>
+            <p class="mb-4">Đăng ký nhận bản tin để không bỏ lỡ những cập nhật về khoa học và thiên nhiên</p>
+            <button class="btn btn-dark btn-lg">Đăng Ký Ngay</button>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <div class="text-center mb-4">
+            <h2 class="h4 fw-bold text-primary">Xu Hướng</h2>
+            <p class="text-muted">Những chủ đề đang được quan tâm nhất</p>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                <h5 class="fw-bold">#BiếnĐổiKhíHậu</h5>
+                <p class="text-muted small">1.2K bài viết</p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                <h5 class="fw-bold">#VũTrụ</h5>
+                <p class="text-muted small">890 bài viết</p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                <h5 class="fw-bold">#ThiênNhiên</h5>
+                <p class="text-muted small">756 bài viết</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </main>
+
+    <footer class="footer mt-5 pt-5 pb-4">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 col-lg-5 mb-4 mb-lg-0 d-flex flex-column gap-3">
+                    <a href="./Home.html" class="text-decoration-none text-white mb-2">
+                        <span class="footer-logo-text fw-bold">BÁO CHÍ 
+                            <span aria-label="DESIGN" class="d-inline-flex">
+                            <span style="color: #c30000">D</span>
+                            <span style="color: #1c9a3f">E</span>
+                            <span style="color: #f2c200">S</span>
+                            <span style="color: #7a3bd6">I</span>
+                            <span style="color: #ff8a00">G</span>
+                            <span style="color: #1262ff">N</span></span>
+                        </span>
+                    </a>
+                    <h3 class="footer-school fw-semibold fst-italic text-uppercase mb-2">Nhóm 7 - Báo Chí Design</h3>
+                    <div class="d-flex align-items-start gap-2">
+                        <div>
+                            <span class="text-white">📍 Địa chỉ: Hà Nội, Việt Nam</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                        <div>
+                            <span class="text-white">📱 ĐT: 0283 8940 390</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                        <div>
+                            <span class="text-white">✉️ Email: contact@baochisdesign.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <iframe class="w-100" height="250"
+                        src="https://www.google.com/maps?q=IUH%20HCM&output=embed">
+                    </iframe>
+                </div>
+            </div>
+            <div class="row pt-4 align-items-center footer-bottom fw-light text-white">
+                <div class="col-12 text-center">© 2026 Báo Chí Design - Nhóm 7</div>
+            </div>
+        </div>
+    </footer>
+
   </body>
 </html>
