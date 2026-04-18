@@ -38,7 +38,7 @@ function initSportsPreview() {
 				card.hidden = false;
 				img.src = src;
 
-				var sportTextEl = button.querySelector(".s3-sport-text, .news-s3-sport-text");
+				var sportTextEl = button.querySelector(".s3-sport-text");
 				var sportText = sportTextEl ? sportTextEl.textContent : "Ảnh thể thao";
 				img.alt = sportText + " " + String(index + 1);
 			});

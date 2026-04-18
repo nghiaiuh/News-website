@@ -1,5 +1,5 @@
 /* SECTION 3: Crafting Culture collage */
-.news-section-three {
+.s3-section {
   margin-top: 3vw;
   background: var(--news-white);
   padding: clamp(44px, 5vw, 68px) 0 clamp(32px, 4vw, 60px);
@@ -9,7 +9,7 @@
   isolation: isolate;
 }
 
-.news-section-three::before {
+.s3-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -22,18 +22,18 @@
   z-index: 0;
 }
 
-.news-section-three > * {
+.s3-section > * {
   position: relative;
   z-index: 1;
 }
 
-.news-s3-header {
+.s3-header {
   position: relative;
   width: 100%;
   min-height: clamp(320px, 30vw, 460px);
 }
 
-.news-s3-copy {
+.s3-copy {
   position: relative;
   z-index: 4;
   top: auto;
@@ -43,7 +43,7 @@
   max-width: min(65%, 1000px);
 }
 
-.news-s3-title {
+.s3-title {
   color: var(--nw-text);
   text-transform: uppercase;
   font-family: var(--nw-font-display);
@@ -55,7 +55,7 @@
   transform-origin: left top;
 }
 
-.news-s3-title span {
+.s3-title span {
   display: block;
 }
 
@@ -72,7 +72,7 @@
   letter-spacing: -0.02em;
 }
 
-.news-s3-sports-line {
+.s3-sports-category {
   margin: clamp(20px, 2vw, 32px) 0 0;
   display: flex;
   flex-wrap: wrap;
@@ -341,11 +341,11 @@
 
 /* ===== RESPONSIVE: Large Tablet ===== */
 @media (max-width: 1199.98px) {
-  .news-s3-copy {
+  .s3-copy {
     max-width: min(76%, 980px);
   }
 
-  .news-s3-title {
+  .s3-title {
     font-size: clamp(4.2rem, 14vw, 10.5rem);
   }
 
@@ -360,11 +360,11 @@
 
 /* ===== RESPONSIVE: Tablet ===== */
 @media (max-width: 991.98px) {
-  .news-section-three {
+  .s3-section {
     padding: 28px 12px 44px;
   }
 
-  .news-s3-header {
+  .s3-header {
     min-height: auto;
   }
 
@@ -376,11 +376,11 @@
     width: 100%;
   }
 
-  .news-s3-copy {
+  .s3-copy {
     max-width: 100%;
   }
 
-  .news-s3-sports-line {
+  .s3-sports-category {
     gap: 8px;
   }
 
@@ -389,7 +389,7 @@
     padding: 0.4rem 0.76rem;
   }
 
-  .news-s3-title {
+  .s3-title {
     font-size: clamp(3.7rem, 16vw, 8.3rem);
     transform: scaleX(0.86);
   }
@@ -407,7 +407,7 @@
 
 /* ===== RESPONSIVE: Mobile ===== */
 @media (max-width: 575.98px) {
-  .news-section-three {
+  .s3-section {
     padding: 22px 10px 34px;
   }
 
@@ -431,7 +431,7 @@
     height: 54vw;
   }
 
-  .news-s3-title {
+  .s3-title {
     font-size: clamp(3rem, 20vw, 4.6rem);
     line-height: 0.84;
     transform: scaleX(0.88);
