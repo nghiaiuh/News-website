@@ -6,28 +6,31 @@
     <title>Đăng ký - News Website</title>
     <link rel="stylesheet" href="../css/local-fonts.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/components/root.css" />
-    <link rel="stylesheet" href="../css/components/navbar.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/login.css" />
-    <script src="../js/lib/jquery/jquery-4.0.0.js" defer></script>
-    <script src="../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
-    <script src="../js/lib/gsap/gsap.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
     <script src="../js/login.js" defer></script>
     <script src="../js/dang-ky.js" defer></script>
+    <script src="../js/cursor.js" defer></script>
   </head>
   <body class="news-body news-auth-body">
     <div id="news-cursor" aria-hidden="true"></div>
-    <div id="news-auth-intro" aria-hidden="true">
-      <div class="news-auth-intro-text">
-        <span class="news-auth-intro-line">BÁO CHÍ</span>
-        <span class="news-auth-intro-line">Đăng ký</span>
-      </div>
-    </div>
     <header class="news-header sticky-top">
       <nav class="navbar navbar-expand-xl navbar-dark news-navbar py-0">
         <div class="container-fluid px-3 px-xl-4">
-          <a class="navbar-brand news-logo py-3" href="./Index.html">
-            <span>BÁO CHÍ</span> <span class="news-logo-accent"> DESIGN</span>
+          <a class="navbar-brand news-logo py-3" href="./Home.html">
+            <span>
+              BÁO CHÍ
+              <span aria-label="DESIGN">
+                <span style="color: #c30000">D</span>
+                <span style="color: #1c9a3f">E</span>
+                <span style="color: #f2c200">S</span>
+                <span style="color: #7a3bd6">I</span>
+                <span style="color: #ff8a00">G</span>
+                <span style="color: #1262ff">N</span>
+              </span>
+            </span>
           </a>
           <button
             class="navbar-toggler border-0 shadow-none"
@@ -58,7 +61,7 @@
               id="user-options"
             ></ul>
             <a
-              href="./Index.html"
+              href="./Home.html"
               class="btn news-login-btn rounded-0 px-4 py-3"
             >
               Trang chủ
@@ -78,10 +81,15 @@
           <div class="col-lg-6">
             <div class="news-auth-copy">
               <p class="news-auth-kicker">Tin tức online</p>
-              <h1 class="news-auth-title">Bắt đầu <span>ngay hôm nay</span></h1>
+              <h1
+                class="news-auth-title news-auth-title-typing"
+                data-typed-text="Bắt đầu|ngay hôm nay"
+                data-typed-accent="ngay hôm nay"
+                aria-label="Bắt đầu ngay hôm nay"
+              ></h1>
               <p class="news-auth-subtitle">
-                Tạo tài khoản để lưu bài viết, theo dõi chủ đề yêu thích và nhận
-                thông báo độc quyền.
+                Tạo tài khoản để lưu bài viết, theo dõi chủ đề
+                yêu thích và nhận thông báo độc quyền.
               </p>
               <div class="news-auth-stat">
                 <div><strong>500+</strong> Bài viết mỗi ngày</div>
@@ -90,11 +98,17 @@
               <ul class="news-auth-feature-list">
                 <li class="news-auth-feature-item">
                   <span class="news-auth-feature-icon">01</span>
-                  <span>Cá nhân hoá nội dung theo sở thích đọc của bạn.</span>
+                  <span
+                    >Cá nhân hoá nội dung theo sở thích đọc của
+                    bạn.</span
+                  >
                 </li>
                 <li class="news-auth-feature-item">
                   <span class="news-auth-feature-icon">02</span>
-                  <span>Lưu danh sách đọc và tiếp tục ở bất kỳ đâu.</span>
+                  <span
+                    >Lưu danh sách đọc và tiếp tục ở bất kỳ
+                    đâu.</span
+                  >
                 </li>
                 <li class="news-auth-feature-item">
                   <span class="news-auth-feature-icon">03</span>
@@ -106,9 +120,14 @@
                 <span class="news-auth-badge">Không spam email</span>
                 <span class="news-auth-badge">Dữ liệu riêng tư</span>
               </div>
-              <div class="news-auth-quote">
-                “Tài khoản giúp tôi lưu lại các bài phân tích dài.”
-                <strong>— Đức Huy</strong>
+              <div
+                class="news-auth-quote"
+                data-quotes="Tài khoản giúp tôi lưu lại các bài phân tích dài.— Phúc Khang|Đăng ký xong là có gợi ý đúng sở thích đọc.— Công Khoa|Tôi dễ dàng quản lý danh sách bài đã lưu.— Sơn Nghĩa"
+              >
+                <span class="news-auth-quote-text">
+                  “Tài khoản giúp tôi lưu lại các bài phân tích dài.”
+                </span>
+                <strong class="news-auth-quote-author">— Đức Huy</strong>
               </div>
             </div>
           </div>
@@ -117,38 +136,74 @@
               <h2>Đăng ký</h2>
               <form id="registerForm" novalidate>
                 <div class="mb-3">
-                  <label class="form-label" for="uname">Tên đăng nhập</label>
+                  <label class="form-label" for="uname"
+                    >Tên đăng nhập</label
+                  >
                   <input
                     class="form-control news-auth-input"
                     id="uname"
                     type="text"
                     placeholder="Nhập tên đăng nhập"
                     autocomplete="username"
+                    minlength="4"
+                    maxlength="20"
+                    required
                   />
+                  <div class="news-auth-hint">4-20 ký tự, chỉ gồm chữ, số hoặc dấu gạch dưới.</div>
                   <div class="news-auth-message" id="txt_uname"></div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label" for="password">Mật khẩu</label>
-                  <input
-                    class="form-control news-auth-input"
-                    id="password"
-                    type="password"
-                    placeholder="Nhập mật khẩu"
-                    autocomplete="new-password"
-                  />
+                  <div class="input-group news-auth-input-group">
+                    <input
+                      class="form-control news-auth-input"
+                      id="password"
+                      type="password"
+                      placeholder="Nhập mật khẩu"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <button
+                      class="btn news-auth-toggle"
+                      type="button"
+                      data-toggle-password="password"
+                      aria-label="Hiện mật khẩu"
+                      aria-pressed="false"
+                    >
+                      Hiện
+                    </button>
+                  </div>
+                  <div class="news-auth-strength" aria-hidden="true">
+                    <div class="news-auth-strength-bar" id="passwordStrengthBar"></div>
+                  </div>
+                  <div class="news-auth-strength-text" id="passwordStrengthText">
+                    Mật khẩu nên có chữ hoa, chữ thường, số và ký tự đặc biệt.
+                  </div>
                   <div class="news-auth-message" id="txt_password"></div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label" for="passauth"
                     >Xác nhận mật khẩu</label
                   >
-                  <input
-                    class="form-control news-auth-input"
-                    id="passauth"
-                    type="password"
-                    placeholder="Nhập lại mật khẩu"
-                    autocomplete="new-password"
-                  />
+                  <div class="input-group news-auth-input-group">
+                    <input
+                      class="form-control news-auth-input"
+                      id="passauth"
+                      type="password"
+                      placeholder="Nhập lại mật khẩu"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <button
+                      class="btn news-auth-toggle"
+                      type="button"
+                      data-toggle-password="passauth"
+                      aria-label="Hiện mật khẩu xác nhận"
+                      aria-pressed="false"
+                    >
+                      Hiện
+                    </button>
+                  </div>
                   <div class="news-auth-message" id="txt_passauth"></div>
                 </div>
                 <div class="mb-3">
@@ -159,23 +214,29 @@
                     type="email"
                     placeholder="ten@email.com"
                     autocomplete="email"
+                    required
                   />
                   <div class="news-auth-message" id="txt_email"></div>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label" for="phone">Số điện thoại</label>
+                  <label class="form-label" for="phone"
+                    >Số điện thoại</label
+                  >
                   <input
                     class="form-control news-auth-input"
                     id="phone"
                     type="tel"
                     placeholder="0xxxxxxxxx"
                     autocomplete="tel"
+                    inputmode="numeric"
+                    required
                   />
+                  <div class="news-auth-hint">Nhập 10-11 số, bắt đầu bằng số 0.</div>
                   <div class="news-auth-message" id="txt_phone"></div>
                 </div>
                 <div
                   id="registerMessage"
-                  class="news-auth-message"
+                  class="news-auth-message news-auth-feedback"
                   aria-live="polite"
                 ></div>
                 <button type="submit" class="btn news-auth-submit w-100">
@@ -188,7 +249,9 @@
               </form>
               <div class="news-auth-help">
                 Đã có tài khoản?
-                <a class="news-auth-link" href="./dang-nhap.html">Đăng nhập</a>
+                <a class="news-auth-link" href="./dang-nhap.html"
+                  >Đăng nhập</a
+                >
               </div>
               <div class="news-auth-mini">
                 <span>Ưu tiên mật khẩu mạnh, khó đoán.</span>
