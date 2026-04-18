@@ -13,6 +13,17 @@
 }
 
 /* ===== TITLE (text clip effect) ===== */
+.title-wrap {
+  background: var(--nw-text);
+  margin-top: 40px;
+  padding: 140px 1.5rem 80px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .display-title {
   display: inline-block;
   transform: scaleY(2);
@@ -25,13 +36,3 @@
   text-align: center;
 }
 
-.title-wrap {
-  background: var(--nw-text);
-  margin-top: 40px;
-  padding: 140px 1.5rem 80px;
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
