@@ -10,7 +10,7 @@
 
   /* ── Navbar behaviours (scroll hide/show + hovers) ───────── */
   function initNavbarBehaviours() {
-    var header = document.querySelector(".header, .news-header");
+    var header = document.querySelector(".header");
     if (!header) return;
 
     var mobileMenu = document.getElementById("nwMenu");
@@ -28,7 +28,7 @@
       var currentY = window.scrollY || window.pageYOffset || 0;
 
       if (currentY <= 2) {
-        header.classList.remove("header--hidden", "news-header--hidden");
+        header.classList.remove("header--hidden");
         lastScrollY = currentY;
         ticking = false;
         return;
@@ -38,13 +38,14 @@
         var diff = currentY - lastScrollY;
 
         if (diff > delta && currentY > hideAfter) {
+          // Scroll xuống → ẩn navbar
           header.classList.add("header--hidden");
-          header.classList.remove("news-header--hidden");
         } else if (diff < -delta) {
-          header.classList.remove("header--hidden", "news-header--hidden");
+          // Scroll lên → hiện navbar
+          header.classList.remove("header--hidden");
         }
       } else {
-        header.classList.remove("header--hidden", "news-header--hidden");
+        header.classList.remove("header--hidden");
       }
 
       lastScrollY = currentY;
@@ -67,18 +68,18 @@
 
     if (mobileMenu) {
       mobileMenu.addEventListener("show.bs.collapse", function () {
-        header.classList.remove("header--hidden", "news-header--hidden");
+        header.classList.remove("header--hidden");
       });
       mobileMenu.addEventListener("shown.bs.collapse", function () {
-        header.classList.remove("header--hidden", "news-header--hidden");
+        header.classList.remove("header--hidden");
       });
     }
 
     // ── GSAP hover effects (menu items + hamburger) ──────────
     if (typeof gsap !== "undefined") {
-      var menuItems = document.querySelectorAll(".main-menu .menu-item, .news-main-menu .news-menu-item");
+      var menuItems = document.querySelectorAll(".main-menu .menu-item");
       menuItems.forEach(function (item) {
-        var link = item.querySelector(".menu-link, .news-menu-link");
+        var link = item.querySelector(".menu-link");
         if (!link) return;
 
         gsap.set(link, { y: 0 });
@@ -102,10 +103,10 @@
         });
       });
 
-      var hamburgerBtn = document.querySelector(".hamburger-btn, .news-hamburger-btn");
+      var hamburgerBtn = document.querySelector(".hamburger-btn");
       if (hamburgerBtn) {
-        var topLine = hamburgerBtn.querySelector(".ham-top, .news-ham-top");
-        var bottomLine = hamburgerBtn.querySelector(".ham-bottom, .news-ham-bottom");
+        var topLine = hamburgerBtn.querySelector(".ham-top");
+        var bottomLine = hamburgerBtn.querySelector(".ham-bottom");
 
         gsap.set([topLine, bottomLine], { x: 0 });
 
@@ -182,7 +183,7 @@
   /* ── Template ───────────────────────────────────────────── */
   function buildNavbar(activeKey) {
     return (
-      '<header class="header sticky-top">' +
+      '<header class="header">' +
         '<nav class="navbar navbar-dark py-0">' +
           '<div class="container-fluid px-3 px-xl-4">' +
 

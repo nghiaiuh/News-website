@@ -3,24 +3,26 @@
 	 ============================================================= */
 
 /* ===== NAVBAR ===== */
-.news-header,
 .header {
-  transition: transform 0.35s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
-.news-header.news-header--hidden,
 .header.header--hidden {
   transform: translateY(-105%);
 }
 
-.news-navbar,
 .navbar {
   background: var(--nw-white);
   border-bottom: 1px solid var(--nw-border);
 }
 
-.news-navbar-shell,
 .navbar-shell {
   position: relative;
   display: grid;
@@ -29,7 +31,6 @@
 }
 
 /* ===== TEAM TAG ===== */
-.news-team-tag,
 .team-tag {
   grid-column: 1;
   font-family: var(--nw-font-heading);
@@ -41,13 +42,11 @@
 }
 
 /* ===== HAMBURGER BUTTON ===== */
-.news-navbar-shell .navbar-toggler,
 .navbar-shell .navbar-toggler {
   grid-column: 5;
   justify-self: end;
 }
 
-.news-navbar .navbar-collapse,
 .navbar .navbar-collapse {
   background: var(--news-white);
   margin-top: 0.35rem;
@@ -55,7 +54,6 @@
 }
 
 /* ===== LOGO ===== */
-.news-logo,
 .logo {
   grid-column: 3;
   font-family: var(--nw-font-serif);
@@ -72,14 +70,12 @@
   letter-spacing: -0.03em;
 }
 
-.news-logo [aria-label="DESIGN"],
 .logo [aria-label="DESIGN"] {
   letter-spacing: -0.03em;
   word-spacing: -0.3em;
 }
 
 /* ===== MENU ===== */
-.news-main-menu,
 .main-menu {
   display: flex;
   flex-direction: row;
@@ -89,19 +85,15 @@
   list-style: none;
 }
 
-.news-main-menu-left,
 .main-menu-left {
   grid-column: 2;
   justify-self: end;
 }
-
-.news-main-menu-right,
 .main-menu-right {
   grid-column: 4;
   justify-self: start;
 }
 
-.news-menu-link,
 .menu-link {
   color: var(--nw-text);
   font-family: var(--nw-font-serif);
@@ -113,9 +105,6 @@
   text-align: center;
 }
 
-.news-menu-link:hover,
-.news-menu-link:focus,
-.news-menu-link:active,
 .menu-link:hover,
 .menu-link:focus,
 .menu-link:active,
@@ -127,7 +116,6 @@
 }
 
 /* ===== LOGIN BUTTON ===== */
-.news-login-btn,
 .login-btn {
   background: var(--nw-text);
   color: var(--nw-black);
@@ -135,14 +123,12 @@
   border: none;
 }
 
-.news-login-btn:hover,
 .login-btn:hover {
   background: var(--nw-ink-strong);
   color: var(--nw-black);
 }
 
 /* ===== HAMBURGER ICON ===== */
-.news-hamburger-btn,
 .hamburger-btn {
   display: flex;
   align-items: center;
@@ -150,7 +136,6 @@
   padding: 6px 4px;
 }
 
-.news-hamburger,
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -158,7 +143,6 @@
   width: 28px;
 }
 
-.news-ham-line,
 .ham-line {
   display: block;
   height: 1.5px;
@@ -168,16 +152,15 @@
   will-change: transform;
 }
 
-/* Tắt transition trên navbar (trừ menu/hamburger line) */
-.news-navbar *:not(.news-menu-item):not(.news-menu-link):not(.news-ham-line),
-.navbar *:not(.menu-item):not(.menu-link):not(.ham-line) {
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .navbar-toggler {
   transition: none !important;
   animation: none !important;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1199.98px) {
-  .news-navbar-shell,
   .navbar-shell {
     grid-template-columns: minmax(64px, 1fr) auto minmax(44px, 1fr);
     grid-template-areas:
@@ -187,42 +170,34 @@
     row-gap: 0.2rem;
     column-gap: 0.5rem;
   }
-
-  .news-team-tag,
   .team-tag {
     grid-area: team;
   }
 
-  .news-logo,
   .logo {
     grid-area: logo;
     justify-self: center;
   }
 
-  .news-navbar-shell .navbar-toggler,
   .navbar-shell .navbar-toggler {
     grid-area: toggler;
   }
 
-  .news-main-menu-left,
   .main-menu-left {
     grid-area: left;
     justify-self: center;
   }
 
-  .news-main-menu-right,
   .main-menu-right {
     grid-area: right;
     justify-self: center;
   }
 
-  .news-main-menu,
   .main-menu {
     flex-wrap: wrap;
     gap: 0.3rem 0.9rem;
   }
 
-  .news-menu-link,
   .menu-link {
     font-size: 0.86rem;
     padding-top: 0.2rem;
@@ -231,17 +206,14 @@
 }
 
 @media (max-width: 575.98px) {
-  .news-team-tag,
   .team-tag {
     font-size: 0.8rem;
   }
 
-  .news-logo,
   .logo {
     font-size: 1.35rem;
   }
 
-  .news-menu-link,
   .menu-link {
     font-size: 0.76rem;
   }
