@@ -1,0 +1,90 @@
+/* CSS cho trang chi tiết bài viết (Code sinh viên) */
+
+body {
+    background-color: #f4f4f4; /* Nền xám nhạt cho nổi hộp bài viết */
+}
+
+.article-container {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px; /* Bo góc cơ bản */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ đơn giản */
+}
+
+/* Phần tiêu đề và tác giả */
+.article-title {
+    color: #111;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.article-meta {
+    color: #666;
+    font-size: 14px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd; /* Kẻ gạch dưới */
+}
+
+/* Nội dung chữ */
+.article-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.article-content h3 {
+    color: #1c9a3f; /* Màu xanh lá cho mục đời sống */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Khối trích dẫn mộc mạc */
+.quote-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #1c9a3f;
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Tin liên quan */
+.related-news {
+    margin-top: 50px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.related-news h3 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.related-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+/* Hover đổi màu link đơn giản */
+.related-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.related-item a:hover {
+    color: #1c9a3f;
+}
+
+.related-item a:hover img {
+    opacity: 0.8; /* Đưa chuột vào thì ảnh hơi mờ đi - hiệu ứng sinh viên hay dùng */
+}

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/components/navbar.css" />
     <link rel="stylesheet" href="../../css/components/footer.css">
-    <link rel="stylesheet" href="../../css/styles_giaitridoisong.css" />
+    <link rel="stylesheet" href="../../css/chudetintuc/chude_GTvDS.css"/>
 
     <script src="../../js/lib/jquery/jquery-4.0.0.js"></script>
     <script src="../../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
@@ -69,7 +69,7 @@
         </nav>
     </header>
     <main>
-        <section class="hero-section py-4 py-lg-5">
+        <section class="hero-section py-4 py-lg-5 gsap-fade-in">
             <div class="container">
                 <div class="row align-items-center"> 
                     <div class="col-12 col-md-6 mb-4 mb-md-0">
@@ -80,134 +80,141 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="d-flex gap-3 justify-content-center justify-content-md-end">
-                            <div class="rounded-4 overflow-hidden shadow-sm" style="width: 220px; height: 300px; background-color: #e9ecef;">
-                                <img src="../../images/giaitridoisong/ngoinharung.jpg" alt="Hình 1" class="w-100 h-100 object-fit-cover">
+                            <div class="rounded-4 overflow-hidden shadow-sm hero-img-box">
+                                <img src="../../images/Dune_Part_2_.png" alt="Hình 1" class="w-100 h-100 object-fit-cover">
                             </div>
-                            <div class="rounded-4 overflow-hidden shadow-sm mt-5" style="width: 220px; height: 300px; background-color: #e9ecef;">
-                                <img src="../../images/giaitridoisong/epstein.jpg" alt="Hình 2" class="w-100 h-100 object-fit-cover">
+                            <div class="rounded-4 overflow-hidden shadow-sm mt-5 hero-img-box">
+                                <img src="../../images/s3_carnival.png" alt="Hình 2" class="w-100 h-100 object-fit-cover">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container featured-section mb-5">
+
+        <section class="container section-entertainment mb-5 gsap-fade-in px-4">
             <h2 class="section-title mb-4 fw-bold">Giải Trí</h2>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-12 col-lg-7">
-                    <article class="lead-article rounded-4 shadow-sm mb-4 mb-lg-0 h-100">
-                        <a href="#" class="d-block h-100 rounded-4 overflow-hidden text-decoration-none">
-                            <img src="../../images/Dune_Part_2_.png" alt="Phim" class="bg-img">
-                            <div class="overlay-content d-flex flex-column justify-content-end h-100 p-4">
-                                <span class="tag text-uppercase fw-bold text-white mb-2" style="font-size: 11px; background-color: #c30000; padding: 4px 10px; border-radius: 4px; width: max-content;">Review Phim</span>
-                                <h3 class="title mt-2 fw-bold text-white">Dune: Part Two - Kiệt tác thị giác càn quét phòng vé toàn cầu</h3>
-                                <p class="excerpt mb-3">Phần hai của siêu phẩm viễn tưởng không chỉ thỏa mãn người xem bằng hình ảnh tráng lệ mà còn đào sâu vào tâm lý nhân vật.</p>
-                                <div class="audio-player mt-auto mb-3 p-3 rounded-3">
-                                    <p class="mb-2 text-white" style="font-weight: 600; font-size: 14px;">🎧 Nghe podcast Review:</p>
-                                    <audio controls style="width: 100%; height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
+                    <article class="lead-article rounded-4 shadow-sm h-100 position-relative overflow-hidden">
+                        <a href="#" class="d-block h-100 text-decoration-none">
+                            <img src="../../images/Dune_Part_2_.png" alt="Phim" class="bg-img position-absolute w-100 h-100 object-fit-cover start-0 top-0" style="z-index: 0;">
+                            
+                            <div class="hero-overlay d-flex flex-column justify-content-end h-100 p-4 position-relative">
+                                <span class="badge tag-entertainment text-uppercase mb-2 align-self-start py-2 px-3">Review Phim</span>
+                                <h3 class="article-title mt-2 fw-bold text-white fs-4">Dune: Part Two - Kiệt tác thị giác càn quét phòng vé toàn cầu</h3>
+                                <p class="text-light mb-3">Phần hai của siêu phẩm viễn tưởng không chỉ thỏa mãn người xem bằng hình ảnh tráng lệ mà còn đào sâu vào tâm lý nhân vật.</p>
+                                
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
+                                    <p class="mb-2 text-white fw-semibold fs-6">🎧 Nghe podcast Review:</p>
+                                    <audio controls class="w-100" style="height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
                                 </div>
-                                <span class="meta" style="font-size: 13px;">Tác giả: Minh Quân • 8 phút đọc</span>
+                                <span class="meta text-white-50 fs-6">Tác giả: Minh Quân • 8 phút đọc</span>
                             </div>
                         </a>
                     </article>
                 </div>
                 <div class="col-12 col-lg-5">
-                    <div class="side-list d-flex flex-column h-100 justify-content-between">
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
-                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                    <div class="side-list d-flex flex-column h-100 gap-3">
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
                                 <img src="../../images/s3_carnival.png" class="w-100 h-100 object-fit-cover">
                             </a>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Music</span>
-                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Sức nóng của các lễ hội âm nhạc mùa hè 2026</h6></a>
-                                <span class="meta text-muted" style="font-size: 12px;">4 phút đọc</span>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-danger text-uppercase" style="font-size: 11px;">Music</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Sức nóng của các lễ hội âm nhạc mùa hè 2026</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">4 phút đọc</span>
                             </div>
                         </article>
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
-                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                        
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
                                 <img src="../../images/tennis.jpg" class="w-100 h-100 object-fit-cover">
                             </a>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">TV Shows</span>
-                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Chương trình thực tế thể thao lên ngôi năm nay</h6></a>
-                                <span class="meta text-muted" style="font-size: 12px;">5 phút đọc</span>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-danger text-uppercase" style="font-size: 11px;">TV Shows</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Chương trình thực tế thể thao lên ngôi năm nay</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">5 phút đọc</span>
                             </div>
                         </article>
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
-                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
                                 <img src="../../images/suckhoe3.png" class="w-100 h-100 object-fit-cover">
                             </a>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Celeb</span>
-                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Phong cách sống của các ngôi sao</h6></a>
-                                <span class="meta text-muted" style="font-size: 12px;">6 phút đọc</span>
-                            </div>
-                        </article>
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 bg-white shadow-sm">
-                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
-                                <img src="../../images/suckhoe1.png" class="w-100 h-100 object-fit-cover">
-                            </a>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Trend</span>
-                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Trào lưu làm video ngắn trên mạng xã hội</h6></a>
-                                <span class="meta text-muted" style="font-size: 12px;">3 phút đọc</span>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-danger text-uppercase" style="font-size: 11px;">Celeb</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Phong cách sống của các ngôi sao Hollywood</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">6 phút đọc</span>
                             </div>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="banner text-center py-5 bg-light rounded-4 mx-3 mx-lg-5 mb-5 shadow-sm">
-            <div class="container">
-                <h2 class="fw-bold">Bắt đầu ngày mới với năng lượng tích cực</h2>
-                <p class="text-muted">Nhận bản tin 30 giây mỗi sáng giúp bạn sống chậm lại.</p>
-                <a href="dang-nhap.html" class="btn btn-dark px-4 py-2 mt-2 rounded-pill">Đăng Ký Nhận Bản Tin →</a>
+
+        <section class="container mb-5 gsap-fade-in">
+            <div class="banner text-center py-5 rounded-4 shadow-sm w-100">
+                <h2 class="fw-bold text-white mb-3 article-title">Bắt đầu ngày mới với năng lượng tích cực</h2>
+                <p class="text-white-50 fs-5 mb-4">Nhận bản tin 30 giây mỗi sáng giúp bạn sống chậm lại.</p>
+                <a href="../dang-nhap.html" class="btn btn-warning px-5 py-2 fw-bold rounded-pill shadow-sm">Đăng Ký Nhận Bản Tin →</a>
             </div>
         </section>
-        <section class="container featured-section mb-5">
+
+        <section class="container section-lifestyle mb-5 gsap-fade-in px-4">
             <h2 class="section-title mb-4 fw-bold">Đời Sống</h2>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-12 col-lg-7">
-                    <article class="lead-article rounded-4 shadow-sm mb-4 mb-lg-0 h-100">
-                        <a href="#" class="d-block h-100 rounded-4 overflow-hidden text-decoration-none">
-                            <img src="../images/giaitridoisong/minimalist.webp" alt="Sống tối giản" class="bg-img">
-                            <div class="overlay-content d-flex flex-column justify-content-end h-100 p-4">
-                                <span class="tag text-uppercase fw-bold text-white mb-2" style="font-size: 11px; background-color: #1c9a3f; padding: 4px 10px; border-radius: 4px; width: max-content;">Slow Living</span>
-                                <h3 class="title mt-2 fw-bold text-white">Nghệ thuật Sống tối giản: Bớt vật chất, thêm bình yên</h3>
-                                <p class="excerpt mb-3">Hướng dẫn dọn dẹp không gian sống để nhường chỗ cho sự thanh thản trong tâm hồn.</p>
-                                <div class="audio-player mt-auto mb-3 p-3 rounded-3">
-                                    <p class="mb-2 text-white" style="font-weight: 600; font-size: 14px;">🎧 Nghe podcast Review:</p>
-                                    <audio controls style="width: 100%; height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
+                    <article class="lead-article rounded-4 shadow-sm h-100 position-relative overflow-hidden">
+                        <a href="../giai-tri-doi-song/song-toi-gian.html" class="d-block h-100 text-decoration-none">
+                            <img src="../../images/giaitridoisong/minimalist.webp" alt="Sống tối giản" class="bg-img position-absolute w-100 h-100 object-fit-cover start-0 top-0" style="z-index: 0;">
+                            
+                            <div class="hero-overlay d-flex flex-column justify-content-end h-100 p-4 position-relative">
+                                <span class="badge tag-lifestyle text-uppercase mb-2 align-self-start py-2 px-3">Slow Living</span>
+                                <h3 class="article-title mt-2 fw-bold text-white fs-4">Nghệ thuật Sống tối giản: Bớt vật chất, thêm bình yên</h3>
+                                <p class="text-light mb-3">Hướng dẫn dọn dẹp không gian sống để nhường chỗ cho sự thanh thản trong tâm hồn, thoát khỏi áp lực đô thị.</p>
+                                
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
+                                    <p class="mb-2 text-white fw-semibold fs-6">🎧 Nghe podcast Review:</p>
+                                    <audio controls class="w-100" style="height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
                                 </div>
-                                <span class="meta" style="font-size: 13px;">Tác giả: Diệp Anh • 7 phút đọc</span>
+                                <span class="meta text-white-50 fs-6">Tác giả: Diệp Anh • 7 phút đọc</span>
                             </div>
                         </a>
                     </article>
                 </div>
                 <div class="col-12 col-lg-5">
-                    <div class="side-list d-flex flex-column h-100 justify-content-between">
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
-                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/suckhoe2.png" class="w-100 h-100 object-fit-cover"></div>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Habits</span>
-                                <h6 class="title mb-1 fw-bold">Sức mạnh của việc thức dậy sớm</h6>
-                                <span class="meta text-muted" style="font-size: 12px;">5 phút đọc</span>
+                    <div class="side-list d-flex flex-column h-100 gap-3">
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/suckhoe1.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Habits</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Sức mạnh của việc thức dậy lúc 5 giờ sáng</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">5 phút đọc</span>
                             </div>
                         </article>
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
-                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/injury.png" class="w-100 h-100 object-fit-cover"></div>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Tips</span>
-                                <h6 class="title mb-1 fw-bold">Cách phòng tránh mỏi lưng</h6>
-                                <span class="meta text-muted" style="font-size: 12px;">4 phút đọc</span>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/injury.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Tips</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Mẹo set up góc làm việc phòng tránh đau lưng</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">4 phút đọc</span>
                             </div>
                         </article>
-                        <article class="side-article d-flex align-items-center border rounded-4 p-2 bg-white shadow-sm">
-                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/volleyball.jpg" class="w-100 h-100 object-fit-cover"></div>
-                            <div class="content ms-3">
-                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Outdoor</span>
-                                <h6 class="title mb-1 fw-bold">Hoạt động thể thao ngoài trời</h6>
-                                <span class="meta text-muted" style="font-size: 12px;">3 phút đọc</span>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/volleyball.jpg" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Outdoor</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title article-title mt-1 mb-2 fw-bold">Lợi ích bất ngờ từ các hoạt động thể thao ngoài trời</h6></a>
+                                <span class="meta text-muted" style="font-size: 13px;">3 phút đọc</span>
                             </div>
                         </article>
                     </div>
@@ -219,7 +226,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 col-lg-5 mb-4 mb-lg-0 d-flex flex-column gap-3">
-                    <a href="./Home.html" class="text-decoration-none text-white mb-2">
+                    <a href="../Index.html" class="text-decoration-none text-white mb-2">
                         <span class="footer-logo fw-bold">BÁO CHÍ 
                             <span aria-label="DESIGN" class="d-inline-flex">
                             <span style="color: #c30000">D</span>
@@ -271,8 +278,8 @@
             </div>
         </div>
     </footer>
-    <button id="scrollToTop" class="btn scroll-top rounded-circle shadow-lg d-flex align-items-center justify-content-center">
-        <img src="../../images/arrow-circle-up.png" alt="Lên đầu trang" style="width: 30px; height: auto;">
+    <button id="scrollToTop" class="btn btn-light rounded-circle shadow-lg d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 m-3 z-3" style="width: 50px; height: 50px; display: none;">
+        <img src="../../images/arrow-circle-up.png" alt="Lên đầu trang" style="width: 24px; height: auto;">
     </button>
 </body>
 </html>
