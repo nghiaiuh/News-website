@@ -1,65 +1,71 @@
-/* =============================================================
-	 NAVBAR.CSS — Shared navbar, menu and hamburger styles
-	 ============================================================= */
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--news-text);
+}
+
+::selection {
+  background-color: var(--news-white);
+  color: var(--news-black);
+}
 /* ===== NAVBAR ===== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1030;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+.news-header {
+  transition: transform 0.35s ease;
   will-change: transform;
 }
 
-.header.header--hidden {
+.news-header.news-header--hidden {
   transform: translateY(-105%);
 }
 
-.navbar {
-  background: var(--nw-white);
-  border-bottom: 1px solid var(--nw-border);
+.news-navbar {
+  background: var(--news-white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.navbar-shell {
+.news-navbar-shell {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr auto;
   align-items: center;
 }
 
-/* ===== TEAM TAG ===== */
-.team-tag {
-  grid-column: 1;
-  font-family: var(--nw-font-heading);
-  font-size: var(--nw-text-base);
-  font-weight: 500;
-  color: var(--nw-text);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ===== HAMBURGER BUTTON ===== */
-.navbar-shell .navbar-toggler {
-  grid-column: 5;
-  justify-self: end;
-}
-
-.navbar .navbar-collapse {
+.news-navbar .navbar-collapse {
   background: var(--news-white);
   margin-top: 0.35rem;
   padding-bottom: 0.75rem;
 }
 
+/* Tắt transition trên navbar (trừ menu/hamburger line) */
+.news-navbar *:not(.news-menu-item):not(.news-menu-link):not(.news-ham-line) {
+  transition: none !important;
+  animation: none !important;
+}
+/* ===== TEAM TAG ===== */
+.news-team-tag {
+  grid-column: 1;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--news-text);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 /* ===== LOGO ===== */
-.logo {
+.news-logo {
   grid-column: 3;
-  font-family: var(--nw-font-serif);
+  font-family: "Merriweather", serif;
   font-weight: 700;
-  font-size: var(--nw-text-2xl);
-  color: var(--nw-logo-color);
+  font-size: 2rem;
+  color: #4e4d4d;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
@@ -70,35 +76,33 @@
   letter-spacing: -0.03em;
 }
 
-.logo [aria-label="DESIGN"] {
+.news-logo [aria-label="DESIGN"] {
   letter-spacing: -0.03em;
   word-spacing: -0.3em;
-}
-
-/* ===== MENU ===== */
-.main-menu {
+}/* ===== MENU ===== */
+.news-main-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.6rem, 1.6vw, 1.35rem);
   list-style: none;
 }
 
-.main-menu-left {
+.news-main-menu-left {
   grid-column: 2;
   justify-self: end;
 }
 
-.main-menu-right {
+.news-main-menu-right {
   grid-column: 4;
   justify-self: start;
 }
 
-.menu-link {
-  color: var(--nw-text);
-  font-family: var(--nw-font-serif);
-  font-size: var(--nw-text-base);
+.news-menu-link {
+  color: var(--news-text);
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
   padding-top: 0.2rem;
@@ -106,63 +110,59 @@
   text-align: center;
 }
 
-.menu-link:hover,
-.menu-link:focus,
-.menu-link:active,
+.news-menu-link:hover,
+.news-menu-link:focus,
+.news-menu-link:active,
 .navbar-dark .nav-link:hover,
 .navbar-dark .nav-link:focus,
 .navbar-dark .nav-link.active,
 .navbar-dark .nav-link:active {
   color: var(--news-text) !important;
-}
-
-/* ===== LOGIN BUTTON ===== */
-.login-btn {
-  background: var(--nw-text);
-  color: var(--nw-black);
+}/* ===== LOGIN BUTTON ===== */
+.news-login-btn {
+  background: var(--news-text);
+  color: var(--news-black);
   font-weight: 700;
   border: none;
 }
 
-.login-btn:hover {
-  background: var(--nw-ink-strong);
-  color: var(--nw-black);
+.news-login-btn:hover {
+  background: var(--news-text);
+  color: var(--news-black);
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.news-navbar-shell .navbar-toggler {
+  grid-column: 5;
+  justify-self: end;
 }
 
 /* ===== HAMBURGER ICON ===== */
-.hamburger-btn {
+.news-hamburger-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6px 4px;
 }
 
-.hamburger {
+.news-hamburger {
   display: flex;
   flex-direction: column;
   gap: 6px;
   width: 28px;
 }
 
-.ham-line {
+.news-ham-line {
   display: block;
   height: 1.5px;
-  background-color: var(--nw-text);
+  background-color: var(--news-text);
   border-radius: 2px;
   width: 100%;
   will-change: transform;
 }
-
-.navbar .nav-link,
-.navbar .navbar-brand,
-.navbar .navbar-toggler {
-  transition: none !important;
-  animation: none !important;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1199.98px) {
-  .navbar-shell {
+  .news-navbar-shell {
     grid-template-columns: minmax(64px, 1fr) auto minmax(44px, 1fr);
     grid-template-areas:
       "team logo toggler"
@@ -172,35 +172,31 @@
     column-gap: 0.5rem;
   }
 
-  .team-tag {
+  .news-team-tag {
     grid-area: team;
   }
-
-  .logo {
+  .news-logo {
     grid-area: logo;
     justify-self: center;
   }
-
-  .navbar-shell .navbar-toggler {
+  .news-navbar-shell .navbar-toggler {
     grid-area: toggler;
   }
-
-  .main-menu-left {
+  .news-main-menu-left {
     grid-area: left;
     justify-self: center;
   }
-
-  .main-menu-right {
+  .news-main-menu-right {
     grid-area: right;
     justify-self: center;
   }
 
-  .main-menu {
+  .news-main-menu {
     flex-wrap: wrap;
     gap: 0.3rem 0.9rem;
   }
 
-  .menu-link {
+  .news-menu-link {
     font-size: 0.86rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
@@ -208,15 +204,13 @@
 }
 
 @media (max-width: 575.98px) {
-  .team-tag {
+  .news-team-tag {
     font-size: 0.8rem;
   }
-
-  .logo {
+  .news-logo {
     font-size: 1.35rem;
   }
-
-  .menu-link {
+  .news-menu-link {
     font-size: 0.76rem;
   }
 }

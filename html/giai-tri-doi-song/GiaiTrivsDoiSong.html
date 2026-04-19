@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giải trí & Đời sống - Tin tức</title>
+
+    <link rel="stylesheet" href="../../css/lib/local-fonts.css" />
+    <link rel="stylesheet" href="../../css/components/root.css" />
+    <link rel="stylesheet" href="../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/components/navbar.css" />
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/styles_giaitridoisong.css" />
+
+    <script src="../../js/lib/jquery/jquery-4.0.0.js"></script>
+    <script src="../../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
+    <script src="../../js/dangky-dangnhap/auth.js"></script>
+    <script src="../../js/scrolltoTop.js"></script>
+</head>
+<body class="news-body page-main">
+    <header class="news-header sticky-top">
+        <nav class="navbar navbar-dark news-navbar py-0">
+            <div class="container-fluid px-3 px-xl-4">
+                <div class="news-navbar-shell w-100">
+                    <span class="news-team-tag">Nhóm 7</span>
+                    <ul class="navbar-nav mb-0 news-main-menu news-main-menu-left">
+                        <li class="nav-item news-menu-item">
+                            <a class="nav-link news-menu-link" href="../kinh-te-chinh-tri/KinhTevsChinhTri.html">Kinh tế & Chính trị</a>
+                        </li>
+                        <li class="nav-item news-menu-item">
+                            <a class="nav-link news-menu-link" href="../the-thao-suc-khoe/TheThaovsSucKhoe.html">Thể thao & Sức khoẻ</a>
+                        </li>
+                    </ul>
+                    <a class="news-logo py-3 mb-0" href="../Index.html">
+                        <span>
+                            BÁO CHÍ
+                            <span aria-label="DESIGN">
+                                <span style="color: #c30000">D</span>
+                                <span style="color: #1c9a3f">E</span>
+                                <span style="color: #f2c200">S</span>
+                                <span style="color: #7a3bd6">I</span>
+                                <span style="color: #ff8a00">G</span>
+                                <span style="color: #1262ff">N</span>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="navbar-nav mb-0 news-main-menu news-main-menu-right">
+                        <li class="nav-item news-menu-item">
+                            <a class="nav-link news-menu-link" href="./GiaiTrivsDoiSong.html">Giải trí & Đời sống</a>
+                        </li>
+                        <li class="nav-item news-menu-item">
+                            <a class="nav-link news-menu-link" href="../vu-tru-thien-nhien/VuTruvsThienNhien.html">Vũ trụ & Thiên nhiên</a>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler border-0 shadow-none news-hamburger-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nwMenu">
+                        <span class="news-hamburger" aria-hidden="true">
+                            <span class="news-ham-line news-ham-top"></span>
+                            <span class="news-ham-line news-ham-bottom"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="nwMenu">
+                    <div class="d-flex justify-content-center justify-content-lg-end w-100 mb-2 news-menu-actions">
+                        <a class="btn news-login-btn rounded-0 px-4 py-4" id="login-link" href="../dang-nhap.html">Đăng nhập</a>
+                    </div>
+                    <ul class="navbar-nav list-inline mb-0 justify-content-center justify-content-lg-end w-100" id="user-options"></ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section py-4 py-lg-5">
+            <div class="container">
+                <div class="row align-items-center"> 
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                        <h1 class="fw-bold mb-3">Giải Trí & Đời Sống</h1>
+                        <p class="text-muted fs-5">
+                            Cập nhật nhịp sống hiện đại, nơi giải trí, xu hướng và câu chuyện đời thường hội tụ – mang đến góc nhìn sâu sắc và truyền cảm hứng mỗi ngày.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+                            <div class="rounded-4 overflow-hidden shadow-sm" style="width: 220px; height: 300px; background-color: #e9ecef;">
+                                <img src="../../images/giaitridoisong/ngoinharung.jpg" alt="Hình 1" class="w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="rounded-4 overflow-hidden shadow-sm mt-5" style="width: 220px; height: 300px; background-color: #e9ecef;">
+                                <img src="../../images/giaitridoisong/epstein.jpg" alt="Hình 2" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container featured-section mb-5">
+            <h2 class="section-title mb-4 fw-bold">Giải Trí</h2>
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <article class="lead-article rounded-4 shadow-sm mb-4 mb-lg-0 h-100">
+                        <a href="#" class="d-block h-100 rounded-4 overflow-hidden text-decoration-none">
+                            <img src="../../images/Dune_Part_2_.png" alt="Phim" class="bg-img">
+                            <div class="overlay-content d-flex flex-column justify-content-end h-100 p-4">
+                                <span class="tag text-uppercase fw-bold text-white mb-2" style="font-size: 11px; background-color: #c30000; padding: 4px 10px; border-radius: 4px; width: max-content;">Review Phim</span>
+                                <h3 class="title mt-2 fw-bold text-white">Dune: Part Two - Kiệt tác thị giác càn quét phòng vé toàn cầu</h3>
+                                <p class="excerpt mb-3">Phần hai của siêu phẩm viễn tưởng không chỉ thỏa mãn người xem bằng hình ảnh tráng lệ mà còn đào sâu vào tâm lý nhân vật.</p>
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3">
+                                    <p class="mb-2 text-white" style="font-weight: 600; font-size: 14px;">🎧 Nghe podcast Review:</p>
+                                    <audio controls style="width: 100%; height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
+                                </div>
+                                <span class="meta" style="font-size: 13px;">Tác giả: Minh Quân • 8 phút đọc</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="side-list d-flex flex-column h-100 justify-content-between">
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                                <img src="../../images/s3_carnival.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Music</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Sức nóng của các lễ hội âm nhạc mùa hè 2026</h6></a>
+                                <span class="meta text-muted" style="font-size: 12px;">4 phút đọc</span>
+                            </div>
+                        </article>
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                                <img src="../../images/tennis.jpg" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">TV Shows</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Chương trình thực tế thể thao lên ngôi năm nay</h6></a>
+                                <span class="meta text-muted" style="font-size: 12px;">5 phút đọc</span>
+                            </div>
+                        </article>
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                                <img src="../../images/suckhoe3.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Celeb</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Phong cách sống của các ngôi sao</h6></a>
+                                <span class="meta text-muted" style="font-size: 12px;">6 phút đọc</span>
+                            </div>
+                        </article>
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 bg-white shadow-sm">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;">
+                                <img src="../../images/suckhoe1.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Trend</span>
+                                <a href="#" class="text-decoration-none text-dark"><h6 class="title mb-1 fw-bold">Trào lưu làm video ngắn trên mạng xã hội</h6></a>
+                                <span class="meta text-muted" style="font-size: 12px;">3 phút đọc</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner text-center py-5 bg-light rounded-4 mx-3 mx-lg-5 mb-5 shadow-sm">
+            <div class="container">
+                <h2 class="fw-bold">Bắt đầu ngày mới với năng lượng tích cực</h2>
+                <p class="text-muted">Nhận bản tin 30 giây mỗi sáng giúp bạn sống chậm lại.</p>
+                <a href="dang-nhap.html" class="btn btn-dark px-4 py-2 mt-2 rounded-pill">Đăng Ký Nhận Bản Tin →</a>
+            </div>
+        </section>
+        <section class="container featured-section mb-5">
+            <h2 class="section-title mb-4 fw-bold">Đời Sống</h2>
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <article class="lead-article rounded-4 shadow-sm mb-4 mb-lg-0 h-100">
+                        <a href="#" class="d-block h-100 rounded-4 overflow-hidden text-decoration-none">
+                            <img src="../images/giaitridoisong/minimalist.webp" alt="Sống tối giản" class="bg-img">
+                            <div class="overlay-content d-flex flex-column justify-content-end h-100 p-4">
+                                <span class="tag text-uppercase fw-bold text-white mb-2" style="font-size: 11px; background-color: #1c9a3f; padding: 4px 10px; border-radius: 4px; width: max-content;">Slow Living</span>
+                                <h3 class="title mt-2 fw-bold text-white">Nghệ thuật Sống tối giản: Bớt vật chất, thêm bình yên</h3>
+                                <p class="excerpt mb-3">Hướng dẫn dọn dẹp không gian sống để nhường chỗ cho sự thanh thản trong tâm hồn.</p>
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3">
+                                    <p class="mb-2 text-white" style="font-weight: 600; font-size: 14px;">🎧 Nghe podcast Review:</p>
+                                    <audio controls style="width: 100%; height: 40px;"><source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg"></audio>
+                                </div>
+                                <span class="meta" style="font-size: 13px;">Tác giả: Diệp Anh • 7 phút đọc</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="side-list d-flex flex-column h-100 justify-content-between">
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
+                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/suckhoe2.png" class="w-100 h-100 object-fit-cover"></div>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Habits</span>
+                                <h6 class="title mb-1 fw-bold">Sức mạnh của việc thức dậy sớm</h6>
+                                <span class="meta text-muted" style="font-size: 12px;">5 phút đọc</span>
+                            </div>
+                        </article>
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 mb-3 bg-white shadow-sm">
+                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/injury.png" class="w-100 h-100 object-fit-cover"></div>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Tips</span>
+                                <h6 class="title mb-1 fw-bold">Cách phòng tránh mỏi lưng</h6>
+                                <span class="meta text-muted" style="font-size: 12px;">4 phút đọc</span>
+                            </div>
+                        </article>
+                        <article class="side-article d-flex align-items-center border rounded-4 p-2 bg-white shadow-sm">
+                            <div class="img-wrap rounded-3 overflow-hidden" style="width: 120px; height: 90px;"><img src="../../images/volleyball.jpg" class="w-100 h-100 object-fit-cover"></div>
+                            <div class="content ms-3">
+                                <span class="tag text-uppercase fw-bold text-secondary" style="font-size: 11px;">Outdoor</span>
+                                <h6 class="title mb-1 fw-bold">Hoạt động thể thao ngoài trời</h6>
+                                <span class="meta text-muted" style="font-size: 12px;">3 phút đọc</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer mt-5 pt-5 pb-4">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 col-lg-5 mb-4 mb-lg-0 d-flex flex-column gap-3">
+                    <a href="./Home.html" class="text-decoration-none text-white mb-2">
+                        <span class="footer-logo fw-bold">BÁO CHÍ 
+                            <span aria-label="DESIGN" class="d-inline-flex">
+                            <span style="color: #c30000">D</span>
+                            <span style="color: #1c9a3f">E</span>
+                            <span style="color: #f2c200">S</span>
+                            <span style="color: #7a3bd6">I</span>
+                            <span style="color: #ff8a00">G</span>
+                            <span style="color: #1262ff">N</span></span>
+                        </span>
+                    </a>
+                    <p style="font-size:16px ; color: #888; line-height: 1.6;">
+                    Kênh thông tin tổng hợp đa phương tiện. Cập nhật tin tức đời sống, thể thao và công nghệ nhanh chóng, chính xác.
+                    </p>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="footer-icon">
+                            <img src="../../images/footer/graduation-cap-white.png" alt="Địa chỉ" class="w-100 h-auto">
+                        </div>
+                        <div class="footer-text fw-light">
+                            Địa chỉ: Số 12 Nguyễn Văn Bảo, P. Hạnh Thông, Thành phố Hồ Chí Minh
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="footer-icon">
+                            <img src="../../images/footer/phone-call-white.png" alt="Điện thoại" class="w-100 h-auto">
+                        </div>
+                        <div class="footer-text fw-light">
+                            ĐT: 0123456789
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="footer-icon">
+                            <img src="../../images/footer/envelope-white.png" alt="Email" class="w-100 h-auto">
+                        </div>
+                        <div class="footer-text fw-light">
+                            Email: nhom7.htcnw@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="footer-map-wrap">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.858237841131!2d106.68427047460395!3d10.82215888932938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528e5496d03cf%3A0xa5b8e7395ec636b9!2sIndustrial%20University%20of%20Ho%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1714532679904!5m2!1sen!2s" 
+                            class="w-100 h-100 border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4 text-center footer-bottom fw-light">
+                <div class="col-12 text-md-end text-white">© 2026 Báo Chí DESIGN. Đây là project của học sinh - Không dành cho mục đích "thương mại"</div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTop" class="btn scroll-top rounded-circle shadow-lg d-flex align-items-center justify-content-center">
+        <img src="../../images/arrow-circle-up.png" alt="Lên đầu trang" style="width: 30px; height: auto;">
+    </button>
+</body>
+</html>

@@ -1,72 +1,48 @@
 /* =========================================================
-   1. KHAI BÁO FONT LOCAL
+   CẤU HÌNH CHUNG (BASE)
    ========================================================= */
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/google/Inter-Regular-400.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/google/Inter-SemiBold-600.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('../fonts/google/PlayfairDisplay-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-/* =========================================================
-   2. CẤU HÌNH CHUNG (BASE)
-   ========================================================= */
-.tgt-page {
+.page-main {
     background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
     color: #333333;
 }
 
-.tgt-page a {
+.page-main a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
 }
 
-.tgt-page a:hover {
+.page-main a:hover {
     color: #888888;
 }
 
-.tgt-section-title {
-    font-family: 'Playfair Display', serif;
+.section-title {
     font-size: 32px;
     text-align: center;
     margin-bottom: 40px;
     color: #1a1a1a;
 }
 
+main{
+    background-color: linear-gradient(180deg, #ffffff 0%, #4e4d4d 100%);
+}
 /* =========================================================
-   3. HERO SECTION (Tiêu đề chuyên mục)
+   HERO SECTION (Tiêu đề chuyên mục)
    ========================================================= */
-.tgt-hero {
+.hero-section {
     text-align: center;
     padding: 80px 20px;
     margin-bottom: 60px;
 }
 
-.tgt-hero h1 {
-    font-family: 'Playfair Display', serif;
+.hero-section h1 {
     font-size: 48px;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 20px;
 }
 
-.tgt-hero p {
+.hero-section p {
     font-size: 18px;
     color: #555555;
     max-width: 700px;
@@ -75,57 +51,80 @@
 }
 
 /* =========================================================
-   4. BỐ CỤC FEATURED: 1 BÀI TRÁI + LIST BÀI PHẢI
+   BỐ CỤC FEATURED: BÀI TRÁI OVERLAY + LIST BÀI PHẢI
    ========================================================= */
-.tgt-featured-section {
+.featured-section {
     margin-bottom: 60px;
 }
 
-/* Bài chính bên trái */
-.tgt-lead-article {
-    margin-bottom: 30px;
+/* --- Bài chính bên trái (LAYOUT MỚI: OVERLAY NỀN ẢNH) --- */
+.lead-article {
+    position: relative;
+    min-height: 480px; /* Chiều cao cố định để chữ nổi lên đẹp */
+    border: none !important;
 }
 
-.tgt-lead-article .img-wrap {
-    display: block;
-    overflow: hidden;
-    margin-bottom: 24px;
-    border-radius: 2px;
+.lead-article > a {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-.tgt-lead-article .img-wrap img {
+/* Hình nền nằm dưới cùng */
+.lead-article .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 4/3;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    z-index: 1;
+    transition: transform 0.6s ease;
 }
 
-.tgt-lead-article:hover .img-wrap img {
-    transform: scale(1.02);
+.lead-article:hover .bg-img {
+    transform: scale(1.05); /* Hiệu ứng zoom ảnh khi trỏ chuột */
 }
 
-.tgt-lead-article .title {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    color: #1a1a1a;
+/* Lớp phủ gradient và chứa nội dung */
+.lead-article .overlay-content {
+    position: relative;
+    z-index: 2;
+    /* Gradient tối từ dưới lên trên để dễ đọc chữ */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+    width: 100%;
 }
 
-.tgt-lead-article .excerpt {
+.lead-article .title {
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.lead-article .excerpt {
     font-size: 16px;
-    color: #555;
+    color: #e0e0e0;
     line-height: 1.6;
-    margin-bottom: 16px;
 }
 
-/* List bài nhỏ bên phải */
-.tgt-side-list {
+.lead-article .meta {
+    color: #b0b0b0;
+}
+
+/* Làm đẹp hộp podcast nổi trên nền ảnh */
+.lead-article .audio-player {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- List bài nhỏ bên phải --- */
+.side-list {
     display: flex;
     flex-direction: column;
 }
 
-.tgt-side-article {
+.side-article {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -134,36 +133,35 @@
     border-bottom: 1px solid #eaeaea;
 }
 
-.tgt-side-article:last-child {
+.side-article:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.tgt-side-article .img-wrap {
+.side-article .img-wrap {
     width: 140px;
     flex-shrink: 0;
     margin-bottom: 0;
 }
 
-.tgt-side-article .img-wrap img {
+.side-article .img-wrap img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-.tgt-side-article:hover .img-wrap img {
+.side-article:hover .img-wrap img {
     transform: scale(1.05);
 }
 
-.tgt-side-article .content {
+.side-article .content {
     display: flex;
     flex-direction: column;
 }
 
-.tgt-side-article .title {
-    font-family: 'Playfair Display', serif;
+.side-article .title {
     font-size: 20px;
     line-height: 1.3;
     margin-bottom: 8px;
@@ -171,96 +169,38 @@
 }
 
 /* =========================================================
-   5. BỐ CỤC CARD LƯỚI (Grid 3 & 4 cột)
+   DẢI BANNER NHẬN BẢN TIN
    ========================================================= */
-.tgt-card {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-}
-
-.tgt-card .img-wrap {
-    overflow: hidden;
-    margin-bottom: 20px;
-    border-radius: 2px;
-}
-
-.tgt-card .img-wrap img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.tgt-card:hover .img-wrap img {
-    transform: scale(1.03);
-}
-
-.tgt-card .tag, .tgt-lead-article .tag, .tgt-side-article .tag {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #666666;
-    margin-bottom: 12px;
-    display: block;
-}
-
-.tgt-card .title {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    line-height: 1.3;
-    margin-bottom: 12px;
-    color: #1a1a1a;
-}
-
-.tgt-card .meta, .tgt-lead-article .meta, .tgt-side-article .meta {
-    font-size: 13px;
-    color: #888888;
-}
-
-.tgt-card.small-card .title {
-    font-size: 19px;
-}
-
-/* =========================================================
-   6. DẢI BANNER NHẬN BẢN TIN
-   ========================================================= */
-.tgt-banner {
-    background: linear-gradient(180deg, #f3ede6 0%, #e9dfd3 100%);
+.banner {
+    background: linear-gradient(180deg, #948f8f 0%, #dce80083 100%);
     padding: 70px 20px;
     text-align: center;
     margin: 60px 0;
 }
 
-.tgt-banner h2 {
-    font-family: 'Playfair Display', serif;
+.banner h2 {
     font-size: 36px;
     margin-bottom: 15px;
 }
 
-.tgt-banner p {
+.banner p {
     font-size: 16px;
     margin-bottom: 30px;
     color: #444;
 }
-.tgt-banner-a{
-    color: #ffffff;
-}
-.tgt-btn {
+
+.btn-dark {
     background-color: #32373c;
     color: #ffffff;
     padding: 12px 30px;
     border-radius: 50px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 14px;
     display: inline-block;
     transition: background 0.3s;
 }
 
-.tgt-btn:hover {
+.btn-dark:hover {
     background-color: #1a1a1a;
     color: #ffffff;
 }
