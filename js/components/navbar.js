@@ -29,7 +29,7 @@
   ];
 
   const NAV_RIGHT = [
-    { href: "./giai-tri-doi-song/homeGTDS.html", label: "Giải trí &amp; Đời sống", key: "lifestyle" },
+    { href: "./giai-tri-doi-song/GiaiTrivsDoiSong.html", label: "Giải trí &amp; Đời sống", key: "lifestyle" },
     { href: "./vu-tru-thien-nhien/vu-tru-thien-nhien-detail.html", label: "Vũ trụ &amp; Thiên nhiên", key: "cosmos" },
   ];
 

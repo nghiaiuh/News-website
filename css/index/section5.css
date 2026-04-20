@@ -1,0 +1,140 @@
+.s5-section {
+  height: 300vh; /* Section dài đủ cho 200vh scroll animation + 100vh hiển thị đầu */
+  font-family: inherit;
+  background-color: white;
+}
+
+/* STICKY WRAP: Dính ở top viewport trong khi .s5-section scroll qua (CSS native, không cần GSAP pin) */
+.s5-sticky-wrap {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.s5-scene-container {
+  height: 100%; /* Kế thừa 100vh từ .s5-sticky-wrap */
+}
+/* Sắp xếp các item ảnh collage */
+.s5-gallery-item {
+  border-radius: 14px;
+  /* Transform-origin center để scale phóng to ảnh center đều và mượt */
+  transform-origin: center center;
+}
+
+/* =========================================
+   BỐ CỤC 5 ẢNH - KHỚP VỚI ẢNH MẪU
+   Phân tích:
+   - Cột trái (22%): 2 ảnh chồng dọc
+   - Giữa (50%): 1 ảnh lớn landscape chiếm từ 10%-70%
+   - Cột phải (22%): 2 ảnh chồng dọc từ đỉnh
+   - Gap giữa các cột: ~2%
+   Container: w-100 h-100 (= 100vw x 100vh)
+   ========================================= */
+
+/* CENTER MAIN: Ảnh chính - landscape rộng ở trung tâm */
+.item-center {
+  left: 26%;
+  top: 32%;
+  width: 48%;
+  height: 43%;  /* Chiều cao nhỏ hơn, nhưng đủ chỗ cho Title & Subtitle bên trong */
+  transform: none;
+  z-index: 2;
+}
+
+/* LEFT TOP: Cao, chiếm nửa trên cột trái */
+.item-tl {
+  left: 1.5%;
+  top: 22%;
+  width: 23%;
+  height: 38%;
+}
+
+/* LEFT BOTTOM: Ngay dưới item-tl, hết phần còn lại */
+.item-bl {
+  left: 1.5%;
+  top: 63%;
+  width: 23%;
+  height: 25%;
+}
+
+/* RIGHT TOP: Từ đỉnh viewport, chiếm nửa trên cột phải */
+.item-tr {
+  right: 1.5%;
+  top: 22%;
+  width: 23%;
+  height: 30%;
+}
+
+/* RIGHT BOTTOM: Ngay dưới item-tr */
+.item-br {
+  right: 1.5%;
+  top: 55%;
+  width: 23%;
+  height: 38%;
+}
+.item-tr1 {
+  right: 25%;
+  top: 14%;
+  width: 20%;
+  height: 15%;
+}
+.item-bl1 {
+  left: 25%;
+  bottom: 2%;
+  width: 20%;
+  height: 20%;
+}
+/* Hiệu ứng hover hiện tóm tắt trên ảnh collage */
+.s5-item-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  /* Đảm bảo overlay ko chèn chặn click vào link */
+  pointer-events: none;
+}
+
+/* Khi hover vào collage item */
+.s5-gallery-item:hover .s5-item-overlay {
+  opacity: 1;
+}
+
+/* Nature Feed List ở dưới đáy */
+.s5-nature-feed {
+  pointer-events: auto; /* Cho phép click & scroll */
+}
+
+.s5-feed-track {
+  /* Ẩn scrollbar ngang cho tinh tế */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.s5-feed-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Border-right ngăn cách giữa các item */
+.s5-feed-item:not(:last-child) {
+  border-right: 1px solid rgba(169, 169, 169, 0.4); /* Màu bạc thuỷ ngân mờ */
+}
+
+.s5-feed-img-wrap {
+  width: 100px;
+  height: 70px;
+}
+
+.transition-img {
+  transition: transform 0.4s ease;
+}
+
+/* Hover phóng to ảnh trong feed */
+.s5-feed-item:hover .transition-img {
+  transform: scale(1.15);
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

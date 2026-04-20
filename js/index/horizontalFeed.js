@@ -1,149 +1,57 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var containers = [].slice.call(document.querySelectorAll(".feed-container"));
-  if (!containers.length) return;
-
-  containers.forEach(function (container) {
-    var track = container.querySelector(".feed-track");
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".feed-container").forEach(container => {
+    const track = container.querySelector(".feed-track");
     if (!track) return;
 
-    var centerCard = track.querySelector(".center-card");
+    const centerCard = track.querySelector(".center-card");
+    let isDragging = false, hasDragged = false, startX = 0, dragStartTranslateX = 0, currentTranslateX = 0;
 
-    var isDragging = false;
-    var hasDragged = false;
-    var isReady = false;
-    var startX = 0;
-    var dragStartTranslateX = 0;
-    var currentTranslateX = 0;
+    const clamp = (x) => Math.max(Math.min(0, container.clientWidth - track.scrollWidth), Math.min(0, x));
+    
+    const applyTranslate = (x) => {
+      currentTranslateX = clamp(x);
+      track.style.transform = `translate3d(${currentTranslateX}px, 0, 0)`;
+    };
 
-    function markReady() {
-      if (isReady) return;
-      isReady = true;
-      container.classList.add("feed-ready");
-    }
+    const refreshBounds = (shouldCenter = false) => {
+      applyTranslate(shouldCenter && !hasDragged && centerCard 
+        ? (container.clientWidth / 2) - (centerCard.offsetLeft + centerCard.offsetWidth / 2) 
+        : currentTranslateX);
+    };
 
-    function getMinTranslateX() {
-      return Math.min(0, container.clientWidth - track.scrollWidth);
-    }
-
-    function clampTranslateX(nextX) {
-      var minX = getMinTranslateX();
-      if (nextX < minX) return minX;
-      if (nextX > 0) return 0;
-      return nextX;
-    }
-
-    function applyTranslate(x) {
-      track.style.transform = "translate3d(" + x + "px, 0, 0)";
-    }
-
-    function getCenterCardTranslateX() {
-      if (!centerCard) return 0;
-
-      var containerCenterX = container.clientWidth / 2;
-      var cardCenterX = centerCard.offsetLeft + centerCard.offsetWidth / 2;
-      return containerCenterX - cardCenterX;
-    }
-
-    function refreshBounds(shouldCenter) {
-      if (shouldCenter && !hasDragged) {
-        currentTranslateX = getCenterCardTranslateX();
-      }
-
-      currentTranslateX = clampTranslateX(currentTranslateX);
-      applyTranslate(currentTranslateX);
-    }
-
-    function startDrag(pointerX) {
+    const startDrag = (x) => {
       isDragging = true;
       hasDragged = true;
-      startX = pointerX;
+      startX = x;
       dragStartTranslateX = currentTranslateX;
       container.classList.add("is-dragging");
-    }
+    };
 
-    function moveDrag(pointerX) {
-      if (!isDragging) return;
-
-      var delta = (pointerX - startX) * 1.2;
-      currentTranslateX = clampTranslateX(dragStartTranslateX + delta);
-      applyTranslate(currentTranslateX);
-    }
-
-    function endDrag() {
-      if (!isDragging) return;
+    const endDrag = () => {
       isDragging = false;
       container.classList.remove("is-dragging");
-    }
+    };
 
-    container.addEventListener("mousedown", function (event) {
-      if (event.button !== 0) return;
-      startDrag(event.pageX);
-      event.preventDefault();
-    });
-
-    window.addEventListener("mousemove", function (event) {
-      moveDrag(event.pageX);
-    });
-
+    container.addEventListener("mousedown", e => { if (e.button === 0) { startDrag(e.pageX); e.preventDefault(); } });
+    window.addEventListener("mousemove", e => isDragging && applyTranslate(dragStartTranslateX + (e.pageX - startX) * 1.2));
     window.addEventListener("mouseup", endDrag);
     container.addEventListener("mouseleave", endDrag);
 
-    container.addEventListener(
-      "touchstart",
-      function (event) {
-        if (!event.touches.length) return;
-        startDrag(event.touches[0].pageX);
-      },
-      { passive: true }
-    );
-
-    container.addEventListener(
-      "touchmove",
-      function (event) {
-        if (!event.touches.length) return;
-        moveDrag(event.touches[0].pageX);
-      },
-      { passive: true }
-    );
-
+    container.addEventListener("touchstart", e => e.touches.length && startDrag(e.touches[0].pageX), { passive: true });
+    container.addEventListener("touchmove", e => isDragging && e.touches.length && applyTranslate(dragStartTranslateX + (e.touches[0].pageX - startX) * 1.2), { passive: true });
     container.addEventListener("touchend", endDrag, { passive: true });
     container.addEventListener("touchcancel", endDrag, { passive: true });
 
-    [].slice.call(track.querySelectorAll("img")).forEach(function (img) {
-      img.addEventListener("dragstart", function (event) {
-        event.preventDefault();
-      });
-    });
+    track.querySelectorAll("img").forEach(img => img.addEventListener("dragstart", e => e.preventDefault()));
+    window.addEventListener("resize", () => refreshBounds(true));
 
-    window.addEventListener("resize", function () {
-      refreshBounds(true);
-    });
+    const initReadyState = () => { refreshBounds(true); container.classList.add("feed-ready"); };
 
-    // Compute centered anchor before reveal to avoid first-paint jump from x=0.
     refreshBounds(true);
-
-    requestAnimationFrame(function () {
-      refreshBounds(true);
-      markReady();
-    });
-
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function () {
-        refreshBounds(true);
-      });
-    }
-
-    if (document.readyState === "complete") {
-      markReady();
-    } else {
-      window.addEventListener(
-        "load",
-        function () {
-          refreshBounds(true);
-          markReady();
-        },
-        { once: true }
-      );
-    }
+    requestAnimationFrame(initReadyState);
+    if (document.fonts?.ready) document.fonts.ready.then(() => refreshBounds(true));
+    
+    if (document.readyState === "complete") container.classList.add("feed-ready");
+    else window.addEventListener("load", initReadyState, { once: true });
   });
 });

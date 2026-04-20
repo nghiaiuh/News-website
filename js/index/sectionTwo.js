@@ -1,160 +1,97 @@
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    return;
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let section = document.querySelector(".section-two, .news-section-two");
-
+  const section = document.querySelector(".section-two, .news-section-two");
   if (!section) return;
 
-  let viewport = section.querySelector(".s2-viewport, .news-s2-viewport");
-  let track = section.querySelector(".s2-track, .news-s2-track");
-  let progressBar = section.querySelector(".s2-progress-bar, .news-s2-progress-bar");
-  let hoverPanelSelector = ".s2-lead-panel, .s2-data-panel";
-  let hoverActiveClass = "s2-hover-active";
-  let lastPointerX = null;
-  let lastPointerY = null;
-  let activeHoverPanel = null;
+  const viewport = section.querySelector(".s2-viewport, .news-s2-viewport");
+  const track = section.querySelector(".s2-track, .news-s2-track");
+  const progressBar = section.querySelector(".s2-progress-bar, .news-s2-progress-bar");
 
   if (!viewport || !track) return;
 
-  let mm = gsap.matchMedia();
+  let activeHoverPanel = null, lastPointerX = null, lastPointerY = null;
 
-  function setProgress(value) {
-    if (!progressBar) return;
-    let safe = Math.max(0, Math.min(1, value));
-    progressBar.style.transform = "scaleX(" + safe + ")";
-  }
+  const setProgress = (value) => {
+    if (progressBar) progressBar.style.transform = `scaleX(${Math.max(0, Math.min(1, value))})`;
+  };
 
-  function setActiveHoverPanel(panel) {
+  const setActiveHoverPanel = (panel) => {
     if (activeHoverPanel === panel) return;
+    if (activeHoverPanel) activeHoverPanel.classList.remove("s2-hover-active");
+    if ((activeHoverPanel = panel)) activeHoverPanel.classList.add("s2-hover-active");
+  };
 
-    if (activeHoverPanel) {
-      activeHoverPanel.classList.remove(hoverActiveClass);
-    }
+  const syncHoverFromPointerPosition = () => {
+    if (lastPointerX === null || lastPointerY === null) return setActiveHoverPanel(null);
+    const target = document.elementFromPoint(lastPointerX, lastPointerY);
+    const panel = target?.closest(".s2-lead-panel, .s2-data-panel");
+    setActiveHoverPanel(panel && section.contains(panel) ? panel : null);
+  };
 
-    activeHoverPanel = panel || null;
+  const mm = gsap.matchMedia();
 
-    if (activeHoverPanel) {
-      activeHoverPanel.classList.add(hoverActiveClass);
-    }
-  }
-
-  function syncHoverFromPointerPosition() {
-    if (lastPointerX === null || lastPointerY === null) {
-      setActiveHoverPanel(null);
-      return;
-    }
-
-    var target = document.elementFromPoint(lastPointerX, lastPointerY);
-    if (!target || !section.contains(target)) {
-      setActiveHoverPanel(null);
-      return;
-    }
-
-    var panel = target.closest(hoverPanelSelector);
-    if (!panel || !section.contains(panel)) {
-      setActiveHoverPanel(null);
-      return;
-    }
-
-    setActiveHoverPanel(panel);
-  }
-
-  mm.add("(min-width: 992px)", function () {
+  mm.add("(min-width: 992px)", () => {
     setProgress(0);
 
-    function updatePointerPosition(clientX, clientY) {
-      lastPointerX = clientX;
-      lastPointerY = clientY;
-    }
-
-    function handleMouseMove(event) {
-      updatePointerPosition(event.clientX, event.clientY);
+    const handlePointerInfo = (e) => {
+      lastPointerX = e.clientX;
+      lastPointerY = e.clientY;
       syncHoverFromPointerPosition();
-    }
+    };
 
-    function handleWheel(event) {
-      updatePointerPosition(event.clientX, event.clientY);
-      syncHoverFromPointerPosition();
-    }
-
-    function handlePointerExit(event) {
-      if (event && event.relatedTarget) {
-        return;
-      }
-
-      lastPointerX = null;
-      lastPointerY = null;
+    const handlePointerExit = (e) => {
+      if (e.relatedTarget) return;
+      lastPointerX = lastPointerY = null;
       setActiveHoverPanel(null);
-    }
+    };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    window.addEventListener("wheel", handleWheel, { passive: true });
+    const events = ['mousemove', 'wheel'];
+    events.forEach(evt => window.addEventListener(evt, handlePointerInfo, { passive: true }));
     window.addEventListener("mouseout", handlePointerExit);
 
     syncHoverFromPointerPosition();
 
-    let tween = gsap.to(track, {
-      x: function () {
-        return -Math.max(0, track.scrollWidth - viewport.clientWidth);
-      },
+    const getScrollOffset = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+
+    const tween = gsap.to(track, {
+      x: () => -getScrollOffset(),
       ease: "none",
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: function () {
-          return "+=" + Math.max(0, track.scrollWidth - viewport.clientWidth);
-        },
+        end: () => `+=${getScrollOffset()}`,
         pin: section,
         scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        onUpdate: function (self) {
+        onUpdate: (self) => {
           setProgress(self.progress);
           syncHoverFromPointerPosition();
         },
       },
     });
 
-    requestAnimationFrame(function () {
-      ScrollTrigger.refresh();
-    });
+    requestAnimationFrame(() => ScrollTrigger.refresh());
 
-    return function () {
-      if (tween.scrollTrigger) {
-        tween.scrollTrigger.kill();
-      }
+    return () => {
+      tween.scrollTrigger?.kill();
       tween.kill();
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("wheel", handleWheel);
+      events.forEach(evt => window.removeEventListener(evt, handlePointerInfo));
       window.removeEventListener("mouseout", handlePointerExit);
-      lastPointerX = null;
-      lastPointerY = null;
+      lastPointerX = lastPointerY = null;
       setActiveHoverPanel(null);
       gsap.set(track, { clearProps: "transform" });
       setProgress(0);
     };
   });
 
-  mm.add("(max-width: 991.98px)", function () {
+  mm.add("(max-width: 991.98px)", () => {
     setProgress(1);
-
-    return function () {
-      setProgress(0);
-    };
+    return () => setProgress(0);
   });
 
-  window.addEventListener(
-    "load",
-    function () {
-      requestAnimationFrame(function () {
-        ScrollTrigger.refresh();
-      });
-    },
-    { once: true }
-  );
+  window.addEventListener("load", () => requestAnimationFrame(() => ScrollTrigger.refresh()), { once: true });
 });
-

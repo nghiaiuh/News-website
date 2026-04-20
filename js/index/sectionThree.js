@@ -1,121 +1,82 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 	initSportsPreview();
 	initSportsFeedNavigation();
 });
 
-function initSportsPreview() {
-	var sportsLine = document.getElementById("s3-sports-category");
-	var previewCards = document.querySelectorAll(".s3-card-gallery");
+const initSportsPreview = () => {
+	const sportsLine = document.getElementById("s3-sports-category");
+	const previewCards = document.querySelectorAll(".s3-card-gallery");
 
 	if (!sportsLine || !previewCards.length) return;
 
-	var sportButtons = sportsLine.querySelectorAll(".s3-btn");
-
+	const sportButtons = sportsLine.querySelectorAll(".s3-btn");
 	if (!sportButtons.length) return;
 
-	var activeButton =
-		sportsLine.querySelector(".s3-btn.is-active") || sportButtons[0];
+	let activeButton = sportsLine.querySelector(".s3-btn.is-active") || sportButtons[0];
 
-	function updatePreview(button, animate) {
-		if (!button) return;
+	const updatePreview = (button, animate = true) => {
+		if (!button || (animate && button === activeButton)) return;
+		activeButton = button;
+		sportButtons.forEach(btn => btn.classList.toggle("is-active", btn === button));
 
-		sportButtons.forEach(function (btn) {
-			btn.classList.toggle("is-active", btn === button);
-		});
-
-		function applySources() {
-			previewCards.forEach(function (card, index) {
-				var img = card.querySelector("img");
-				var key = "preview" + String(index + 1);
-				var src = button.dataset[key];
-
+		const applySources = () => {
+			previewCards.forEach((card, index) => {
+				const img = card.querySelector("img");
+				const src = button.dataset[`preview${index + 1}`];
 				if (!img || !src) {
 					card.classList.remove("is-visible");
 					card.hidden = true;
 					return;
 				}
-
 				card.hidden = false;
 				img.src = src;
-
-				var sportTextEl = button.querySelector("span:first-child");
-				var sportText = sportTextEl ? sportTextEl.textContent.trim() : "Ảnh thể thao";
-				img.alt = sportText + " " + String(index + 1);
+				const sportText = button.querySelector("span:first-child")?.textContent.trim() || "Ảnh thể thao";
+				img.alt = `${sportText} ${index + 1}`;
 			});
 
-			requestAnimationFrame(function () {
-				previewCards.forEach(function (card) {
-					if (!card.hidden) {
-						card.classList.add("is-visible");
-					}
-				});
+			requestAnimationFrame(() => {
+				previewCards.forEach(card => !card.hidden && card.classList.add("is-visible"));
 			});
-		}
+		};
 
 		if (animate) {
-			previewCards.forEach(function (card) {
-				card.classList.remove("is-visible");
-			});
-
-			window.setTimeout(applySources, 110);
+			previewCards.forEach(card => card.classList.remove("is-visible"));
+			setTimeout(applySources, 110);
 		} else {
 			applySources();
 		}
+	};
 
-		activeButton = button;
-	}
-
-	sportButtons.forEach(function (button) {
-		button.addEventListener("mouseenter", function () {
-			updatePreview(button, true);
-		});
-
-		button.addEventListener("focus", function () {
-			updatePreview(button, true);
-		});
-
-		button.addEventListener("click", function () {
-			updatePreview(button, true);
-		});
+	sportButtons.forEach(btn => {
+		["mouseenter", "focus", "click"].forEach(event =>
+			btn.addEventListener(event, () => updatePreview(btn))
+		);
 	});
 
 	updatePreview(activeButton, false);
-}
+};
 
-function initSportsFeedNavigation() {
-	var viewport = document.querySelector(".sports-feed-viewport");
-	var prevButton = document.querySelector(".sports-feed-nav--prev");
-	var nextButton = document.querySelector(".sports-feed-nav--next");
+const initSportsFeedNavigation = () => {
+	const viewport = document.querySelector(".sports-feed-viewport");
+	const prevButton = document.querySelector(".sports-feed-nav--prev");
+	const nextButton = document.querySelector(".sports-feed-nav--next");
 
 	if (!viewport || !prevButton || !nextButton) return;
 
-	function getStep() {
-		return Math.max(viewport.clientWidth * 0.75, 260);
-	}
-
-	function updateNavState() {
-		var maxScrollLeft = Math.max(viewport.scrollWidth - viewport.clientWidth, 0);
+	const updateNavState = () => {
 		prevButton.disabled = viewport.scrollLeft <= 4;
-		nextButton.disabled = viewport.scrollLeft >= maxScrollLeft - 4;
-	}
+		nextButton.disabled = viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 4;
+	};
 
-	function scrollFeed(direction) {
-		viewport.scrollBy({
-			left: direction * getStep(),
-			behavior: "smooth",
-		});
-	}
+	const scrollFeed = (dir) => {
+		viewport.scrollBy({ left: dir * Math.max(viewport.clientWidth * 0.75, 260), behavior: "smooth" });
+	};
 
-	prevButton.addEventListener("click", function () {
-		scrollFeed(-1);
-	});
-
-	nextButton.addEventListener("click", function () {
-		scrollFeed(1);
-	});
+	prevButton.addEventListener("click", () => scrollFeed(-1));
+	nextButton.addEventListener("click", () => scrollFeed(1));
 
 	viewport.addEventListener("scroll", updateNavState);
 	window.addEventListener("resize", updateNavState);
 	updateNavState();
-}
+};
 
