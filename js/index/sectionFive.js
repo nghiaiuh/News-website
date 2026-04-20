@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+$(() => {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const section = document.querySelector(".s5-section");
-  if (!section) return;
-
+  const section = $(".s5-section")[0];
   const natureFeed = section.querySelector(".s5-nature-feed");
 
   // Initial state cho Nature feed

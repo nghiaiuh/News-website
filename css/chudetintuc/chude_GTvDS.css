@@ -3,14 +3,7 @@
     color: #333;
     min-height: 100vh;
 }
-.page-main a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-}
-.page-main a:hover {
-    color: #0d6efd; /* Xanh chuẩn của Bootstrap khi hover link */
-}
+
 
 /* Font chữ tiêu đề giống báo chí truyền thống */
 .article-title {

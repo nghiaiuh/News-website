@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+$(() => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "power2.out",
           onComplete: () => {
             gsap.set(batch, { clearProps: "transform" });
-            batch.forEach(item => item.classList.add("hover-ready"));
+            $(batch).addClass("hover-ready");
           },
         });
       },
