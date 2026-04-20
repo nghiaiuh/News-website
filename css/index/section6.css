@@ -1,0 +1,193 @@
+/* =========================================================
+   SECTION 6: OUR TEAM (AWWWARDS STYLE)
+   ========================================================= */
+.s6-section {
+  position: relative;
+  background-color: var(--nw-white);
+  padding: 100px 0 150px;
+  overflow: hidden;
+}
+
+.s6-header {
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.s6-title {
+  font-family: var(--nw-font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  color: var(--nw-ink-strong);
+  letter-spacing: -0.05em;
+  margin-bottom: 10px;
+}
+
+.s6-subtitle {
+  font-family: var(--nw-font-time);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  color: var(--nw-muted);
+  font-style: italic;
+}
+
+/* =========================================================
+   ASYMMETRICAL LAYOUT
+   ========================================================= */
+.s6-team-grid {
+  height: 180vh; /* Tăng chiều cao để tạo đủ độ trượt */
+  width: 100%;
+}
+
+.s6-member-card {
+  position: absolute;
+  width: clamp(280px, 50vw, 620px);
+  will-change: transform, opacity;
+}
+
+/* Tọa độ bất đối xứng và lệch sóng cho từng thành viên */
+.card-1 {
+  top: 5%;
+  left: 8%;
+}
+
+.card-2 {
+  top: 25%;
+  right: 12%;
+}
+
+.card-3 {
+  top: 45%;
+  left: 18%;
+}
+
+.card-4 {
+  top: 68%;
+  right: 8%;
+}
+
+.card-5 {
+  top: 85%;
+  left: 35%;
+}
+
+/* =========================================================
+   CARD DESIGN (Glassmorphism Light Theme)
+   ========================================================= */
+.s6-member-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--nw-text);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Viền mờ cho theme sáng */
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05); /* Shadow nổi khối tinh tế */
+  transition: box-shadow 0.4s ease;
+}
+
+/* Hover: Nhấn mạnh bằng việc tăng kích thước và bóng, JS sẽ xử lý Transform Y */
+.s6-member-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
+  z-index: 100 !important; /* Luôn nổi lên trên cùng khi trỏ chuột */
+}
+
+/* =========================================================
+   ELEMENTS INSIDE CARD
+   ========================================================= */
+.s6-avatar {
+  flex: 0 0 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 3px solid #fff;
+}
+
+.s6-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.s6-member-card:hover .s6-avatar img {
+  transform: scale(1.1); /* Phóng to ảnh khi hover card */
+}
+
+.s6-info {
+  flex: 1; /* Chiếm 60% còn lại */
+}
+
+.s6-name {
+  font-family: var(--nw-font-display);
+  font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+  font-weight: 800;
+  color: var(--nw-white);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.s6-role {
+  font-family: var(--nw-font-heading);
+  color: var(--nw-white);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.s6-desc {
+  font-family: var(--nw-font-sans);
+  font-size: 0.9rem;
+  color: var(--nw-white);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   RESPONSIVE: MOBILE & TABLET STACKING
+   ========================================================= */
+@media (max-width: 991.98px) {
+  .s6-section {
+    padding: 60px 0;
+  }
+  
+  .s6-team-grid {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .s6-member-card {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .s6-header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .s6-member-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .s6-avatar {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+  }
+}
