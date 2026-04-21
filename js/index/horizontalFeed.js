@@ -1,10 +1,14 @@
 $(() => {
-  $(".feed-container, .s5-nature-feed").each(function() {
+  $(".feed-container, .s5-nature-feed, .news-feed").each(function() {
     const $container = $(this);
     const $track = $container.find(".feed-track, .s5-feed-track");
     if (!$track.length) return;
-
     if ($container.hasClass("s5-nature-feed")) {
+      $container.css({ overflow: "hidden", cursor: "grab", "touch-action": "pan-y" });
+      $track.removeClass("overflow-x-auto").css("width", "max-content");
+    }
+    // vu-tru-va-thien-nhien
+    if ($container.hasClass("news-feed")) {
       $container.css({ overflow: "hidden", cursor: "grab", "touch-action": "pan-y" });
       $track.removeClass("overflow-x-auto").css("width", "max-content");
     }

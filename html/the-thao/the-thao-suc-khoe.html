@@ -1,239 +1,231 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thể thao &amp; Sức khoẻ - Báo Chí DESIGN</title>
-    <meta
-      name="description"
-      content="Tin tức thể thao và sức khỏe mới nhất: bóng đá, quần vợt, F1, bóng rổ, yoga và dinh dưỡng."
-    />
+    <title>Thể Thao & Sức Khỏe - Tin tức</title>
 
-    <!-- SCROLL RESET -->
-    <script>
-      document.documentElement.classList.add("news-feed-js");
-      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
-      document.documentElement.style.scrollBehavior = "auto";
-    </script>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../../css/local-fonts.css" />
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/components/root.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/components/navbar.css" />
-    <link rel="stylesheet" href="../../css/index/section1.css" />
-    <link rel="stylesheet" href="../../css/index/section2.css" />
-    <link rel="stylesheet" href="../../css/index/horizontal-feed.css" />
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/chudetintuc/chude_TTvSK.css" />
 
-    <!-- jQuery -->
-    <script src="../../js/lib/jquery/jquery-4.0.0.js" defer></script>
-
-    <!-- Bootstrap JS -->
+    <script src="../../js/lib/jquery/jquery-4.0.0.js"></script>
     <script src="../../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
-
-    <!-- GSAP -->
-    <script src="../../js/lib/gsap/gsap.min.js" defer></script>
-    <script src="../../js/lib/gsap/ScrollTrigger.min.js" defer></script>
-
-    <!-- JS sections -->
+    <script src="../../js/auth.js"></script>
     <script src="../../js/components/navbar.js" defer></script>
-    <script src="../../js/index/sectionTwo.js" defer></script>
-    <script src="../../js/index/horizontalFeed.js" defer></script>
-    <script src="../../js/auth.js" defer></script>
-  </head>
+    <script src="../../js/components/footer.js" defer></script>
+</head>
 
-  <body class="news-body m-0">
-    <!-- Con trỏ tuỳ chỉnh -->
-    <div id="news-cursor" aria-hidden="true"></div>
-
-    <!-- HEADER: injected by js/components/navbar.js -->
+<body class="body m-0">
     <div id="site-header" data-base="../"></div>
-
-    <main class="news-main">
-      <!-- SECTION 1: Thể thao Hero -->
-      <section class="news-hero position-relative">
-        <div class="feed-container">
-          <div class="feed-track">
-            <article class="proj-card">
-              <img src="../../images/thethao1.png" alt="Bóng đá" loading="lazy" />
-              <div class="proj-content">
-                <div
-                  class="proj-title-row d-flex align-items-center gap-2 mb-2"
-                >
-                  <h3 class="proj-title mb-0">Bóng đá quốc tế</h3>
-                  <span class="proj-badge">HOT</span>
+    <main>
+        <section class="hero-section py-4 py-lg-5 gsap-fade-in">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                        <h1 class="fw-bold mb-3">Thể Thao & Sức Khỏe</h1>
+                        <p class="text-muted fs-5">
+                            Cập nhật những diễn biến thể thao cuồng nhiệt nhất toàn cầu cùng các bí quyết chăm sóc sức
+                            khỏe, dinh dưỡng khoa học để giữ gìn cơ thể dẻo dai.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+                            <div class="rounded-4 overflow-hidden shadow-sm hero-img-box">
+                                <img src="../../images/thethao1.png" alt="Khởi động nền"
+                                    class="w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="rounded-4 overflow-hidden shadow-sm mt-5 hero-img-box">
+                                <img src="../../images/suckhoe2.png" alt="Sức khỏe yoga"
+                                    class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="proj-desc mb-0">
-                  Cập nhật những diễn biến mới nhất từ các giải đấu hàng đầu
-                  châu Âu.
-                </p>
-                <a
-                  href="./the-thao-football-detail.html"
-                  class="stretched-link"
-                ></a>
-              </div>
-            </article>
-
-            <article class="proj-card">
-              <img src="../../images/thethao2.png" alt="Tennis" loading="lazy" />
-              <div class="proj-content">
-                <div
-                  class="proj-title-row d-flex align-items-center gap-2 mb-2"
-                >
-                  <h3 class="proj-title mb-0">Grand Slam 2024</h3>
-                  <span class="proj-badge">NEW</span>
-                </div>
-                <p class="proj-desc mb-0">
-                  Những bất ngờ tại giải đấu quần vợt lớn nhất năm.
-                </p>
-                <a
-                  href="./the-thao-tennis-detail.html"
-                  class="stretched-link"
-                ></a>
-              </div>
-            </article>
-
-            <!-- Card trung tâm -->
-            <article class="center-card">
-              <h3 class="center-title mb-2">THỂ THAO</h3>
-              <p class="center-subtitle mt-3 mb-0">
-                ĐAM MÊ ! <br /><span class="news-khorap">SỨC MẠNH</span><br />
-                VÀ <br />
-                <span class="news-highlight">CHIẾN THẮNG</span>.
-              </p>
-              <p class="center-tip">
-                <span class="news-tip">TIP!</span> Kéo ngang để xem thêm tin tức
-                thể thao
-              </p>
-            </article>
-
-            <article class="proj-card">
-              <img src="../../images/thethao3.png" alt="NBA" loading="lazy" />
-              <div class="proj-content">
-                <div
-                  class="proj-title-row d-flex align-items-center gap-2 mb-2"
-                >
-                  <h3 class="proj-title mb-0">Nhịp đập NBA</h3>
-                  <span class="proj-badge">NEW</span>
-                </div>
-                <p class="proj-desc mb-0">
-                  Cuộc đua giành ngôi vô địch bóng rổ nhà nghề Mỹ.
-                </p>
-                <a href="./the-thao-nba-detail.html" class="stretched-link"></a>
-              </div>
-            </article>
-
-            <article class="proj-card">
-              <img src="../../images/thethao4.png" alt="F1" loading="lazy" />
-              <div class="proj-content">
-                <div
-                  class="proj-title-row d-flex align-items-center gap-2 mb-2"
-                >
-                  <h3 class="proj-title mb-0">Tốc độ F1</h3>
-                  <span class="proj-badge">NEW</span>
-                </div>
-                <p class="proj-desc mb-0">
-                  Những màn rượt đuổi nghẹt thở trên đường đua tử thần.
-                </p>
-                <a href="./the-thao-f1-detail.html" class="stretched-link"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="container-fluid px-3 px-xl-4">
-          <div class="news-title-wrap">
-            <h2 class="news-display-title mb-0">THỂ THAO & SỨC KHỎE</h2>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 2: Sức khỏe với GSAP -->
-      <div class="news-s2-wrapper">
-        <section class="news-section-two">
-          <div class="news-s2-viewport">
-            <div class="news-s2-track">
-              <!-- Panel 1: Sức khỏe -->
-              <article
-                class="news-s2-panel news-s2-panel--lead news-s2-panel--article-1"
-              >
-                <div class="news-s2-editorial">
-                  <div class="news-s2-mark" aria-hidden="true">
-                    SỨC KHỎE & <br />
-                    ĐỜI SỐNG
-                  </div>
-                  <p class="news-s2-editorial-text">
-                    Chăm sóc sức khỏe toàn diện từ dinh dưỡng đến tinh thần.
-                    Khám phá các bí quyết sống khỏe mỗi ngày cùng chuyên gia.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Panel 2 -->
-              <article class="news-s2-panel news-s2-panel--photo">
-                <img
-                  class="news-s2-image"
-                  src="../../images/suckhoe1.png"
-                  alt="Dinh dưỡng"
-                  loading="lazy"
-                />
-                <div class="news-s2-meta">
-                  <span class="news-s2-index">01</span>
-                  <h3 class="news-s2-card-title">
-                    Dinh dưỡng cân bằng cho phái đẹp
-                  </h3>
-                </div>
-                <a
-                  href="./suc-khoe-nutrition-detail.html"
-                  class="stretched-link"
-                ></a>
-              </article>
-
-              <!-- Panel 3 -->
-              <article class="news-s2-panel news-s2-panel--photo">
-                <img
-                  class="news-s2-image"
-                  src="../../images/suckhoe2.png"
-                  alt="Yoga"
-                  loading="lazy"
-                />
-                <div class="news-s2-meta">
-                  <span class="news-s2-index">02</span>
-                  <h3 class="news-s2-card-title">
-                    Yoga: Chìa khóa của sự tĩnh lặng
-                  </h3>
-                </div>
-                <a
-                  href="./suc-khoe-yoga-detail.html"
-                  class="stretched-link"
-                ></a>
-              </article>
-
-              <!-- Panel 4 -->
-              <article class="news-s2-panel news-s2-panel--photo">
-                <img
-                  class="news-s2-image"
-                  src="../../images/suckhoe3.png"
-                  alt="Mental Health"
-                  loading="lazy"
-                />
-                <div class="news-s2-meta">
-                  <span class="news-s2-index">03</span>
-                  <h3 class="news-s2-card-title">
-                    Chăm sóc sức khỏe tinh thần
-                  </h3>
-                </div>
-                <a
-                  href="./suc-khoe-mental-detail.html"
-                  class="stretched-link"
-                ></a>
-              </article>
             </div>
-          </div>
         </section>
-      </div>
+
+        <section class="container section-sports mb-5 gsap-fade-in px-4">
+            <h2 class="section-title mb-4 fw-bold">Thể Thao</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                    <article class="lead-article rounded-4 shadow-sm h-100 position-relative overflow-hidden">
+                        <a href="./the-thao-football-detail.html" class="d-block h-100 text-decoration-none">
+                            <img src="../../images/thethao1.png" alt="Bóng đá"
+                                class="bg-img position-absolute w-100 h-100 object-fit-cover start-0 top-0"
+                                style="z-index: 0;">
+
+                            <div
+                                class="hero-overlay d-flex flex-column justify-content-end h-100 p-4 position-relative">
+                                <span class="badge tag-sports text-uppercase mb-2 align-self-start py-2 px-3">Bóng
+                                    Đá</span>
+                                <h3 class="article-title mt-2 fw-bold text-white fs-4">Bóng đá quốc tế: Những diễn biến
+                                    mới nhất từ châu Âu</h3>
+                                <p class="text-light mb-3">Những trận cầu kinh điển rực lửa và cuộc đua vô địch gay cấn
+                                    trên các giải đấu hàng đầu châu Âu không thể bỏ lỡ.</p>
+
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3"
+                                    style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
+                                    <p class="mb-2 text-white fw-semibold fs-6">🎧 Nghe bản tin Thể thao:</p>
+                                    <audio controls class="w-100" style="height: 40px;">
+                                        <source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg">
+                                    </audio>
+                                </div>
+                                <span class="meta text-white-50 fs-6">Tác giả: Thể Thao 247 • 5 phút đọc</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="side-list d-flex flex-column h-100 gap-3">
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="./the-thao-tennis-detail.html"
+                                class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/thethao2.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-primary text-uppercase"
+                                    style="font-size: 11px;">Tennis</span>
+                                <a href="./the-thao-tennis-detail.html" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Grand Slam 2024: Những bất ngờ tại
+                                        giải đấu quần vợt lớn nhất năm</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">4 phút đọc</span>
+                            </div>
+                        </article>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="./the-thao-nba-detail.html"
+                                class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/thethao3.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-primary text-uppercase" style="font-size: 11px;">Bóng
+                                    Rổ</span>
+                                <a href="./the-thao-nba-detail.html" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Nhịp đập NBA: Cuộc đua giành ngôi
+                                        vô địch danh giá</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">5 phút đọc</span>
+                            </div>
+                        </article>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="./the-thao-f1-detail.html"
+                                class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/thethao4.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-primary text-uppercase" style="font-size: 11px;">Đua
+                                    xe</span>
+                                <a href="./the-thao-f1-detail.html" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Tốc độ F1: Những màn rượt đuổi
+                                        nghẹt thở trên đường đua tử thần</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">6 phút đọc</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mb-5 gsap-fade-in">
+            <div class="banner text-center py-5 rounded-4 shadow-sm w-100">
+                <h2 class="fw-bold text-white mb-3 article-title">Tăng cường thể lực, bứt phá giới hạn</h2>
+                <p class="text-white-50 fs-5 mb-4">Nhận bản tin thể thao và mẹo sức khỏe miễn phí mỗi buổi sáng.</p>
+                <a href="../dang-nhap.html" class="btn btn-warning px-5 py-2 fw-bold rounded-pill shadow-sm">Đăng Ký Bản
+                    Tin Mới →</a>
+            </div>
+        </section>
+
+        <section class="container section-health mb-5 gsap-fade-in px-4">
+            <h2 class="section-title mb-4 fw-bold">Sức Khỏe</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                    <article class="lead-article rounded-4 shadow-sm h-100 position-relative overflow-hidden">
+                        <a href="#" class="d-block h-100 text-decoration-none">
+                            <img src="../../images/suckhoe1.png" alt="Dinh dưỡng"
+                                class="bg-img position-absolute w-100 h-100 object-fit-cover start-0 top-0"
+                                style="z-index: 0;">
+
+                            <div
+                                class="hero-overlay d-flex flex-column justify-content-end h-100 p-4 position-relative">
+                                <span class="badge tag-health text-uppercase mb-2 align-self-start py-2 px-3">Dinh
+                                    Dưỡng</span>
+                                <h3 class="article-title mt-2 fw-bold text-white fs-4">Dinh dưỡng cân bằng: Chăm sóc cơ
+                                    thể tuyệt hảo từ bên trong</h3>
+                                <p class="text-light mb-3">Những kiến thức cập nhật nhất về ăn uống lành mạnh, duy trì
+                                    vóc dáng nhưng vẫn tràn đầy năng lượng làm việc.</p>
+
+                                <div class="audio-player mt-auto mb-3 p-3 rounded-3"
+                                    style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
+                                    <p class="mb-2 text-white fw-semibold fs-6">🎧 Nghe podcast Sức khỏe:</p>
+                                    <audio controls class="w-100" style="height: 40px;">
+                                        <source src="../../audio/podcast-suc-khoe.mp3" type="audio/mpeg">
+                                    </audio>
+                                </div>
+                                <span class="meta text-white-50 fs-6">Tác giả: BS Hà Thu • 7 phút đọc</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="side-list d-flex flex-column h-100 gap-3">
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/suckhoe2.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Phong
+                                    cách sống</span>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Yoga – Chìa khóa vàng của sự tĩnh
+                                        lặng và dẻo dai</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">5 phút đọc</span>
+                            </div>
+                        </article>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/suckhoe3.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Tâm Lý
+                                    học</span>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Tầm quan trọng của việc chăm sóc
+                                        sức khỏe tinh thần hiện đại</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">4 phút đọc</span>
+                            </div>
+                        </article>
+
+                        <article class="side-article d-flex align-items-center rounded-4 p-2 bg-white flex-fill">
+                            <a href="#" class="img-wrap rounded-3 overflow-hidden flex-shrink-0">
+                                <img src="../../images/thethao1.png" class="w-100 h-100 object-fit-cover">
+                            </a>
+                            <div class="content ms-3 pe-2">
+                                <span class="tag fw-bold text-success text-uppercase" style="font-size: 11px;">Tập
+                                    luyện</span>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <h6 class="title article-title mt-1 mb-2 fw-bold">Hướng dẫn khởi động an toàn cho
+                                        người mới tập cardio</h6>
+                                </a>
+                                <span class="meta text-muted" style="font-size: 13px;">3 phút đọc</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <div id="site-footer" data-base="../../"></div>
 </body>
+
 </html>

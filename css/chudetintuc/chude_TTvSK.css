@@ -1,0 +1,127 @@
+.page-main {
+    background: floralwhite;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Font chữ tiêu đề giống báo chí truyền thống */
+.article-title {
+    font-family: "Merriweather", serif; 
+    line-height: 1.4;
+}
+
+/* =========================================================
+   HERO SECTION (Phần giới thiệu đầu trang)
+   ========================================================= */
+.hero-section {
+    padding: 60px 0;
+}
+.hero-section h1 {
+    font-size: 42px;
+    font-family: "Merriweather", serif; 
+    color: #111;
+}
+.hero-section p {
+    color: #555;
+    line-height: 1.6;
+}
+.hero-img-box {
+    width: 220px; 
+    height: 300px; 
+    background-color: #e9ecef;
+}
+
+/* =========================================================
+   THIẾT KẾ CHUYÊN MỤC (THỂ THAO & SỨC KHỎE)
+   ========================================================= */
+/* Khối Thể thao (Màu xanh dương) */
+.section-sports {
+    border-top: 4px solid #0d6efd; 
+    background-color: #ffffff;     
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03); 
+}
+.section-sports .section-title {
+    color: #0d6efd;
+    text-transform: uppercase;
+    border-left: 5px solid #0d6efd;
+    padding-left: 12px;
+}
+.tag-sports { background-color: #0d6efd; color: #fff; }
+
+/* Khối Sức khỏe (Màu xanh ngọc / Teal) */
+.section-health {
+    border-top: 4px solid #20c997; 
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+}
+.section-health .section-title {
+    color: #20c997;
+    text-transform: uppercase;
+    border-left: 5px solid #20c997;
+    padding-left: 12px;
+}
+.tag-health { background-color: #20c997; color: #fff; }
+
+/* =========================================================
+   BÀI VIẾT CHÍNH (ẢNH TO LÀM NỀN)
+   ========================================================= */
+.lead-article {
+    min-height: 440px;
+    border: none;
+}
+.lead-article .bg-img {
+    transition: transform 0.6s ease;
+}
+.lead-article:hover .bg-img {
+    transform: scale(1.05);
+}
+.hero-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+.lead-article:hover .hero-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+}
+
+/* =========================================================
+   BÀI VIẾT PHỤ (LIST BÊN PHẢI)
+   ========================================================= */
+.side-article {
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0 !important;
+}
+.side-article:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06) !important;
+    transform: translateY(-3px);
+    border-color: transparent !important;
+}
+.side-article .img-wrap {
+    width: 130px;
+    height: 95px;
+}
+.side-article .img-wrap img {
+    transition: transform 0.4s ease;
+}
+.side-article:hover .img-wrap img {
+    transform: scale(1.08);
+}
+.side-article .title {
+    transition: color 0.2s ease;
+}
+
+/* =========================================================
+   BANNER ĐĂNG KÝ NHẬN TIN
+   ========================================================= */
+.banner {
+    background-color: #111;
+    border-bottom: 4px solid #f2c200;
+    transition: box-shadow 0.3s ease;
+}
+.banner:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
