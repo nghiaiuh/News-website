@@ -2,7 +2,7 @@
 .news-article-detail {
   padding-top: 80px;
   padding-bottom: 120px;
-  background: var(--news-bg);
+  background: #f6f1ea;
   min-height: 100vh;
 }
 
@@ -12,9 +12,17 @@
   padding: 0 20px;
 }
 
+.article-shell {
+  background: #fffdf9;
+  border: 1px solid #e7d9c8;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 18px 42px rgba(33, 22, 12, 0.08);
+}
+
 .article-header {
   margin-bottom: 40px;
-  text-align: center;
+  text-align: left;
 }
 
 .article-category {
@@ -23,7 +31,7 @@
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #c30000;
+  color: #8c5f3f;
   margin-bottom: 15px;
 }
 
@@ -39,12 +47,13 @@
 .article-meta {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(29, 23, 18, 0.65);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(140, 95, 63, 0.14);
+  border-bottom: 1px solid rgba(140, 95, 63, 0.14);
   padding: 15px 0;
 }
 
@@ -52,14 +61,16 @@
   width: 100%;
   height: auto;
   margin-bottom: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 22px;
+  border: 1px solid #eadfce;
+  box-shadow: 0 20px 40px rgba(33, 22, 12, 0.12);
 }
 
 .article-content {
   font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #333;
+  color: #2c241d;
 }
 
 .article-content p {
@@ -71,12 +82,22 @@
   font-weight: 700;
   margin-top: 40px;
   margin-bottom: 20px;
+  color: #18120d;
+}
+
+.article-content blockquote {
+  margin: 30px 0;
+  padding: 18px 22px;
+  border-left: 4px solid #8c5f3f;
+  background: #f8f1e8;
+  color: #4f4438;
+  font-style: italic;
 }
 
 .article-footer {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(140, 95, 63, 0.14);
 }
 
 .related-news-title {
@@ -96,6 +117,11 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e7d9c8;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(33, 22, 12, 0.08);
 }
 
 .related-card:hover {
@@ -114,9 +140,16 @@
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
+  padding: 0 16px 18px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
+  .article-shell {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
   .article-title {
     font-size: 2.2rem;
   }
