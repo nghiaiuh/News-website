@@ -1,1 +1,340 @@
-﻿
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vũ trụ và thiên nhiên - Tin tức chi tiết</title>
+
+    <link rel="stylesheet" href="../../css/local-fonts.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/components/root.css" />
+    <link rel="stylesheet" href="../../css/components/navbar.css" />
+    <link rel="stylesheet" href="../../css/article-detail.css" />
+    <link rel="stylesheet" href="../../css/styles_giaitridoisong.css" />
+    <link rel="stylesheet" href="../../css/components/footer.css" />
+
+    <script src="../../js/lib/jquery/jquery-4.0.0.js" defer></script>
+    <script src="../../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
+    <script src="../../js/components/navbar.js" defer></script>
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/components/footer.js" defer></script>
+
+    <style>
+        /* ===== hiệu ứng chung ===== */
+        .tgt-card,
+        .article-box {
+            transition: all 0.35s ease;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .tgt-card:hover,
+        .article-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .tgt-card img,
+        .article-box img {
+            transition: transform 0.5s ease;
+        }
+
+        .tgt-card:hover img,
+        .article-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .quote-box {
+            background: #111;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .trend-box:hover {
+            background: #f8f9fa;
+            transform: translateY(-6px);
+        }
+
+        .btn-dark:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+    </style>
+    
+</head>
+
+<body class="body m-0">
+    <div id="site-header" data-base="../"></div>
+
+        <main style="background:#fbf9f6; padding:40px 0;">
+            <div class="container">
+                <h1 class="text-center fw-bold mb-5">Vũ trụ & Thiên nhiên</h1>
+
+                <!-- BÀI VIẾT NỔI BẬT -->
+                <section class="mb-5">
+                    <div class="text-center mb-4">
+                        <h2 class="h4 fw-bold text-primary">Bài Báo Nổi Bật</h2>
+                        <p class="text-muted">Khám phá những tin tức khoa học và thiên nhiên hấp dẫn nhất</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <article class="tgt-card bg-white" style="border-radius:24px;">
+                                <img src="../../images/vutru-featured.jpg" class="w-100" style="height:300px; object-fit:cover; border-radius:24px 24px 0 0;">
+                                <div class="p-4">
+                                    <span class="text-uppercase fw-bold text-secondary small">Nổi bật</span>
+                                    <h3 class="mt-2 fw-bold">Khám phá bí ẩn vũ trụ: Từ Big Bang đến tương lai</h3>
+                                    <p class="text-muted">Những nghiên cứu mới đang mở ra cái nhìn rõ hơn về vũ trụ và sự thay đổi của môi trường không gian.</p>
+                                    <small class="text-muted">Nguyễn Văn A • 8 phút</small>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="d-flex flex-column gap-3">
+                                <article class="tgt-card bg-white p-3" style="border-radius:16px;">
+                                    <img src="../../images/nature-vietnam.webp" class="w-100 mb-2" style="height:120px; object-fit:cover; border-radius:12px;">
+                                    <h5 class="fw-bold">Thiên nhiên Việt Nam</h5>
+                                    <p class="text-muted small">Bảo tồn hệ sinh thái trong bối cảnh khí hậu thay đổi.</p>
+                                    <small class="text-muted">Nguyễn Văn B • 15 phút</small>
+                                </article>
+
+                                <article class="tgt-card bg-white p-3" style="border-radius:16px;">
+                                    <img src="../../images/space-tech.jpg" class="w-100 mb-2" style="height:120px; object-fit:cover; border-radius:12px;">
+                                    <h5 class="fw-bold">Công nghệ vũ trụ</h5>
+                                    <p class="text-muted small">Những bước tiến mới trong nghiên cứu ngoài không gian.</p>
+                                    <small class="text-muted">Nguyễn Văn C • 10 phút</small>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BÀI BÁO DÀI -->
+                <section class="mb-5">
+                    <article class="bg-white p-4 p-md-5" style="border-radius:28px;">
+
+                        <span class="text-uppercase fw-bold text-primary small">Chuyên đề</span>
+                        <h2 class="fw-bold mt-2 mb-5">
+                            Vũ trụ và thiên nhiên: Bức tranh toàn cảnh từ thế giới đến Việt Nam
+                        </h2>
+
+                        <!-- khối 1 -->
+                        <div class="row align-items-center mb-5">
+                            <div class="col-md-6">
+                                <img src="../../images/vutru.webp"
+                                    class="w-100 rounded"
+                                    style="height:280px; object-fit:cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="fw-bold">🌍 Vũ trụ trên thế giới</h4>
+                                <p class="text-muted">
+                                    Các hoạt động nghiên cứu không gian hiện nay đang ghi nhận nhiều kết quả đáng chú ý, góp phần làm rõ hơn quá trình hình thành và phát triển của các thiên hà, hành tinh cũng như những khu vực xa xôi trong vũ trụ. 
+                                    Với sự hỗ trợ của các kính viễn vọng thế hệ mới như James Webb Space Telescope, các nhà khoa học đã thu được những hình ảnh có độ phân giải cao, cho phép quan sát chi tiết các vùng hình thành sao và cấu trúc vật chất trong không gian. 
+                                    Những dữ liệu này đang mở rộng phạm vi nghiên cứu thiên văn, đồng thời cung cấp thêm cơ sở để hiểu rõ hơn về nguồn gốc và sự vận động của vũ trụ.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- quote -->
+                        <div class="bg-dark text-white text-center p-4 rounded mb-5">
+                            <h5 class="mb-0">
+                                "Những gì diễn ra ngoài không gian có thể ảnh hưởng trực tiếp đến tương lai khí hậu Trái Đất."
+                            </h5>
+                        </div>
+
+                        <!-- khối 2 -->
+                        <div class="row align-items-center mb-5">
+                            <div class="col-md-6 order-md-2">
+                                <img src="../../images/bangtan.webp"
+                                    class="w-100 rounded"
+                                    style="height:280px; object-fit:cover;">
+                            </div>
+                            <div class="col-md-6 order-md-1">
+                                <h4 class="fw-bold">🌿 Thiên nhiên toàn cầu thay đổi</h4>
+                                <p class="text-muted">
+                                    Những biến động của thiên nhiên trên phạm vi toàn cầu đang được ghi nhận rõ nét khi nhiệt độ trung bình tiếp tục gia tăng, kéo theo tốc độ băng tan nhanh hơn tại nhiều khu vực. Mực nước biển vì thế có xu hướng dâng cao, ảnh hưởng đến cấu trúc tự nhiên của các vùng ven biển và đại dương. 
+                                    Nhiều hệ sinh thái quan trọng cũng cho thấy dấu hiệu mất cân bằng, điển hình như Great Barrier Reef với sự thay đổi về màu sắc và môi trường sống của sinh vật biển. Cùng với đó, các hiện tượng thời tiết cực đoan như nắng nóng kéo dài, mưa lớn hay bão mạnh xuất hiện với tần suất cao hơn, phản ánh sự biến đổi rõ rệt của thiên nhiên trên toàn thế giới.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- ảnh full -->
+                        <img src="../../images/3d.jpg"
+                            class="w-100 rounded mb-5"
+                            style="height:350px; object-fit:cover;">
+
+                        <!-- khối 3 -->
+                        <div class="row align-items-center mb-5">
+                            <div class="col-md-6">
+                                <h4 class="fw-bold">🇻🇳✨Việt Nam chịu ảnh hưởng rõ rệt</h4>
+                                <p class="text-muted">
+                                    Tại Việt Nam, các biến động của thiên nhiên đang thể hiện ngày càng rõ qua nhiều hiện tượng thực tế. Khu vực Đồng bằng sông Cửu Long thường xuyên ghi nhận tình trạng xâm nhập mặn diễn ra sớm và kéo dài, ảnh hưởng trực tiếp đến nguồn nước và hệ sinh thái đặc trưng. Ở miền Trung, các đợt bão và mưa lớn có xu hướng diễn biến phức tạp hơn, gây biến đổi đáng kể đến điều kiện tự nhiên khu vực. Trong khi đó, tại các đô thị lớn như Hà Nội và Thành phố Hồ Chí Minh, nhiệt độ có xu hướng gia tăng rõ rệt, đặc biệt vào các giai đoạn cao điểm nắng nóng, phản ánh đặc trưng khí hậu đô thị ngày càng rõ nét.
+                                </p>
+                                <p class="text-muted">
+                                    Các ghi nhận gần đây cho thấy những biến động này không còn mang tính cục bộ mà đang diễn ra trên diện rộng, theo chu kỳ ngày càng dày hơn. Nhiều nhận định chuyên môn cho rằng trong thời gian tới, các đặc điểm tự nhiên này có thể tiếp tục thay đổi theo hướng rõ rệt hơn, đòi hỏi việc theo dõi và cập nhật thông tin một cách liên tục để phục vụ nghiên cứu và quan sát thực tế.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../../images/canh.jpg"
+                                    class="w-100 rounded"
+                                    style="height:280px; object-fit:cover;">
+                            </div>
+                        </div>
+
+                        <!-- khối tác động -->
+                        <div class="bg-light p-4 rounded">
+                            <h4 class="fw-bold mb-3">⚖️ Tác động hiện nay</h4>
+                            <p>
+                                <strong>Tích cực:</strong> Những biến động của vũ trụ và thiên nhiên trong thời gian gần đây đang tạo ra cả cơ hội lẫn thách thức rõ rệt. Ở chiều tích cực, các hiện tượng tự nhiên và dữ liệu quan sát được đã thúc đẩy mạnh mẽ hoạt động nghiên cứu khoa học, đặc biệt trong các lĩnh vực khí hậu, môi trường và không gian. Đồng thời, những thay đổi này cũng góp phần nâng cao nhận thức về thiên nhiên và khuyến khích phát triển các nguồn năng lượng sạch, thân thiện với môi trường.
+                            </p>
+                            <p class="mb-0">
+                                <strong>Thách thức:</strong> Tuy nhiên, đi kèm với đó là nhiều thách thức đáng chú ý. Tần suất và cường độ của các hiện tượng thiên tai có xu hướng gia tăng, tác động trực tiếp đến sản xuất nông nghiệp, nguồn nước và điều kiện sinh hoạt. Những yếu tố này đang ảnh hưởng ngày càng rõ đến chất lượng sống, đòi hỏi sự thích ứng linh hoạt trước những biến động của tự nhiên trong giai đoạn hiện nay.
+                            </p>
+                        </div>
+
+                    </article>
+                </section>
+                <!-- BÀI BÁO LIÊN QUAN -->
+                <section class="mb-5">
+                    <div class="text-center mb-4">
+                        <h2 class="h4 fw-bold text-primary">Bài Báo Liên Quan</h2>
+                        <p class="text-muted">Những bài viết cùng chủ đề đang được quan tâm</p>
+                    </div>
+                </section>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <article class="tgt-card h-100 bg-white">
+                            <img src="../../images/X.jpg" class="w-100">
+                            <div class="p-4">
+                                <h5 class="fw-bold">Quan sát tia X mở ra góc nhìn mới về quá trình hình thành sao</h5>
+                                <p class="text-muted">
+                                    Những quan sát gần đây từ các thiết bị không gian như Chandra X-ray Observatory đang mang lại góc nhìn mới về quá trình hình thành sao. 
+                                    Thông qua việc ghi nhận tia X phát ra từ các vùng không gian năng lượng cao, các nhà khoa học có thể theo dõi sự sụp đổ của các đám mây khí và bụi. Dữ liệu này giúp làm rõ hơn những giai đoạn đầu tiên khi một ngôi sao bắt đầu hình thành và phát triển. 
+                                    Qua đó, hiểu biết về vòng đời của các thiên thể trong vũ trụ tiếp tục được mở rộng.
+                                </p>
+                                <small class="text-muted">Trần Khoa Y • 6 phút</small>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="tgt-card h-100 bg-white">
+                            <img src="../../images/song.webp" class="w-100">
+                            <div class="p-4">
+                                <h5 class="fw-bold">Sóng hấp dẫn hé lộ thêm bí mật của hố đen</h5>
+                                <p class="text-muted"> 
+                                    Những nghiên cứu gần đây về sóng hấp dẫn đang cung cấp thêm thông tin quan trọng về bản chất của các hố đen trong vũ trụ. Thông qua các tín hiệu được ghi nhận bởi LIGO, các nhà khoa học có thể phát hiện sự va chạm và hợp nhất của các hố đen ở khoảng cách rất xa. 
+                                    Những dữ liệu này giúp làm rõ hơn cấu trúc, khối lượng và cách các hố đen tương tác với nhau. Qua đó, nhiều giả thuyết trước đây về sự tồn tại và phát triển của hố đen đang dần được kiểm chứng.
+                                </p>
+                                <small class="text-muted">Lê Minh Huy • 5 phút</small>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="tgt-card h-100 bg-white">
+                            <img src="../../images/mattroi.webp" class="w-100">
+                            <div class="p-4">
+                                <h5 class="fw-bold">Bão Mặt Trời có thể ảnh hưởng GPS toàn cầu</h5>
+                                <p class="text-muted">
+                                    Các nghiên cứu gần đây cho thấy những cơn bão Mặt Trời có thể gây tác động đáng kể đến hệ thống định vị toàn cầu (GPS). 
+                                    Khi các luồng hạt mang điện từ Mặt Trời va chạm với từ quyển Trái Đất, chúng có thể làm nhiễu tín hiệu vệ tinh và gây sai lệch dữ liệu định vị. Hiện tượng này đã được ghi nhận trong một số thời điểm hoạt động Mặt Trời tăng cao, ảnh hưởng đến hàng không, hàng hải và các dịch vụ dựa trên GPS. 
+                                    Điều này cho thấy mối liên hệ trực tiếp giữa hoạt động vũ trụ và các hệ thống công nghệ hiện đại trên Trái Đất.
+                                </p>
+                                <small class="text-muted">Phạm Lan Anh • 4 phút</small>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="tgt-card h-100 bg-white">
+                            <img src="../../images/bienvn.jpg" class="w-100">
+                            <div class="p-4">
+                                <h5 class="fw-bold">Hệ sinh thái biển Việt Nam ghi nhận nhiều biến động</h5>
+                                <p class="text-muted">Tại Việt Nam, các khu vực biển đang cho thấy nhiều thay đổi đáng chú ý trong hệ sinh thái tự nhiên. Một số vùng ven biển và đảo ghi nhận sự thay đổi về số lượng và phân bố của các loài sinh vật biển, phản ánh sự dịch chuyển trong môi trường sống. 
+                                    Khu vực Biển Đông và các vùng ven bờ xuất hiện hiện tượng suy giảm ở một số rạn san hô, trong khi một số loài khác lại thích nghi và phát triển theo điều kiện mới. Những ghi nhận này cho thấy thiên nhiên biển Việt Nam đang vận động liên tục và có sự thay đổi theo từng giai đoạn.
+
+                                </p>
+                                <small class="text-muted">Nguyễn Đức Vinh • 7 phút</small>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                </section>
+
+                <!-- PHÂN TÍCH -->
+                <section class="mb-5" style="margin-top: 3rem;">
+                    <div class="text-center mb-4">
+                        <h2 class="h4 fw-bold text-primary">Phân Tích Sâu</h2>
+                        <p class="text-muted">Những bài phân tích chuyên sâu về khoa học và môi trường</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article class="tgt-card bg-white p-4" style="border-radius: 24px;">
+                                <h4 class="fw-bold">Tác động của biến đổi khí hậu đến hệ sinh thái Việt Nam</h4>
+                                <p class="text-muted">Phân tích chi tiết về những thay đổi trong hệ sinh thái và đề xuất giải pháp bảo tồn.</p>
+                                <small class="text-muted">Phân tích • 12 phút đọc</small>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="tgt-card bg-white p-4" style="border-radius: 24px;">
+                                <h4 class="fw-bold">Công nghệ AI trong nghiên cứu vũ trụ</h4>
+                                <p class="text-muted">Cách AI đang thay đổi cách chúng ta khám phá và hiểu về vũ trụ.</p>
+                                <small class="text-muted">Phân tích • 10 phút đọc</small>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ĐĂNG KÝ -->
+                <section class="mb-5 text-center">
+                    <div class="tgt-card bg-light text-dark p-5" style="border-radius: 24px;">
+                        <h3 class="fw-bold mb-3">Theo Dõi Tin Tức Mới Nhất</h3>
+                        <p class="mb-4">Đăng ký nhận bản tin để không bỏ lỡ những cập nhật về khoa học và thiên nhiên</p>
+                        <button class="btn btn-dark btn-lg">Đăng Ký Ngay</button>
+                    </div>
+                </section>
+
+                <!-- XU HƯỚNG -->
+                <section class="mb-5">
+                    <div class="text-center mb-4">
+                        <h2 class="h4 fw-bold text-primary">Xu Hướng</h2>
+                        <p class="text-muted">Những chủ đề đang được quan tâm nhất</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                                <h5 class="fw-bold">#BiếnĐổiKhíHậu</h5>
+                                <p class="text-muted small">1.2K bài viết</p>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                                <h5 class="fw-bold">#VũTrụ</h5>
+                                <p class="text-muted small">890 bài viết</p>
+                            </article>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="tgt-card bg-white p-3 text-center" style="border-radius: 16px;">
+                                <h5 class="fw-bold">#ThiênNhiên</h5>
+                                <p class="text-muted small">756 bài viết</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    <button id="scrollToTop" class="btn btn-light rounded-circle shadow-lg d-flex align-items-center justify-content-center position-fixed bottom-0 end-0 m-3 z-3" style="width: 50px; height: 50px; display: none;">
+        <img src="../../images/arrow-circle-up.png" alt="Lên đầu trang" style="width: 24px; height: auto;">
+    </button>
+
+    <div id="site-footer" data-base="../../"></div>
+</body>
+</html>
