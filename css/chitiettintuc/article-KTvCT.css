@@ -1,25 +1,42 @@
-/* ===== ARTICLE DETAIL PAGE ===== */
+/* ===== Trang bai viet chi tiet ===== */
+/* Khoi nay tao nen chung va khai bao bien mau de cac phan ben duoi dung lai. */
 .news-article-detail {
+  --article-page-bg: #f6f1ea;
+  --article-surface: #fffdf9;
+  --article-surface-soft: #fbf7f2;
+  --article-border: #e7d9c8;
+  --article-border-soft: #eadfce;
+  --article-accent: #8c5f3f;
+  --article-accent-strong: #5f3d23;
+  --article-text: #2c241d;
+  --article-text-soft: #5b4b3d;
+  --article-shadow: 0 18px 42px rgba(33, 22, 12, 0.08);
+  --article-shadow-strong: 0 20px 40px rgba(33, 22, 12, 0.12);
+
   padding-top: 80px;
   padding-bottom: 120px;
-  background: #f6f1ea;
+  background: var(--article-page-bg);
   min-height: 100vh;
 }
 
+/* Giu noi dung o do rong doc thoai mai, tranh dong qua dai. */
 .article-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* The bao chinh dong vai tro nhu "to bao": nen sang, vien mem va do bong nhe. */
 .article-shell {
-  background: #fffdf9;
-  border: 1px solid #e7d9c8;
+  background: var(--article-surface);
+  border: 1px solid var(--article-border);
   border-radius: 28px;
   padding: 36px;
-  box-shadow: 0 18px 42px rgba(33, 22, 12, 0.08);
+  box-shadow: var(--article-shadow);
 }
 
+/* ===== Header bai viet ===== */
+/* Nhom nay chua chuyen muc, tieu de va metadata cua bai. */
 .article-header {
   margin-bottom: 40px;
   text-align: left;
@@ -27,73 +44,122 @@
 
 .article-category {
   display: inline-block;
+  margin-bottom: 15px;
+  color: var(--article-accent);
   font-family: "Oswald", sans-serif;
   font-size: 0.9rem;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.1em;
-  color: #8c5f3f;
-  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .article-title {
+  margin-bottom: 20px;
+  color: #18120d;
   font-family: "Merriweather", serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--news-text);
-  margin-bottom: 20px;
 }
 
+/* Metadata dung flex de tu xuong dong khi thieu cho tren man hinh nho. */
 .article-meta {
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  color: rgba(29, 23, 18, 0.65);
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 15px 0;
   border-top: 1px solid rgba(140, 95, 63, 0.14);
   border-bottom: 1px solid rgba(140, 95, 63, 0.14);
-  padding: 15px 0;
+  color: rgba(29, 23, 18, 0.65);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
 }
 
-.article-featured-img {
+/* ===== Anh mo dau ===== */
+/* Khung ngoai tao lop nen kem, vien va bo goc nhu mot "frame" cho anh. */
+.article-shell .article-featured-media {
+  margin: 0 0 40px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--article-border-soft);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 45%),
+    linear-gradient(180deg, #f7efe5 0%, #efe2d4 100%);
+  box-shadow: var(--article-shadow-strong);
+}
+
+/*
+  Anh dung aspect-ratio co dinh de moi bai ra cung mot nhip bo cuc.
+  object-fit: cover giup anh phu kin khung va giu cam giac "day anh".
+*/
+.article-shell .article-featured-media > .article-featured-img {
+  display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 40px;
-  border-radius: 22px;
-  border: 1px solid #eadfce;
-  box-shadow: 0 20px 40px rgba(33, 22, 12, 0.12);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  background: var(--article-surface-soft);
+  box-shadow: inset 0 0 0 1px rgba(234, 223, 206, 0.7);
 }
 
+/* ===== Noi dung bai viet ===== */
+/* Font serif giup phan than bai de doc theo phong cach bao dien tu. */
 .article-content {
+  color: var(--article-text);
   font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #2c241d;
 }
 
 .article-content p {
   margin-bottom: 25px;
 }
 
+/* Xoa khoang trang thua o phan tu cuoi de footer bam dep hon. */
+.article-content > *:last-child {
+  margin-bottom: 0;
+}
+
 .article-content h2 {
-  font-family: "Merriweather", serif;
-  font-weight: 700;
   margin-top: 40px;
   margin-bottom: 20px;
   color: #18120d;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
 }
 
+/* Blockquote dong vai tro nhu diem nhan thi giac va nhan manh y chinh. */
 .article-content blockquote {
   margin: 30px 0;
   padding: 18px 22px;
-  border-left: 4px solid #8c5f3f;
+  border-left: 4px solid var(--article-accent);
   background: #f8f1e8;
   color: #4f4438;
   font-style: italic;
 }
 
+/* Neu sau nay chen anh giua bai, cac rule nay se tu bo goc va do bong nhe. */
+.article-content figure {
+  margin: 30px 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.article-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 14px 28px rgba(33, 22, 12, 0.1);
+}
+
+/* ===== Chan bai ===== */
+/* Footer bai giu nguon tham khao tach biet voi phan noi dung chinh. */
 .article-footer {
   margin-top: 60px;
   padding-top: 40px;
@@ -102,26 +168,28 @@
 
 .article-source {
   margin: 0;
+  color: var(--article-text-soft);
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  color: #5b4b3d;
 }
 
 .article-source a {
-  color: #8c5f3f;
+  color: var(--article-accent);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .article-source a:hover {
-  color: #5f3d23;
+  color: var(--article-accent-strong);
 }
 
+/* ===== Cum tin lien quan ===== */
+/* Grid nay san sang cho cac card bai viet goi y neu sau nay can dung lai. */
 .related-news-title {
+  margin-bottom: 30px;
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
-  margin-bottom: 30px;
 }
 
 .related-grid {
@@ -130,15 +198,17 @@
   gap: 30px;
 }
 
+/* Card co padding trong de anh bo goc ro va tach khoi vien ngoai. */
 .related-card {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease;
-  background: #ffffff;
-  border: 1px solid #e7d9c8;
-  border-radius: 18px;
   overflow: hidden;
+  padding: 12px;
+  border: 1px solid var(--article-border);
+  border-radius: 20px;
+  background: #ffffff;
   box-shadow: 0 10px 24px rgba(33, 22, 12, 0.08);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
 .related-card:hover {
@@ -147,24 +217,37 @@
 
 .related-card img {
   width: 100%;
-  aspect-ratio: 16/9;
+  margin-bottom: 14px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
   object-fit: cover;
-  margin-bottom: 15px;
 }
 
 .related-card h4 {
+  margin: 0;
+  padding: 0 6px 8px;
   font-family: "Merriweather", serif;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
-  padding: 0 16px 18px;
-  margin: 0;
 }
 
+/* ===== Responsive ===== */
+/* Khi xuong mobile, giam padding va doi ty le anh de khung van thoang mat. */
 @media (max-width: 768px) {
   .article-shell {
     padding: 24px 20px;
     border-radius: 20px;
+  }
+
+  .article-shell .article-featured-media {
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .article-shell .article-featured-media > .article-featured-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
   }
 
   .article-title {
