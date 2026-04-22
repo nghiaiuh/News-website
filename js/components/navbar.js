@@ -42,9 +42,6 @@ $(() => {
             </button>
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="nwMenu">
-            <div class="d-flex justify-content-center justify-content-lg-end w-100 mb-2 menu-actions">
-              <a class="btn login-btn rounded-0 px-4 py-4" href="${r("dang-nhap.html")}">Đăng nhập</a>
-            </div>
             <ul class="navbar-nav list-inline mb-0 justify-content-center justify-content-lg-end w-100" id="user-options"></ul>
           </div>
         </div>

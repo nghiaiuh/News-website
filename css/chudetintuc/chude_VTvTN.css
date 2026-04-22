@@ -74,7 +74,6 @@
 
 .article-meta .category {
   background-color: var(--secondary-color);
-  color: white;
   padding: 4px 12px;
   border-radius: 4px;
   font-weight: 500;
@@ -85,7 +84,6 @@
 }
 
 .article-meta .read-time {
-  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Hero Sidebar */
@@ -437,7 +435,7 @@
 }
 
 .btn-continue:hover {
-  background-color: var(--text-dark);
+  background-color: black;
   color: white;
 }
 

@@ -81,7 +81,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  column-gap: 2rem;
   list-style: none;
 }
 
