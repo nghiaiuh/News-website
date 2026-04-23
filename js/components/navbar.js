@@ -33,9 +33,7 @@ $(() => {
       <nav class="navbar navbar-dark py-0">
         <div class="container-fluid px-3 px-xl-4">
           <div class="navbar-shell w-100">
-            <a href="../../html/Index.html#team"class="btn">
-              <span class="team-tag">Nhóm 7</span>
-            </a>
+            <span class="team-tag">Nhóm 7</span>
             ${buildNav(L_NAV, "main-menu-left")}
             <a class="logo py-3 mb-0" href="${r("Index.html")}"><span>BÁO CHÍ <span aria-label="DESIGN">${LOGO.map(x => `<span style="color:${x.hex}">${x.c}</span>`).join("")}</span></span></a>
             ${buildNav(R_NAV, "main-menu-right")}

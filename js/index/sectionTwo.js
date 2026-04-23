@@ -12,22 +12,26 @@ $(() => {
 
   const getScrollOffset = () => Math.max(0, $track[0].scrollWidth - $viewport.innerWidth());
 
-  gsap.to($track[0], {
-    x: () => -getScrollOffset(),
-    ease: "none",
-    scrollTrigger: {
-      trigger: $section[0],
-      start: "top top",
-      end: () => `+=${getScrollOffset()}`,
-      pin: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        if ($progressBar.length) {
-          $progressBar.css("transform", `scaleX(${self.progress})`);
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 992px)", () => {
+    gsap.to($track[0], {
+      x: () => -getScrollOffset(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: $section[0],
+        start: "top top",
+        end: () => `+=${getScrollOffset()}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          if ($progressBar.length) {
+            $progressBar.css("transform", `scaleX(${self.progress})`);
+          }
         }
       }
-    }
+    });
   });
 
   // Tái kích hoạt Hover thông qua jQuery cơ bản thay vì theo dõi tọa độ

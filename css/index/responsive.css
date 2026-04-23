@@ -3,6 +3,34 @@
   .title-wrap {
     display: none !important;
   }
+
+  /* Ensure Navbar is fully visible and clickable */
+  .header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+    background: #000 !important;
+    /* Force black background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+    /* Add shadow for depth */
+  }
+
+  /* Make sure mobile menu opens properly */
+  #nwMenu {
+    background: #000 !important;
+  }
+
+  /* Ensure team tag is clickable */
+  .navbar-shell .team-tag {
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+  }
+
+  .navbar-shell .team-tag:hover {
+    color: #c30000 !important;
+    /* Red hover like button */
+    text-shadow: 0 0 5px rgba(195, 0, 0, 0.3);
+  }
 }
 
 /* SECTION 2 */
@@ -14,8 +42,19 @@
   .s2-viewport {
     overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: #3d3d3d var(--news-text);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .s2-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Override height of section 2 for mobile */
+  .s2-panel {
+    height: 70vh !important;
+    scroll-snap-align: start;
   }
 
   /* Tắt GSAP transform trên mobile */
@@ -52,6 +91,49 @@
 
   .s2-lead-image-wrap {
     height: 220px;
+  }
+
+  /* SECTION 3 - MOBILE NATIVE DRAG/SCROLL */
+  .sports-feed-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sports-feed-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sports-feed-card {
+    scroll-snap-align: center;
+    flex: 0 0 240px;
+    height: 360px;
+  }
+
+  .sports-feed-nav {
+    display: none; /* Hide next/prev arrows on touch devices */
+  }
+
+  /* SECTION 5 - DISABLE HEIGHT FOR MOBILE */
+  .s5-section {
+    height: auto !important; 
+    padding-bottom: 40px;
+  }
+
+  .s5-sticky-wrap {
+    position: relative !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Display elements normally on mobile */
+  .s5-scene-container {
+    display: none; /* Hide the complex collage on mobile if desired, or arrange them differently. 
+                       For now, let's keep them hidden on small screens and just show the feed */
   }
 }
 
@@ -94,5 +176,11 @@
 
   .s2-lead-cta {
     max-width: 100%;
+  }
+
+  /* Section 3 further reduce card size */
+  .sports-feed-card {
+    flex: 0 0 200px;
+    height: 300px;
   }
 }
