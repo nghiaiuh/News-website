@@ -20,6 +20,23 @@
     <script src="../../js/lib/gsap/gsap.min.js" defer></script>
     <script src="../../js/index/horizontalFeed.js" defer></script>
 
+    <style>
+        .video-thumbnail a{
+            display:block;
+            position:relative;
+        }
+
+        .video-thumbnail img{
+            width:100%;
+            border-radius:20px;
+            transition:0.4s;
+        }
+
+        .video-thumbnail:hover img{
+            transform:scale(1.03);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -31,89 +48,154 @@
                 <div class="hero-content">
                     <div class="hero-feature mt-3 mb-3">
                         <div class="hero-text">
-                            <h1 class="hero-title mb-4">Russia's Youngest-ever Astronauts Blast Off to Space Station
+                            <h1 class="hero-title mb-4">
+                                NASA chuẩn bị sứ mệnh đưa con người trở lại Mặt Trăng trong thập kỷ này
                             </h1>
-                            <p class="hero-description mb-4">On Thursday, three Russian astronauts lifted off on the
-                                Moscow-17 spacecraft from the Sputnik 1 Satellite Launch Center deep in the Gobi Desert,
-                                heading for the Mir space station for a six-month stay.</p>
+                            <p class="hero-description mb-4">
+                                Trong hơn nửa thế kỷ kể từ khi con người lần đầu đặt chân lên Mặt Trăng vào năm 1969,
+                                vệ tinh tự nhiên của Trái Đất vẫn luôn là biểu tượng của khát vọng khám phá và giới hạn
+                                công nghệ nhân loại. Ngày nay, NASA cùng các đối tác quốc tế đang chuẩn bị cho một hành
+                                trình mang tính bước ngoặt: đưa con người trở lại Mặt Trăng — lần này với mục tiêu ở lại lâu dài.
+                            </p>
+
+                            <p class="mb-3">
+                                Chương trình Artemis hướng tới việc xây dựng sự hiện diện bền vững của con người trên
+                                và quanh Mặt Trăng. Tàu vũ trụ Orion cùng tên lửa SLS đang được thử nghiệm nhằm đảm bảo
+                                khả năng hoạt động trong môi trường khắc nghiệt của không gian, nơi không có khí quyển,
+                                áp suất hay từ trường bảo vệ như Trái Đất.
+                            </p>
+
+                            <p class="mb-3">
+                                Các sứ mệnh không gian hiện đại cũng đóng vai trò quan trọng trong việc quan sát Trái Đất
+                                từ xa, giúp con người hiểu rõ hơn về biến đổi khí hậu, băng tan và sự dâng cao của mực nước biển.
+                                Từ góc nhìn ngoài không gian, Trái Đất hiện lên như một hành tinh nhỏ bé và mong manh,
+                                nhấn mạnh tầm quan trọng của việc bảo vệ môi trường sống.
+                            </p>
+
+                            <p>
+                                Trong tương lai, Mặt Trăng không chỉ là điểm đến mà còn là bàn đạp cho những hành trình xa hơn,
+                                đặc biệt là Sao Hỏa. Việc xây dựng căn cứ tại đây sẽ giúp thử nghiệm công nghệ sinh tồn,
+                                khai thác tài nguyên và chuẩn bị cho các sứ mệnh dài hạn trong vũ trụ.
+                            </p>
                             <div class="article-meta">
-                                <span class="category">Space and Universe</span>
+                                <span class="category">Vũ trụ và Thiên nhiên</span>
                                 <span class="separator">•</span>
-                                <span class="author">Daniel Albarta</span>
+                                <span class="author">Nguyễn Minh Anh</span>
                                 <span class="separator">•</span>
-                                <span class="date">October 22, 2023</span>
+                                <span class="date">22 tháng 10, 2023</span>
                             </div>
                         </div>
-                        <img src="../../images/vu-tru-thien-nhien/russian-astronaut.png" alt="">
+                        <div class="trending-image video-thumbnail">
+                            <img src="../../images/planet-1.png" alt="Phi hành gia NASA trên Mặt Trăng">
+                        </div>
                     </div>
                     <div class="hero-sidebar">
                         <div class="sidebar-article">
                             <img class="sidebar-img" src="../../images/vu-tru-thien-nhien/ice.png" alt="Article">
                             <div class="sidebar-content">
                                 <div class="article-meta small">
-                                    <span class="author">Daniel Albarta</span>
-                                    <span class="date">October 22, 2023</span>
+                                    <span class="author">Trần Hoàng Nam</span>
+                                    <span class="date">22 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="sidebar-title my-2">'Washy Clouds and a Weepy Sky Floating Upside Down':
-                                    Simon
-                                    Armitage's Arctic expedition</h3>
+                                <!----1---->
+                                <h3 class="sidebar-title my-2">
+                                    Gấu Bắc Cực đang mất môi trường sống do băng tan nhanh tại Bắc Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Our Planet</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="read-time">8 phút đọc</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="sidebar-article">
-                            <img class="sidebar-img" src="../../images/vu-tru-thien-nhien/rocket.png" alt="Article">
+                            <img class="sidebar-img" src="../../images/ca-voi.jpg" alt="Article">
                             <div class="sidebar-content">
                                 <div class="article-meta small">
-                                    <span class="author">Donn Robinson</span>
-                                    <span class="date">October 21, 2023</span>
+                                    <span class="author">Lê Quốc Huy</span>
+                                    <span class="date">21 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="sidebar-title my-2">Rocket Lab Expects to Resume Electron Launches before
-                                    year-end
-                                    after September failure</h3>
+                                <!----2---->
+                                <h3 class="sidebar-title my-2">
+                                    Cá voi xanh xuất hiện trở lại tại vùng biển lạnh Nam Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">4 mins read</span>
+                                    <span class="read-time">4 phút đọc</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="sidebar-article">
-                            <img class="sidebar-img" src="../../images/vu-tru-thien-nhien/mars.png" alt="Article">
+                            <img class="sidebar-img" src="../../images/rung.webp" alt="Article">
                             <div class="sidebar-content">
                                 <div class="article-meta small">
-                                    <span class="author">Natalia Freigman</span>
-                                    <span class="date">October 21, 2023</span>
+                                    <span class="author">Phạm Gia Linh</span>
+                                    <span class="date">21 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="sidebar-title my-2">Curiosity Rover Discovers New Evidence Mars Once had
-                                    'right
-                                    conditions' for life</h3>
+                                <!----3---->
+                                <h3 class="sidebar-title my-2">
+                                    Rừng Amazon đang mất dần đa dạng sinh học do nhiệt độ tăng cao
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">7 mins read</span>
+                                    <span class="read-time">7 phút đọc</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="sidebar-article">
-                            <img class="sidebar-img" src="../../images/vu-tru-thien-nhien/sattlite.png" alt="Article">
+                            <img class="sidebar-img" src="../../images/bang.webp" alt="Article">
                             <div class="sidebar-content">
                                 <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
+                                    <span class="author">Võ Minh Khang</span>
+                                    <span class="date">19 tháng 1, 2023</span>
                                 </div>
-                                <h3 class="sidebar-title my-2">Satellite Data Reveals Ancient Landscape Preserved
-                                    beneath
-                                    East Antarctic ice sheet</h3>
+                                <!----4----->
+                                <h3 class="sidebar-title my-2">
+                                    Vệ tinh ghi nhận lớp băng Nam Cực tan nhanh hơn dự báo trước đây
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="read-time">20 phút đọc</span>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="sidebar-article">
+                            <img class="sidebar-img" src="../../images/sao.jpg" alt="Article">
+                            <div class="sidebar-content">
+                                <div class="article-meta small">
+                                    <span class="author">Vinh Khang</span>
+                                    <span class="date">9 tháng 10, 2023</span>
+                                </div>
+
+                                <!----5----->
+                                <h3 class="sidebar-title my-2">
+                                    Hiện tượng sao băng rực sáng trên bầu trời đêm khiến giới thiên văn chú ý
+                                </h3>
+
+                                <div class="article-meta small">
+                                    <span class="read-time">17 phút đọc</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-article">
+                            <img class="sidebar-img" src="../../images/nhatthuc.jpg" alt="Article">
+                            <div class="sidebar-content">
+                                <div class="article-meta small">
+                                    <span class="author">Võ An</span>
+                                    <span class="date">19 tháng 3, 2023</span>
+                                </div>
+
+                                <!----6----->
+                                <h3 class="sidebar-title my-2">
+                                    Hiện tượng nhật thực toàn phần tạo nên cảnh tượng hiếm gặp trên bầu trời
+                                </h3>
+
+                                <div class="article-meta small">
+                                    <span class="read-time">30 phút đọc</span>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="news-feed py-4 mt-5">
@@ -121,75 +203,75 @@
                         <div class="feed-card">
                             <div class="feed-content">
                                 <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
+                                    <span class="author">Võ Minh Khang</span>
+                                    <span class="date">19 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="feed-title my-3">Satellite Data Reveals Ancient Landscape Preserved beneath
-                                    East
-                                    Antarctic ice sheet</h3>
+                                <h3 class="feed-title my-3">
+                                    Dữ liệu vệ tinh tiết lộ cảnh quan cổ đại được bảo tồn dưới lớp băng Đông Nam Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feed-card">
-                            <div class="feed-content">
-                                <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
-                                </div>
-                                <h3 class="feed-title my-3">Satellite Data Reveals Ancient Landscape Preserved beneath
-                                    East
-                                    Antarctic ice sheet</h3>
-                                <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="category">Vũ trụ và Thiên nhiên</span>
+                                    <span class="read-time">8 phút đọc</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="feed-card">
                             <div class="feed-content">
                                 <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
+                                    <span class="author">Ngô Thành Đạt</span>
+                                    <span class="date">19 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="feed-title my-3">Satellite Data Reveals Ancient Landscape Preserved beneath
-                                    East
-                                    Antarctic ice sheet</h3>
+                                <h3 class="feed-title my-3">
+                                    Dữ liệu vệ tinh tiết lộ cảnh quan cổ xưa được bảo tồn dưới lớp băng Đông Nam Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="read-time">8 phút đọc</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="feed-card">
                             <div class="feed-content">
                                 <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
+                                    <span class="author">Trịnh Hải Nam</span>
+                                    <span class="date">19 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="feed-title my-3">Satellite Data Reveals Ancient Landscape Preserved beneath
-                                    East
-                                    Antarctic ice sheet</h3>
+                                <h3 class="feed-title my-3">
+                                    Dữ liệu vệ tinh hé lộ địa hình cổ đại được lưu giữ dưới lớp băng phía Đông Nam Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="read-time">8 phút đọc</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="feed-card">
                             <div class="feed-content">
                                 <div class="article-meta small">
-                                    <span class="author">Antonio Roberto</span>
-                                    <span class="date">October 19, 2023</span>
+                                    <span class="author">Bùi Anh Tuấn</span>
+                                    <span class="date">19 tháng 10, 2023</span>
                                 </div>
-                                <h3 class="feed-title my-3">Satellite Data Reveals Ancient Landscape Preserved beneath
-                                    East
-                                    Antarctic ice sheet</h3>
+                                <h3 class="feed-title my-3">
+                                    Dữ liệu vệ tinh cho thấy cảnh quan cổ xưa được bảo tồn dưới lớp băng Đông Nam Cực
+                                </h3>
                                 <div class="article-meta small">
-                                    <span class="category">Space and Universe</span>
-                                    <span class="read-time">8 mins read</span>
+                                    <span class="read-time">8 phút đọc</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feed-card">
+                            <div class="feed-content">
+                                <div class="article-meta small">
+                                    <span class="author">Đặng Quốc Bảo</span>
+                                    <span class="date">19 tháng 10, 2023</span>
+                                </div>
+                                <h3 class="feed-title my-3">
+                                    Dữ liệu vệ tinh phát hiện địa hình cổ đại nằm dưới lớp băng phía Đông Nam Cực
+                                </h3>
+                                <div class="article-meta small">
+                                    <span class="read-time">8 phút đọc</span>
                                 </div>
                             </div>
                         </div>
@@ -202,20 +284,18 @@
         <!-- Newest Stories -->
         <section class="featured-section py-5 px-4 px-md-5">
             <div class="container-lg">
-                <h2 class="section-title mb-4 mb-md-5">Newest Stories</h2>
+                <h2 class="section-title mb-4 mb-md-5">Tin mới nhất</h2>
                 <div class="stories-grid">
                     <div class="story-card">
                         <img src="../../images/vu-tru-thien-nhien/rocket1.png" alt="Story" class="story-img">
                         <div class="story-content">
-                            <h3 class="story-title mb-3">If Alien Life is Artificially Intelligent, it May be Stranger
-                                than
-                                We Can imagine</h3>
-                            <p class="story-excerpt mb-3">If Alien Life is Artificially Intelligent, it May be Stranger
-                                than
-                                We Can imagine</p>
+                            <h3 class="story-title mb-3">Nếu sự sống ngoài hành tinh là trí tuệ nhân tạo, nó có thể kỳ lạ hơn chúng ta tưởng</h3>
+                            <p class="story-excerpt mb-3">
+                            Khả năng sự sống ngoài Trái Đất tồn tại dưới dạng trí tuệ nhân tạo đang được các nhà khoa học nghiên cứu nghiêm túc.
+                            </p>
                             <div class="article-meta">
-                                <span class="category">Space and Universe</span>
-                                <span class="read-time">9 mins read</span>
+                                <span class="category">Thiên văn học</span>
+                                <span class="read-time">9 phút đọc</span>
                             </div>
                         </div>
                     </div>
@@ -223,45 +303,45 @@
                     <div class="story-card">
                         <img src="../../images/vu-tru-thien-nhien/sattlite1.png" alt="Story" class="story-img">
                         <div class="story-content">
-                            <h3 class="story-title mb-3">Climate change has pushed Earth into 'Uncharted territory':
-                                report
-                            </h3>
-                            <p class="story-excerpt mb-3">Climate change has pushed Earth into 'Uncharted territory':
-                                report
+                            <h3 class="story-title mb-3">Biến đổi khí hậu đang đẩy Trái Đất vào vùng “chưa từng có”</h3>
+                            <p class="story-excerpt mb-3">
+                            Các báo cáo khoa học mới cho thấy nhiệt độ toàn cầu đang tăng nhanh hơn dự đoán trước đây.
                             </p>
                             <div class="article-meta">
-                                <span class="category">Our Planet</span>
-                                <span class="read-time">3 mins read</span>
+                                <span class="category">Biến đổi khí hậu</span>
+                                <span class="read-time">3 phút đọc</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="story-card">
-                        <img src="../../images/vu-tru-thien-nhien/rocket2.png" alt="Story" class="story-img">
+                        <img src="../../images/vu-tru-thien-nhien/rocket2.png" alt="Câu chuyện" class="story-img">
                         <div class="story-content">
-                            <h3 class="story-title mb-3">Humanity at Risk from AI 'Race to the Bottom', Says Tech Expert
+                            <h3 class="story-title mb-3">
+                                Nhân loại đối mặt nguy cơ từ cuộc chạy đua AI thiếu kiểm soát, chuyên gia cảnh báo
                             </h3>
-                            <p class="story-excerpt mb-3">Humanity at Risk from AI 'Race to the Bottom', Says Tech
-                                Expert</p>
+                            <p class="story-excerpt mb-3">
+                                Các chuyên gia công nghệ cho rằng cuộc cạnh tranh phát triển trí tuệ nhân tạo đang có thể tạo ra nhiều rủi ro cho tương lai nhân loại.
+                            </p>
                             <div class="article-meta">
-                                <span class="category">Technology</span>
-                                <span class="read-time">8 mins read</span>
+                                <span class="category">Công nghệ</span>
+                                <span class="read-time">8 phút đọc</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="story-card">
-                        <img src="../../images/vu-tru-thien-nhien/astronauts.png" alt="Story" class="story-img">
+                        <img src="../../images/vu-tru-thien-nhien/astronauts.png" alt="Câu chuyện" class="story-img">
                         <div class="story-content">
-                            <h3 class="story-title mb-3">UN Science Body Head Fears Lower Chance of Keeping Global
-                                warming to
-                                1.5C</h3>
-                            <p class="story-excerpt mb-3">UN Science Body Head Fears Lower Chance of Keeping Global
-                                warming
-                                to 1.5C</p>
+                            <h3 class="story-title mb-3">
+                                Người đứng đầu cơ quan khoa học Liên Hợp Quốc lo ngại mục tiêu giữ ấm lên toàn cầu ở mức 1,5°C ngày càng khó đạt
+                            </h3>
+                            <p class="story-excerpt mb-3">
+                                Các nhà khoa học cảnh báo cơ hội kiểm soát nhiệt độ Trái Đất tăng không vượt quá 1,5°C đang giảm dần nhanh chóng.
+                            </p>
                             <div class="article-meta">
-                                <span class="category">Our Planet</span>
-                                <span class="read-time">10 mins read</span>
+                                <span class="category">Hành tinh của chúng ta</span>
+                                <span class="read-time">10 phút đọc</span>
                             </div>
                         </div>
                     </div>
@@ -273,41 +353,41 @@
         <section class="py-4 px-4 px-md-5">
             <div class="container-lg">
                 <div class="section-header">
-                    <h2 class="section-title mb-4 mb-md-5">Trending News</h2>
-                    <a href="#" class="see-all">see all</a>
+                    <h2 class="section-title mb-4 mb-md-5">Tin nổi bật</h2>
+                    <a href="#" class="see-all">Xem tất cả</a>
                 </div>
                 <div class="trending-content">
-                    <div class="trending-image">
-                        <img src="../../images/vu-tru-thien-nhien/2austronauts.png" alt="Trending">
-                        <button class="play-button" aria-label="Play video">
-                            <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
-                        </button>
+                    <div class="trending-image video-thumbnail">
+                        <a href="https://www.youtube.com/watch?v=21X5lGlDOfg" target="_blank">
+                            <img src="https://img.youtube.com/vi/21X5lGlDOfg/maxresdefault.jpg" alt="NASA Live">
+                            <button class="play-button" aria-label="Xem video">
+                                <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
+                            </button>
+                        </a>
                     </div>
                     <div class="trending-text">
-                        <h2 class="trending-title mb-4">Axiom Space Refines Training for Next Astronauts Mission</h2>
+                        <h2 class="trending-title mb-4">
+                            Kính James Webb ghi nhận thiên hà xa nhất từng được quan sát
+                        </h2>
                         <div class="trending-body flex-grow-1">
-                            <p class="mb-3"><span class="drop-cap">A</span>n American company that organises visits to
-                                the
-                                International Space Station.Houston-based Axiom has signed a memorandum of understanding
-                                with the UK Space Agency to
-                                try to make it happen. The project would probably cost £200m or more, but the idea is
-                                that it would be funded commercially. There would be no contribution from UK taxpayers.
-                                Axiom told the BBC that conversations with corporations and institutions interested in
-                                providing finance were already under way.</p>
-                            <p class="mb-3">The last UK individual to go into orbit was Tim Peake, who flew to the ISS
-                                as a European
-                                Space Agency (Esa) astronaut in 2015. "This is an exciting opportunity and actually
-                                unique," he commented. "No-one has done a 'national mission', commercially, like this
-                                before. It's a new model and would be paving the way for how we do space in the future."
-                                Details are sparse at the moment. No crew has been chosen, nor is there a concept yet
-                                for how it would be selected.</p>
+                            <p class="mb-3">
+                                <span class="drop-cap">K</span>
+                                ính viễn vọng James Webb của NASA vừa truyền về những hình ảnh
+                                rõ nét nhất từng ghi nhận về các thiên hà sơ khai hình thành
+                                chỉ vài trăm triệu năm sau Vụ Nổ Lớn.
+                            </p>
+                            <p class="mb-3">
+                                Phát hiện này giúp các nhà thiên văn hiểu rõ hơn về cách
+                                các ngôi sao đầu tiên được hình thành và cách vũ trụ phát triển
+                                trong hàng tỷ năm qua.
+                            </p>
                         </div>
                         <div class="trending-footer mt-4 pt-4">
                             <div class="article-meta">
-                                <span class="category">Space and Universe</span>
+                                <span class="category">Thiên văn học</span>
                                 <span class="read-time">9 mins read</span>
                             </div>
-                            <a href="#" class="btn-continue">Continue Reading</a>
+                            <a href="#" class="btn-continue">Đọc tiếp</a>
                         </div>
                     </div>
                 </div>
@@ -321,39 +401,42 @@
                     <!-- Space and Universe -->
                     <div class="category-card">
                         <div class="category-header">
-                            <h3 class="category-title m-0">Space and Universe</h3>
-                            <a href="#" class="see-all">see all</a>
+                            <h3 class="category-title m-0">Vũ trụ & Thiên văn</h3>
+                            <a href="#" class="see-all">Xem tất cả</a>
                         </div>
-                        <img src="../../images/vu-tru-thien-nhien/sattlite3.png" alt="Featured"
+                        <img src="../../images/vu-tru-thien-nhien/sattlite3.png" alt="Nổi bật"
                             class="category-featured">
                         <div class="category-content">
-                            <h4 class="featured-title mb-3">Research Institute Wins $55 Million Contract for
-                                QuickSounder
-                                Weather Satellite</h4>
+                            <h4 class="featured-title mb-3">
+                                Viện nghiên cứu giành hợp đồng 55 triệu USD cho vệ tinh thời tiết QuickSounder
+                            </h4>
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/mars1.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Scientists Identify Molten Layer Deep Within Interior of Mars
+                                <img src="../../images/vu-tru-thien-nhien/mars1.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Các nhà khoa học phát hiện lớp nóng chảy sâu bên trong lõi sao Hỏa
                                 </h5>
                             </div>
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/galaxy.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Civilizations are Probably Spreading Quickly Through the
-                                    Universe
+                                <img src="../../images/vu-tru-thien-nhien/galaxy.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Các nền văn minh có thể đang lan rộng nhanh chóng khắp vũ trụ
                                 </h5>
                             </div>
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/sattlite4.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Researchers Identify Metals Released into the Atmosphere by
-                                    Satellite Reentry</h5>
+                                <img src="../../images/vu-tru-thien-nhien/sattlite4.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Các nhà nghiên cứu xác định kim loại phát tán vào khí quyển khi vệ tinh quay về
+                                </h5>
                             </div>
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/rocket3.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">SpaceX Falcon 9 Launches 23 Starlink Satellites from Cape
-                                    Canaveral</h5>
+                                <img src="../../images/vu-tru-thien-nhien/rocket3.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    SpaceX Falcon 9 phóng 23 vệ tinh Starlink từ mũi Canaveral
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -361,39 +444,44 @@
                     <!-- Health and Science -->
                     <div class="category-card">
                         <div class="category-header">
-                            <h3 class="category-title m-0">Health and Science</h3>
-                            <a href="#" class="see-all">see all</a>
+                            <h3 class="category-title m-0">Khoa học & Thiên nhiên</h3>
+                            <a href="#" class="see-all">Xem tất cả</a>
                         </div>
-                        <img src="../../images/vu-tru-thien-nhien/science.png" alt="Featured" class="category-featured">
+                        <img src="../../images/vu-tru-thien-nhien/science.png" alt="Nổi bật" class="category-featured">
                         <div class="category-content">
-                            <h4 class="featured-title mb-3">Dr. Natalia Vardoka Uses Science, Math and Technology in
-                                Laboratory Diagnostics</h4>
+                            <h4 class="featured-title mb-3">
+                                Tiến sĩ Nguyễn Thanh Vân ứng dụng khoa học, toán học và công nghệ trong chẩn đoán phòng thí nghiệm
+                            </h4>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/science1.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Speciality Chemicals Manufacturer and Global Distributor,
-                                    Devine
-                                    Chemicals has doubled the size of its head office and opened a research centre.</h5>
-                            </div>
-                            <div class="category-divider my-3"></div>
-                            <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/science2.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Chemistry Study Improves Method to Measure Vibrations of
-                                    Solids
+                                <img src="../../images/vu-tru-thien-nhien/science1.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Nhà sản xuất hóa chất chuyên dụng Devine Chemicals mở rộng trụ sở và khai trương trung tâm nghiên cứu mới
                                 </h5>
                             </div>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/health.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Human Powered Health adds 'pure climber' Doebel-Hickok for
-                                    2024
+                                <img src="../../images/vu-tru-thien-nhien/science2.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Nghiên cứu hóa học cải tiến phương pháp đo dao động của vật rắn
                                 </h5>
                             </div>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/science3.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Source of Raw Milk Causing Illness Found, Health Officials
-                                    Report
+                                <img src="../../images/vu-tru-thien-nhien/health.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Human Powered Health bổ sung tay đua leo núi triển vọng cho mùa giải 2024
+                                </h5>
+                            </div>
+
+                            <div class="category-divider my-3"></div>
+                            <div class="article-list-item mb-3">
+                                <img src="../../images/vu-tru-thien-nhien/science3.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Giới chức y tế xác định nguồn sữa tươi gây ra nhiều ca bệnh
                                 </h5>
                             </div>
                         </div>
@@ -402,38 +490,45 @@
                     <!-- Technology -->
                     <div class="category-card">
                         <div class="category-header">
-                            <h3 class="category-title m-0">Technology</h3>
-                            <a href="#" class="see-all">see all</a>
+                            <h3 class="category-title m-0">Công nghệ</h3>
+                            <a href="#" class="see-all">Xem tất cả</a>
                         </div>
-                        <img src="../../images/vu-tru-thien-nhien/car.png" alt="Featured" class="category-featured">
+                        <img src="../../images/vu-tru-thien-nhien/car.png" alt="Nổi bật" class="category-featured">
                         <div class="category-content">
-                            <h4 class="featured-title mb-3">Tesla Model Y Becomes Europe's Top-Selling Car in September
+                            <h4 class="featured-title mb-3">
+                                Tesla Model Y trở thành mẫu xe bán chạy nhất châu Âu trong tháng 9
                             </h4>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/Neuron.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Neuron E-scooter Access in Saskatoon Stops as Cold Weather
-                                    Rolls
-                                    In</h5>
+                                <img src="../../images/vu-tru-thien-nhien/Neuron.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Dịch vụ xe điện Neuron tại Saskatoon tạm dừng khi thời tiết lạnh tràn về
+                                </h5>
                             </div>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/Qualcomm.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Qualcomm's Powerful Snapdragon X Elite Processor Scores
-                                    Partnerships from More leading laptop OEMs</h5>
+                                <img src="../../images/vu-tru-thien-nhien/Qualcomm.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Bộ xử lý Snapdragon X Elite của Qualcomm mở rộng hợp tác với nhiều hãng laptop lớn
+                                </h5>
                             </div>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/internet.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">Indonesia Ranks Low on Internet Speed, Free Trial Rides on
-                                    'Whoosh' High-speed Train Extended</h5>
+                                <img src="../../images/vu-tru-thien-nhien/internet.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    Indonesia xếp hạng thấp về tốc độ internet, tiếp tục miễn phí trải nghiệm tàu cao tốc Whoosh
+                                </h5>
                             </div>
+
                             <div class="category-divider my-3"></div>
                             <div class="article-list-item mb-3">
-                                <img src="../../images/vu-tru-thien-nhien/phone.png" alt="Article" class="list-img">
-                                <h5 class="list-title m-0">You Need to Know About These 3 New Features on the iPhone 15
-                                    Pro
-                                    and 15 Pro Max</h5>
+                                <img src="../../images/vu-tru-thien-nhien/phone.png" alt="Bài viết" class="list-img">
+                                <h5 class="list-title m-0">
+                                    3 tính năng mới đáng chú ý trên iPhone 15 Pro và iPhone 15 Pro Max
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -444,75 +539,82 @@
         <!-- Viral Videos Section -->
         <section class="viral-section py-4 px-4 px-md-5">
             <div class="section-header">
-                <h2 class="section-title mb-4 mb-md-5">Viral Videos</h2>
-                <a href="#" class="see-all">see all</a>
+                <h2 class="section-title mb-4 mb-md-5">Video nổi bật</h2>
+                <a href="#" class="see-all">Xem tất cả</a>
             </div>
             <div class="viral-container">
-                <div class="feature-card w-100">
-                    <div class="feature-image">
-                        <img src="../../images/vu-tru-thien-nhien/2austronauts.png" alt="Video">
-                        <button class="play-button" aria-label="Play video">
-                            <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
-                        </button>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title m-0">SpaceX Fuels Up Starship in Key Test Ahead of 2nd-Ever Launch</h3>
-                        <p class="feature-excerpt m-0">SpaceX's latest Starship prototype just passed another big
-                            preflight
-                            test. The company conducted a "wet... <span class="read-more">Read more</span></p>
+    <!-- LEFT: Feature video -->
+                <div class="viral-left">
+                    <div class="feature-card w-100">
+                        <div class="trending-image video-thumbnail">
+                            <a href="https://www.youtube.com/watch?v=21X5lGlDOfg" target="_blank">
+                                <img src="https://img.youtube.com/vi/21X5lGlDOfg/maxresdefault.jpg" alt="NASA Live">
+                                <button class="play-button" aria-label="Xem video">
+                                    <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="viral-grid">
+
+                <!-- RIGHT: list viral cards -->
+                <div class="viral-right">
+
                     <div class="viral-card mb-4">
                         <div class="viral-image">
                             <img src="../../images/vu-tru-thien-nhien/VR.png" alt="Video">
-                            <button class="play-button" aria-label="Play video">
+                            <button class="play-button">
                                 <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
                             </button>
                         </div>
                         <div class="viral-content">
-                            <h3 class="viral-title mb-2">Meta Quest's Best VR Travel Experience Gets New Locations & AI
-                                Assistant
+                            <h3 class="viral-title mb-2">
+                                Trải nghiệm du lịch thực tế ảo tốt nhất trên Meta Quest có thêm địa điểm mới và trợ lý AI
                             </h3>
-                            <p class="viral-excerpt m-0">The app, available for Meta Quest and PC VR-compatible
-                                headsets,
-                                features some of the highest quality... <span class="read-more">Read more</span></p>
+                            <p class="viral-excerpt m-0">
+                                Ứng dụng này, có mặt trên Meta Quest và các kính thực tế ảo tương thích với PC,
+                                mang đến những hình ảnh chất lượng cao nhất...
+                                <span class="read-more">Đọc thêm</span>
+                            </p>
                         </div>
                     </div>
 
                     <div class="viral-card mb-4">
                         <div class="viral-image">
                             <img src="../../images/vu-tru-thien-nhien/greenland.png" alt="Video">
-                            <button class="play-button" aria-label="Play video">
+                            <button class="play-button">
                                 <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
                             </button>
                         </div>
                         <div class="viral-content">
-                            <h3 class="viral-title mb-2">Polar Contrasts: Greenland and Antarctica's Divergent Ice Melt
-                                Patterns
+                            <h3 class="viral-title mb-2">
+                                Sự khác biệt giữa Greenland và Nam Cực trong tốc độ tan băng
                             </h3>
-                            <p class="viral-excerpt m-0">Researchers have reported that while Greenland's surface ice
-                                melt has
-                                accelerated due to the... <span class="read-more">Read more</span></p>
+                            <p class="viral-excerpt m-0">
+                                Các nhà nghiên cứu cho biết băng bề mặt tại Greenland đang tan nhanh hơn...
+                                <span class="read-more">Đọc thêm</span>
+                            </p>
                         </div>
                     </div>
 
                     <div class="viral-card mb-4">
                         <div class="viral-image">
                             <img src="../../images/vu-tru-thien-nhien/deer.png" alt="Video">
-                            <button class="play-button" aria-label="Play video">
+                            <button class="play-button">
                                 <img src="../../images/vu-tru-thien-nhien/Player.png" alt="">
                             </button>
                         </div>
                         <div class="viral-content">
-                            <h3 class="viral-title mb-2">New Wildlife Heritage Areas Help Travelers Find Responsible
-                                Animal
-                                Experiences</h3>
-                            <p class="viral-excerpt m-0">Riding elephants and manta rays, petting tiger cubs, and
-                                watching caged
-                                bears dance... <span class="read-more">Read more</span></p>
+                            <h3 class="viral-title mb-2">
+                                Khu bảo tồn động vật hoang dã mới giúp du khách trải nghiệm thiên nhiên có trách nhiệm
+                            </h3>
+                            <p class="viral-excerpt m-0">
+                                Cưỡi voi và cá đuối, vuốt ve hổ con và xem gấu trong lồng biểu diễn...
+                                <span class="read-more">Đọc thêm</span>
+                            </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -521,57 +623,64 @@
         <section class="condition-section py-5 px-4 px-md-5">
             <div class="container-lg">
                 <div class="section-header">
-                    <h2 class="section-title mb-4 mb-md-5">Current Condition of Our Planet</h2>
-                    <a href="#" class="see-all">see all</a>
+                    <h2 class="section-title mb-4 mb-md-5">Tình trạng hiện tại của Trái Đất</h2>
+                    <a href="#" class="see-all">Xem tất cả</a>
                 </div>
                 <div class="condition-grid">
                     <article class="condition-featured">
-                        <img src="../../images/vu-tru-thien-nhien/industrial.png" alt="Article"
+                        <img src="../../images/vu-tru-thien-nhien/industrial.png" alt="Bài viết"
                             class="condition-img mb-4">
+
                         <div class="condition-content">
-                            <h3 class="condition-title mb-3">New Research Ties Industrial Pollution in Joppa to Higher
-                                Rates
-                                of Asthma, Respiratory Issues</h3>
-                            <p class="condition-excerpt">Joppa residents breathe more polluted air and report higher
-                                cases of asthma and other respiratory issues than local and state averages. Those are
-                                the top-line takeaways of a new study by researche... <span class="read-more">Read
-                                    more</span></p>
+                            <h3 class="condition-title mb-3">
+                                Nghiên cứu mới: Ô nhiễm công nghiệp tại Joppa liên quan đến tỷ lệ hen suyễn và bệnh hô hấp cao hơn
+                            </h3>
+                            <p class="condition-excerpt">
+                                Người dân Joppa hít phải không khí ô nhiễm hơn và ghi nhận nhiều ca hen suyễn cùng các bệnh hô hấp
+                                cao hơn mức trung bình địa phương và bang. Đây là kết luận chính từ một nghiên cứu mới của các nhà nghiên cứu...
+                                <span class="read-more">Đọc thêm</span>
+                            </p>
                         </div>
                     </article>
 
                     <div class="condition-cards">
                         <article class="condition-card">
-                            <img src="../../images/vu-tru-thien-nhien/cheetah1.png" alt="Article" class="card-img">
-                            <h4 class="card-title m-0 py-3">Coastal Resilience in Climate Change Era</h4>
+                            <img src="../../images/vu-tru-thien-nhien/cheetah1.png" alt="Bài viết" class="card-img">
+                            <h4 class="card-title m-0 py-3">Khả năng chống chịu vùng ven biển trong thời kỳ biến đổi khí hậu</h4>
                             <div class="article-meta">
-                                <span>Wild animals across every continent are contaminated with flame retardant
-                                    chemicals, according to a new...<span class="fw-bold">Read more</span></span>
+                                <span>Động vật hoang dã trên khắp các châu lục đang bị nhiễm hóa chất chống cháy, theo một nghiên cứu mới...
+                                    <span class="fw-bold">Đọc thêm</span>
+                                </span>
                             </div>
                         </article>
 
                         <article class="condition-card">
-                            <img src="../../images/vu-tru-thien-nhien/switzerland.png" alt="Article" class="card-img">
-                            <h4 class="card-title m-0 py-3">Ocean Acidification Threatens Marine Life</h4>
+                            <img src="../../images/vu-tru-thien-nhien/switzerland.png" alt="Bài viết" class="card-img">
+                            <h4 class="card-title m-0 py-3">Axit hóa đại dương đe dọa sự sống biển</h4>
                             <div class="article-meta">
-                                <span>Wild animals across every continent are contaminated with flame retardant
-                                    chemicals, according to a new...<span class="fw-bold">Read more</span></span>
+                                <span>Động vật hoang dã trên khắp các châu lục đang bị nhiễm hóa chất chống cháy, theo một nghiên cứu mới...
+                                    <span class="fw-bold">Đọc thêm</span>
+                                </span>
                             </div>
                         </article>
 
                         <article class="condition-card">
-                            <img src="../../images/vu-tru-thien-nhien/japan.png" alt="Article" class="card-img">
-                            <h4 class="card-title m-0 py-3">Forest Conservation Efforts Show Promise</h4>
+                            <img src="../../images/vu-tru-thien-nhien/japan.png" alt="Bài viết" class="card-img">
+                            <h4 class="card-title m-0 py-3">Nỗ lực bảo tồn rừng đang cho thấy tín hiệu tích cực</h4>
                             <div class="article-meta">
-                                <span>Wild animals across every continent are contaminated with flame retardant
-                                    chemicals, according to a new...<span class="fw-bold">Read more</span></span>
+                                <span>Động vật hoang dã trên khắp các châu lục đang bị nhiễm hóa chất chống cháy, theo một nghiên cứu mới...
+                                    <span class="fw-bold">Đọc thêm</span>
+                                </span>
                             </div>
                         </article>
+
                         <article class="condition-card">
-                            <img src="../../images/vu-tru-thien-nhien/trash.png" alt="Article" class="card-img">
-                            <h4 class="card-title m-0 py-3">Forest Conservation Efforts Show Promise</h4>
+                            <img src="../../images/vu-tru-thien-nhien/trash.png" alt="Bài viết" class="card-img">
+                            <h4 class="card-title m-0 py-3">Nỗ lực giảm rác thải và ô nhiễm môi trường đang được đẩy mạnh</h4>
                             <div class="article-meta">
-                                <span>Wild animals across every continent are contaminated with flame retardant
-                                    chemicals, according to a new...<span class="fw-bold">Read more</span></span>
+                                <span>Động vật hoang dã trên khắp các châu lục đang bị nhiễm hóa chất chống cháy, theo một nghiên cứu mới...
+                                    <span class="fw-bold">Đọc thêm</span>
+                                </span>
                             </div>
                         </article>
                     </div>
@@ -582,7 +691,7 @@
         <!-- Latest News Around the World -->
         <section class="container-lg py-5 px-4 px-md-5">
             <div class="section-header">
-                <h2 class="section-title latest-news-title">Latest News Around the World</h2>
+                <h2 class="section-title latest-news-title">Tin tức mới trên thế giới</h2>
             </div>
             <div class="latest-news-grid">
                 <!-- Card 1 -->
@@ -591,15 +700,16 @@
                         <img src="../../images/vu-tru-thien-nhien/spaceX.png" alt="Long March 9 Rocket">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Long March 9 Rocket Will Be a Game-changer for
-                            China's Space Program</h3>
-                        <p class="latest-news-excerpt m-0">SpaceX's Starship spacecraft and super heavy rocket – the
-                            gleaming stainless steel rocket envisioned as a "fully reusable transportation system" –
-                            dominates the global news landscape.</p>
+                        <h3 class="latest-news-card-title m-0">
+                        Tên lửa Trường Chinh 9 sẽ thay đổi cuộc chơi trong ngành vũ trụ Trung Quốc
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                        Các chương trình không gian đang cạnh tranh mạnh mẽ với những bước tiến công nghệ vượt bậc...
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Thiên văn học</span>
                             <span class="meta-sep">|</span>
-                            <span>7 mins read</span>
+                            <span>7 phút đọc</span>
                         </div>
                     </div>
                 </article>
@@ -607,134 +717,133 @@
                 <!-- Card 2 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/astronauts.png"
-                            alt="A Day in the Life of an Astronaut">
+                        <img src="../../images/vu-tru-thien-nhien/astronauts.png" alt="Một ngày của phi hành gia">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">A Day in the Life of an Astronaut: Humanity's Open
-                            Window to Space</h3>
-                        <p class="latest-news-excerpt m-0">Astronauts frequently use the definition of freedom
-                            related to space, yet their experiences not only give them a sense of being a speck in
-                            the universe...</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Một ngày của phi hành gia: Cánh cửa mở ra vũ trụ của nhân loại
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Các phi hành gia thường nói về khái niệm tự do trong không gian, nhưng trải nghiệm của họ không chỉ mang lại cảm giác con người nhỏ bé giữa vũ trụ...
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Vũ trụ & Thiên văn</span>
                             <span class="meta-sep">|</span>
-                            <span>4 mins read</span>
+                            <span>4 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 3 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/sattlite12.png"
-                            alt="Q&A Life Exists Outside Earth">
+                        <img src="../../images/vu-tru-thien-nhien/sattlite12.png" alt="Hỏi đáp sự sống ngoài Trái Đất">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Q&amp;A: Life Exists Outside of Earth With Astronaut
-                            Matthias Maurer | Euronews Tech Talks</h3>
-                        <p class="latest-news-excerpt m-0">In this episode, we conclude our three-part series
-                            investigating the impact of space technology on humanity with a Q&amp;A featuring ESA
-                            astronaut Matthias Maurer.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Hỏi đáp: Sự sống ngoài Trái Đất cùng phi hành gia Matthias Maurer | Euronews Tech Talks
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Trong tập này, chúng tôi kết thúc loạt ba phần về tác động của công nghệ vũ trụ với buổi hỏi đáp cùng phi hành gia ESA Matthias Maurer.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Vũ trụ & Thiên văn</span>
                             <span class="meta-sep">|</span>
-                            <span>5 mins read</span>
+                            <span>5 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 4 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/rocket1.png" alt="Gaganyaan India">
+                        <img src="../../images/vu-tru-thien-nhien/rocket1.png" alt="Sứ mệnh Gaganyaan Ấn Độ">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Gaganyaan: India Launches Test Flight Ahead of
-                            Sending Crew Into Space</h3>
-                        <p class="latest-news-excerpt m-0">India's space agency has carried out the first in a
-                            series of test flights ahead of its planned mission to take astronauts into space in
-                            2025.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Gaganyaan: Ấn Độ thử nghiệm bay trước khi đưa phi hành gia lên không gian
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Cơ quan vũ trụ Ấn Độ đã thực hiện chuyến bay thử nghiệm đầu tiên trong loạt thử nghiệm trước sứ mệnh đưa con người lên vũ trụ vào năm 2025.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Vũ trụ & Thiên văn</span>
                             <span class="meta-sep">|</span>
-                            <span>6 mins read</span>
+                            <span>6 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 5 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/sattlite3.png" alt="Starquakes Radio Signals">
+                        <img src="../../images/vu-tru-thien-nhien/sattlite3.png" alt="Tín hiệu sao chấn">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Astronomers Link &ldquo;Starquakes&rdquo; to
-                            Mysterious Radio Signals From Space</h3>
-                        <p class="latest-news-excerpt m-0">Fast radio bursts (FRBs), intense radio energy bursts,
-                            are a perplexing astronomical enigma. The University of Tokyo's recent research has
-                            found similarities between FRBs and earthquakes.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Các nhà thiên văn liên hệ “sao chấn” với tín hiệu vô tuyến bí ẩn từ vũ trụ
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Các vụ bùng nổ sóng vô tuyến nhanh (FRBs) là một bí ẩn lớn trong thiên văn học. Nghiên cứu mới của Đại học Tokyo tìm thấy sự tương đồng với động đất.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Vũ trụ & Thiên văn</span>
                             <span class="meta-sep">|</span>
-                            <span>6 mins read</span>
+                            <span>6 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 6 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/sattlite1.png" alt="NASA Space Station Lasers">
+                        <img src="../../images/vu-tru-thien-nhien/sattlite1.png" alt="Trạm vũ trụ NASA và laser">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">NASA to Equip International Space Station With
-                            Frikkin Lasers (for comms)</h3>
-                        <p class="latest-news-excerpt m-0">US space agency NASA plans to run a technology
-                            demonstration for space lasers using the International Space Station, to test how the
-                            system works in orbit.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            NASA trang bị laser cho Trạm Vũ trụ Quốc tế để thử nghiệm liên lạc
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            NASA dự định thực hiện một thử nghiệm công nghệ liên lạc bằng laser trên Trạm Vũ trụ Quốc tế để kiểm tra hiệu quả hoạt động trong quỹ đạo.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Space and Universe</span>
+                            <span>Vũ trụ & Thiên văn</span>
                             <span class="meta-sep">|</span>
-                            <span>3 mins read</span>
+                            <span>3 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 7 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/car.png" alt="Off-Duty Pilot Alaska Airlines">
+                        <img src="../../images/vu-tru-thien-nhien/car.png" alt="Phi công ngoài nhiệm vụ">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Off-Duty Pilot Accused of Trying to Cut the Engines
-                            on an Alaska Airlines Flight</h3>
-                        <p class="latest-news-excerpt m-0">The flight was diverted to Portland, Ore., because of a
-                            "credible security threat" inside the cockpit. An off-duty pilot was charged with
-                            attempted murder.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Phi công ngoài nhiệm vụ bị cáo buộc cố gắng tắt động cơ máy bay Alaska Airlines
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Chuyến bay đã phải chuyển hướng do “mối đe dọa an ninh đáng tin cậy” trong buồng lái. Phi công ngoài nhiệm vụ bị buộc tội âm mưu giết người.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Technology</span>
+                            <span>Công nghệ</span>
                             <span class="meta-sep">|</span>
-                            <span>4 mins read</span>
+                            <span>4 phút đọc</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Card 8 -->
                 <article class="latest-news-card">
                     <div class="latest-news-img-wrap">
-                        <img src="../../images/vu-tru-thien-nhien/science.png" alt="ASIMO Japan Robot">
+                        <img src="../../images/vu-tru-thien-nhien/science.png" alt="Robot ASIMO Nhật Bản">
                     </div>
                     <div class="latest-news-body">
-                        <h3 class="latest-news-card-title m-0">Sayonara! End of the Line for ASIMO, Japan's Famed
-                            Robot?</h3>
-                        <p class="latest-news-excerpt m-0">It has played football with former US president Barack
-                            Obama and danced for German leader Angela Merkel, but Honda's ASIMO robot may have
-                            reached the end of the line.</p>
+                        <h3 class="latest-news-card-title m-0">
+                            Tạm biệt ASIMO: Kết thúc hành trình của robot nổi tiếng Nhật Bản?
+                        </h3>
+                        <p class="latest-news-excerpt m-0">
+                            Robot ASIMO từng chơi bóng với cựu Tổng thống Mỹ Barack Obama và nhảy cùng Thủ tướng Đức Angela Merkel, nhưng có thể đã đến hồi kết.
+                        </p>
                         <div class="latest-news-meta">
-                            <span>Technology</span>
+                            <span>Công nghệ</span>
                             <span class="meta-sep">|</span>
-                            <span>5 mins read</span>
+                            <span>5 phút đọc</span>
                         </div>
                     </div>
                 </article>
