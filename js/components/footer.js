@@ -21,7 +21,7 @@ $(() => {
             <span class="footer-logo">Báo Chí Design</span>
             <div class="d-flex gap-3">
               <!-- youtube -->
-              <a href="#" class="social-circle">
+              <a href="https://www.youtube.com/@nghia_game_dev" class="social-circle">
                 <img src="${r('images/footer/ytb.png')}" alt="YouTube" width="22" height="22">
               </a>
               <!-- github -->

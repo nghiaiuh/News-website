@@ -1,358 +1,213 @@
-/* =============================================================
-   OVERLAY-MENU.CSS — Fullscreen Portfolio Overlay Navigation
-   Awwwards-level design: slide-up, stagger, hover images
-   ============================================================= */
-
-/* ─── Google Font Import: Barlow Condensed (bold condensed) ─── */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap');
-
-/* ─── CSS Custom Properties ─── */
 :root {
-  --om-bg: #f0ede8;
-  --om-text: #111111;
-  --om-muted: #888880;
+  --om-bg: #fdfdfd;
+  --om-text: #0a0a0a;
+  --om-muted: #999;
   --om-accent: #c30000;
-  --om-grid-color: rgba(0, 0, 0, 0.06);
-  --om-duration-open: 0.72s;
-  --om-ease-open: cubic-bezier(0.77, 0, 0.175, 1);
-  --om-ease-item: cubic-bezier(0.22, 1, 0.36, 1);
+  --om-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --om-line-color: rgba(0, 0, 0, 0.12); /* Màu line dọc nhạt như ảnh */
 }
 
-/* ─────────────────────────────────────────────────────────────
-   HAMBURGER BUTTON (fixed, top-right)
-   ───────────────────────────────────────────────────────────── */
-.hamburger-btn {
-  cursor: pointer;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   OVERLAY — fullscreen panel
-   ───────────────────────────────────────────────────────────── */
+/* ── Overlay panel ── */
 .om-overlay {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background-color: var(--om-bg);
-
-  /* Subtle grid lines via CSS */
-  background-image:
-    linear-gradient(var(--om-grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--om-grid-color) 1px, transparent 1px);
-  background-size: 80px 80px;
-
-  /* Initial state: hidden below viewport */
-  transform: translateY(100%);
-  will-change: transform;
-
-  /* Flex layout: column — header at top, menu in center */
+  background: var(--om-bg);
   display: flex;
   flex-direction: column;
-
-  /* Prevent pointer events when hidden */
-  pointer-events: none;
+  transform: translateY(100%);
   visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform 0.4s var(--om-ease),
+    visibility 0s 0.4s;
 }
 
-/* Open state — toggled by JS */
 .om-overlay.is-open {
-  pointer-events: auto;
+  transform: translateY(0);
   visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.4s var(--om-ease);
 }
 
-/* ─────────────────────────────────────────────────────────────
-   OVERLAY HEADER
-   ───────────────────────────────────────────────────────────── */
+/* ── Header ── */
 .om-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
+  padding: 2rem 2.5rem 0;
   flex-shrink: 0;
-  border-bottom: 1px solid var(--om-grid-color);
 }
-
-.om-logo {
-  font-family: var(--nw-font-heading, 'Oswald', sans-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
+.om-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 5rem; /* Khoảng cách giữa nút đăng nhập và nút close */
+}
+/* Style cho nút Đăng Nhập */
+.om-login-btn {
+  font-family: "Space Mono", monospace; /* Dùng font phụ (cùng font với footer) */
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--om-text);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   text-decoration: none;
-  opacity: 0; /* animated in by GSAP */
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--om-text); /* Viền đen mỏng */
+  transition: all 0.3s var(--om-ease);
 }
 
+.om-login-btn:hover {
+  background: var(--om-text);
+  color: var(--om-bg); /* Khi hover đổi màu nền đen, chữ trắng */
+}
+.om-logo {
+  font:
+    900 2rem "Oswald",
+    sans-serif;
+  text-transform: uppercase;
+  color: var(--om-text);
+  text-decoration: none;
+}
 .om-logo span {
   color: var(--om-accent);
 }
 
-/* Close button */
 .om-close-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: var(--om-text);
-  color: var(--om-bg);
-  border: none;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
+  background: #d40b0b;
+  border: none;
   cursor: pointer;
-  font-size: 1.2rem;
-  line-height: 1;
-  opacity: 0; /* animated in by GSAP */
-  will-change: transform, opacity;
-  transition: background 0.2s ease, transform 0.2s ease;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.2s ease,
+    transform 0.25s ease;
 }
-
 .om-close-btn:hover {
-  background: var(--om-accent);
+  background: var(--om-text);
   transform: rotate(90deg);
 }
 
-/* Close icon lines (pure CSS X) */
 .om-close-icon {
+  width: 16px;
+  height: 16px;
   position: relative;
-  width: 18px;
-  height: 18px;
-  display: block;
 }
-
 .om-close-icon::before,
 .om-close-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
   height: 1.5px;
-  background: currentColor;
-  border-radius: 2px;
+  background: #fff;
+}
+.om-close-icon::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.om-close-icon::after {
+  transform: translateY(-50%) rotate(-45deg);
 }
 
-.om-close-icon::before { transform: translateY(-50%) rotate(45deg); }
-.om-close-icon::after  { transform: translateY(-50%) rotate(-45deg); }
-
-/* ─────────────────────────────────────────────────────────────
-   MENU BODY — vertically centered
-   ───────────────────────────────────────────────────────────── */
+/* ── Body & Menu List ── */
 .om-body {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   overflow: hidden;
 }
-
-/* Bootstrap container-fluid used for horizontal padding,
-   combined with our flex/grid layout */
 .om-menu-list {
   list-style: none;
-  margin: 0;
+  margin: 50px 0 0;
   padding: 0;
   width: 100%;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   MENU ITEM — large typography with hover images
-   ───────────────────────────────────────────────────────────── */
 .om-item {
-  position: relative; /* image anchoring context */
-  overflow: visible;
-}
-
-.om-item:last-child {
-  border-bottom: 1px solid var(--om-grid-color);
-}
-
-.om-item-link {
-  display: flex;
-  align-items: baseline;
-  gap: 1.2rem;
-  padding: 0.3rem 2rem;
-  text-decoration: none;
-  color: var(--om-text);
   position: relative;
-  will-change: transform, letter-spacing;
-
-  /* transform origin for scale effect */
-  transform-origin: left center;
-
-  /* Smooth transitions for non-GSAP fallback */
-  transition:
-    transform 0.35s var(--om-ease-item),
-    letter-spacing 0.35s var(--om-ease-item),
-    color 0.25s ease;
+  border-top: 1px solid #000;
 }
 
-.om-item-link:hover {
+/* FIX: Đường line dọc và border bottom chỉ xuất hiện từ item cuối */
+.om-item:last-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(#000, #000),
+    repeating-linear-gradient(
+      to right,
+      var(--om-line-color) 0 1px,
+      transparent 1px 12.5%
+    );
+  background-size:
+    100% 1px,
+    100% 100%;
+  background-repeat: no-repeat, repeat;
+}
+
+/* ── Nội dung Menu Item ── */
+.om-item-link {
+  display: block;
+  padding: 1rem;
+  text-align: center;
   color: var(--om-text);
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
 
-/* Index number */
-.om-item-index {
-  font-family: var(--nw-font-mono, 'Space Mono', monospace);
-  font-size: clamp(0.65rem, 1.2vw, 0.9rem);
-  font-weight: 400;
-  color: var(--om-muted);
-  letter-spacing: 0.04em;
-  flex-shrink: 0;
-  align-self: center;
-  margin-top: 0.15em; /* optical alignment */
-  transition: color 0.25s ease;
-}
-
-/* Menu label */
 .om-item-label {
-  font-family: 'Barlow Condensed', var(--nw-font-heading, 'Oswald', sans-serif);
-  font-size: clamp(60px, 7vw, 148px);
-  font-weight: 800;
-  line-height: 1.2;
+  display: block;
+  font:
+    900 clamp(72px, 5vw, 180px)/1.2 "Oswald",
+    sans-serif;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: inherit;
-
-  /* GPU-accelerated */
-  will-change: transform;
-  display: block;
+  letter-spacing: -0.03em;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   HOVER IMAGES — absolute, pointer-events: none
-   ───────────────────────────────────────────────────────────── */
-.om-img {
-  position: absolute;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: 4px;
-
-  /* Initial hidden state */
-  opacity: 0;
-  will-change: transform, opacity;
-
-  /* Smooth CSS fallback */
-  transition:
-    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.om-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Left image: appears to the left of the item text */
-.om-img--left {
-  width: clamp(120px, 14vw, 220px);
-  height: clamp(80px, 9.5vw, 150px);
-  top: 50%;
-  left: clamp(80px, 10vw, 160px);
-  transform: translateY(-50%) translateX(-12px) scale(0.96);
-}
-
-/* Right image: appears to the right side */
-.om-img--right {
-  width: clamp(100px, 12vw, 190px);
-  height: clamp(130px, 14vw, 210px);
-  top: 50%;
-  right: clamp(60px, 8vw, 140px);
-  transform: translateY(-50%) translateX(12px) scale(0.96);
-}
-
-/* Hover active state — GSAP drives these, CSS is fallback */
-.om-item:hover .om-img {
-  opacity: 1;
-}
-
-.om-item:hover .om-img--left {
-  transform: translateY(-50%) translateX(0) scale(1.04);
-}
-
-.om-item:hover .om-img--right {
-  transform: translateY(-50%) translateX(0) scale(1.04);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   OVERLAY FOOTER
-   ───────────────────────────────────────────────────────────── */
+/* ── Footer ── */
 .om-footer {
-  flex-shrink: 0;
+  font:"Oswald", sans-serif;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  border-top: 1px solid var(--om-grid-color);
-  opacity: 0; /* animated in by GSAP */
+  align-items: end;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
-.om-footer-label {
-  font-family: var(--nw-font-mono, 'Space Mono', monospace);
-  font-size: 0.72rem;
+/* Hiệu ứng cắt line dọc bằng text-shadow */
+.om-footer-label,
+.om-footer-links a {
+  font-size: 0.7rem;
   color: var(--om-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  background: var(--om-bg); /* Đảm bảo nền bao quanh chữ là màu của web */
+  padding: 0 4px; /* Tạo khoảng trống nhỏ quanh chữ để cắt line đẹp hơn */
 }
 
 .om-footer-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
-.om-footer-links a {
-  font-family: var(--nw-font-mono, monospace);
-  font-size: 0.72rem;
-  color: var(--om-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
 .om-footer-links a:hover {
   color: var(--om-text);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   ITEM STAGGER — initial hidden state (GSAP sets translateY 40px)
-   ───────────────────────────────────────────────────────────── */
-.om-item {
-  opacity: 0;
-  transform: translateY(40px);
-  /* GSAP will override these */
-}
-
-/* ─────────────────────────────────────────────────────────────
-   RESPONSIVE
-   ───────────────────────────────────────────────────────────── */
-
-/* Tablet */
-@media (max-width: 991.98px) {
-  .om-item-label {
-    font-size: clamp(48px, 11vw, 96px);
-  }
-
-  .om-img--left,
-  .om-img--right {
-    width: clamp(90px, 12vw, 150px);
-    height: clamp(60px, 9vw, 110px);
-  }
-
-  .om-img--right {
-    right: 1.5rem;
-  }
-
-  .om-img--left {
-    left: clamp(60px, 9vw, 110px);
-  }
-
-  .om-footer-links {
-    gap: 1rem;
-  }
 }
 
 /* Mobile */
@@ -360,33 +215,25 @@
   .om-header {
     padding: 1rem 1.25rem;
   }
-
   .om-item-link {
-    padding: 0.25rem 1.25rem;
-    gap: 0.75rem;
+    padding: 0 1.25rem 0 3.5rem;
   }
-
   .om-item-label {
-    font-size: clamp(44px, 13vw, 80px);
-    line-height: 0.88;
+    font-size: clamp(52px, 16vw, 88px);
+    font-style: italic;
+    line-height: 1;
   }
-
-  /* Hide hover images on mobile — too small to display properly */
   .om-img {
     display: none;
   }
-
   .om-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    padding: 0.9rem 1.25rem;
+    padding: 1.25rem;
   }
 }
 
-/* ─────────────────────────────────────────────────────────────
-   BODY LOCK — prevent scroll when overlay is open
-   ───────────────────────────────────────────────────────────── */
-body.om-lock {
+.om-lock {
   overflow: hidden;
 }
