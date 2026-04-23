@@ -1,123 +1,311 @@
-/* ===== ARTICLE DETAIL PAGE ===== */
+/* ===== Trang bài viết chi tiết – Thể thao & Sức khỏe ===== */
+/* Biến màu riêng cho chuyên mục – xanh lá thể thao làm accent chính. */
 .news-article-detail {
+  --article-page-bg: #f0f7f2;
+  --article-surface: #fafffe;
+  --article-surface-soft: #f3faf5;
+  --article-border: #c2dccb;
+  --article-border-soft: #d0e8d7;
+  --article-accent: #1a7a45;
+  --article-accent-strong: #0f5230;
+  --article-text: #1a2620;
+  --article-text-soft: #3d5445;
+  --article-shadow: 0 18px 42px rgba(10, 50, 25, 0.08);
+  --article-shadow-strong: 0 20px 40px rgba(10, 50, 25, 0.12);
+
   padding-top: 80px;
   padding-bottom: 120px;
-  background: var(--news-bg);
+  background: var(--article-page-bg);
   min-height: 100vh;
 }
 
+/* Giới hạn chiều rộng đọc thoải mái. */
 .article-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* "Tờ báo" nội tuyến: nền sáng, viền mềm, bóng đổ nhẹ. */
+.article-shell {
+  background: var(--article-surface);
+  border: 1px solid var(--article-border);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: var(--article-shadow);
+}
+
+/* ===== Header bài viết ===== */
 .article-header {
   margin-bottom: 40px;
-  text-align: center;
+  text-align: left;
 }
 
 .article-category {
   display: inline-block;
+  margin-bottom: 15px;
+  color: var(--article-accent);
   font-family: "Oswald", sans-serif;
   font-size: 0.9rem;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.1em;
-  color: #c30000;
-  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .article-title {
+  margin-bottom: 20px;
+  color: #0d1f15;
   font-family: "Merriweather", serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--news-text);
-  margin-bottom: 20px;
 }
 
+/* Metadata flex, tự xuống dòng khi hẹp. */
 .article-meta {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(26, 122, 69, 0.14);
+  border-bottom: 1px solid rgba(26, 122, 69, 0.14);
+  color: rgba(20, 50, 30, 0.65);
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
 }
 
-.article-featured-img {
+/* ===== Ảnh mở đầu ===== */
+.article-shell .article-featured-media {
+  margin: 0 0 40px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--article-border-soft);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 45%),
+    linear-gradient(180deg, #e8f5ed 0%, #d4edd9 100%);
+  box-shadow: var(--article-shadow-strong);
+}
+
+.article-shell .article-featured-media > .article-featured-img {
+  display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  background: var(--article-surface-soft);
+  box-shadow: inset 0 0 0 1px rgba(194, 220, 203, 0.7);
 }
 
+/* ===== Nội dung bài viết ===== */
 .article-content {
+  color: var(--article-text);
   font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #333;
 }
 
 .article-content p {
   margin-bottom: 25px;
 }
 
-.article-content h2 {
-  font-family: "Merriweather", serif;
-  font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 20px;
+.article-content > *:last-child {
+  margin-bottom: 0;
 }
 
+.article-content h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #0d1f15;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
+/* Blockquote nhấn màu xanh thể thao. */
+.article-content blockquote {
+  margin: 30px 0;
+  padding: 18px 22px;
+  border-left: 4px solid var(--article-accent);
+  background: #e6f4eb;
+  color: #2a4d35;
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content figure {
+  margin: 30px 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.article-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 14px 28px rgba(10, 50, 25, 0.1);
+}
+
+/* Badge thể thao nhỏ trên đầu section */
+.sport-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--article-accent);
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Stat box: hộp thống kê nhanh. */
+.stat-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.stat-item {
+  padding: 20px 16px;
+  border: 1px solid var(--article-border);
+  border-radius: 16px;
+  background: var(--article-surface-soft);
+  text-align: center;
+}
+
+.stat-item .stat-value {
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--article-accent);
+  line-height: 1;
+}
+
+.stat-item .stat-label {
+  display: block;
+  margin-top: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: var(--article-text-soft);
+}
+
+/* ===== Chân bài ===== */
 .article-footer {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(26, 122, 69, 0.14);
 }
 
+.article-source {
+  margin: 0;
+  color: var(--article-text-soft);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+}
+
+.article-source a {
+  color: var(--article-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-source a:hover {
+  color: var(--article-accent-strong);
+}
+
+/* ===== Tin liên quan ===== */
 .related-news-title {
+  margin-bottom: 30px;
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  color: #0d1f15;
 }
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .related-card {
-  text-decoration: none;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid var(--article-border);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(10, 50, 25, 0.07);
   color: inherit;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .related-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(10, 50, 25, 0.13);
 }
 
 .related-card img {
   width: 100%;
-  aspect-ratio: 16/9;
+  margin-bottom: 14px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
   object-fit: cover;
-  margin-bottom: 15px;
 }
 
 .related-card h4 {
+  margin: 0;
+  padding: 0 6px 8px;
   font-family: "Merriweather", serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.4;
+  color: #0d1f15;
 }
 
+.related-card .related-tag {
+  display: block;
+  padding: 0 6px;
+  margin-bottom: 6px;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--article-accent);
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .article-shell {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .article-shell .article-featured-media {
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .article-shell .article-featured-media > .article-featured-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+
   .article-title {
     font-size: 2.2rem;
+  }
+
+  .stat-box {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
