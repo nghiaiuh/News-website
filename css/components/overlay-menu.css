@@ -157,7 +157,6 @@
    ───────────────────────────────────────────────────────────── */
 .om-item {
   position: relative; /* image anchoring context */
-  border-top: 1px solid var(--om-grid-color);
   overflow: visible;
 }
 
@@ -206,9 +205,9 @@
 /* Menu label */
 .om-item-label {
   font-family: 'Barlow Condensed', var(--nw-font-heading, 'Oswald', sans-serif);
-  font-size: clamp(60px, 9vw, 148px);
+  font-size: clamp(60px, 7vw, 148px);
   font-weight: 800;
-  line-height: 0.92;
+  line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: inherit;

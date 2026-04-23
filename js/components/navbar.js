@@ -37,7 +37,7 @@ $(() => {
             ${buildNav(L_NAV, "main-menu-left")}
             <a class="logo py-3 mb-0" href="${r("Index.html")}"><span>BÁO CHÍ <span aria-label="DESIGN">${LOGO.map(x => `<span style="color:${x.hex}">${x.c}</span>`).join("")}</span></span></a>
             ${buildNav(R_NAV, "main-menu-right")}
-            <button class="navbar-toggler border-0 shadow-none hamburger-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nwMenu">
+            <button class="navbar-toggler border-0 shadow-none hamburger-btn" type="button">
               <span class="hamburger" aria-hidden="true"><span class="ham-line ham-top"></span><span class="ham-line ham-bottom"></span></span>
             </button>
           </div>
