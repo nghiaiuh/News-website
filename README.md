@@ -99,7 +99,7 @@
 News_website/
 │
 ├── html/                              # Tất cả trang HTML
-│   ├── Index.html                     # Trang chủ chính ← entry point
+│   ├── index.html                     # Trang chủ chính ← entry point
 │   ├── dang-nhap.html                 # Trang đăng nhập
 │   ├── dang-ky.html                   # Trang đăng ký
 │   │
@@ -333,7 +333,7 @@ scrollRestoration = "manual" + scrollBehavior = "auto"
 
 | File                                                     | Mô tả                         | JS được load                                                                                                       |
 | -------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `html/Index.html`                                        | Trang chủ (nhiều section)     | navbar.js, sectionTwo.js, sectionThree.js, sectionFour.js, sectionFive.js, section6.js, horizontalFeed.js, auth.js |
+| `html/index.html`                                        | Trang chủ (nhiều section)     | navbar.js, sectionTwo.js, sectionThree.js, sectionFour.js, sectionFive.js, section6.js, horizontalFeed.js, auth.js |
 | `html/dang-nhap.html`                                    | Trang đăng nhập               | navbar.js, login.js, auth.js                                                                                       |
 | `html/dang-ky.html`                                      | Trang đăng ký                 | navbar.js, dang-ky.js, auth.js                                                                                     |
 | `html/the-thao/the-thao-suc-khoe.html`                   | Hub Thể thao & Sức khỏe       | navbar.js, auth.js                                                                                                 |
@@ -407,8 +407,8 @@ Tất cả token được định nghĩa trong **`css/components/root.css`**. AI
 | ID                    | Dùng ở đâu                              |
 | --------------------- | --------------------------------------- |
 | `#site-header`        | Mọi trang — navbar.js inject vào đây    |
-| `#s3-sports-category` | Index.html — container buttons thể thao |
-| `#s4-section`         | Index.html — section 4 anchor           |
+| `#s3-sports-category` | index.html — container buttons thể thao |
+| `#s4-section`         | index.html — section 4 anchor           |
 
 ### JS File convention
 
@@ -432,20 +432,20 @@ Tất cả token được định nghĩa trong **`css/components/root.css`**. AI
 **Cách 1 — Live Server (khuyến nghị):**
 
 1. Mở thư mục `News_website/` bằng VS Code
-2. Right-click vào `html/Index.html` → **Open with Live Server**
-3. Truy cập `http://127.0.0.1:5500/html/Index.html`
+2. Right-click vào `html/index.html` → **Open with Live Server**
+3. Truy cập `http://127.0.0.1:5500/html/index.html`
 
 **Cách 2 — Mở trực tiếp:**
 
 ```
-Mở file html/Index.html bằng trình duyệt
+Mở file html/index.html bằng trình duyệt
 Lưu ý: một số font self-hosted có thể không load nếu dùng file:// protocol
 ```
 
 ### Navigation Flow
 
 ```
-Index.html (trang chủ)
+index.html (trang chủ)
   ├── Header navbar → liên kết chuyên mục
   ├── Section 1: Hero feed (kéo ngang)
   ├── Section 2: Kinh tế & Chính trị (scroll ngang GSAP)

@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
   const FEEDBACK_TIMEOUT = 5000;
   const QUOTE_ROTATE_MS = 5000;
   const storageKeys = {
@@ -394,7 +394,7 @@
     displayUserOptions(enteredUsername);
 
     setTimeout(function () {
-      window.location.href = "Index.html";
+      window.location.href = "index.html";
     }, 500);
   });
 

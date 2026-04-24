@@ -35,8 +35,8 @@ $(() => {
   const rHtml = (h) => htmlBase + h.replace(/^\.?\//, "");
   const rRoot = (h) => rootBase + h.replace(/^\.?\//, "");
 
-  const file = pathParts[pathParts.length - 1] || "Index.html";
-  const activeKey = file === "Index.html" ? "home" :
+  const file = pathParts[pathParts.length - 1] || "index.html";
+  const activeKey = file === "index.html" ? "home" :
                     file.match(/the-thao|suc-khoe/) ? "sports" :
                     file.match(/vu-tru/) ? "cosmos" :
                     file.match(/giai-tri|homeGTDS/) ? "lifestyle" : "";
@@ -54,7 +54,7 @@ $(() => {
               <span class="hamburger" aria-hidden="true"><span class="ham-line ham-top"></span><span class="ham-line ham-bottom"></span></span>
             </button>
             ${buildNav(L_NAV, "main-menu-left")}
-            <a class="logo py-3 mb-0" href="${rHtml("Index.html")}"><span>BÁO CHÍ <span aria-label="DESIGN">${LOGO.map(x => `<span style="color:${x.hex}">${x.c}</span>`).join("")}</span></span></a>
+            <a class="logo py-3 mb-0" href="${rHtml("index.html")}"><span>BÁO CHÍ <span aria-label="DESIGN">${LOGO.map(x => `<span style="color:${x.hex}">${x.c}</span>`).join("")}</span></span></a>
             ${buildNav(R_NAV, "main-menu-right")}
             <button class="account-btn" type="button" aria-label="Tài khoản" id="account-btn">
               <img src="${rRoot("images/account.svg")}" alt="account" width="20px">

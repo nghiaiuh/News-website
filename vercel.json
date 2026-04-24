@@ -1,7 +1,11 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/html/Index.html" },
-    { "source": "/(.*)", "destination": "/html/Index.html" }
+    { "source": "/", "destination": "/html/index.html" },
+    { "source": "/css/:path*", "destination": "/css/:path*" },
+    { "source": "/js/:path*", "destination": "/js/:path*" },
+    { "source": "/images/:path*", "destination": "/images/:path*" },
+    { "source": "/fonts/:path*", "destination": "/fonts/:path*" },
+    { "source": "/:path*", "destination": "/html/:path*" }
   ]
 }
