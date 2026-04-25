@@ -5,13 +5,7 @@
   font-display: swap;
   src: url(../fonts/google/Inter-Regular-400.ttf) format("truetype");
 }
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(../fonts/google/Inter-SemiBold-600.ttf) format("truetype");
-}
+
 @font-face {
   font-family: "Inter";
   font-style: normal;

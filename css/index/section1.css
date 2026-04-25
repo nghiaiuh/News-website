@@ -1,14 +1,7 @@
-
-/* ===== HERO SECTION ===== */
-.hero {
-  min-height: calc(100vh - 63px);
+.s1-section {
   background: var(--nw-white);
-  border-top: 1px solid var(--nw-border-light);
-  border-bottom: 1px solid var(--nw-border-light);
-  overflow: hidden;
 }
 
-/* ===== TITLE (text clip effect) ===== */
 .title-wrap {
   background: var(--nw-text);
   margin-top: 40px;

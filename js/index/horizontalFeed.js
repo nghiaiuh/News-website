@@ -1,89 +1,108 @@
+/**
+ * FLOW INFINITE DRAG SCROLL
+ * ─────────────────────────────────────────────────────
+ * INIT   : Tìm containers → clone track ×2 (trái|gốc|phải)
+ *          → tính wrapWidth → căn giữa center-card → bind events
+ *
+ * DRAG   : dragStart → lưu startX, kill tween
+ *          doDrag    → tính delta (×1.5), cập nhật X, wrap nếu vượt biên
+ *          dragEnd   → glide quán tính (velocity×15), modifier wrap liên tục
+ *
+ * WRAP   : Vùng an toàn = [-2×W, -W)
+ *          Vượt phải (> -W)   → X -= wrapWidth   ┐ gsap.set() âm thầm,
+ *          Vượt trái (< -2×W) → X += wrapWidth   ┘ không giật hình
+ *
+ * GUARD  : isRealDrag > 5px → block click trên <a>
+ *          img dragstart disabled, resize → recalc wrapWidth
+ * ─────────────────────────────────────────────────────
+ */
 $(() => {
-  $(".feed-container, .s5-nature-feed, .news-feed").each(function() {
+  // Khởi tạo infinite drag scroll cho tất cả feed containers
+  $(".s1-feed-container, .s5-nature-feed, .news-feed").each(function () {
     const $container = $(this);
-    const $track = $container.find(".feed-track, .s5-feed-track");
+    const $track = $container.find(".s1-feed-track, .s5-feed-track");
     if (!$track.length) return;
-    if ($container.hasClass("s5-nature-feed")) {
-      $container.css({ overflow: "hidden", cursor: "grab", "touch-action": "pan-y" });
-      $track.removeClass("overflow-x-auto").css("width", "max-content");
-    }
-    // vu-tru-va-thien-nhien
-    if ($container.hasClass("news-feed")) {
+
+    // Ẩn overflow & bật cursor grab cho các feed dạng ngang
+    if ($container.is(".s5-nature-feed, .news-feed")) {
       $container.css({ overflow: "hidden", cursor: "grab", "touch-action": "pan-y" });
       $track.removeClass("overflow-x-auto").css("width", "max-content");
     }
 
-    const $centerCard = $track.find(".center-card");
+    // ─── Infinite Loop Setup ────────────────────────────────────────────────
+    // Cấu trúc: [Clone trái] | [Original] | [Clone phải]
+    // → Khi kéo ra ngoài biên, âm thầm teleport sang phần kế tiếp → vô tận
     const $children = $track.children();
-    
-    // --- Thiết lập Vòng lặp Vô Tận (Infinite Loop) ---
-    // Nhân bản nội dung thành 3 phần: [Left Clone] - [Original] - [Right Clone]
-    const $cloneLeft = $children.clone(true).addClass("is-clone").removeAttr("id");
-    const $cloneRight = $children.clone(true).addClass("is-clone").removeAttr("id");
-    $track.prepend($cloneLeft).append($cloneRight);
-    
-    const $origFirst = $children.eq(0); 
-    const $cloneRightFirst = $cloneRight.eq(0);
-    
+    $track
+      .prepend($children.clone(true).addClass("is-clone").removeAttr("id"))
+      .append($children.clone(true).addClass("is-clone").removeAttr("id"));
+
+    // Dùng 2 mốc này để tính wrapWidth = độ dài 1 vòng lặp
+    const $origFirst  = $children.eq(0);
+    const $cloneRight = $track.children(".is-clone").last().eq(0);
+
     let wrapWidth = 0;
-    const calculateWrap = () => {
-       if (!$cloneRightFirst.length || !$origFirst.length) return;
-       // wrapWidth = khoảng cách chính xác từ mảng gốc tới mảng bên phải
-       wrapWidth = $cloneRightFirst[0].offsetLeft - $origFirst[0].offsetLeft;
+    const calcWrap = () => {
+      wrapWidth = $cloneRight[0]?.offsetLeft - $origFirst[0]?.offsetLeft || 0;
     };
 
-    let isDragging = false, hasDragged = false, isRealDrag = false;
+    // ─── State ──────────────────────────────────────────────────────────────
+    let isDragging = false;   // Đang giữ chuột/chạm
+    let isRealDrag = false;   // Phân biệt drag thật vs click bình thường
+    let hasDragged = false;   // Đã từng drag chưa (để giữ center card lần đầu)
     let startX = 0, currentX = 0, velocity = 0;
 
-    const refreshBounds = (shouldCenter = false) => {
-      calculateWrap();
-      if (!wrapWidth) return; 
+    // ─── Vị trí ban đầu ─────────────────────────────────────────────────────
+    // Ghìm X vào "vùng an toàn" [-2*wrapWidth, -wrapWidth) để wrap hoạt động đúng
+    const clampToSafeZone = (x) => {
+      const mod = ((x % wrapWidth) + wrapWidth) % wrapWidth;
+      return mod - wrapWidth * 2;
+    };
 
-      let startPos = currentX || -wrapWidth; // Mặc định ở phần Original
-      
-      if (shouldCenter && !hasDragged && $centerCard.length) {
-         startPos = ($container.innerWidth() / 2) - ($centerCard[0].offsetLeft + $centerCard.outerWidth() / 2);
+    const refreshBounds = (shouldCenter = false) => {
+      calcWrap();
+      if (!wrapWidth) return;
+
+      let x = currentX || -wrapWidth; // Mặc định: hiển thị phần Original
+
+      // Lần đầu load: căn giữa vào .center-card nếu có
+      if (shouldCenter && !hasDragged) {
+        const $cc = $track.find(".center-card");
+        if ($cc.length)
+          x = $container.innerWidth() / 2 - ($cc[0].offsetLeft + $cc.outerWidth() / 2);
       }
-      
-      // Ghìm vị trí bắt buộc vào "vùng an toàn" hiển thị mượt mà [-2*wrapWidth, -wrapWidth)
-      let temp = ((startPos % wrapWidth) + wrapWidth) % wrapWidth;
-      currentX = temp - wrapWidth * 2;
-      
+
+      currentX = clampToSafeZone(x);
       gsap.set($track[0], { x: currentX });
     };
 
-    const dragStart = x => {
+    // ─── Drag Handlers ──────────────────────────────────────────────────────
+    const dragStart = (x) => {
       isDragging = hasDragged = true;
       isRealDrag = false;
       startX = x;
       velocity = 0;
-      $container.addClass("is-dragging").css("cursor", "grabbing");
-      gsap.killTweensOf($track[0]);
+      $container.css("cursor", "grabbing");
+      gsap.killTweensOf($track[0]); // Dừng mọi animation đang chạy
     };
 
-    const doDrag = x => {
+    const doDrag = (x) => {
       if (!isDragging) return;
-      if (Math.abs(x - startX) > 5) isRealDrag = true; // Chống lỡ click khi kéo
-      
-      // Lấy X hiện tại của DOM (phòng khi tween cũ chưa dừng hẳn do click nhanh)
+      if (Math.abs(x - startX) > 5) isRealDrag = true; // Ngưỡng phân biệt drag vs click
+
+      // Đọc X thực từ DOM (tween cũ có thể chưa settle hoàn toàn)
       let domX = parseFloat(gsap.getProperty($track[0], "x")) || currentX;
-      const deltaX = (x - startX) * 1.5; // Hệ số nhân lướt
-      startX = x; // Consume X
-      
-      let targetX = domX + deltaX;
-      velocity = deltaX; 
-      
-      // Wrap tức thời, âm thầm bẻ lái DOM mà không gây giật
-      if (targetX > -wrapWidth) {
-         targetX -= wrapWidth;
-         domX -= wrapWidth;
-         gsap.set($track[0], { x: domX }); 
-      } else if (targetX < -wrapWidth * 2) {
-         targetX += wrapWidth;
-         domX += wrapWidth;
-         gsap.set($track[0], { x: domX });
-      }
-      
+      const delta = (x - startX) * 1.5; // Hệ số nhân tốc độ lướt
+      startX = x; // Consume để delta tính incremental
+
+      let targetX = domX + delta;
+      velocity = delta;
+
+      // Teleport âm thầm khi vượt biên → không giật, không lộ đầu/cuối
+      if (targetX > -wrapWidth) { targetX -= wrapWidth; domX -= wrapWidth; }
+      else if (targetX < -wrapWidth * 2) { targetX += wrapWidth; domX += wrapWidth; }
+
+      gsap.set($track[0], { x: domX }); // Cập nhật điểm xuất phát tween
       currentX = targetX;
       gsap.to($track[0], { x: currentX, duration: 0.15, ease: "power2.out", overwrite: true });
     };
@@ -91,54 +110,48 @@ $(() => {
     const dragEnd = () => {
       if (!isDragging) return;
       isDragging = false;
-      $container.removeClass("is-dragging").css("cursor", "grab");
-      
-      let finalX = currentX + velocity * 15;
-      
-      // Vung tay theo quán tính, dùng Modifiers để wrap mượt chạy liên tục không điểm viền
-      gsap.to($track[0], { 
-        x: finalX, 
-        duration: 0.8, 
-        ease: "power2.out", 
+      $container.css("cursor", "grab");
+
+      // Glide theo quán tính sau khi thả, modifier giữ wrap liên tục
+      gsap.to($track[0], {
+        x: currentX + velocity * 15,
+        duration: 0.8,
+        ease: "power2.out",
         overwrite: true,
         modifiers: {
-          x: function(x_val) {
-             if (!wrapWidth) return x_val;
-             let val = parseFloat(x_val);
-             let temp = ((val % wrapWidth) + wrapWidth) % wrapWidth;
-             return (temp - wrapWidth * 2) + "px";
-          }
+          x: (val) => {
+            if (!wrapWidth) return val;
+            return clampToSafeZone(parseFloat(val)) + "px";
+          },
         },
-        onUpdate: function() {
-           currentX = parseFloat(gsap.getProperty($track[0], "x"));
-        }
+        onUpdate() {
+          currentX = parseFloat(gsap.getProperty($track[0], "x"));
+        },
       });
     };
 
-    // Chuột tại container & Touch (Mobile)
+    // ─── Event Binding ──────────────────────────────────────────────────────
     $container.on({
-      mousedown: e => { if (e.button === 0) { dragStart(e.pageX); e.preventDefault(); } },
-      mouseleave: dragEnd,
-      touchstart: e => dragStart(e.originalEvent.touches[0].pageX),
-      touchmove: e => doDrag(e.originalEvent.touches[0].pageX),
-      "touchend touchcancel": dragEnd
+      mousedown:            (e) => { if (e.button === 0) { dragStart(e.pageX); e.preventDefault(); } },
+      mouseleave:           dragEnd,
+      touchstart:           (e) => dragStart(e.originalEvent.touches[0].pageX),
+      touchmove:            (e) => doDrag(e.originalEvent.touches[0].pageX),
+      "touchend touchcancel": dragEnd,
     });
-    
-    // Bắt sự kiện chuột di chuyển toàn màn hình
+
     $(window).on({
-      mousemove: e => doDrag(e.pageX),
-      mouseup: dragEnd,
-      resize: () => refreshBounds(false) 
+      mousemove: (e) => doDrag(e.pageX),
+      mouseup:   dragEnd,
+      resize:    () => refreshBounds(false),
     });
 
-    // Vô hiệu mặc định trình duyệt để UX sạch sẽ
-    $track.find("img").on("dragstart", e => e.preventDefault());
-    $track.find("a").on("click", e => { if (isRealDrag) { e.preventDefault(); e.stopImmediatePropagation(); } });
+    // Chặn drag ảnh mặc định & block click nếu đang drag thật
+    $track.find("img").on("dragstart", (e) => e.preventDefault());
+    $track.find("a").on("click", (e) => { if (isRealDrag) { e.preventDefault(); e.stopImmediatePropagation(); } });
 
-    // Init khởi động
+    // ─── Init ───────────────────────────────────────────────────────────────
     setTimeout(() => refreshBounds(true), 100);
     $container.addClass("feed-ready");
-    if (document.fonts?.ready) document.fonts.ready.then(() => refreshBounds(true));
+    document.fonts?.ready.then(() => refreshBounds(true)); // Re-center sau khi font load xong
   });
 });
-
