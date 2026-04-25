@@ -49,20 +49,20 @@ body {
    HORIZONTAL SCROLL WRAPPER
    These selectors are used by sectionTwo.js
    ══════════════════════════════════════════════════════════ */
-.news-section-two {
+.section-two {
     width: 100%;
     height: 100vh;
     position: relative;
     background: var(--nw-white);
 }
 
-.news-s2-viewport {
+.s2-viewport {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.news-s2-track {
+.s2-track {
     display: flex;
     height: 100%;
     width: fit-content;
@@ -345,16 +345,16 @@ body {
    RESPONSIVE  (stack panels on mobile)
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 991px) {
-    .news-section-two {
+    .section-two {
         height: auto;
     }
 
-    .news-s2-viewport {
+    .s2-viewport {
         overflow: visible;
         height: auto;
     }
 
-    .news-s2-track {
+    .s2-track {
         flex-direction: column;
         width: 100%;
         height: auto;

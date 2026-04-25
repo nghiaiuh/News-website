@@ -3,10 +3,10 @@ $(() => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const $section = $(".section-two, .news-section-two");
-  const $viewport = $section.find(".s2-viewport, .news-s2-viewport");
-  const $track = $section.find(".s2-track, .news-s2-track");
-  const $progressBar = $section.find(".s2-progress-bar, .news-s2-progress-bar");
+  const $section = $(".section-two");
+  const $viewport = $section.find(".s2-viewport");
+  const $track = $section.find(".s2-track");
+  const $progressBar = $section.find(".s2-progress-bar");
 
   if (!$section.length || !$track.length) return;
 
@@ -26,16 +26,11 @@ $(() => {
         scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          if ($progressBar.length) {
-            $progressBar.css("transform", `scaleX(${self.progress})`);
-          }
-        }
       }
     });
   });
 
-  // Tái kích hoạt Hover thông qua jQuery cơ bản thay vì theo dõi tọa độ
+  // Hover
   $(".s2-lead-panel, .s2-data-panel").hover(
     function() { $(this).addClass("s2-hover-active"); },
     function() { $(this).removeClass("s2-hover-active"); }

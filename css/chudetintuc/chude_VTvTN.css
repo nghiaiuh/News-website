@@ -278,10 +278,6 @@
   transition: color 0.3s ease;
 }
 
-.see-all:hover {
-  color: var(--secondary-color);
-}
-
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

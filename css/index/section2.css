@@ -75,7 +75,7 @@
 .s2-editorial {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: clamp(1rem, 2vw, 1.75rem);
   height: 100%;
 }
@@ -111,7 +111,7 @@
 
 .s2-editorial-text {
   margin: 0 0 clamp(14px, 1.8vw, 50px) 0;
-  padding-top: clamp(20px, 3vw, 750px);
+  padding-top: clamp(10px, 1.5vw, 30px);
   font-family: var(--nw-font-time);
   font-size: clamp(1.15rem, 1.35vw, 1.5rem);
   line-height: 1.65;
@@ -366,3 +366,16 @@
    RESPONSIVE — TABLET (< 992px)
    Disable GSAP pin, stack vertically or allow native scroll
    ============================================================= */
+@media (max-width: 991.98px) {
+  .s2-editorial-text {
+    font-size: 24px;
+    padding-top: 3vw;
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .s2-editorial-text--dropcap {
+    font-size: 40px;
+    margin-bottom: 1rem;
+  }
+}

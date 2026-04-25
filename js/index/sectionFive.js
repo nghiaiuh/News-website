@@ -3,22 +3,22 @@ $(() => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const section = $(".s5-section")[0];
-  const natureFeed = section.querySelector(".s5-nature-feed");
-
-  // Initial state cho Nature feed
-  gsap.set(natureFeed, { yPercent: 120, opacity: 0 });
+  const natureFeed = $(".s5-nature-feed");
 
   let mm = gsap.matchMedia();
 
+  // ── DESKTOP: ScrollTrigger pin + collage animation ──
   mm.add("(min-width: 992px)", () => {
-    // KHÔNG có pin vì .s5-sticky-wrap đã xử lý bằng CSS position: sticky
+    // Ẩn natureFeed ban đầu, sẽ được GSAP reveal
+    gsap.set(natureFeed, { yPercent: 120, opacity: 0 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: section,
-        start: "top top",       // Khi top section chạm top viewport
-        end: "bottom bottom",   // Khi bottom section chạm bottom viewport (= hết 300vh)
-        scrub: 1,               // Animation chạy mượt theo scroll
+        trigger: ".s5-wrap",
+        pin: true,
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
         invalidateOnRefresh: true,
       }
     });
@@ -46,7 +46,7 @@ $(() => {
     tl.to(".item-tr1", { xPercent: 200, yPercent: -300, duration: 1, ease: "power2.inOut" }, 0);
     tl.to(".item-bl1", { xPercent: -150, yPercent: 200, duration: 1, ease: "power2.inOut" }, 0);
 
-    // 8. Nature Feed trồi lên từ phía dưới (ở giữa chặng animation)
+    // 3. Nature Feed trồi lên từ phía dưới
     tl.to(natureFeed, {
       yPercent: 0,
       opacity: 1,
@@ -55,19 +55,6 @@ $(() => {
     }, 0.5);
   });
 
-  mm.add("(max-width: 991px)", () => {
-    // Trên mobile, chỉ scroll nhẹ để hiện Nature Feed
-    gsap.to(natureFeed, {
-      yPercent: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: section,
-        start: "top center",
-        end: "bottom bottom",
-        scrub: 1,
-      }
-    });
-  });
 
   // Refresh sau khi load xong ảnh
   window.addEventListener("load", () => requestAnimationFrame(() => ScrollTrigger.refresh()), { once: true });

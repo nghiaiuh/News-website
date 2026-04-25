@@ -58,7 +58,7 @@ $(() => {
             ${buildNav(R_NAV, "main-menu-right")}
             <button class="account-btn" type="button" aria-label="Tài khoản" id="account-btn">
               <img src="${rRoot("images/account.svg")}" alt="account" width="20px">
-              Tài khoản
+              <span>Tài khoản</span>
             </button>
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="nwMenu">
