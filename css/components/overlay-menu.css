@@ -43,24 +43,6 @@
   align-items: center;
   gap: 5rem; /* Khoảng cách giữa nút đăng nhập và nút close */
 }
-/* Style cho nút Đăng Nhập */
-.om-login-btn {
-  font-family: "Space Mono", monospace; /* Dùng font phụ (cùng font với footer) */
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--om-text);
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  padding: 0.6rem 1.25rem;
-  border: 1px solid var(--om-text); /* Viền đen mỏng */
-  transition: all 0.3s var(--om-ease);
-}
-
-.om-login-btn:hover {
-  background: var(--om-text);
-  color: var(--om-bg); /* Khi hover đổi màu nền đen, chữ trắng */
-}
 .om-logo {
   font:
     900 2rem "Oswald",

@@ -14,11 +14,9 @@
   --nw-ink-strong: #111111;
   --nw-ink-dark: #0a0a0a;
   --nw-ink-rich: #1a1a1a;
-
-  /* Brand & accent */
   --nw-accent: #ffdd00;
   --nw-accent-hover: #f4c900;
-  --nw-accent-red: #c30000; /* NEW badge, badge-danger */
+  --nw-accent-red: #c30000;
 
   /* Muted / supporting */
   --nw-muted: #78716c;
@@ -52,7 +50,6 @@
   --nw-font-serif: "Merriweather", serif;
   --nw-font-display: "Playfair Display", "Merriweather", serif;
   --nw-font-heading: "Oswald", sans-serif;
-  --nw-font-mono: "Space Mono", "Courier New", monospace;
   --nw-font-news: "Newsreader", sans-serif;
   --nw-font-time: "Times New Roman", Times, serif;
   --nw-font-script: "Dancing Script", cursive;
@@ -87,15 +84,10 @@
   --nw-shadow-lg: 0 24px 46px rgba(8, 10, 16, 0.2);
   --nw-shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.45);
 
-  /* ── Transitions ─────────────────────────────────────────── */
-  --nw-transition-fast: 0.2s ease;
-  --nw-transition-base: 0.3s ease;
-  --nw-transition-slow: 0.4s ease;
-
   /* ── Backwards-compat aliases (legacy names, do not add new ones) ── */
   --news-text: var(--nw-text);
   --news-bg: var(--nw-bg);
-  --news-white: var(--nw-white);
+  --news-white: var(--nw-white);  
   --news-black: var(--nw-black);
   --news-ink-strong: var(--nw-ink-strong);
   --news-accent: var(--nw-accent);
@@ -116,20 +108,14 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: 16px;
   line-height: 1.6;
   color: var(--news-text);
+  background: var(--news-bg);
 }
 
 ::selection {
   background-color: var(--news-black);
   color: var(--news-white);
-}
-
-/* ===== BODY & BACKGROUND ===== */
-.news-body,
-.body {
-  background: var(--news-bg);
-  color: var(--news-text);
 }

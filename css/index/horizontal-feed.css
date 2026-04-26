@@ -1,69 +1,58 @@
 /* ===== FEED CONTAINER ===== */
-.feed-container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
+.s1-feed-container {
+  padding: 15px 0;
   overflow: hidden;
-  margin-top: 25px;
-  margin-bottom: 1.5rem;
   cursor: grab;
   user-select: none;
   touch-action: pan-y;
 }
 
 /* An track cho den khi JS san sang */
-.news-feed-js .feed-container .feed-track {
+.s1-feed-container .s1-feed-track {
   opacity: 0;
 }
-
-.news-feed-js .feed-container.feed-ready .feed-track {
+.s1-feed-container.feed-ready .s1-feed-track {
   opacity: 1;
 }
-
-.feed-container.is-dragging {
+.s1-feed-container.is-dragging {
   cursor: grabbing;
 }
 
 /* ===== FEED TRACK ===== */
-.feed-track {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
+.s1-feed-track {
   will-change: transform;
 }
 
 /* ===== CARD CHUNG ===== */
-.proj-card,
+.s1-feed-card,
 .center-card {
   margin-top: 2vw;
   flex-shrink: 0;
-  min-height: 260px;
 }
 
-/* ===== PROJ CARD (card tin tuc) ===== */
-.proj-card {
-  position: relative;
+/* ===== FEED CARD (card tin tuc) ===== */
+.s1-feed-card {
   width: 36%;
-  display: flex;
-  flex-direction: column;
   padding: 0 4vw;
 }
 
-.proj-card img {
+.s1-feed-card img {
   width: 100%;
   height: clamp(140px, 18vw, 210px);
   object-fit: cover;
   display: block;
   border: 1px solid var(--news-black);
-  pointer-events: none;
   -webkit-user-drag: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.proj-content {
+.s1-feed-card img:hover {
+  transform: scale(1.05);
+}
+.s1-feed-content {
   padding: 1rem 1.25rem;
 }
 
-.proj-title {
+.s1-feed-brand {
   color: var(--nw-ink-dark);
   font-family: var(--nw-font-news);
   font-size: 0.84rem;
@@ -72,7 +61,7 @@
   text-transform: uppercase;
 }
 
-.proj-badge {
+.s1-feed-badge {
   background: var(--nw-accent-red);
   color: var(--nw-white);
   font-family: var(--nw-font-sans);
@@ -83,7 +72,7 @@
   border-radius: var(--nw-radius-sm);
 }
 
-.proj-desc {
+.s1-feed-desc {
   color: var(--nw-text);
   font-family: var(--nw-font-time);
   font-size: 1.7vw;
@@ -93,13 +82,7 @@
 
 /* ===== CENTER CARD (card trung tam) ===== */
 .center-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   width: 29%;
-  padding: 1.8rem 2rem;
   border-left: 1px solid rgba(74, 65, 53, 0.28);
   border-right: 1px solid rgba(74, 65, 53, 0.28);
 }
@@ -122,17 +105,17 @@
   line-height: 1.33;
 }
 
+.news-khorap {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: larger;
+  font-weight: 100;
+}
+
 .news-highlight {
   font-family: "Dancing Script", cursive;
   font-style: italic;
   font-weight: 700;
   font-size: larger;
-}
-
-.news-khorap {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: larger;
-  font-weight: 100;
 }
 
 .center-tip {
@@ -155,12 +138,12 @@
 
 /* TABLET (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .feed-container {
+  .s1-feed-container {
     margin-top: 20px;
     margin-bottom: clamp(1rem, 2vw, 1.6rem);
   }
 
-  .proj-card {
+  .s1-feed-card {
     width: calc(100% / 3);
     min-height: 220px;
     padding: 0 3vw;
@@ -171,19 +154,19 @@
     min-height: 220px;
   }
 
-  .proj-card img {
+  .s1-feed-card img {
     height: clamp(110px, 20vw, 160px);
   }
 
-  .proj-content {
+  .s1-feed-content {
     padding: 0.75rem 0.85rem;
   }
 
-  .proj-title {
+  .s1-feed-brand {
     font-size: 0.8rem;
   }
 
-  .proj-desc {
+  .s1-feed-desc {
     font-size: 1.5vw;
   }
 
@@ -202,17 +185,17 @@
 
 /* LARGE TABLET (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .feed-container {
+  .s1-feed-container {
     margin-top: 18px;
     margin-bottom: clamp(0.8rem, 1.8vw, 1.4rem);
   }
 
-  .proj-card,
+  .s1-feed-card,
   .center-card {
     margin-top: 3vw;
   }
 
-  .proj-card {
+  .s1-feed-card {
     width: calc(100% / 2.5);
     min-height: 200px;
     padding: 0 2.5vw;
@@ -224,19 +207,19 @@
     padding: 1.5rem 1.5rem;
   }
 
-  .proj-card img {
+  .s1-feed-card img {
     height: clamp(100px, 18vw, 140px);
   }
 
-  .proj-content {
+  .s1-feed-content {
     padding: 0.65rem 0.75rem;
   }
 
-  .proj-title {
+  .s1-feed-brand {
     font-size: 0.75rem;
   }
 
-  .proj-desc {
+  .s1-feed-desc {
     font-size: 1.4vw;
     line-height: 0.75;
   }
@@ -256,18 +239,18 @@
 
 /* MOBILE (max-width: 575px) */
 @media (max-width: 575.98px) {
-  .feed-container {
+  .s1-feed-container {
     margin-top: 15px;
     margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
     touch-action: pan-y;
   }
 
-  .proj-card,
+  .s1-feed-card,
   .center-card {
     margin-top: 2vw;
   }
 
-  .proj-card {
+  .s1-feed-card {
     width: calc(100% / 2);
     min-height: 180px;
     padding: 0 2vw;
@@ -279,24 +262,24 @@
     padding: 1.2rem 1rem;
   }
 
-  .proj-card img {
+  .s1-feed-card img {
     height: clamp(90px, 16vw, 130px);
   }
 
-  .proj-content {
+  .s1-feed-content {
     padding: 0.6rem 0.7rem;
   }
 
-  .proj-title {
+  .s1-feed-brand {
     font-size: 0.7rem;
   }
 
-  .proj-badge {
+  .s1-feed-badge {
     font-size: 8px;
     padding: 2px 5px;
   }
 
-  .proj-desc {
+  .s1-feed-desc {
     font-size: 1.3vw;
     line-height: 0.75;
   }
@@ -319,7 +302,7 @@
 
 /* ULTRA SMALL MOBILE (max-width: 360px) */
 @media (max-width: 360px) {
-  .proj-card {
+  .s1-feed-card {
     width: calc(100% / 1.8);
     padding: 0 1.5vw;
   }
@@ -328,15 +311,15 @@
     width: 55%;
   }
 
-  .proj-card img {
+  .s1-feed-card img {
     height: clamp(80px, 15vw, 120px);
   }
 
-  .proj-title {
+  .s1-feed-brand {
     font-size: 0.65rem;
   }
 
-  .proj-desc {
+  .s1-feed-desc {
     font-size: 1.2vw;
   }
 
