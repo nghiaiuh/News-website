@@ -37,7 +37,7 @@
           <nav><ul class="om-menu-list" id="om-menu-list">${itemsHTML}</ul></nav>
         </div>
         <footer class="om-footer" id="om-footer">
-          <span>© 2026 BÁO CHÍ DESIGN — Nhóm 7</span>
+          <span>© 2026 BÁO CHÍ DESIGN — Nhóm 8</span>
           <ul class="om-footer-links">
             <li><a href="https://www.youtube.com/@nghia_game_dev">Youtube</a></li>
             <li><a href="https://github.com/nghiaiuh/News-website">Github</a></li>
