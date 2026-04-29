@@ -1,5 +1,4 @@
-/* SECTION 3: Crafting Culture collage */
-.s3-section {
+.section-three {
   margin-top: 3vw;
   background: var(--news-white);
   padding: clamp(44px, 5vw, 68px) 0 clamp(32px, 4vw, 60px);
@@ -8,7 +7,7 @@
   isolation: isolate;
 }
 
-.s3-section::before {
+.section-three::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -21,18 +20,17 @@
   z-index: 0;
 }
 
-.s3-section > * {
+.section-three>* {
   position: relative;
   z-index: 1;
 }
 
 .s3-header {
   position: relative;
-  width: 100%;
-  min-height: clamp(320px, 30vw, 460px);
+  min-height: clamp(320px, 28vw, 440px);
 }
 
-.s3-copy {
+.s3-category {
   position: relative;
   z-index: 4;
   padding: 0 clamp(18px, 2vw, 42px);
@@ -57,10 +55,8 @@
 
 .s3-kicker {
   padding-left: 2vw;
-  margin: clamp(20px, 5vw, 100px) auto 0 0;
   width: 80%;
   color: var(--nw-text);
-  text-transform: uppercase;
   font-family: var(--nw-font-serif);
   font-size: clamp(1.3rem, 1.7vw, 2.5rem);
   font-weight: 700;
@@ -68,15 +64,10 @@
   letter-spacing: -0.02em;
 }
 
-.s3-sports-category {
-  margin: clamp(20px, 2vw, 32px) 0 0;
-  width: 90%;
-}
-
 .s3-btn {
   --sport-icon: none;
   flex: 0 0 auto;
-  padding: 0.44rem 0.95rem;
+  padding: 0.48rem 0.95rem;
   border: 0;
   border-radius: var(--nw-radius-pill);
   background: transparent;
@@ -88,10 +79,7 @@
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
-  transition:
-    background-color var(--nw-transition-base),
-    color var(--nw-transition-base),
-    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.3s ease;
 }
 
 .s3-btn:hover,
@@ -115,10 +103,7 @@
   position: absolute;
   inset: 2px;
   border-radius: 50%;
-  background-image: var(--sport-icon);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: var(--sport-icon) no-repeat center / cover;
 }
 
 .s3-btn:hover .s3-sport-icon,
@@ -138,20 +123,15 @@
 }
 
 .s3-card-gallery {
-  position: absolute;
   left: var(--x, 50%);
   top: var(--y, 50%);
   width: var(--w, 180px);
   aspect-ratio: 4 / 5;
   transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.92);
   opacity: 0;
-  border: 1px solid var(--nw-overlay-dark);
+  border: 1px solid black;
   box-shadow: var(--nw-shadow-lg);
-  background: var(--nw-white);
-  overflow: hidden;
-  transition:
-    opacity var(--nw-transition-slow),
-    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .s3-card-gallery.is-visible {
@@ -169,12 +149,7 @@
 .box-horizontal {
   margin-top: 0.5vw;
   background: var(--nw-text);
-  width: 80%;
-  margin-right: auto;
   padding: clamp(16px, 2vw, 24px);
-}
-
-.sports-feed-shell {
 }
 
 .sports-feed-nav {
@@ -186,7 +161,7 @@
   border-radius: 50%;
   background: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgb(255, 255, 255);
   cursor: pointer;
   transition: all 0.3s ease, scale 0.3s ease, filter 0.3s ease;
 }
@@ -204,7 +179,7 @@
   right: clamp(8px, 1vw, 14px);
 }
 
-.sports-feed-nav:hover:not(:disabled) {
+.sports-feed-nav:hover {
   background: rgba(0, 0, 0, 0.85);
   scale: 1.15;
 }
@@ -261,11 +236,17 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.05) 40%,
-    rgba(0, 0, 0, 0.78) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.05) 20%,
+      rgba(0, 0, 0, 0.932) 100%);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.sports-feed-card:hover::after {
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.05) 20%,
+      rgba(134, 14, 14, 0.514) 100%);
 }
 
 .sports-feed-body {
@@ -273,39 +254,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   padding: clamp(12px, 1.2vw, 18px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sports-feed-card:hover .sports-feed-body {
+  transform: translateY(-4px);
 }
 
 .sports-feed-title {
   color: var(--nw-white);
   font-family: var(--nw-font-heading);
-  font-size: clamp(1.2rem, 1.3vw, 1.7rem);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
-
-.sports-feed-meta {
-  margin: clamp(10px, 1vw, 14px) 0 0;
-  color: var(--nw-white);
-  font-family: var(--nw-font-heading);
-  font-size: clamp(0.9rem, 0.8vw, 1.1rem);
-  font-weight: 600;
-}
-
-.sports-play {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #f70632;
-  flex: 0 0 34px;
-}
-
-.sports-play::before {
-  content: "";
-  margin-left: 3px;
-  border-block: 7px solid transparent;
-  border-left: 10px solid var(--news-white);
-}
-
