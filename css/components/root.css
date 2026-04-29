@@ -78,6 +78,10 @@
   --nw-radius-xl: 16px;
   --nw-radius-pill: 999px;
 
+  --nw-transition-fast: 0.2s ease;
+  --nw-transition-base: 0.3s ease;
+  --nw-transition-slow: 0.4s ease;
+
   /* ── Shadows ─────────────────────────────────────────────── */
   --nw-shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.14);
   --nw-shadow-md: 0 14px 26px rgba(0, 0, 0, 0.14);
@@ -87,7 +91,7 @@
   /* ── Backwards-compat aliases (legacy names, do not add new ones) ── */
   --news-text: var(--nw-text);
   --news-bg: var(--nw-bg);
-  --news-white: var(--nw-white);  
+  --news-white: var(--nw-white);
   --news-black: var(--nw-black);
   --news-ink-strong: var(--nw-ink-strong);
   --news-accent: var(--nw-accent);
@@ -113,6 +117,7 @@ body {
   line-height: 1.6;
   color: var(--news-text);
   background: var(--news-bg);
+  overflow-x: hidden;
 }
 
 ::selection {

@@ -1,5 +1,6 @@
 .s1-section {
   background: var(--nw-white);
+  position: relative;
 }
 
 .title-wrap {
@@ -24,4 +25,3 @@
   width: 100%;
   text-align: center;
 }
-

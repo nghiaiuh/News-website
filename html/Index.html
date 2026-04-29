@@ -1,1756 +1,1042 @@
 ﻿<!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tin tức Online - Báo Chí DESIGN</title>
-    <meta
-      name="description"
-      content="Cập nhật tin tức mới nhất về kinh tế, chính trị, thể thao, giải trí và khoa học từ Báo Chí DESIGN."
-    />
 
-    <!-- SCROLL RESET, no-defer -->
-    <script>
-      // Problem: scroll-behavior: smooth trên body CSS can thiệp vào GSAP ScrollTrigger.refresh().
-      // Khi ST refresh nội bộ cần scroll về 0 để đo positions, smooth behavior
-      // làm scroll animation bất đồng bộ -> ST đọc vị trí sai.
-      // Override về "auto" để scroll luôn instant với GSAP.
-      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-      document.documentElement.style.scrollBehavior = "auto";
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức Online - Báo Chí DESIGN</title>
+  <meta name="description"
+    content="Cập nhật tin tức mới nhất về kinh tế, chính trị, thể thao, giải trí và khoa học từ Báo Chí DESIGN." />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/local-fonts.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/components/root.css" />
-    <link rel="stylesheet" href="../css/components/navbar.css" />
-    <link rel="stylesheet" href="../css/components/account-overlay.css" />
-    <link rel="stylesheet" href="../css/components/overlay-menu.css" />
-    <link rel="stylesheet" href="../css/index/section1.css" />
-    <link rel="stylesheet" href="../css/index/section2.css" />
-    <link rel="stylesheet" href="../css/index/section3.css" />
-    <link rel="stylesheet" href="../css/index/section4.css" />
-    <link rel="stylesheet" href="../css/index/section5.css" />
-    <link rel="stylesheet" href="../css/index/section6.css" />
-    <link rel="stylesheet" href="../css/index/horizontal-feed.css" />
-    <link rel="stylesheet" href="../css/components/footer.css" />
+  <!-- SCROLL RESET, no-defer -->
+  <script>
+    // Problem: scroll-behavior: smooth trên body CSS can thiệp vào GSAP ScrollTrigger.refresh().
+    // Khi ST refresh nội bộ cần scroll về 0 để đo positions, smooth behavior
+    // làm scroll animation bất đồng bộ -> ST đọc vị trí sai.
+    // Override về "auto" để scroll luôn instant với GSAP.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    document.documentElement.style.scrollBehavior = "auto";
+  </script>
 
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="../css/index/nyt-header.css" />
-    <link rel="stylesheet" href="../css/index/responsive.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/local-fonts.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/components/root.css" />
+  <link rel="stylesheet" href="../css/components/navbar.css" />
+  <link rel="stylesheet" href="../css/components/account-overlay.css" />
+  <link rel="stylesheet" href="../css/components/overlay-menu.css" />
+  <link rel="stylesheet" href="../css/index/section1.css" />
+  <link rel="stylesheet" href="../css/index/section2.css" />
+  <link rel="stylesheet" href="../css/index/section3.css" />
+  <link rel="stylesheet" href="../css/index/section4.css" />
+  <link rel="stylesheet" href="../css/index/section5.css" />
+  <link rel="stylesheet" href="../css/index/section6.css" />
+  <link rel="stylesheet" href="../css/index/horizontal-feed.css" />
+  <link rel="stylesheet" href="../css/components/footer.css" />
 
-    <!-- jQuery -->
-    <script src="../js/lib/jquery/jquery-4.0.0.js" defer></script>
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="../css/index/nyt-header.css" />
+  <link rel="stylesheet" href="../css/index/responsive.css" />
 
-    <!-- Bootstrap JS -->
-    <script src="../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <!-- jQuery -->
+  <script src="../js/lib/jquery/jquery-4.0.0.js" defer></script>
 
-    <!-- GSAP -->
-    <script src="../js/lib/gsap/gsap.min.js" defer></script>
-    <script src="../js/lib/gsap/ScrollTrigger.min.js" defer></script>
+  <!-- Bootstrap JS -->
+  <script src="../js/lib/bootstrap/bootstrap.bundle.min.js" defer></script>
 
-    <!-- JS sections -->
-    <script src="../js/components/navbar.js" defer></script>
-    <script src="../js/components/account-overlay.js" defer></script>
-    <script src="../js/components/overlay-menu.js" defer></script>
-    <script src="../js/index/sectionTwo.js" defer></script>
-    <script src="../js/index/sectionThree.js" defer></script>
-    <script src="../js/index/sectionFour.js" defer></script>
-    <script src="../js/index/horizontalFeed.js" defer></script>
-    <script src="../js/index/sectionFive.js" defer></script>
-    <script src="../js/index/section6.js" defer></script>
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/components/footer.js" defer></script>
-  </head>
+  <!-- GSAP -->
+  <script src="../js/lib/gsap/gsap.min.js" defer></script>
+  <script src="../js/lib/gsap/ScrollTrigger.min.js" defer></script>
 
-  <body>
-    <div id="site-header"></div>
+  <!-- JS sections -->
+  <script src="../js/components/navbar.js" defer></script>
+  <script src="../js/components/account-overlay.js" defer></script>
+  <script src="../js/components/overlay-menu.js" defer></script>
+  <script src="../js/index/sectionTwo.js" defer></script>
+  <script src="../js/index/sectionThree.js" defer></script>
+  <script src="../js/index/sectionFour.js" defer></script>
+  <script src="../js/index/horizontalFeed.js" defer></script>
+  <script src="../js/index/sectionFive.js" defer></script>
+  <script src="../js/index/section6.js" defer></script>
+  <script src="../js/auth.js" defer></script>
+  <script src="../js/components/footer.js" defer></script>
+  <script src="../js/index/section1.js" defer></script>
+</head>
 
-    <main>
-      <!-- SECTION 1: Horizontal Feed -->
-      <section class="s1-section">
-        <div class="s1-feed-container">
-          <div class="s1-feed-track d-flex flex-nowrap">
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
-                <img src="../images/Trump.png" alt="Global Dispatch" loading="lazy"/>
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Global Dispatch</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc">
-                  Editorial package tracking high-stakes diplomacy.
-                </p>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- SECTION 1: Horizontal Feed -->
+    <section class="s1-section">
+      <div class="s1-feed-container">
+        <div class="s1-feed-track d-flex flex-nowrap">
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
+              <img src="../images/Trump.png" alt="Global Dispatch" loading="lazy" />
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Global Dispatch</h3>
+                <span class="s1-feed-badge">NEW</span>
               </div>
-            </article>
-
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
-                <img src="../images/trump2.png" alt="Policy Lens" loading="lazy"/>
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Policy Lens</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc mb-0">
-                  Longform layout balancing data callouts and context.
-                </p>
-              </div>
-            </article>
-
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
-                <img src="../images/vu-tru-thien-nhien/artemisRocket1.png" alt="Nasa" loading="lazy">
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Nasa</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc mb-0">
-                  Artemis II: Nhân loại trở lại Mặt Trăng sau hơn nửa thế kỷ
-                </p>
-              </div>
-            </article>
-
-            <!-- Card trung tâm -->
-            <article class="center-card d-flex flex-column align-items-center text-center justify-content-center">
-              <h3 class="center-title mb-2">BÁO CHÍ !</h3>
-              <p class="center-subtitle mt-3 mb-0">
-                Không chỉ dừng lại ở <br /><span class="news-khorap">Nội dung</span
-                ><br />
-                Mà bắt đầu từ cách bạn <br />
-                <span class="news-highlight">Thể hiện</span>.
+              <p class="s1-feed-desc">
+                Editorial package tracking high-stakes diplomacy.
               </p>
-              <p class="center-tip">
-                <span class="news-tip">TIP!</span> Kéo ngang để xem các mục tin tức
-              </p>
-            </article>
-
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
-                <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Báo Hà Tĩnh</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc mb-0">
-                  UAV Iran 'đánh trúng cơ sở của CIA' tại Arab Saudi
-                </p>
-              </div>
-            </article>
-
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
-                <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Signal Desk</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc mb-0">
-                  Compact newsroom module for tracking brief alerts.
-                </p>
-              </div>
-            </article>
-
-            <article class="s1-feed-card d-flex flex-column">
-              <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
-                <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
-              </a>
-              <div class="s1-feed-content">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="s1-feed-brand mb-0">Deep Focus</h3>
-                  <span class="s1-feed-badge">NEW</span>
-                </div>
-                <p class="s1-feed-desc mb-0">Chuyên mục Thể thao & Sức khoẻ: Những câu chuyện truyền cảm hứng.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="container-fluid px-3 px-xl-4">
-          <div class="title-wrap">
-            <h2 class="display-title mb-0">TIN TỨC ONLINE</h2>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 2: Horizontal scroll với GSAP -->
-      <div class="s2-wrapper">
-        <section class="section-two">
-          <div class="s2-viewport">
-            <div class="s2-track">
-              <!-- ▸ Panel 1: Title Block -->
-              <article class="s2-panel s2-title-block s2-first">
-                <div class="s2-editorial">
-                  <div class="s2-mark" aria-hidden="true">
-                    <span class="s2-mark-line">KINH TẾ &amp;</span>
-                    <span class="s2-mark-line">CHÍNH TRỊ</span>
-                  </div>
-                  <p class="s2-editorial-text s2-editorial-text--dropcap">
-                    <span class="initial-block">T</span>heo dõi nhịp chuyển động
-                    của kinh tế, thị trường tài chính và các quyết sách chính
-                    trị có tác động trực tiếp đến doanh nghiệp.
-                  </p>
-                </div>
-              </article>
-
-              <!-- ▸ Panel 2: Lead Story -->
-              <article class="s2-panel s2-lead-panel">
-                <div class="s2-lead-badge">Bài chính</div>
-                <div class="s2-lead-image-wrap">
-                  <img
-                    class="s2-lead-image"
-                    src="../images/kinh-te-chinh-tri/iranbomb.png"
-                    alt="Wall Street — Kiến trúc thị trường toàn cầu"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="s2-lead-headline">
-                  UAV Iran 'đánh trúng cơ sở của CIA' tại Arab Saudi
-                </h3>
-                <p class="s2-lead-desc">
-                  UAV Iran đã đánh trúng cơ sở của Cơ quan Tình báo Trung ương
-                  (CIA) trong đòn tập kích đại sứ quán Mỹ tại Arab Saudi, theo
-                  Washington Post.
-                </p>
-                <div class="s2-lead-cta">
-                  <a
-                    href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
-                  >
-                    <span class="s2-lead-cta-text btn"
-                      >Đọc Phân Tích Đầy Đủ</span
-                    >
-                  </a>
-                  <span class="s2-lead-cta-time">8 phút đọc</span>
-                </div>
-              </article>
-
-              <!-- ▸ Panel 3: Data / Secondary Column -->
-              <article class="s2-panel s2-data-panel">
-                <!-- Row 1: Market tickers -->
-                <div class="s2-data-cell s2-data-tickers">
-                  <h4 class="s2-data-heading">
-                    Mỹ tuyên bố thắng lợi với nước Iran
-                  </h4>
-                </div>
-
-                <!-- Row 2: Secondary image -->
-                <div class="s2-data-cell s2-data-image-wrap">
-                  <a
-                    href="kinh-te-chinh-tri/my-tuyen-bo-thang-loi-iran-oman-thu-phi-hormuz.html"
-                  >
-                    <img
-                      class="s2-data-image"
-                      src="../images/kinh-te-chinh-tri/trump2.png"
-                      alt="Biểu tình chính trị"
-                      loading="lazy"
-                    />
-                    <div class="s2-data-image-overlay"></div>
-                  </a>
-                </div>
-
-                <!-- Row 3: Briefing -->
-                <div class="s2-data-cell s2-data-briefing">
-                  <div class="s2-briefing-label">7 phút đọc</div>
-                  <p class="s2-briefing-text">
-                    Nhà Trắng tuyên bố lệnh ngừng bắn hai tuần là "một thắng lợi
-                    của Mỹ", trong khi Iran và Oman dự kiến thu phí tàu qua eo
-                    biển Hormuz để tái thiết.
-                  </p>
-                </div>
-              </article>
-
-              <!-- ▸ Panel 4: Lead Story (large) -->
-              <article class="s2-panel s2-lead-panel">
-                <div class="s2-lead-badge">Bài nổi bật</div>
-                <div class="s2-lead-image-wrap">
-                  <img
-                    class="s2-lead-image"
-                    src="../images/kinh-te-chinh-tri/hop.jpg"
-                    alt="Chính sách thuế quan mới"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="s2-lead-headline">
-                  Quốc hội rút ngắn nhiệm kỳ khóa XV, bầu cử khóa mới vào
-                  15/3/2026
-                </h3>
-                <p class="s2-lead-desc">
-                  Quốc hội quyết nghị Ngày bầu cử đại biểu Quốc hội khoá XVI và
-                  đại biểu HĐND các cấp nhiệm kỳ 2026-2031 là Chủ nhật, ngày
-                  15/3/2026.
-                </p>
-                <div class="s2-lead-cta">
-                  <a
-                    href="kinh-te-chinh-tri/quoc-hoi-rut-ngan-nhiem-ky-khoa-xv.html"
-                  >
-                    <span class="s2-lead-cta-text btn"
-                      >Đọc Báo Cáo Chi Tiết</span
-                    >
-                  </a>
-                  <span class="s2-lead-cta-time">10 phút đọc</span>
-                </div>
-              </article>
-
-              <!-- ▸ Panel 5: Data / Secondary Column (small) -->
-              <article class="s2-panel s2-data-panel">
-                <div class="s2-data-cell s2-data-tickers">
-                  <h4 class="s2-data-heading">
-                    Tương lai bất định của tàu hàng Iran bị Mỹ bắt
-                  </h4>
-                </div>
-
-                <div class="s2-data-cell s2-data-image-wrap">
-                  <a
-                    href="kinh-te-chinh-tri/tuong-lai-bat-dinh-cua-tau-hang-iran-bi-my-bat.html"
-                  >
-                    <img
-                      class="s2-data-image"
-                      src="../images/kinh-te-chinh-tri/tau-iran.webp"
-                      alt="Biến động thị trường hàng hóa"
-                      loading="lazy"
-                    />
-                    <div class="s2-data-image-overlay"></div>
-                  </a>
-                </div>
-
-                <div class="s2-data-cell s2-data-briefing">
-                  <div class="s2-briefing-label">9 phút đọc</div>
-                  <p class="s2-briefing-text">
-                    Quân đội Mỹ rạng sáng 20/4 bắt một tàu container của Iran
-                    gần vùng Vịnh.
-                  </p>
-                </div>
-              </article>
-
-              <!-- ▸ Panel 6: Lead Story (large) -->
-              <article class="s2-panel s2-lead-panel">
-                <div class="s2-lead-badge">Phân tích</div>
-                <div class="s2-lead-image-wrap">
-                  <img
-                    class="s2-lead-image"
-                    src="../images/kinh-te-chinh-tri/tho-nhi-ky.jpg"
-                    alt="Dòng tiền chuyển dịch tài sản rủi ro"
-                    loading="lazy"
-                  />
-                </div>
-                <h4 class="s2-lead-headline">
-                  Chủ tịch Quốc hội hợp tác Việt Nam - Thổ Nhĩ Kỳ
-                </h4>
-                <p class="s2-lead-desc">
-                  Chủ tịch Quốc hội Trần Thanh Mẫn nhấn mạnh, trong bối cảnh
-                  kinh tế toàn cầu đang chuyển dịch mạnh mẽ...
-                </p>
-                <div class="s2-lead-cta">
-                  <a
-                    href="kinh-te-chinh-tri/chu-tich-quoc-hoi-toa-dam-viet-nam-tho-nhi-ky.html"
-                  >
-                    <span class="s2-lead-cta-text btn"
-                      >Đọc Nhận Định Nhanh</span
-                    >
-                  </a>
-                  <span class="s2-lead-cta-time">8 phút đọc</span>
-                </div>
-              </article>
             </div>
-          </div>
-        </section>
+          </article>
+
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
+              <img src="../images/trump2.png" alt="Policy Lens" loading="lazy" />
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Policy Lens</h3>
+                <span class="s1-feed-badge">NEW</span>
+              </div>
+              <p class="s1-feed-desc mb-0">
+                Longform layout balancing data callouts and context.
+              </p>
+            </div>
+          </article>
+
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/vu-tru-thien-nhien/artemisII.html" class="overflow-hidden">
+              <img src="../images/vu-tru-thien-nhien/artemisRocket1.png" alt="Nasa" loading="lazy">
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Nasa</h3>
+                <span class="s1-feed-badge">NEW</span>
+              </div>
+              <p class="s1-feed-desc mb-0">
+                Artemis II: Nhân loại trở lại Mặt Trăng sau hơn nửa thế kỷ
+              </p>
+            </div>
+          </article>
+
+          <!-- Card trung tâm -->
+          <article class="center-card d-flex flex-column align-items-center text-center justify-content-center">
+            <h3 class="center-title mb-2">BÁO CHÍ !</h3>
+            <p class="center-subtitle mt-3 mb-0">
+              Không chỉ dừng lại ở <br /><span class="news-khorap">Nội dung</span><br />
+              Mà bắt đầu từ cách bạn <br />
+              <span class="news-highlight">Thể hiện</span>.
+            </p>
+            <p class="center-tip">
+              <span class="news-tip">TIP!</span> Kéo ngang để xem các mục tin tức
+            </p>
+          </article>
+
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
+              <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Báo Hà Tĩnh</h3>
+                <span class="s1-feed-badge">NEW</span>
+              </div>
+              <p class="s1-feed-desc mb-0">
+                UAV Iran 'đánh trúng cơ sở của CIA' tại Arab Saudi
+              </p>
+            </div>
+          </article>
+
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
+              <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Signal Desk</h3>
+                <span class="s1-feed-badge">NEW</span>
+              </div>
+              <p class="s1-feed-desc mb-0">
+                Compact newsroom module for tracking brief alerts.
+              </p>
+            </div>
+          </article>
+
+          <article class="s1-feed-card d-flex flex-column">
+            <a href="../html/kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html" class="overflow-hidden">
+              <img src="../images/iranbomb.png" alt="Nasa" loading="lazy">
+            </a>
+            <div class="s1-feed-content">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="s1-feed-brand mb-0">Deep Focus</h3>
+                <span class="s1-feed-badge">NEW</span>
+              </div>
+              <p class="s1-feed-desc mb-0">Chuyên mục Thể thao & Sức khoẻ: Những câu chuyện truyền cảm hứng.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="container-fluid px-3 px-xl-4 mb-5">
+        <div class="title-wrap">
+          <h2 class="display-title mb-0">TIN TỨC ONLINE</h2>
+        </div>
       </div>
 
-      <!-- SECTION 3: Crafting Culture collage -->
-      <section class="s3-section">
-        <div class="s3-header">
-          <div class="s3-copy">
-            <h2 class="s3-title mb-0">
-              <span class="s2-mark-line">THỂ THAO</span>
-            </h2>
+    </section>
 
-            <div
-              class="s3-sports-category"
-              id="s3-sports-category"
-              role="list"
-              aria-label="Danh mục thể thao"
-            >
-              <button
-                type="button"
-                class="s3-btn is-active"
-                role="listitem"
-                data-sport="bong-da"
-                data-preview1="../images/thethao1.png"
-                data-preview2="../images/football.png"
-                data-preview3="../images/atletico_madrid.jpg"
-                style="--sport-icon: url(&quot;../../images/football.png&quot;)"
-              >
-                <span>BÓNG ĐÁ</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
+    <!-- SECTION 2: Horizontal scrollTrigger -->
+    <section class="section-two">
+      <div class="s2-viewport overflow-hidden">
+        <div class="s2-track d-flex position-relative">
 
-              <button
-                type="button"
-                class="s3-btn"
-                role="listitem"
-                data-sport="bong-ro"
-                data-preview1="../images/basketball.png"
-                data-preview2="../images/thethao3.png"
-                data-preview3="../images/thethao4.png"
-                style="
+          <!-- ▸ Panel 1: Title Block -->
+          <article class="s2-panel s2-title-block">
+            <div class="s2-mark" aria-hidden="true">
+              <span class="s2-mark-line d-block position-relative">KINH TẾ &amp;</span>
+              <span class="s2-mark-line d-block position-relative">CHÍNH TRỊ</span>
+            </div>
+            <p class="s2-editorial-text mt-5">
+              <span class="initial-block">T</span>heo dõi nhịp chuyển động
+              của kinh tế, thị trường tài chính và các quyết sách chính
+              trị có tác động trực tiếp đến doanh nghiệp.
+            </p>
+          </article>
+
+          <!-- ▸ Panel 2: Col 1 -->
+          <article class="s2-panel s2-col1">
+            <div class="s2-col1-badge">BÀI CHÍNH</div>
+            <a class="s2-col1-image-wrap" href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html">
+              <img class="s2-image" src="../images/kinh-te-chinh-tri/iranbomb.png" loading="lazy" />
+            </a>
+            <h3 class="s2-col1-headline">UAV Iran 'đánh trúng cơ sở của CIA' tại Arab Saudi</h3>
+            <p class="s2-desc">
+              UAV Iran đã đánh trúng cơ sở của Cơ quan Tình báo Trung ương
+              (CIA) trong đòn tập kích đại sứ quán Mỹ tại Arab Saudi, theo Washington Post.
+            </p>
+            <div class="s2-time">8 phút đọc</div>
+          </article>
+
+          <!-- ▸ Panel 3: Col 2 -->
+          <article class="s2-panel s2-col2 d-flex flex-column">
+            <div class="d-flex flex-column justify-content-center p-4">
+              <h4 class="s2-col2-heading">Mỹ tuyên bố thắng lợi với nước Iran</h4>
+            </div>
+            <a class="s2-col2-image-wrap" href="kinh-te-chinh-tri/my-tuyen-bo-thang-loi-iran-oman-thu-phi-hormuz.html">
+              <img class="s2-image" src="../images/kinh-te-chinh-tri/trump2.png" loading="lazy" />
+            </a>
+            <div class="d-flex flex-column justify-content-center p-4">
+              <p class="s2-time">7 phút đọc</p>
+              <p class="s2-desc">
+                Nhà Trắng tuyên bố lệnh ngừng bắn hai tuần là "một thắng lợi
+                của Mỹ", trong khi Iran và Oman dự kiến thu phí tàu qua eo biển Hormuz để tái thiết.
+              </p>
+            </div>
+          </article>
+
+          <!-- ▸ Panel 4: Col 1 -->
+          <article class="s2-panel s2-col1">
+            <div class="s2-col1-badge">BÀI NỔI BẬT</div>
+            <a class="s2-col1-image-wrap" href="kinh-te-chinh-tri/quoc-hoi-rut-ngan-nhiem-ky-khoa-xv.html">
+              <img class="s2-image" src="../images/kinh-te-chinh-tri/hop.jpg" alt="Chính sách thuế quan mới" loading="lazy" />
+            </a>
+            <h3 class="s2-col1-headline">Quốc hội rút ngắn nhiệm kỳ khóa XV, bầu cử khóa mới vào 15/3/2026</h3>
+            <p class="s2-desc">
+              Quốc hội quyết nghị Ngày bầu cử đại biểu Quốc hội khoá XVI và
+              đại biểu HĐND các cấp nhiệm kỳ 2026-2031 là Chủ nhật, ngày 15/3/2026.
+            </p>
+            <div class="s2-time">10 phút đọc</div>
+          </article>
+
+          <!-- ▸ Panel 5: Col 2 -->
+          <article class="s2-panel s2-col2 d-flex flex-column">
+            <div class="d-flex flex-column justify-content-center p-4">
+              <h4 class="s2-col2-heading">Tương lai bất định của tàu hàng Iran bị Mỹ bắt</h4>
+            </div>
+            <a class=" s2-col2-image-wrap" href="kinh-te-chinh-tri/tuong-lai-bat-dinh-cua-tau-hang-iran-bi-my-bat.html">
+              <img class="s2-image" src="../images/kinh-te-chinh-tri/tau-iran.webp" alt="Biến động thị trường hàng hóa" loading="lazy" />
+            </a>
+            <div class="d-flex flex-column justify-content-center p-4">
+              <p class="s2-time">9 phút đọc</p>
+              <p class="s2-desc">Quân đội Mỹ rạng sáng 20/4 bắt một tàu container của Iran gần vùng Vịnh.</p>
+            </div>
+          </article>
+
+          <!-- ▸ Panel 6: Col 1 -->
+          <article class="s2-panel s2-col1">
+            <div class="s2-col1-badge">Phân tích</div>
+            <a class="s2-col1-image-wrap" href="kinh-te-chinh-tri/chu-tich-quoc-hoi-toa-dam-viet-nam-tho-nhi-ky.html">
+              <img class="s2-image" src="../images/kinh-te-chinh-tri/tho-nhi-ky.jpg" alt="Dòng tiền chuyển dịch tài sản rủi ro" loading="lazy" />
+            </a>
+            <h4 class="s2-col1-headline">Chủ tịch Quốc hội hợp tác Việt Nam - Thổ Nhĩ Kỳ</h4>
+            <p class="s2-desc">
+              Chủ tịch Quốc hội Trần Thanh Mẫn nhấn mạnh, trong bối cảnh kinh tế toàn cầu đang chuyển dịch mạnh mẽ...
+            </p>
+            <div class="s2-time">8 phút đọc</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3: Crafting Culture collage -->
+    <section class="s3-section">
+      <div class="s3-header">
+        <div class="s3-copy">
+          <h2 class="s3-title mb-0">
+            <span class="s2-mark-line">THỂ THAO</span>
+          </h2>
+
+          <div class="s3-sports-category" id="s3-sports-category" role="list" aria-label="Danh mục thể thao">
+            <button type="button" class="s3-btn is-active" role="listitem" data-sport="bong-da"
+              data-preview1="../images/thethao1.png" data-preview2="../images/football.png"
+              data-preview3="../images/atletico_madrid.jpg"
+              style="--sport-icon: url(&quot;../../images/football.png&quot;)">
+              <span>BÓNG ĐÁ</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
+
+            <button type="button" class="s3-btn" role="listitem" data-sport="bong-ro"
+              data-preview1="../images/basketball.png" data-preview2="../images/thethao3.png"
+              data-preview3="../images/thethao4.png" style="
                   --sport-icon: url(&quot;../../images/basketball.png&quot;);
-                "
-              >
-                <span>BÓNG RỔ</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
+                ">
+              <span>BÓNG RỔ</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
 
-              <button
-                type="button"
-                class="s3-btn"
-                role="listitem"
-                data-sport="bong-bau-duc"
-                data-preview1="../images/thethao2.png"
-                data-preview2="../images/Fomular1.png"
-                data-preview3="../images/thethao4.png"
-                style="--sport-icon: url(&quot;../../images/thethao2.png&quot;)"
-              >
-                <span>BÓNG BẦU DỤC</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
+            <button type="button" class="s3-btn" role="listitem" data-sport="bong-bau-duc"
+              data-preview1="../images/thethao2.png" data-preview2="../images/Fomular1.png"
+              data-preview3="../images/thethao4.png" style="--sport-icon: url(&quot;../../images/thethao2.png&quot;)">
+              <span>BÓNG BẦU DỤC</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
 
-              <button
-                type="button"
-                class="s3-btn"
-                role="listitem"
-                data-sport="f1"
-                data-preview1="../images/Fomular1.png"
-                data-preview2="../images/thethao4.png"
-                data-preview3="../images/F1er.png"
-                style="--sport-icon: url(&quot;../../images/F1.png&quot;)"
-              >
-                <span>F1</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
+            <button type="button" class="s3-btn" role="listitem" data-sport="f1" data-preview1="../images/Fomular1.png"
+              data-preview2="../images/thethao4.png" data-preview3="../images/F1er.png"
+              style="--sport-icon: url(&quot;../../images/F1.png&quot;)">
+              <span>F1</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
 
-              <button
-                type="button"
-                class="s3-btn"
-                role="listitem"
-                data-sport="cau-long"
-                data-preview1="../images/thethao3.png"
-                data-preview2="../images/suckhoe2.png"
-                data-preview3="../images/suckhoe1.png"
-                style="--sport-icon: url(&quot;../../images/thethao3.png&quot;)"
-              >
-                <span>CẦU LÔNG</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
+            <button type="button" class="s3-btn" role="listitem" data-sport="cau-long"
+              data-preview1="../images/thethao3.png" data-preview2="../images/suckhoe2.png"
+              data-preview3="../images/suckhoe1.png" style="--sport-icon: url(&quot;../../images/thethao3.png&quot;)">
+              <span>CẦU LÔNG</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
 
-              <button
-                type="button"
-                class="s3-btn"
-                role="listitem"
-                data-sport="quan-vot"
-                data-preview1="../images/suckhoe3.png"
-                data-preview2="../images/suckhoe2.png"
-                data-preview3="../images/thethao1.png"
-                style="--sport-icon: url(&quot;../../images/suckhoe3.png&quot;)"
-              >
-                <span>QUẦN VỢT</span>
-                <span class="s3-sport-icon" aria-hidden="true"></span>
-              </button>
-            </div>
-
-            <p class="s3-kicker">- CẬP NHẬT MỌI TIN TỨC THỂ THAO SỚM NHẤT -</p>
+            <button type="button" class="s3-btn" role="listitem" data-sport="quan-vot"
+              data-preview1="../images/suckhoe3.png" data-preview2="../images/suckhoe2.png"
+              data-preview3="../images/thethao1.png" style="--sport-icon: url(&quot;../../images/suckhoe3.png&quot;)">
+              <span>QUẦN VỢT</span>
+              <span class="s3-sport-icon" aria-hidden="true"></span>
+            </button>
           </div>
 
-          <div class="s3-pic-gallery" aria-hidden="true">
-            <figure
-              class="s3-card-gallery s3-card-gallery--1 is-visible"
-              style="--x: 0%; --y: 24%; --w: 200px; --r: -8deg"
-            >
-              <img
-                src="../images/thethao1.png"
-                alt="Ảnh thể thao 1"
-                loading="lazy"
-              />
-            </figure>
-            <figure
-              class="s3-card-gallery s3-card-gallery--2 is-visible"
-              style="--x: 25%; --y: 55%; --w: 205px; --r: 6deg"
-            >
-              <img
-                src="../images/football.png"
-                alt="Ảnh thể thao 2"
-                loading="lazy"
-              />
-            </figure>
-            <figure
-              class="s3-card-gallery s3-card-gallery--3 is-visible"
-              style="--x: 56%; --y: 20%; --w: 200px; --r: 11deg"
-            >
-              <img
-                src="../images/atletico_madrid.jpg"
-                alt="Ảnh thể thao 3"
-                loading="lazy"
-              />
-            </figure>
-          </div>
+          <p class="s3-kicker">- CẬP NHẬT MỌI TIN TỨC THỂ THAO SỚM NHẤT -</p>
         </div>
 
-        <div class="container-fluid px-3 px-xl-4">
-          <div class="box-horizontal">
-            <div class="sports-feed-shell">
-              <button
-                type="button"
-                class="sports-feed-nav sports-feed-nav--prev"
-                aria-label="Xem mục trước"
-              >
-                <img src="../images/prev_arrow.png" alt="Prev" />
-              </button>
-
-              <div class="sports-feed-viewport" aria-label="Sports video feed">
-                <div class="sports-feed-track">
-                  <article class="sports-feed-card">
-                    <img
-                      src="../images/thethao3.png"
-                      alt="Rwanda tries to protect farmland"
-                      loading="lazy"
-                    />
-                    <div class="sports-feed-body">
-                      <h3 class="sports-feed-title mb-0">
-                        Rwanda tries to protect farmland in Africa's most
-                        densely populated nation
-                      </h3>
-                      <p class="sports-feed-meta">
-                        <span class="sports-play" aria-hidden="true"></span
-                        ><span>0:50</span>
-                      </p>
-                    </div>
-                  </article>
-
-                  <article class="sports-feed-card">
-                    <img
-                      src="../images/atletico_madrid.jpg"
-                      alt="Prediction market reacts to ceasefire update"
-                      loading="lazy"
-                    />
-                    <div class="sports-feed-body">
-                      <h3 class="sports-feed-title mb-0">
-                        Polymarket bets on Iran ceasefire surged before Trump's
-                        announcement
-                      </h3>
-                      <p class="sports-feed-meta">
-                        <span class="sports-play" aria-hidden="true"></span
-                        ><span>1:12</span>
-                      </p>
-                    </div>
-                  </article>
-
-                  <article class="sports-feed-card">
-                    <img
-                      src="../images/Fomular1.png"
-                      alt="Large fire in central Beirut"
-                      loading="lazy"
-                    />
-                    <div class="sports-feed-body">
-                      <h3 class="sports-feed-title mb-0">
-                        Huge fire burns in central Beirut after consecutive
-                        Israeli airstrikes hit the city
-                      </h3>
-                      <p class="sports-feed-meta">
-                        <span class="sports-play" aria-hidden="true"></span
-                        ><span>0:26</span>
-                      </p>
-                    </div>
-                  </article>
-
-                  <article class="sports-feed-card">
-                    <img
-                      src="../images/tennis.jpg"
-                      alt="Temporary ceasefire briefing"
-                      loading="lazy"
-                    />
-                    <div class="sports-feed-body">
-                      <h3 class="sports-feed-title mb-0">
-                        Iran, the US and Israel agree to a temporary ceasefire
-                      </h3>
-                      <p class="sports-feed-meta">
-                        <span class="sports-play" aria-hidden="true"></span
-                        ><span>1:41</span>
-                      </p>
-                    </div>
-                  </article>
-
-                  <article class="sports-feed-card">
-                    <img
-                      src="../images/volleyball.jpg"
-                      alt="Infrastructure threat statement"
-                      loading="lazy"
-                    />
-                    <div class="sports-feed-body">
-                      <h3 class="sports-feed-title mb-0">
-                        Trump says it would take 4 hours to destroy Iran's
-                        bridges and power plants
-                      </h3>
-                      <p class="sports-feed-meta">
-                        <span class="sports-play" aria-hidden="true"></span
-                        ><span>0:28</span>
-                      </p>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                class="sports-feed-nav sports-feed-nav--next"
-                aria-label="Xem mục tiếp theo"
-              >
-                <img src="../images/next_arrow.png" alt="Next" />
-              </button>
-            </div>
-          </div>
+        <div class="s3-pic-gallery" aria-hidden="true">
+          <figure class="s3-card-gallery s3-card-gallery--1 is-visible"
+            style="--x: 0%; --y: 24%; --w: 200px; --r: -8deg">
+            <img src="../images/thethao1.png" alt="Ảnh thể thao 1" loading="lazy" />
+          </figure>
+          <figure class="s3-card-gallery s3-card-gallery--2 is-visible"
+            style="--x: 25%; --y: 55%; --w: 205px; --r: 6deg">
+            <img src="../images/football.png" alt="Ảnh thể thao 2" loading="lazy" />
+          </figure>
+          <figure class="s3-card-gallery s3-card-gallery--3 is-visible"
+            style="--x: 56%; --y: 20%; --w: 200px; --r: 11deg">
+            <img src="../images/atletico_madrid.jpg" alt="Ảnh thể thao 3" loading="lazy" />
+          </figure>
         </div>
-      </section>
+      </div>
 
-      <!-- SECTION 4: Sticky lead story + right rail list -->
+      <div class="container-fluid px-3 px-xl-4">
+        <div class="box-horizontal">
+          <div class="sports-feed-shell">
+            <button type="button" class="sports-feed-nav sports-feed-nav--prev" aria-label="Xem mục trước">
+              <img src="../images/prev_arrow.png" alt="Prev" />
+            </button>
 
-      <section class="s4-section" id="s4-section">
-        <div class="container-fluid px-3 px-xl-4">
-          <div class="row g-4 s4-layout-row">
-            <div class="col-12 col-lg-7 col-xl-8">
-              <article class="s4-feature-wrap sticky-lg-top">
-                <a
-                  class="s4-feature-link position-relative d-block rounded-4 overflow-hidden text-decoration-none text-white shadow-lg"
-                  style="isolation: isolate"
-                  href="./giai-tri-doi-song/Dune_PartTwo.html"
-                >
-                  <img
-                    class="w-100 h-100 object-fit-cover d-block"
-                    src="../images/Dune_Part_2_.png"
-                    alt="Dune Part Two"
-                    loading="lazy"
-                  />
-                  <div class="s4-feature-overlay position-absolute z-2">
-                    <p
-                      class="s4-feature-tag mb-0"
-                      style="
-                        background: #e91e63;
-                        display: inline-block;
-                        padding: 4px 12px;
-                        border-radius: 4px;
-                        font-weight: bold;
-                        font-size: 12px;
-                      "
-                    >
-                      REVIEW PHIM
-                    </p>
-                    <h3 class="s4-feature-title mt-2">
-                      Dune: Part Two - Kiệt tác thị giác càn quét phòng vé toàn
-                      cầu
+            <div class="sports-feed-viewport" aria-label="Sports video feed">
+              <div class="sports-feed-track">
+                <article class="sports-feed-card">
+                  <img src="../images/thethao3.png" alt="Rwanda tries to protect farmland" loading="lazy" />
+                  <div class="sports-feed-body">
+                    <h3 class="sports-feed-title mb-0">
+                      Rwanda tries to protect farmland in Africa's most
+                      densely populated nation
                     </h3>
-                    <p class="s4-feature-excerpt">
-                      Phần hai của siêu phẩm viễn tưởng không chỉ thỏa mãn người
-                      xem bằng hình ảnh tráng lệ mà còn đào sâu vào tâm lý nhân
-                      vật.
-                    </p>
-                    <p class="s4-feature-meta">
-                      <span>Minh Quân</span>
-                      <span>• 8 phút đọc</span>
+                    <p class="sports-feed-meta">
+                      <span class="sports-play" aria-hidden="true"></span><span>0:50</span>
                     </p>
                   </div>
+                </article>
+
+                <article class="sports-feed-card">
+                  <img src="../images/atletico_madrid.jpg" alt="Prediction market reacts to ceasefire update"
+                    loading="lazy" />
+                  <div class="sports-feed-body">
+                    <h3 class="sports-feed-title mb-0">
+                      Polymarket bets on Iran ceasefire surged before Trump's
+                      announcement
+                    </h3>
+                    <p class="sports-feed-meta">
+                      <span class="sports-play" aria-hidden="true"></span><span>1:12</span>
+                    </p>
+                  </div>
+                </article>
+
+                <article class="sports-feed-card">
+                  <img src="../images/Fomular1.png" alt="Large fire in central Beirut" loading="lazy" />
+                  <div class="sports-feed-body">
+                    <h3 class="sports-feed-title mb-0">
+                      Huge fire burns in central Beirut after consecutive
+                      Israeli airstrikes hit the city
+                    </h3>
+                    <p class="sports-feed-meta">
+                      <span class="sports-play" aria-hidden="true"></span><span>0:26</span>
+                    </p>
+                  </div>
+                </article>
+
+                <article class="sports-feed-card">
+                  <img src="../images/tennis.jpg" alt="Temporary ceasefire briefing" loading="lazy" />
+                  <div class="sports-feed-body">
+                    <h3 class="sports-feed-title mb-0">
+                      Iran, the US and Israel agree to a temporary ceasefire
+                    </h3>
+                    <p class="sports-feed-meta">
+                      <span class="sports-play" aria-hidden="true"></span><span>1:41</span>
+                    </p>
+                  </div>
+                </article>
+
+                <article class="sports-feed-card">
+                  <img src="../images/volleyball.jpg" alt="Infrastructure threat statement" loading="lazy" />
+                  <div class="sports-feed-body">
+                    <h3 class="sports-feed-title mb-0">
+                      Trump says it would take 4 hours to destroy Iran's
+                      bridges and power plants
+                    </h3>
+                    <p class="sports-feed-meta">
+                      <span class="sports-play" aria-hidden="true"></span><span>0:28</span>
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button type="button" class="sports-feed-nav sports-feed-nav--next" aria-label="Xem mục tiếp theo">
+              <img src="../images/next_arrow.png" alt="Next" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Sticky lead story + right rail list -->
+
+    <section class="s4-section" id="s4-section">
+      <div class="container-fluid px-3 px-xl-4">
+        <div class="row g-4 s4-layout-row">
+          <div class="col-12 col-lg-7 col-xl-8">
+            <article class="s4-feature-wrap sticky-lg-top">
+              <a class="s4-feature-link position-relative d-block rounded-4 overflow-hidden text-decoration-none text-white shadow-lg"
+                href="./giai-tri-doi-song/Dune_PartTwo.html">
+                <img class="w-100 h-100 object-fit-cover d-block" src="../images/Dune_Part_2_.png" alt="Dune Part Two"
+                  loading="lazy" />
+                <div class="s4-feature-overlay position-absolute z-2">
+                  <p class="s4-feature-tag mb-0">
+                    REVIEW PHIM
+                  </p>
+                  <h3 class="s4-feature-title mt-2">
+                    Dune: Part Two - Kiệt tác thị giác càn quét phòng vé toàn
+                    cầu
+                  </h3>
+                  <p class="s4-feature-excerpt">
+                    Phần hai của siêu phẩm viễn tưởng không chỉ thỏa mãn người
+                    xem bằng hình ảnh tráng lệ mà còn đào sâu vào tâm lý nhân
+                    vật.
+                  </p>
+                  <p class="s4-feature-meta">
+                    <span>Minh Quân</span>
+                    <span>• 8 phút đọc</span>
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-5 col-xl-4">
+            <aside class="s4-list d-flex flex-column gap-2" aria-label="Danh sách tin nhanh">
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/concern_chayVE.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block"
+                      src="../images/doi-song-giai-tri/ban-ve-concern.jpg" alt="Concert" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">CONCERT</span>
+                    <span class="s4-item-title fw-bold">Nam ca sĩ vừa cháy vé concert chỉ trong
+                      12 phút</span>
+                    <span class="s4-item-readtime text-muted">3 phút đọc</span>
+                  </span>
                 </a>
               </article>
-            </div>
 
-            <div class="col-12 col-lg-5 col-xl-4">
-              <aside
-                class="s4-list d-flex flex-column gap-2"
-                aria-label="Danh sách tin nhanh"
-              >
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/concern_chayVE.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/ban-ve-concern.jpg"
-                        alt="Concert"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >CONCERT</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Nam ca sĩ vừa cháy vé concert chỉ trong 12 phút</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >3 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/top_phim.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/top5Phim.jpg"
+                      alt="Phim" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">XU HƯỚNG</span>
+                    <span class="s4-item-title fw-bold">Cuộc đua chưa từng có của 5 phim Việt
+                      mùa nghỉ lễ</span>
+                    <span class="s4-item-readtime text-muted">4 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/top_phim.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/top5Phim.jpg"
-                        alt="Phim"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >XU HƯỚNG</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Cuộc đua chưa từng có của 5 phim Việt mùa nghỉ lễ</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >4 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/loi-song.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/day_som.jpg"
+                      alt="Dậy sớm" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">HABITS</span>
+                    <span class="s4-item-title fw-bold">Sức mạnh của việc thức dậy lúc 5 giờ
+                      sáng</span>
+                    <span class="s4-item-readtime text-muted">5 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/loi-song.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/day_som.jpg"
-                        alt="Dậy sớm"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >HABITS</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Sức mạnh của việc thức dậy lúc 5 giờ sáng</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >5 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/nghesi_tre.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/j97.jpg"
+                      alt="Tranh luận" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">TRANH LUẬN</span>
+                    <span class="s4-item-title fw-bold">Mạnh tay với văn hóa ứng xử của nghệ sĩ
+                      và giới
+                      trẻ</span>
+                    <span class="s4-item-readtime text-muted">6 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/nghesi_tre.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/j97.jpg"
-                        alt="Tranh luận"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >TRANH LUẬN</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Mạnh tay với văn hóa ứng xử của nghệ sĩ và giới
-                        trẻ</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >6 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/typhu.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/ty_phu.jpg"
+                      alt="Triệu phú" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">FAMILY</span>
+                    <span class="s4-item-title fw-bold">Triệu phú 80 tuổi tìm vợ trẻ sinh con
+                      nối dõi</span>
+                    <span class="s4-item-readtime text-muted">6 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/typhu.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/ty_phu.jpg"
-                        alt="Triệu phú"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >FAMILY</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Triệu phú 80 tuổi tìm vợ trẻ sinh con nối dõi</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >6 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/top_phim.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/top5Phim.jpg"
+                      alt="Phim" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">XU HƯỚNG</span>
+                    <span class="s4-item-title fw-bold">Cuộc đua chưa từng có của 5 phim Việt
+                      mùa nghỉ lễ</span>
+                    <span class="s4-item-readtime text-muted">4 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/top_phim.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/top5Phim.jpg"
-                        alt="Phim"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >XU HƯỚNG</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Cuộc đua chưa từng có của 5 phim Việt mùa nghỉ lễ</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >4 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/an_uong.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/suckhoe1.png" alt="Dinh dưỡng"
+                      loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">NUTRITION</span>
+                    <span class="s4-item-title fw-bold">Chế độ ăn xanh: Xu hướng bảo vệ môi
+                      trường</span>
+                    <span class="s4-item-readtime text-muted">5 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/an_uong.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/suckhoe1.png"
-                        alt="Dinh dưỡng"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >NUTRITION</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Chế độ ăn xanh: Xu hướng bảo vệ môi trường</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >5 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/phuquoc.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/phu_quoc.jpg"
+                      alt="Du lịch" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">TRAVEL</span>
+                    <span class="s4-item-title fw-bold">Phú Quốc: Hòn Đảo Quý Giá vươn tầm quốc
+                      tế</span>
+                    <span class="s4-item-readtime text-muted">8 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/phuquoc.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/phu_quoc.jpg"
-                        alt="Du lịch"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >TRAVEL</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Phú Quốc: Hòn Đảo Quý Giá vươn tầm quốc tế</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >8 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/top_phim.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/top5Phim.jpg"
+                      alt="Phim" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">XU HƯỚNG</span>
+                    <span class="s4-item-title fw-bold">Cuộc đua chưa từng có của 5 phim Việt
+                      mùa nghỉ lễ</span>
+                    <span class="s4-item-readtime text-muted">4 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/top_phim.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/top5Phim.jpg"
-                        alt="Phim"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >XU HƯỚNG</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Cuộc đua chưa từng có của 5 phim Việt mùa nghỉ lễ</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >4 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/song-toi-gian.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/song-toi-giang.png"
+                      alt="Sống tối giản" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">SLOW LIVING</span>
+                    <span class="s4-item-title fw-bold">Nghệ thuật Sống tối giản: Bớt vật chất,
+                      thêm bình
+                      yên</span>
+                    <span class="s4-item-readtime text-muted">7 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/song-toi-gian.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/song-toi-giang.png"
-                        alt="Sống tối giản"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >SLOW LIVING</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Nghệ thuật Sống tối giản: Bớt vật chất, thêm bình
-                        yên</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >7 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/nghesi_tre.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/j97.jpg"
+                      alt="Tranh luận" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="red">TRANH LUẬN</span>
+                    <span class="s4-item-title fw-bold">Mạnh tay với văn hóa ứng xử của nghệ sĩ
+                      và giới
+                      trẻ</span>
+                    <span class="s4-item-readtime text-muted">6 phút đọc</span>
+                  </span>
+                </a>
+              </article>
 
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/nghesi_tre.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/j97.jpg"
-                        alt="Tranh luận"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #dc3545;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >TRANH LUẬN</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Mạnh tay với văn hóa ứng xử của nghệ sĩ và giới
-                        trẻ</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >6 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
-
-                <article
-                  class="s4-item rounded-3 border bg-white transition-hover"
-                >
-                  <a
-                    class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
-                    href="./giai-tri-doi-song/loi-song.html"
-                  >
-                    <span
-                      class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary"
-                    >
-                      <img
-                        class="w-100 h-100 object-fit-cover d-block"
-                        src="../images/doi-song-giai-tri/day_som.jpg"
-                        alt="Dậy sớm"
-                        loading="lazy"
-                      />
-                    </span>
-                    <span class="s4-item-body d-block" style="min-width: 0">
-                      <span
-                        class="s4-item-author mb-0"
-                        style="
-                          color: #198754;
-                          font-weight: bold;
-                          font-size: 11px;
-                        "
-                        >HABITS</span
-                      >
-                      <span
-                        class="s4-item-title fw-bold"
-                        style="font-size: 15px"
-                        >Sức mạnh của việc thức dậy lúc 5 giờ sáng</span
-                      >
-                      <span
-                        class="s4-item-readtime text-muted"
-                        style="font-size: 12px"
-                        >5 phút đọc</span
-                      >
-                    </span>
-                  </a>
-                </article>
-              </aside>
-            </div>
+              <article class="s4-item rounded-3 border bg-white transition-hover">
+                <a class="s4-item-link d-flex gap-2 align-items-start text-decoration-none text-dark p-2"
+                  href="./giai-tri-doi-song/loi-song.html">
+                  <span class="s4-item-media d-block flex-shrink-0 rounded overflow-hidden text-bg-secondary">
+                    <img class="w-100 h-100 object-fit-cover d-block" src="../images/doi-song-giai-tri/day_som.jpg"
+                      alt="Dậy sớm" loading="lazy" />
+                  </span>
+                  <span class="s4-item-body d-block" >
+                    <span class="s4-item-author mb-0" data-cat="green">HABITS</span>
+                    <span class="s4-item-title fw-bold">Sức mạnh của việc thức dậy lúc 5 giờ
+                      sáng</span>
+                    <span class="s4-item-readtime text-muted">5 phút đọc</span>
+                  </span>
+                </a>
+              </article>
+            </aside>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SECTION 5: Vũ Trụ & Thiên Nhiên -->
-      <section class="s5-section" id="s5-section" aria-labelledby="s5-heading">
-        <!-- PIN WRAP: Ghim khung nhìn trong khi animation chạy -->
-        <div
-          class="s5-wrap"
-          style="height: 100vh; overflow: hidden; position: relative"
-        >
-          <div
-            class="s5-scene-container container-fluid px-3 px-xl-4 position-relative w-100 h-100"
-          >
-            <!-- LEFT COL TOP: Ảnh trái - trên (cao, chiếm nửa trên trái) -->
-            <a
-              href="./thien-nhien/article-1.html"
-              class="s5-gallery-item item-tl position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/galaxy.png"
-                alt="galaxy"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Bí ẩn sao Hỏa
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Khám phá dấu vết sự sống và lịch sử địa chất độc đáo của hành
-                  tinh đỏ.
-                </p>
-              </div>
-            </a>
-
-            <!-- LEFT COL BOTTOM: Ảnh trái - dưới (trực tiếp dưới item-tl) -->
-            <a
-              href="./thien-nhien/article-3.html"
-              class="s5-gallery-item item-bl position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/space-tech.jpg"
-                alt="Space Tech"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Kỷ nguyên du hành mới
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Tương lai của phi hành gia thương mại và những trạm không gian
-                  tư nhân.
-                </p>
-              </div>
-            </a>
-
-            <!-- CENTER MAIN: Ảnh lớn chính giữa - landscape format rộng -->
-            <a
-              href="./thien-nhien/main-post.html"
-              class="s5-gallery-item item-center position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/cheetah.jpg"
-                alt="cheetah"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-4 w-100"
-              ></div>
-            </a>
-
-            <!-- RIGHT COL TOP: Ảnh phải - trên (từ top, cao 50%) -->
-            <a
-              href="./thien-nhien/article-2.html"
-              class="s5-gallery-item item-tr position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/Fomular1.png"
-                alt="Planet 3"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Kính viễn vọng James Webb
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Tiết lộ những hình ảnh sâu thẳm chưa từng thấy từ thuở sơ khai
-                  của vũ trụ.
-                </p>
-              </div>
-            </a>
-
-            <!-- RIGHT COL BOTTOM: Ảnh phải - dưới (trực tiếp dưới item-tr) -->
-            <a
-              href="./thien-nhien/article-4.html"
-              class="s5-gallery-item item-br position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/Dune3.jpg"
-                alt="Dune"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Trái Đất thứ hai?
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
-                  tương tự Trái Đất.
-                </p>
-              </div>
-            </a>
-
-            <!-- TOP RIGHT 1: Ảnh phải - trên (trực tiếp dưới item-tr) -->
-            <a
-              href="./thien-nhien/article-4.html"
-              class="s5-gallery-item item-tr1 position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/Dune3.jpg"
-                alt="Dune"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Trái Đất thứ hai?
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
-                  tương tự Trái Đất.
-                </p>
-              </div>
-            </a>
-
-            <!-- BOTTOM LEFT 1: Ảnh phải - dưới (trực tiếp dưới item-bl) -->
-            <a
-              href="./thien-nhien/article-4.html"
-              class="s5-gallery-item item-bl1 position-absolute overflow-hidden text-decoration-none"
-            >
-              <img
-                src="../images/Dune3.jpg"
-                alt="Dune"
-                class="s5-img w-100 h-100 object-fit-cover"
-              />
-              <div
-                class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100"
-              >
-                <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
-                  Trái Đất thứ hai?
-                </h4>
-                <p class="small text-light s5-excerpt">
-                  Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
-                  tương tự Trái Đất.
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Nature Feed List  -->
-          <div
-            class="s5-nature-feed position-absolute bottom-0 start-0 w-100 z-3 px-3 px-xl-4 pb-4"
-          >
-            <div
-              class="s5-feed-track d-flex flex-nowrap overflow-x-auto gap-1 pb-2 pt-2"
-            >
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/earth.png"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Chậm Lại Băng Tan Tại Nam Cực
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >3 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/nature-vietnam.webp"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Biến Đổi Khí Hậu Tác Động Rừng Mưa
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >1 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/earth.png"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Chậm Lại Băng Tan Tại Nam Cực
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >3 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/vutru-featured.jpg"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Đa Dạng Sinh Học Biển Khu Vực Á Âu
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >5 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/earth.png"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Chậm Lại Băng Tan Tại Nam Cực
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >3 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/galaxy.png"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Vùng Đất Mới Cho Các Sinh Vật Bậc Cao
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >7 giờ trước</span
-                  >
-                </div>
-              </a>
-
-              <a href="#" class="s5-feed-item text-white text-decoration-none">
-                <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
-                  <img
-                    src="../images/vutru-featured.jpg"
-                    class="w-100 h-100 object-fit-cover transition-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s5-feed-body">
-                  <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
-                    Đa Dạng Sinh Học Biển Khu Vực Á Âu
-                  </h6>
-                  <span class="small text-white-50 mt-2 d-block"
-                    >5 giờ trước</span
-                  >
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION 6: Our Team -->
-      <section class="s6-section">
-        <div class="s6-container container-fluid px-3 px-xl-4 pb-5">
-          <div class="s6-header text-center pt-5">
-            <h2 class="display-title s6-title">Nhóm của chúng tôi</h2>
-          </div>
-
-          <div class="s6-team-grid position-relative">
-            <!-- Card 1 -->
-            <article
-              class="s6-member-card card-1"
-              data-speed="140"
-              style="z-index: 1"
-            >
-              <p class="s6-quote">
-                "Định hướng triết lí website, quản lý thiết kế, animation"
+    <!-- SECTION 5: Vũ Trụ & Thiên Nhiên -->
+    <section class="s5-section" id="s5-section" aria-labelledby="s5-heading">
+      <!-- PIN WRAP: Ghim khung nhìn trong khi animation chạy -->
+      <div class="s5-wrap" style="height: 100vh; overflow: hidden; position: relative">
+        <div class="s5-scene-container container-fluid px-3 px-xl-4 position-relative w-100 h-100">
+          <!-- LEFT COL TOP: Ảnh trái - trên (cao, chiếm nửa trên trái) -->
+          <a href="./thien-nhien/article-1.html"
+            class="s5-gallery-item item-tl position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/galaxy.png" alt="galaxy" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Bí ẩn sao Hỏa
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Khám phá dấu vết sự sống và lịch sử địa chất độc đáo của hành
+                tinh đỏ.
               </p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/nghia.jpg"
-                    alt="Phan Hồ Sơn Nghĩa"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Phan Hồ Sơn Nghĩa
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Nhóm trưởng</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
-              </div>
-            </article>
+            </div>
+          </a>
 
-            <!-- Card 2 -->
-            <article
-              class="s6-member-card card-2"
-              data-speed="250"
-              style="z-index: 3"
-            >
-              <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/khang.jpg"
-                    alt="Phạm Nguyễn Phúc Khang"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Phạm Nguyễn Phúc Khang
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
-              </div>
-            </article>
+          <!-- LEFT COL BOTTOM: Ảnh trái - dưới (trực tiếp dưới item-tl) -->
+          <a href="./thien-nhien/article-3.html"
+            class="s5-gallery-item item-bl position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/space-tech.jpg" alt="Space Tech" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Kỷ nguyên du hành mới
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Tương lai của phi hành gia thương mại và những trạm không gian
+                tư nhân.
+              </p>
+            </div>
+          </a>
 
-            <!-- Card 3 -->
-            <article
-              class="s6-member-card card-3"
-              data-speed="180"
-              style="z-index: 2"
-            >
-              <p class="s6-quote">"Quản lý html, css, viết nội dung báo."</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/tuyen.jpg"
-                    alt="Đào Tấn Tuyên"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Đào Tấn Tuyên
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
-              </div>
-            </article>
+          <!-- CENTER MAIN: Ảnh lớn chính giữa - landscape format rộng -->
+          <a href="./thien-nhien/main-post.html"
+            class="s5-gallery-item item-center position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/cheetah.jpg" alt="cheetah" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-4 w-100"></div>
+          </a>
 
-            <!-- Card 4 -->
-            <article
-              class="s6-member-card card-4"
-              data-speed="230"
-              style="z-index: 4"
-            >
-              <p class="s6-quote">"Tạo trang đăng nhập"</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/khoa.jpg"
-                    alt="Dương Công Khoa"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Dương Công Khoa
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
-              </div>
-            </article>
+          <!-- RIGHT COL TOP: Ảnh phải - trên (từ top, cao 50%) -->
+          <a href="./thien-nhien/article-2.html"
+            class="s5-gallery-item item-tr position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/Fomular1.png" alt="Planet 3" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Kính viễn vọng James Webb
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Tiết lộ những hình ảnh sâu thẳm chưa từng thấy từ thuở sơ khai
+                của vũ trụ.
+              </p>
+            </div>
+          </a>
 
-            <!-- Card 5 -->
-            <article
-              class="s6-member-card card-5"
-              data-speed="160"
-              style="z-index: 5"
-            >
-              <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/vu-tru-thien-nhien/astronauts.png"
-                    alt="Huỳnh Bảo Duy"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Huỳnh Bảo Duy
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
+          <!-- RIGHT COL BOTTOM: Ảnh phải - dưới (trực tiếp dưới item-tr) -->
+          <a href="./thien-nhien/article-4.html"
+            class="s5-gallery-item item-br position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/Dune3.jpg" alt="Dune" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Trái Đất thứ hai?
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
+                tương tự Trái Đất.
+              </p>
+            </div>
+          </a>
+
+          <!-- TOP RIGHT 1: Ảnh phải - trên (trực tiếp dưới item-tr) -->
+          <a href="./thien-nhien/article-4.html"
+            class="s5-gallery-item item-tr1 position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/Dune3.jpg" alt="Dune" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Trái Đất thứ hai?
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
+                tương tự Trái Đất.
+              </p>
+            </div>
+          </a>
+
+          <!-- BOTTOM LEFT 1: Ảnh phải - dưới (trực tiếp dưới item-bl) -->
+          <a href="./thien-nhien/article-4.html"
+            class="s5-gallery-item item-bl1 position-absolute overflow-hidden text-decoration-none">
+            <img src="../images/Dune3.jpg" alt="Dune" class="s5-img w-100 h-100 object-fit-cover" />
+            <div class="s5-item-overlay position-absolute bottom-0 start-0 end-0 p-3 w-100">
+              <h4 class="mb-1 text-white fw-bold fs-5 s5-item-title">
+                Trái Đất thứ hai?
+              </h4>
+              <p class="small text-light s5-excerpt">
+                Hành trình tìm kiếm các ngoại hành tinh có điều kiện sống
+                tương tự Trái Đất.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Nature Feed List  -->
+        <div class="s5-nature-feed position-absolute bottom-0 start-0 w-100 z-3 px-3 px-xl-4 pb-4">
+          <div class="s5-feed-track d-flex flex-nowrap overflow-x-auto gap-1 pb-2 pt-2">
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/earth.png" class="w-100 h-100 object-fit-cover transition-img" loading="lazy" />
               </div>
-            </article>
-            <!-- Card 6 -->
-            <article
-              class="s6-member-card card-6"
-              data-speed="160"
-              style="z-index: 5"
-            >
-              <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/loi.jpg"
-                    alt="Huỳnh Vĩnh Lợi"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Huỳnh Vĩnh Lợi
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Chậm Lại Băng Tan Tại Nam Cực
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">3 giờ trước</span>
               </div>
-            </article>
-            <!-- Card 7 -->
-            <article
-              class="s6-member-card card-7"
-              data-speed="160"
-              style="z-index: 5"
-            >
-              <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
-              <div class="s6-divider"></div>
-              <div class="s6-bottom">
-                <div class="s6-avatar">
-                  <img
-                    src="../images/vu-tru-thien-nhien/astronauts.png"
-                    alt="Đào Văn Hào"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="s6-info">
-                  <h3 class="s6-name d-flex align-items-center gap-1">
-                    Đào Văn Hào
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
-                        fill="#1D9BF0"
-                      />
-                    </svg>
-                  </h3>
-                  <p class="s6-role">Thành viên</p>
-                </div>
-                <div class="s6-logo ms-auto">Báo Chí</div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/nature-vietnam.webp" class="w-100 h-100 object-fit-cover transition-img"
+                  loading="lazy" />
               </div>
-            </article>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Biến Đổi Khí Hậu Tác Động Rừng Mưa
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">1 giờ trước</span>
+              </div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/earth.png" class="w-100 h-100 object-fit-cover transition-img" loading="lazy" />
+              </div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Chậm Lại Băng Tan Tại Nam Cực
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">3 giờ trước</span>
+              </div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/vutru-featured.jpg" class="w-100 h-100 object-fit-cover transition-img"
+                  loading="lazy" />
+              </div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Đa Dạng Sinh Học Biển Khu Vực Á Âu
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">5 giờ trước</span>
+              </div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/earth.png" class="w-100 h-100 object-fit-cover transition-img" loading="lazy" />
+              </div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Chậm Lại Băng Tan Tại Nam Cực
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">3 giờ trước</span>
+              </div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/galaxy.png" class="w-100 h-100 object-fit-cover transition-img" loading="lazy" />
+              </div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Vùng Đất Mới Cho Các Sinh Vật Bậc Cao
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">7 giờ trước</span>
+              </div>
+            </a>
+
+            <a href="#" class="s5-feed-item text-white text-decoration-none">
+              <div class="s5-feed-img-wrap overflow-hidden rounded mb-3">
+                <img src="../images/vutru-featured.jpg" class="w-100 h-100 object-fit-cover transition-img"
+                  loading="lazy" />
+              </div>
+              <div class="s5-feed-body">
+                <h6 class="mb-1 fw-bold fs-6 text-white text-truncate-2">
+                  Đa Dạng Sinh Học Biển Khu Vực Á Âu
+                </h6>
+                <span class="small text-white-50 mt-2 d-block">5 giờ trước</span>
+              </div>
+            </a>
           </div>
         </div>
-      </section>
-    </main>
-    <div id="site-footer" data-base="../"></div>
-  </body>
+      </div>
+    </section>
+    <!-- SECTION 6: Our Team -->
+    <section class="s6-section">
+      <div class="s6-container container-fluid px-3 px-xl-4 pb-5">
+        <div class="s6-header text-center pt-5">
+          <h2 class="display-title s6-title">Nhóm của chúng tôi</h2>
+        </div>
+
+        <div class="s6-team-grid position-relative">
+          <!-- Card 1 -->
+          <article class="s6-member-card card-1" data-speed="140" style="z-index: 1">
+            <p class="s6-quote">
+              "Định hướng triết lí website, quản lý thiết kế, animation"
+            </p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/nghia.jpg" alt="Phan Hồ Sơn Nghĩa" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Phan Hồ Sơn Nghĩa
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Nhóm trưởng</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="s6-member-card card-2" data-speed="250" style="z-index: 3">
+            <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/khang.jpg" alt="Phạm Nguyễn Phúc Khang" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Phạm Nguyễn Phúc Khang
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="s6-member-card card-3" data-speed="180" style="z-index: 2">
+            <p class="s6-quote">"Quản lý html, css, viết nội dung báo."</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/tuyen.jpg" alt="Đào Tấn Tuyên" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Đào Tấn Tuyên
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="s6-member-card card-4" data-speed="230" style="z-index: 4">
+            <p class="s6-quote">"Tạo trang đăng nhập"</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/khoa.jpg" alt="Dương Công Khoa" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Dương Công Khoa
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="s6-member-card card-5" data-speed="160" style="z-index: 5">
+            <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/vu-tru-thien-nhien/astronauts.png" alt="Huỳnh Bảo Duy" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Huỳnh Bảo Duy
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+          <!-- Card 6 -->
+          <article class="s6-member-card card-6" data-speed="160" style="z-index: 5">
+            <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/loi.jpg" alt="Huỳnh Vĩnh Lợi" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Huỳnh Vĩnh Lợi
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+          <!-- Card 7 -->
+          <article class="s6-member-card card-7" data-speed="160" style="z-index: 5">
+            <p class="s6-quote">"Quản lý html, css, viết nội dung báo"</p>
+            <div class="s6-divider"></div>
+            <div class="s6-bottom">
+              <div class="s6-avatar">
+                <img src="../images/vu-tru-thien-nhien/astronauts.png" alt="Đào Văn Hào" loading="lazy" />
+              </div>
+              <div class="s6-info">
+                <h3 class="s6-name d-flex align-items-center gap-1">
+                  Đào Văn Hào
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5 12.536L20.447 9.948L20.736 6.575L17.585 5.568L15.289 3.012L12 4.298L8.711 3.012L6.415 5.568L3.264 6.575L3.553 9.948L1.5 12.536L3.553 15.124L3.264 18.497L6.415 19.504L8.711 22.061L12 20.774L15.289 22.061L17.585 19.504L20.736 18.497L20.447 15.124L22.5 12.536ZM10.59 16.635L6.773 12.875L8.272 11.399L10.59 13.682L16.273 8.086L17.773 9.562L10.59 16.635Z"
+                      fill="#1D9BF0" />
+                  </svg>
+                </h3>
+                <p class="s6-role">Thành viên</p>
+              </div>
+              <div class="s6-logo ms-auto">Báo Chí</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer" data-base="../"></div>
+</body>
+
 </html>

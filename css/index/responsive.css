@@ -1,5 +1,41 @@
-/* TIN TỨC ONLINE */
-@media (max-width: 768px) {
+/* =============================================================
+   RESPONSIVE.CSS — Index Page Breakpoints
+   Gộp tất cả responsive của Section 1–6 & Horizontal Feed
+   Breakpoints:
+     Tablet  : max-width: 991.98px
+     Mobile  : max-width: 575.98px
+     XSmall  : max-width: 360px
+   ============================================================= */
+
+/* ─────────────────────────────────────────────────────────────
+   TABLET  (≤ 991px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+
+  /* ── Navbar ──────────────────────────────────────────────── */
+  .header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+    background: #000 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  #nwMenu {
+    background: #000 !important;
+  }
+
+  .navbar-shell .team-tag {
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+  }
+
+  .navbar-shell .team-tag:hover {
+    color: #c30000 !important;
+    text-shadow: 0 0 5px rgba(195, 0, 0, 0.3);
+  }
+
+  /* ── Section 1 – Horizontal Feed ─────────────────────────── */
   .title-wrap {
     display: none !important;
   }
@@ -8,37 +44,51 @@
     min-height: auto !important;
   }
 
-  /* Ensure Navbar is fully visible and clickable */
-  .header {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1030 !important;
-    background: #000 !important;
-    /* Force black background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
-    /* Add shadow for depth */
+  .s1-feed-container {
+    margin-top: 20px;
+    margin-bottom: clamp(1rem, 2vw, 1.6rem);
   }
 
-  /* Make sure mobile menu opens properly */
-  #nwMenu {
-    background: #000 !important;
+  .s1-feed-card {
+    width: calc(100% / 3);
+    min-height: 220px;
+    padding: 0 3vw;
   }
 
-  /* Ensure team tag is clickable */
-  .navbar-shell .team-tag {
-    cursor: pointer !important;
-    transition: all 0.2s ease;
+  .center-card {
+    width: 30%;
+    min-height: 220px;
   }
 
-  .navbar-shell .team-tag:hover {
-    color: #c30000 !important;
-    /* Red hover like button */
-    text-shadow: 0 0 5px rgba(195, 0, 0, 0.3);
+  .s1-feed-card img {
+    height: clamp(110px, 20vw, 160px);
   }
-}
 
-/* SECTION 2 */
-@media (max-width: 991.98px) {
+  .s1-feed-content {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .s1-feed-brand {
+    font-size: 0.8rem;
+  }
+
+  .s1-feed-desc {
+    font-size: 1.5vw;
+  }
+
+  .center-title {
+    font-size: clamp(24px, 2.8vw, 50px);
+  }
+
+  .center-subtitle {
+    font-size: clamp(14px, 1.8vw, 40px);
+  }
+
+  .center-tip {
+    font-size: clamp(14px, 0.9vw, 50px);
+  }
+
+  /* ── Section 2 – Horizontal ScrollTrigger ────────────────── */
   .section-two {
     padding: 0;
   }
@@ -55,13 +105,11 @@
     display: none;
   }
 
-  /* Override height of section 2 for mobile */
   .s2-panel {
     height: 70vh !important;
     scroll-snap-align: start;
   }
 
-  /* Tắt GSAP transform trên mobile */
   .s2-track {
     transform: none !important;
   }
@@ -81,6 +129,14 @@
 
   .s2-editorial-text {
     font-size: 1.15rem;
+    padding-top: 3vw;
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .s2-editorial-text--dropcap {
+    font-size: 40px;
+    margin-bottom: 1rem;
   }
 
   .s2-lead-panel {
@@ -88,16 +144,56 @@
     min-height: 56vh;
   }
 
+  .s2-lead-image-wrap {
+    height: 220px;
+  }
+
   .s2-data-panel {
     width: 280px;
     min-height: 56vh;
   }
 
-  .s2-lead-image-wrap {
-    height: 220px;
+  /* ── Section 3 – Thể Thao ────────────────────────────────── */
+  .s3-section {
+    padding: 28px 12px 44px;
   }
 
-  /* SECTION 3 - MOBILE NATIVE DRAG/SCROLL */
+  .s3-header {
+    min-height: auto;
+  }
+
+  .s3-pic-gallery {
+    display: none;
+  }
+
+  .s3-copy {
+    max-width: 100%;
+  }
+
+  .s3-sports-category {
+    gap: 8px;
+  }
+
+  .s3-btn {
+    font-size: clamp(0.92rem, 2.55vw, 1.12rem);
+    padding: 0.4rem 0.76rem;
+  }
+
+  .s3-title {
+    font-size: clamp(3.7rem, 16vw, 8.3rem);
+    transform: scaleX(0.86);
+  }
+
+  .s3-kicker {
+    margin-top: 14px;
+    max-width: 30ch;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .box-horizontal {
+    width: 100%;
+  }
+
   .sports-feed-viewport {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -117,34 +213,168 @@
   }
 
   .sports-feed-nav {
-    display: none; /* Hide next/prev arrows on touch devices */
+    display: none;
   }
 
-  /* SECTION 5 - DISABLE HEIGHT FOR MOBILE */
+  /* ── Section 4 – Giải Trí / Đời Sống ────────────────────── */
+  .s4-feature-wrap {
+    position: static;
+  }
+
+  .s4-feature-link {
+    height: clamp(300px, 52vh, 480px);
+  }
+
+  .s4-feature-title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    max-width: 100%;
+  }
+
+  .s4-feature-excerpt {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+  }
+
+  .s4-item-title {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+  }
+
+  .s4-section {
+    padding: 32px 0 48px;
+  }
+
+  /* ── Section 5 – Vũ Trụ & Thiên Nhiên ───────────────────── */
   .s5-section {
-    height: auto !important; 
+    height: auto !important;
     padding-bottom: 40px;
   }
 
-  .s5-sticky-wrap {
-    position: relative !important;
+  .s5-wrap {
     height: auto !important;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    overflow: visible !important;
   }
 
-  /* Display elements normally on mobile */
   .s5-scene-container {
-    display: none; /* Hide the complex collage on mobile if desired, or arrange them differently. 
-                       For now, let's keep them hidden on small screens and just show the feed */
+    display: none !important;
+  }
+
+  .s5-nature-feed {
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 1.5rem 0;
+    background: #0a0a0f;
+  }
+
+  .s5-feed-track {
+    padding-bottom: 1rem;
+  }
+
+  .s5-feed-item {
+    width: 280px;
+  }
+
+  .s5-feed-img-wrap {
+    height: 160px;
+  }
+
+  /* ── Section 6 – Our Team ────────────────────────────────── */
+  .s6-section {
+    padding: 48px 0 64px;
+  }
+
+  .s6-header {
+    margin-bottom: 32px;
+  }
+
+  .s6-team-grid {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  .s6-member-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    max-width: 480px;
+    transform: none !important;
   }
 }
 
-/* =============================================================
-   RESPONSIVE — MOBILE (< 576px)
-   ============================================================= */
+/* ─────────────────────────────────────────────────────────────
+   MOBILE  (≤ 575px)
+   ───────────────────────────────────────────────────────────── */
 @media (max-width: 575.98px) {
+
+  /* ── Section 1 – Horizontal Feed ─────────────────────────── */
+  .s1-feed-container {
+    margin-top: 15px;
+    margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+    touch-action: pan-y;
+  }
+
+  .s1-feed-card,
+  .center-card {
+    margin-top: 2vw;
+  }
+
+  .s1-feed-card {
+    width: calc(100% / 2);
+    min-height: 180px;
+    padding: 0 2vw;
+  }
+
+  .center-card {
+    width: 50%;
+    min-height: 180px;
+    padding: 1.2rem 1rem;
+  }
+
+  .s1-feed-card img {
+    height: clamp(90px, 16vw, 130px);
+  }
+
+  .s1-feed-content {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .s1-feed-brand {
+    font-size: 0.7rem;
+  }
+
+  .s1-feed-badge {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+
+  .s1-feed-desc {
+    font-size: 1.3vw;
+    line-height: 0.75;
+  }
+
+  .center-title {
+    font-size: clamp(20px, 2.2vw, 36px);
+  }
+
+  .center-subtitle {
+    font-size: clamp(11px, 1.5vw, 28px);
+    line-height: 1.25;
+  }
+
+  .center-tip {
+    font-size: clamp(10px, 0.7vw, 24px);
+    margin-top: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Section 2 – Horizontal ScrollTrigger ────────────────── */
   .s2-title-block {
     width: 240px;
   }
@@ -174,17 +404,194 @@
     width: 240px;
   }
 
-  .s2-lead-desc {
-    max-width: 100%;
-  }
-
+  .s2-lead-desc,
   .s2-lead-cta {
     max-width: 100%;
   }
 
-  /* Section 3 further reduce card size */
+  /* ── Section 3 – Thể Thao ────────────────────────────────── */
+  .s3-section {
+    padding: 22px 10px 34px;
+  }
+
+  .s3-title {
+    font-size: clamp(3rem, 20vw, 4.6rem);
+    line-height: 0.84;
+    transform: scaleX(0.88);
+  }
+
+  .s3-kicker {
+    font-size: clamp(0.9rem, 4.4vw, 1.12rem);
+    max-width: 100%;
+  }
+
+  .s3-btn {
+    padding: 0.38rem 0.66rem;
+    gap: 0.5rem;
+  }
+
+  .s3-sport-icon {
+    width: 1.12rem;
+    height: 1.12rem;
+    flex-basis: 1.12rem;
+  }
+
+  .sports-feed-nav {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sports-feed-nav--prev { left: 8px; }
+  .sports-feed-nav--next { right: 8px; }
+
   .sports-feed-card {
     flex: 0 0 200px;
     height: 300px;
+  }
+
+  /* ── Section 4 – Giải Trí / Đời Sống ────────────────────── */
+  .s4-section {
+    padding: 24px 0 32px;
+  }
+
+  .s4-feature-link {
+    border-radius: 10px;
+    height: clamp(240px, 45vh, 380px);
+  }
+
+  .s4-feature-title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+
+  .s4-feature-excerpt {
+    font-size: clamp(0.92rem, 3.7vw, 1.04rem);
+  }
+
+  .s4-feature-overlay {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .s4-item-title {
+    font-size: clamp(0.98rem, 4.4vw, 1.14rem);
+  }
+
+  .s4-item-author {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  }
+
+  .s4-item-readtime {
+    font-size: clamp(0.82rem, 2vw, 0.92rem);
+  }
+
+  /* ── Section 6 – Our Team ────────────────────────────────── */
+  .s6-team-grid {
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .s6-member-card {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .s6-quote {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .s6-avatar {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .s6-name  { font-size: 0.9rem; }
+  .s6-role  { font-size: 0.75rem; }
+  .s6-logo  { font-size: 1.1rem; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ULTRA-SMALL  (≤ 360px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 360px) {
+
+  /* ── Section 1 – Horizontal Feed ─────────────────────────── */
+  .s1-feed-card {
+    width: calc(100% / 1.8);
+    padding: 0 1.5vw;
+  }
+
+  .center-card {
+    width: 55%;
+  }
+
+  .s1-feed-card img {
+    height: clamp(80px, 15vw, 120px);
+  }
+
+  .s1-feed-brand {
+    font-size: 0.65rem;
+  }
+
+  .s1-feed-desc {
+    font-size: 1.2vw;
+  }
+
+  .center-title {
+    font-size: clamp(18px, 2vw, 32px);
+  }
+
+  .center-subtitle {
+    font-size: clamp(10px, 1.4vw, 24px);
+  }
+
+  /* ── Section 4 – Giải Trí / Đời Sống ────────────────────── */
+  .s4-section {
+    padding: 20px 0 28px;
+  }
+
+  .s4-feature-link {
+    height: clamp(220px, 42vh, 340px);
+    border-radius: 8px;
+  }
+
+  .s4-feature-title {
+    font-size: clamp(1.3rem, 6vw, 1.75rem);
+  }
+
+  .s4-feature-excerpt {
+    display: none;
+  }
+
+  .s4-feature-meta {
+    gap: 0.5rem;
+  }
+
+  .s4-item-media {
+    aspect-ratio: 3 / 2;
+  }
+
+  .s4-item-title {
+    font-size: clamp(0.92rem, 4vw, 1.05rem);
+    margin-top: 2px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LANDSCAPE MOBILE (height ≤ 600px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-height: 600px) and (orientation: landscape) {
+  .s4-section {
+    padding: 20px 0 24px;
+  }
+
+  .s4-feature-link {
+    height: 56vh;
+  }
+
+  .s4-feature-excerpt {
+    display: none;
   }
 }

@@ -6,7 +6,6 @@ $(() => {
   const $section = $(".section-two");
   const $viewport = $section.find(".s2-viewport");
   const $track = $section.find(".s2-track");
-  const $progressBar = $section.find(".s2-progress-bar");
 
   if (!$section.length || !$track.length) return;
 

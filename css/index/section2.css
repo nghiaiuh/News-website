@@ -1,83 +1,35 @@
-/* ============================================================
-   SECTION 2 — Kinh tế & Chính trị
-   Layout: GSAP horizontal scroll (3 panels inside .news-s2-track)
-   Design: Adapted from React Economics grid template
-   ============================================================ */
-
-/* WRAPPER */
-.s2-wrapper {
-  margin-top: 30px;
-}
-
-/* SECTION */
 .section-two {
-  --s2-bg: var(--nw-white);
-  --s2-separator: var(--nw-text);
-  --s2-cell-bg: var(--nw-white);
-  --s2-border: var(--nw-white);
-  --s2-muted: var(--nw-muted);
-
-  background: var(--s2-bg);
+  background: var(--nw-white);
   color: var(--nw-ink-strong);
   overflow: clip;
 }
 
-/* VIEWPORT */
-.s2-viewport {
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
-}
-
-/* TRACK — flex row, 1px gap mimics grid border effect */
 .s2-track {
-  display: flex;
-  gap: 1px;
   width: max-content;
   will-change: transform;
-  background: var(--s2-separator);
 }
 
-/* ===== SHARED PANEL BASE ===== */
 .s2-panel {
   position: relative;
   flex: 0 0 auto;
-  background: var(--s2-bg);
+  background: var(--nw-white);
   height: 102vh;
-  box-sizing: border-box;
-  --s2-image-filter-default: none;
-  --s2-image-filter-hover: none;
-  --s2-image-blend-default: normal;
-  --s2-image-blend-hover: normal;
-  --s2-image-scale-hover: 1.02;
-}
-
-/* =============================================================
-   PANEL 1 — TITLE BLOCK
-   ============================================================= */
-.s2-title-block,
-.s2-lead-panel {
+  border-right: 1px solid var(--nw-text);
   padding: clamp(24px, 3vw, 40px);
   display: flex;
   flex-direction: column;
+  --s2-image-scale-hover: 1.02;
 }
 
+.s2-panel:last-child {
+  border-right: none;
+}
+
+/* TITLE */
 .s2-title-block {
   width: clamp(320px, 26vw, 460px);
-  justify-content: space-between;
-}
-
-.s2-first {
   min-width: 550px;
-}
-
-/* Editorial content inside title block */
-.s2-editorial {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: clamp(1rem, 2vw, 1.75rem);
-  height: 100%;
+  justify-content: space-between;
 }
 
 .s2-mark {
@@ -89,16 +41,8 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   color: var(--nw-ink-dark);
 }
-
-.s2-mark-line {
-  display: block;
-  position: relative;
-  line-height: 1.08;
-}
-
 .s2-mark-line::after {
   content: "";
   position: absolute;
@@ -110,28 +54,22 @@
 }
 
 .s2-editorial-text {
-  margin: 0 0 clamp(14px, 1.8vw, 50px) 0;
-  padding-top: clamp(10px, 1.5vw, 30px);
   font-family: var(--nw-font-time);
-  font-size: clamp(1.15rem, 1.35vw, 1.5rem);
-  line-height: 1.65;
-  text-align: justify;
-  color: rgba(17, 17, 17, 0.88);
-}
-
-.s2-editorial-text--dropcap {
   font-size: clamp(1.95rem, 3vw, 3rem);
-  line-height: 1.06;
+  line-height: 1.2;
   letter-spacing: -0.012em;
   color: var(--nw-ink-rich);
   margin: 0 0 clamp(30px, 10vw, 200px) 0;
   max-width: 18ch;
   text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
+  word-spacing: -0.05em;
 }
 
-.s2-editorial-text--dropcap .initial-block {
+.s2-editorial-text .initial-block {
+  font-family: var(--nw-font-display);
+  font-size: clamp(1.95rem, 7vw, 7rem);
+  background: var(--nw-ink-strong);
+  color: #f4f4f2;
   float: left;
   display: inline-flex;
   align-items: center;
@@ -139,24 +77,16 @@
   width: 0.8em;
   height: 1.06em;
   margin: 0.17em 0.08em 0 0;
-  background: var(--nw-ink-strong);
-  color: #f4f4f2;
-  font-family: var(--nw-font-display);
-  font-size: clamp(1.95rem, 7vw, 7rem);
-  line-height: 1;
 }
 
-/* =============================================================
-   PANEL 2 — LEAD STORY
-   ============================================================= */
-.s2-lead-panel {
+/* COL 1 */
+.s2-col1 {
   width: clamp(500px, 48vw, 820px);
   --s2-image-filter-default: grayscale(100%);
   --s2-image-filter-hover: grayscale(60%);
 }
 
-/* Badge — top right */
-.s2-lead-badge {
+.s2-col1-badge {
   position: absolute;
   top: clamp(20px, 2.5vw, 36px);
   right: clamp(20px, 2.5vw, 36px);
@@ -164,49 +94,43 @@
   font-family: var(--nw-font-mono);
   font-size: 0.625rem;
   font-weight: 400;
-  text-transform: uppercase;
+  color: var(--nw-muted-dark);
   letter-spacing: 0.14em;
-  border: 1px solid var(--s2-border);
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: var(--nw-radius-pill);
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--nw-muted-dark);
 }
 
-/* Image container */
-.s2-lead-image-wrap {
+.s2-col1-image-wrap {
+  display: block;
   width: 100%;
-  height: clamp(240px, 34vw, 450px);
   overflow: hidden;
+  height: clamp(240px, 34vw, 450px);
   margin-bottom: clamp(20px, 2.5vw, 36px);
 }
 
-.s2-lead-image,
-.s2-data-image {
+.s2-col2-image-wrap {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.s2-image{
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: var(--s2-image-filter-default);
-  mix-blend-mode: var(--s2-image-blend-default);
   transition:
     filter 0.4s ease,
     transform 0.45s ease;
 }
 
-.s2-lead-panel:hover .s2-lead-image,
-.s2-lead-panel.s2-hover-active .s2-lead-image,
-.s2-data-panel:hover .s2-data-image,
-.s2-data-panel.s2-hover-active .s2-data-image {
-  filter: var(--s2-image-filter-hover);
-  mix-blend-mode: var(--s2-image-blend-hover);
+.s2-col1:hover .s2-image,
+.s2-col1.s2-hover-active .s2-image {
   transform: scale(var(--s2-image-scale-hover));
 }
 
-/* Headline */
-.s2-lead-headline {
+.s2-col1-headline {
   margin: 0 0 clamp(16px, 2vw, 28px);
   font-family: var(--nw-font-display);
   font-size: clamp(2rem, 3.6vw, 3.8rem);
@@ -216,97 +140,29 @@
   max-width: 42rem;
 }
 
-/* Description */
-.s2-lead-desc {
-  margin: 0;
+.s2-desc {
   font-family: var(--nw-font-sans);
   font-size: clamp(0.95rem, 1.1vw, 1.15rem);
   font-weight: 500;
   line-height: 1.7;
   color: var(--nw-text);
-  max-width: 80%;
 }
 
-/* CTA bar */
-.s2-lead-cta {
-  margin-top: auto;
-  padding-top: clamp(18px, 2vw, 28px);
-  border-top: 1px solid var(--s2-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 80%;
-}
-
-.s2-lead-cta-text {
-  font-family: var(--nw-font-sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--nw-text);
-}
-
-.s2-lead-cta-time {
+.s2-time {
   font-family: var(--nw-font-mono);
-  font-size: 0.72rem;
-  color: var(--s2-muted);
+  font-size: 0.9rem;
+  color: var(--nw-muted);
 }
 
-/* =============================================================
-   PANEL 3 — DATA / SECONDARY COLUMN
-   ============================================================= */
-.s2-data-panel {
+.s2-col2 {
   width: clamp(280px, 22vw, 400px);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  padding: 0;
   gap: 1px;
-  background: var(--s2-separator);
+  background: var(--nw-white);
   height: 102vh;
-  --s2-image-filter-default: grayscale(100%) contrast(1.25);
-  --s2-image-filter-hover: grayscale(60%) contrast(1.1);
-  --s2-image-blend-default: multiply;
 }
 
-/* Shared cell base */
-.s2-data-cell {
-  background: var(--s2-cell-bg);
-  box-sizing: border-box;
-}
-
-/* ------- Row 1: Tickers ------- */
-.s2-data-tickers {
-  padding: clamp(20px, 2.5vw, 36px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.s2-ticker-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-bottom: 10px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid var(--s2-border);
-}
-
-.s2-ticker-symbol {
-  font-family: var(--nw-font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--nw-text);
-}
-
-.s2-ticker-value {
-  font-family: var(--nw-font-mono);
-  font-size: 0.85rem;
-  color: var(--s2-muted);
-}
-
-.s2-data-heading {
-  margin: auto 0 0;
-  padding-top: 8px;
+.s2-col2-heading {
   font-family: var(--nw-font-sans);
   font-size: clamp(1.1rem, 1.4vw, 1.45rem);
   font-weight: 700;
@@ -314,68 +170,4 @@
   letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--nw-text);
-}
-
-/* ------- Row 2: Image ------- */
-.s2-data-image-wrap {
-  position: relative;
-  overflow: hidden;
-  min-height: 200px;
-}
-
-.s2-data-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(28, 28, 26, 0.1);
-  pointer-events: none;
-  transition: background 0.35s ease;
-}
-
-.s2-data-panel:hover .s2-data-image-overlay,
-.s2-data-panel.s2-hover-active .s2-data-image-overlay {
-  background: rgba(28, 28, 26, 0.02);
-}
-
-/* ------- Row 3: Briefing ------- */
-.s2-data-briefing {
-  padding: clamp(20px, 2.5vw, 36px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.s2-briefing-label {
-  font-family: var(--nw-font-mono);
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--s2-muted);
-  margin-bottom: 14px;
-}
-
-.s2-briefing-text {
-  margin: 0;
-  font-family: var(--nw-font-sans);
-  font-size: clamp(0.9rem, 1vw, 1.05rem);
-  font-weight: 500;
-  line-height: 1.55;
-  color: var(--nw-ink-rich);
-}
-
-/* =============================================================
-   RESPONSIVE — TABLET (< 992px)
-   Disable GSAP pin, stack vertically or allow native scroll
-   ============================================================= */
-@media (max-width: 991.98px) {
-  .s2-editorial-text {
-    font-size: 24px;
-    padding-top: 3vw;
-    width: 100%;
-    max-width: none !important;
-  }
-
-  .s2-editorial-text--dropcap {
-    font-size: 40px;
-    margin-bottom: 1rem;
-  }
 }

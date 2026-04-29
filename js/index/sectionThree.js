@@ -12,14 +12,14 @@ const initSportsPreview = () => {
 	const $sportButtons = $sportsLine.find(".s3-btn");
 	if (!$sportButtons.length) return;
 
-	let $activeButton = $sportButtons.filter(".is-active").length 
-		? $sportButtons.filter(".is-active").first() 
+	let $activeButton = $sportButtons.filter(".is-active").length
+		? $sportButtons.filter(".is-active").first()
 		: $sportButtons.first();
 
 	const updatePreview = ($button, animate = true) => {
 		if (!$button || (animate && $button.is($activeButton))) return;
 		$activeButton = $button;
-		
+
 		$sportButtons.removeClass("is-active");
 		$button.addClass("is-active");
 
@@ -28,12 +28,12 @@ const initSportsPreview = () => {
 				const $card = $(card);
 				const $img = $card.find("img");
 				const src = $button.data(`preview${index + 1}`);
-				
+
 				if (!$img.length || !src) {
 					$card.removeClass("is-visible").prop("hidden", true);
 					return;
 				}
-				
+
 				$card.prop("hidden", false);
 				$img.attr("src", src);
 				const sportText = $button.find("span:first-child").text().trim() || "Ảnh thể thao";
@@ -53,7 +53,7 @@ const initSportsPreview = () => {
 		}
 	};
 
-	$sportButtons.on("mouseenter focus click", function() {
+	$sportButtons.on("mouseenter focus click", function () {
 		updatePreview($(this));
 	});
 
@@ -76,9 +76,9 @@ const initSportsFeedNavigation = () => {
 	};
 
 	const scrollFeed = (dir) => {
-		$viewport[0].scrollBy({ 
-			left: dir * Math.max($viewport.innerWidth() * 0.75, 260), 
-			behavior: "smooth" 
+		$viewport[0].scrollBy({
+			left: dir * Math.max($viewport.innerWidth() * 0.75, 260),
+			behavior: "smooth"
 		});
 	};
 
