@@ -26,11 +26,12 @@
   </head>
 
   <body>
-    <div id="site-header"></div>
+    <div id="site-header" data-base="../"></div>
     <main class="page-wrapper overflow-hidden">
       <!-- Hero Section -->
       <section
         class="hero-section px-4 px-md-5 position-relative overflow-hidden"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../images/war.png') no-repeat center center / cover;"
       >
         <div class="container-fluid">
           <div class="hero-content row g-3">
@@ -47,23 +48,20 @@
                   tránh đứt gãy chuỗi phân phối và giữ ổn định giá bán lẻ trong
                   bối cảnh thị trường thế giới biến động mạnh.
                 </p>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span class="category">Kinh tế &amp; Chính trị</span>
-                  <span class="separator">•</span>
-                  <span class="author">Ban Thời sự</span>
-                  <span class="separator">•</span>
-                  <span class="date">01/05/2026</span>
+                <div class="article-meta d-flex gap-2">
+                  <span class="category"
+                    >Kinh tế & Chính trị • Ban Thời sự • 01/05/2026</span
+                  >
                 </div>
               </div>
               <img
                 src="../images/kinh-te-chinh-tri/global.webp"
                 alt="Thị trường năng lượng"
-                height="620vw"
+                height="690vw"
               />
             </a>
-            <div
-              class="hero-sidebar d-none d-sm-flex flex-column gap-4 col-12 col-lg-4"
-            >
+            <!-- hero sidebar -->
+            <div class="d-none d-sm-flex flex-column gap-4 col-12 col-lg-4">
               <a
                 href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
                 class="sidebar-article text-decoration-none text-reset d-flex gap-3 p-3 overflow-hidden"
@@ -73,23 +71,17 @@
                   src="../images/kinh-te-chinh-tri/iranbombed.png"
                   alt="Article"
                 />
-                <div
-                  class="sidebar-content d-flex flex-column justify-content-between"
-                >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                <div class="sidebar-content d-flex flex-column">
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">30/04/2026</span>
                   </div>
                   <h3 class="sidebar-title my-2">
                     UAV Iran 'đánh trúng cơ sở của CIA' tại Arab Saudi
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Điểm nóng</span>
-                    <span class="read-time">8 phút đọc</span>
+                    <span>8 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -106,20 +98,16 @@
                 <div
                   class="sidebar-content d-flex flex-column justify-content-between"
                 >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Reuters</span>
                     <span class="date">29/04/2026</span>
                   </div>
                   <h3 class="sidebar-title my-2">
                     Mỹ tuyên bố thắng lợi, Iran và Oman tính thu phí qua Hormuz
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Địa chính trị</span>
-                    <span class="read-time">7 phút đọc</span>
+                    <span>7 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -136,9 +124,7 @@
                 <div
                   class="sidebar-content d-flex flex-column justify-content-between"
                 >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">AP</span>
                     <span class="date">28/04/2026</span>
                   </div>
@@ -146,11 +132,9 @@
                     Israel - Iran liên tục ăn miếng trả miếng, số người chết
                     tăng cao
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Xung đột</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -167,32 +151,27 @@
                 <div
                   class="sidebar-content d-flex flex-column justify-content-between"
                 >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">27/04/2026</span>
                   </div>
                   <h3 class="sidebar-title my-2">
                     Mỹ công bố 300 người nổi tiếng xuất hiện trong hồ sơ Epstein
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Hồ sơ</span>
-                    <span class="read-time">5 phút đọc</span>
+                    <span>5 phút đọc</span>
                   </div>
                 </div>
               </a>
             </div>
           </div>
+          <!-- News-feed -->
           <div class="news-feed py-4 mt-5">
             <div class="feed-track d-flex gap-4">
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">26/04/2026</span>
                   </div>
@@ -205,19 +184,15 @@
                       Ngày sinh Tổng Bí thư Hà Huy Tập
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Chính trị</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">25/04/2026</span>
                   </div>
@@ -230,19 +205,15 @@
                       nước tới Việt Nam
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Đối ngoại</span>
-                    <span class="read-time">5 phút đọc</span>
+                    <span>5 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">24/04/2026</span>
                   </div>
@@ -255,19 +226,15 @@
                       15/3/2026
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Chính sách</span>
-                    <span class="read-time">4 phút đọc</span>
+                    <span>4 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">23/04/2026</span>
                   </div>
@@ -280,19 +247,15 @@
                       Nâng tầm kết nối chiến lược hai nước Việt Nam - Trung Quốc
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Đối ngoại</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">VTV.vn</span>
                     <span class="date">22/04/2026</span>
                   </div>
@@ -305,11 +268,9 @@
                       thúc đẩy hợp tác Việt Nam - Thổ Nhĩ Kỳ
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Chính sách</span>
-                    <span class="read-time">5 phút đọc</span>
+                    <span>5 phút đọc</span>
                   </div>
                 </div>
               </div>
@@ -319,14 +280,11 @@
       </section>
 
       <!-- Newest Stories -->
-      <section class="featured-section py-5 px-4 px-md-5">
+      <section class="mt-4 py-5 px-4 px-md-5">
         <div class="container-lg">
-          <h2 class="section-title mb-4 mb-md-5">Tin mới nhất</h2>
+          <h2 class="section-title mb-5">Tin mới nhất</h2>
           <div class="stories-grid row g-4">
-            <a
-              href="kinh-te-chinh-tri/bo-cong-thuong-khuyen-nghi-doanh-nghiep-giam-rui-ro-trung-dong.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/kinh-te-chinh-tri/chungkhoan.png"
                 alt="Story"
@@ -334,7 +292,13 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Bộ Công Thương khuyến nghị doanh nghiệp giảm rủi ro Trung Đông
+                  <a
+                    href="kinh-te-chinh-tri/bo-cong-thuong-khuyen-nghi-doanh-nghiep-giam-rui-ro-trung-dong.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Bộ Công Thương khuyến nghị doanh nghiệp giảm rủi ro Trung
+                    Đông
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Các khuyến nghị mới tập trung vào nguồn cung, bảo hiểm hàng
@@ -342,15 +306,12 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Kinh tế</span>
-                  <span class="read-time">5 phút đọc</span>
+                  <span>5 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="kinh-te-chinh-tri/tuong-lai-bat-dinh-cua-tau-hang-iran-bi-my-bat.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/kinh-te-chinh-tri/tau-iran.webp"
                 alt="Story"
@@ -358,7 +319,12 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Tương lai bất định của tàu hàng Iran bị Mỹ bắt
+                  <a
+                    href="kinh-te-chinh-tri/tuong-lai-bat-dinh-cua-tau-hang-iran-bi-my-bat.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Tương lai bất định của tàu hàng Iran bị Mỹ bắt
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Vụ việc làm dấy lên lo ngại về căng thẳng hàng hải và nguy cơ
@@ -366,15 +332,12 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Địa chính trị</span>
-                  <span class="read-time">6 phút đọc</span>
+                  <span>6 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="kinh-te-chinh-tri/viet-nam-binh-on-thi-truong-nang-luong-truoc-bien-dong-gia-dau.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/kinh-te-chinh-tri/global.webp"
                 alt="Story"
@@ -382,8 +345,13 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Việt Nam giữ ổn định giá bán lẻ trong giai đoạn biến động dầu
-                  mỏ
+                  <a
+                    href="kinh-te-chinh-tri/viet-nam-binh-on-thi-truong-nang-luong-truoc-bien-dong-gia-dau.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Việt Nam giữ ổn định giá bán lẻ trong giai đoạn biến động
+                    dầu mỏ
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Các giải pháp dự trữ và điều hành linh hoạt giúp kiểm soát tâm
@@ -391,15 +359,12 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Thị trường</span>
-                  <span class="read-time">4 phút đọc</span>
+                  <span>4 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="kinh-te-chinh-tri/my-tuyen-bo-thang-loi-iran-oman-thu-phi-hormuz.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/kinh-te-chinh-tri/trump2.png"
                 alt="Story"
@@ -407,7 +372,12 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Mỹ tuyên bố thắng lợi, Iran và Oman tính thu phí qua Hormuz
+                  <a
+                    href="kinh-te-chinh-tri/my-tuyen-bo-thang-loi-iran-oman-thu-phi-hormuz.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Mỹ tuyên bố thắng lợi, Iran và Oman tính thu phí qua Hormuz
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Động thái mới có thể ảnh hưởng chi phí vận tải và giá hàng hóa
@@ -415,10 +385,10 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Địa chính trị</span>
-                  <span class="read-time">7 phút đọc</span>
+                  <span>7 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -430,12 +400,6 @@
             class="section-header d-flex justify-content-between align-items-center"
           >
             <h2 class="section-title">Tin tức thịnh hành</h2>
-            <a
-              href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
-              class="see-all"
-            >
-              Xem tất cả
-            </a>
           </div>
           <div class="trending-content row g-4 align-items-stretch">
             <div
@@ -475,14 +439,13 @@
               >
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Điểm nóng</span>
-                  <span class="read-time">8 phút đọc</span>
+                  <span>8 phút đọc</span>
                 </div>
                 <a
                   href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
                   class="btn-continue d-inline-flex align-items-center"
+                  >Đọc tiếp</a
                 >
-                  Đọc tiếp
-                </a>
               </div>
             </div>
           </div>
@@ -498,8 +461,7 @@
               <div
                 class="category-header d-flex justify-content-between align-items-center"
               >
-                <h3 class="category-title m-0">Chính sách &amp; Kinh tế</h3>
-                <a href="kinhte-chinhtri.html" class="see-all">Xem tất cả</a>
+                <h3 class="category-title m-0">Chính sách & Kinh tế</h3>
               </div>
               <img
                 src="../images/kinh-te-chinh-tri/chungkhoan.png"
@@ -591,8 +553,7 @@
               <div
                 class="category-header d-flex justify-content-between align-items-center"
               >
-                <h3 class="category-title m-0">Đối ngoại &amp; An ninh</h3>
-                <a href="kinhte-chinhtri.html" class="see-all">Xem tất cả</a>
+                <h3 class="category-title m-0">Đối ngoại & An ninh</h3>
               </div>
               <img
                 src="../images/kinh-te-chinh-tri/korean-in-vietnam.jpg"
@@ -683,9 +644,8 @@
                 class="category-header d-flex justify-content-between align-items-center"
               >
                 <h3 class="category-title m-0">
-                  Thị trường &amp; Doanh nghiệp
+                  Thị trường & Doanh nghiệp
                 </h3>
-                <a href="kinhte-chinhtri.html" class="see-all">Xem tất cả</a>
               </div>
               <img
                 src="../images/kinh-te-chinh-tri/tau-iran.webp"
@@ -780,8 +740,7 @@
         <div
           class="section-header d-flex justify-content-between align-items-center"
         >
-          <h2 class="section-title">Video nổi bật</h2>
-          <a href="kinhte-chinhtri.html" class="see-all">Xem tất cả</a>
+          <h2 class="section-title">Viral Videos</h2>
         </div>
         <div class="viral-container row g-4 align-items-stretch">
           <div class="feature-card w-100 d-flex flex-column col-12 col-lg-6">
@@ -902,6 +861,37 @@
                 </p>
               </div>
             </div>
+
+            <div class="viral-card mb-4 d-flex overflow-hidden">
+              <div class="viral-image position-relative overflow-hidden">
+                <img
+                  src="../images/kinh-te-chinh-tri/to_lam_tap_can_binh.webp"
+                  alt="Video"
+                />
+                <button
+                  class="play-button position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center"
+                  aria-label="Play video"
+                >
+                  <img src="../images/vu-tru-thien-nhien/Player.png" alt="" />
+                </button>
+              </div>
+              <div
+                class="viral-content d-flex flex-column justify-content-center"
+              >
+                <h3 class="viral-title mb-2">
+                  <a
+                    href="kinh-te-chinh-tri/to-lam-nang-tam-ket-noi-viet-trung.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Nâng tầm kết nối chiến lược Việt - Trung
+                  </a>
+                </h3>
+                <p class="viral-excerpt m-0">
+                  Các thỏa thuận mới tập trung vào chuỗi cung ứng...
+                  <span class="read-more">Đọc thêm</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -913,16 +903,17 @@
             class="section-header d-flex justify-content-between align-items-center"
           >
             <h2 class="section-title">Tình hình hiện tại của nền kinh tế</h2>
-            <a href="kinhte-chinhtri.html" class="see-all">Xem tất cả</a>
           </div>
-          <div class="condition-grid row g-4">
-            <article class="condition-featured col-12 col-lg-6">
+          <div class="condition-grid row g-4 align-items-stretch">
+            <article
+              class="condition-featured col-12 col-lg-6 d-flex flex-column"
+            >
               <img
                 src="../images/kinh-te-chinh-tri/chungkhoan.png"
                 alt="Article"
-                class="condition-img mb-4"
+                class="condition-img"
               />
-              <div class="condition-content">
+              <div class="condition-content flex-grow-1 d-flex flex-column">
                 <h3 class="condition-title mb-3">
                   <a
                     href="kinh-te-chinh-tri/bo-cong-thuong-khuyen-nghi-doanh-nghiep-giam-rui-ro-trung-dong.html"
@@ -940,96 +931,99 @@
                 </p>
               </div>
             </article>
+            <!-- cột phải -->
+            <div class="condition-cards col-12 col-lg-6 d-flex flex-column">
+              <div class="row gx-3 gy-2 flex-grow-1">
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/kinh-te-chinh-tri/hop.jpg"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="kinh-te-chinh-tri/quoc-hoi-rut-ngan-nhiem-ky-khoa-xv.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Quốc hội thảo luận các chính sách kinh tế trọng điểm
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Kỳ họp tập trung vào ổn định vĩ mô và hỗ trợ doanh
+                      nghiệp...<span class="fw-bold">Đọc thêm</span></span
+                    >
+                  </div>
+                </article>
 
-            <div class="condition-cards row g-4 col-12 col-lg-6">
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/kinh-te-chinh-tri/hop.jpg"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="kinh-te-chinh-tri/quoc-hoi-rut-ngan-nhiem-ky-khoa-xv.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Quốc hội thảo luận các chính sách kinh tế trọng điểm
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Kỳ họp tập trung vào ổn định vĩ mô và hỗ trợ doanh
-                    nghiệp...<span class="fw-bold">Đọc thêm</span></span
-                  >
-                </div>
-              </article>
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/kinh-te-chinh-tri/korean-in-vietnam.jpg"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="kinh-te-chinh-tri/tong-thong-han-quoc-lee-jae-myung-tham-viet-nam.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Dòng vốn FDI mới từ các đối tác chiến lược
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Các thỏa thuận hợp tác mới mở ra triển vọng tăng
+                      trưởng...<span class="fw-bold">Đọc thêm</span></span
+                    >
+                  </div>
+                </article>
 
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/kinh-te-chinh-tri/korean-in-vietnam.jpg"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="kinh-te-chinh-tri/tong-thong-han-quoc-lee-jae-myung-tham-viet-nam.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Dòng vốn FDI mới từ các đối tác chiến lược
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Các thỏa thuận hợp tác mới mở ra triển vọng tăng
-                    trưởng...<span class="fw-bold">Đọc thêm</span></span
-                  >
-                </div>
-              </article>
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/kinh-te-chinh-tri/global.webp"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="kinh-te-chinh-tri/viet-nam-binh-on-thi-truong-nang-luong-truoc-bien-dong-gia-dau.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Giá năng lượng toàn cầu và tác động trong nước
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Các kịch bản điều hành giá được kích hoạt sớm...<span
+                        class="fw-bold"
+                        >Đọc thêm</span
+                      ></span
+                    >
+                  </div>
+                </article>
 
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/kinh-te-chinh-tri/global.webp"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="kinh-te-chinh-tri/viet-nam-binh-on-thi-truong-nang-luong-truoc-bien-dong-gia-dau.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Giá năng lượng toàn cầu và tác động trong nước
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Các kịch bản điều hành giá được kích hoạt sớm...<span
-                      class="fw-bold"
-                      >Đọc thêm</span
-                    ></span
-                  >
-                </div>
-              </article>
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/kinh-te-chinh-tri/iranbomb.png"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Địa chính trị làm nóng thị trường hàng hóa
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Rủi ro vận tải tăng khiến chi phí bảo hiểm nhích
-                    lên...<span class="fw-bold">Đọc thêm</span></span
-                  >
-                </div>
-              </article>
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/kinh-te-chinh-tri/iranbomb.png"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="kinh-te-chinh-tri/uav-iran-danh-trung-co-so-cia-arab-saudi.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Địa chính trị làm nóng thị trường hàng hóa
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Rủi ro vận tải tăng khiến chi phí bảo hiểm nhích
+                      lên...<span class="fw-bold">Đọc thêm</span></span
+                    >
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -1287,6 +1281,6 @@
         </div>
       </section>
     </main>
-    <div id="site-footer"></div>
+    <div id="site-footer" data-base="../"></div>
   </body>
 </html>

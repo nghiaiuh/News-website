@@ -31,7 +31,10 @@
 
   <main class="page-wrapper overflow-hidden">
     <!-- Hero Section -->
-    <section class="hero-section px-4 px-md-5 position-relative overflow-hidden">
+      <section
+        class="hero-section px-4 px-md-5 position-relative overflow-hidden"
+        style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../images/cosmos.png') repeat center center;"
+      >
       <div class="container-fluid">
         <div class="hero-content row g-3">
           <a href="artemisII.html" class="hero-feature mt-3 mb-3 d-flex flex-column flex-lg-row gap-2 col-12 col-lg-8">
@@ -216,9 +219,9 @@
     </section>
 
     <!-- Newest Stories -->
-    <section class="featured-section py-5 px-4 px-md-5">
+    <section class="mt-4 py-5 px-4 px-md-5">
       <div class="container-lg">
-        <h2 class="section-title mb-4 mb-md-5">Tin mới nhất</h2>
+        <h2 class="section-title mb-5">Tin mới nhất</h2>
         <div class="stories-grid row g-4">
           <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
             <img src="../../images/vu-tru-thien-nhien/rocket1.png" alt="Story" class="story-img" />
@@ -300,7 +303,6 @@
       <div class="container-lg">
         <div class="section-header d-flex justify-content-between align-items-center">
           <h2 class="section-title">Tin tức thịnh hành</h2>
-          <a href="#" class="see-all">Xem tất cả</a>
         </div>
         <div class="trending-content row g-4 align-items-stretch">
           <div class="trending-image position-relative overflow-hidden col-12 col-lg-6">
@@ -354,8 +356,7 @@
           <!-- Space and Universe -->
           <div class="category-card col-12 col-lg-4 overflow-hidden">
             <div class="category-header d-flex justify-content-between align-items-center">
-              <h3 class="category-title m-0">Không gian và vũ trụ</h3>
-              <a href="#" class="see-all">Xem tất cả</a>
+              <h3 class="category-title m-0">Không gian vũ trụ</h3>
             </div>
             <img src="../../images/vu-tru-thien-nhien/sattlite3.png" alt="Featured" class="category-featured" />
             <div class="category-content">
@@ -400,8 +401,7 @@
           <!-- Health and Science -->
           <div class="category-card col-12 col-lg-4 overflow-hidden">
             <div class="category-header d-flex justify-content-between align-items-center">
-              <h3 class="category-title m-0">Sức khỏe và khoa học</h3>
-              <a href="#" class="see-all">Xem tất cả</a>
+              <h3 class="category-title m-0">Trái Đất và thiên nhiên</h3>
             </div>
             <img src="../../images/vu-tru-thien-nhien/science.png" alt="Featured" class="category-featured" />
             <div class="category-content">
@@ -446,8 +446,7 @@
           <!-- Technology -->
           <div class="category-card col-12 col-lg-4 overflow-hidden">
             <div class="category-header d-flex justify-content-between align-items-center">
-              <h3 class="category-title m-0">Công nghệ</h3>
-              <a href="#" class="see-all">Xem tất cả</a>
+              <h3 class="category-title m-0">Khoa học công nghệ</h3>
             </div>
             <img src="../../images/vu-tru-thien-nhien/car.png" alt="Featured" class="category-featured" />
             <div class="category-content">
@@ -496,7 +495,6 @@
     <section class="viral-section py-4 px-4 px-md-5">
       <div class="section-header d-flex justify-content-between align-items-center">
         <h2 class="section-title">Viral Videos</h2>
-        <a href="#" class="see-all">Xem tất cả</a>
       </div>
       <div class="viral-container row g-4 align-items-stretch">
         <div class="feature-card w-100 d-flex flex-column col-12 col-lg-6">
@@ -596,12 +594,11 @@
           <h2 class="section-title">
             Tình hình hiện tại của hành tinh chúng ta
           </h2>
-          <a href="#" class="see-all">Xem tất cả</a>
         </div>
-        <div class="condition-grid row g-4">
-          <article class="condition-featured col-12 col-lg-6">
-            <img src="../../images/vu-tru-thien-nhien/industrial.png" alt="Article" class="condition-img mb-4" />
-            <div class="condition-content">
+        <div class="condition-grid row g-4 align-items-stretch">
+          <article class="condition-featured col-12 col-lg-6 d-flex flex-column">
+            <img src="../../images/vu-tru-thien-nhien/industrial.png" alt="Article" class="condition-img" />
+            <div class="condition-content flex-grow-1 d-flex flex-column">
               <h3 class="condition-title mb-3">
                 Nghiên cứu mới liên hệ ô nhiễm công nghiệp ở Joppa với tỷ lệ
                 hen suyễn, bệnh hô hấp cao hơn
@@ -615,50 +612,53 @@
               </p>
             </div>
           </article>
+          <!-- cột phải -->
+          <div class="condition-cards col-12 col-lg-6 d-flex flex-column">
+            <div class="row gx-3 gy-2 flex-grow-1">
+              <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                <img src="../../images/vu-tru-thien-nhien/cheetah1.png" alt="Article" class="card-img" />
+                <h4 class="card-title mt-3 mb-3">
+                  Khả năng phục hồi ven biển trong kỷ nguyên biến đổi khí hậu
+                </h4>
+                <div class="article-meta d-flex align-items-center gap-2">
+                  <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
+                    chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
+                </div>
+              </article>
 
-          <div class="condition-cards row g-4 col-12 col-lg-6">
-            <article class="condition-card col-12 col-sm-6 overflow-hidden">
-              <img src="../../images/vu-tru-thien-nhien/cheetah1.png" alt="Article" class="card-img" />
-              <h4 class="card-title m-0 py-3">
-                Khả năng phục hồi ven biển trong kỷ nguyên biến đổi khí hậu
-              </h4>
-              <div class="article-meta d-flex align-items-center gap-2">
-                <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
-                  chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
-              </div>
-            </article>
+              <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                <img src="../../images/vu-tru-thien-nhien/switzerland.png" alt="Article" class="card-img" />
+                <h4 class="card-title mt-3 mb-3">
+                  Axit hóa đại dương đe dọa sinh vật biển
+                </h4>
+                <div class="article-meta d-flex align-items-center gap-2">
+                  <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
+                    chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
+                </div>
+              </article>
 
-            <article class="condition-card col-12 col-sm-6 overflow-hidden">
-              <img src="../../images/vu-tru-thien-nhien/switzerland.png" alt="Article" class="card-img" />
-              <h4 class="card-title m-0 py-3">
-                Axit hóa đại dương đe dọa sinh vật biển
-              </h4>
-              <div class="article-meta d-flex align-items-center gap-2">
-                <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
-                  chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
-              </div>
-            </article>
+              <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                <img src="../../images/vu-tru-thien-nhien/japan.png" alt="Article" class="card-img" />
+                <h4 class="card-title mt-3 mb-3">
+                  Những nỗ lực bảo tồn rừng cho thấy đầy hứa hẹn
+                </h4>
+                <div class="article-meta d-flex align-items-center gap-2">
+                  <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
+                    chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
+                </div>
+              </article>
 
-            <article class="condition-card col-12 col-sm-6 overflow-hidden">
-              <img src="../../images/vu-tru-thien-nhien/japan.png" alt="Article" class="card-img" />
-              <h4 class="card-title m-0 py-3">
-                Những nỗ lực bảo tồn rừng cho thấy đầy hứa hẹn
-              </h4>
-              <div class="article-meta d-flex align-items-center gap-2">
-                <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
-                  chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
-              </div>
-            </article>
-            <article class="condition-card col-12 col-sm-6 overflow-hidden">
-              <img src="../../images/vu-tru-thien-nhien/trash.png" alt="Article" class="card-img" />
-              <h4 class="card-title m-0 py-3">
-                Các nỗ lực bảo tồn rừng cho thấy đầy hứa hẹn
-              </h4>
-              <div class="article-meta d-flex align-items-center gap-2">
-                <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
-                  chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
-              </div>
-            </article>
+              <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                <img src="../../images/vu-tru-thien-nhien/trash.png" alt="Article" class="card-img" />
+                <h4 class="card-title mt-3 mb-3">
+                  Các nỗ lực bảo tồn rừng cho thấy đầy hứa hẹn
+                </h4>
+                <div class="article-meta d-flex align-items-center gap-2">
+                  <span>Động vật hoang dã trên mọi châu lục đều bị nhiễm hóa chất
+                    chống cháy, theo nghiên cứu mới...<span class="fw-bold">Đọc thêm</span></span>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>

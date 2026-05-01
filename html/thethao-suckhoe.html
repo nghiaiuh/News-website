@@ -26,11 +26,12 @@
   </head>
 
   <body>
-    <div id="site-header"></div>
+    <div id="site-header" data-base="../"></div>
     <main class="page-wrapper overflow-hidden">
       <!-- Hero Section -->
       <section
         class="hero-section px-4 px-md-5 position-relative overflow-hidden"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../images/stadium.png') no-repeat center center / cover;"
       >
         <div class="container-fluid">
           <div class="hero-content row g-3">
@@ -48,23 +49,16 @@
                   Âu khiến bảng đấu thay đổi liên tục, mở ra cuộc đua quyết liệt
                   cho tấm vé dự World Cup.
                 </p>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span class="category">Thể thao &amp; Sức khỏe</span>
-                  <span class="separator">•</span>
-                  <span class="author">Nguyễn Văn Hùng</span>
-                  <span class="separator">•</span>
-                  <span class="date">12/04/2026</span>
+                <div class="article-meta d-flex gap-2">
+                  <span class="category"
+                    >Thể thao & Sức khỏe • Nguyễn Văn Hùng • 12/04/2026</span
+                  >
                 </div>
               </div>
-              <img
-                src="../images/the-thao/messi.jpg"
-                alt="Bóng đá quốc tế"
-                height="620vw"
-              />
+              <img src="../images/the-thao/messi.jpg" height="690vw" />
             </a>
-            <div
-              class="hero-sidebar d-none d-sm-flex flex-column gap-4 col-12 col-lg-4"
-            >
+            <!-- hero sidebar -->
+            <div class="d-none d-sm-flex flex-column gap-4 col-12 col-lg-4">
               <a
                 href="the-thao/the-thao-tennis-detail.html"
                 class="sidebar-article text-decoration-none text-reset d-flex gap-3 p-3 overflow-hidden"
@@ -74,12 +68,8 @@
                   src="../images/the-thao/tennis.jpg"
                   alt="Article"
                 />
-                <div
-                  class="sidebar-content d-flex flex-column justify-content-between"
-                >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                <div class="sidebar-content d-flex flex-column">
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Lê Văn Cường</span>
                     <span class="date">15/04/2026</span>
                   </div>
@@ -87,11 +77,9 @@
                     Grand Slam 2024: Những bất ngờ không tưởng từ các tay vợt
                     trẻ chưa tới 22 tuổi
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Quần vợt</span>
-                    <span class="read-time">7 phút đọc</span>
+                    <span>7 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -102,15 +90,11 @@
               >
                 <img
                   class="sidebar-img"
-                  src="../images/the-thao/basketball.png"
+                  src="../images/the-thao/thethao3.png"
                   alt="Article"
                 />
-                <div
-                  class="sidebar-content d-flex flex-column justify-content-between"
-                >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                <div class="sidebar-content d-flex flex-column">
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Trần Minh Khoa</span>
                     <span class="date">18/04/2026</span>
                   </div>
@@ -118,11 +102,9 @@
                     Nhịp đập NBA Playoffs 2026: Cuộc đua giành ngôi vô địch danh
                     giá nhất làng bóng rổ thế giới
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Bóng rổ</span>
-                    <span class="read-time">8 phút đọc</span>
+                    <span>8 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -133,15 +115,11 @@
               >
                 <img
                   class="sidebar-img"
-                  src="../images/the-thao/F1.png"
+                  src="../images/the-thao/Fomular1.png"
                   alt="Article"
                 />
-                <div
-                  class="sidebar-content d-flex flex-column justify-content-between"
-                >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                <div class="sidebar-content d-flex flex-column">
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Phạm Đức Anh</span>
                     <span class="date">20/04/2026</span>
                   </div>
@@ -149,11 +127,9 @@
                     Tốc độ F1 2026: Những màn rượt đuổi nghẹt thở trên đường đua
                     tử thần
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Đua xe</span>
-                    <span class="read-time">9 phút đọc</span>
+                    <span>9 phút đọc</span>
                   </div>
                 </div>
               </a>
@@ -167,12 +143,8 @@
                   src="../images/the-thao/volleyball.jpg"
                   alt="Article"
                 />
-                <div
-                  class="sidebar-content d-flex flex-column justify-content-between"
-                >
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                <div class="sidebar-content d-flex flex-column">
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Thanh Vy</span>
                     <span class="date">30/04/2026</span>
                   </div>
@@ -180,23 +152,20 @@
                     Cottafava và Dal Corso vô địch Challenge đầu tiên tại
                     Nayarit
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Bóng chuyền</span>
-                    <span class="read-time">5 phút đọc</span>
+                    <span>5 phút đọc</span>
                   </div>
                 </div>
               </a>
             </div>
           </div>
+          <!-- News-feed -->
           <div class="news-feed py-4 mt-5">
             <div class="feed-track d-flex gap-4">
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Khánh An</span>
                     <span class="date">30/04/2026</span>
                   </div>
@@ -209,19 +178,15 @@
                       giấc mơ cùng loạt kỷ lục để đời
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Bóng đá</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Tuệ Minh</span>
                     <span class="date">30/04/2026</span>
                   </div>
@@ -234,19 +199,15 @@
                       chia tay
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Tennis</span>
-                    <span class="read-time">7 phút đọc</span>
+                    <span>7 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Minh Quân</span>
                     <span class="date">30/04/2026</span>
                   </div>
@@ -259,19 +220,15 @@
                       NBA
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Bóng rổ</span>
-                    <span class="read-time">7 phút đọc</span>
+                    <span>7 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">Hải Đăng</span>
                     <span class="date">30/04/2026</span>
                   </div>
@@ -283,19 +240,15 @@
                       Max Verstappen và 6 khoảnh khắc cho thấy thiên tài đua xe
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Đua xe</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </div>
               <div class="feed-card overflow-hidden">
                 <div class="feed-content">
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="author">HLV Nguyễn Minh Tuấn</span>
                     <span class="date">17/04/2026</span>
                   </div>
@@ -308,11 +261,9 @@
                       đầu tập cardio
                     </a>
                   </h3>
-                  <div
-                    class="article-meta small d-flex align-items-center gap-2"
-                  >
+                  <div class="article-meta d-flex align-items-center gap-2">
                     <span class="category">Sức khỏe</span>
-                    <span class="read-time">6 phút đọc</span>
+                    <span>6 phút đọc</span>
                   </div>
                 </div>
               </div>
@@ -322,19 +273,21 @@
       </section>
 
       <!-- Newest Stories -->
-      <section class="featured-section py-5 px-4 px-md-5">
+      <section class="mt-4 py-5 px-4 px-md-5">
         <div class="container-lg">
-          <h2 class="section-title mb-4 mb-md-5">Tin mới nhất</h2>
+          <h2 class="section-title mb-5">Tin mới nhất</h2>
           <div class="stories-grid row g-4">
-            <a
-              href="the-thao/suc-khoe-yoga-detail.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img src="../images/suckhoe2.png" alt="Story" class="story-img" />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Yoga – Chìa khóa vàng của sự tĩnh lặng và dẻo dai trong thế
-                  giới hiện đại bận rộn
+                  <a
+                    href="the-thao/suc-khoe-yoga-detail.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Yoga – Chìa khóa vàng của sự tĩnh lặng và dẻo dai trong thế
+                    giới hiện đại bận rộn
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Yoga giúp cải thiện sức mạnh, độ dẻo dai và cân bằng tinh thần
@@ -342,20 +295,22 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Sức khỏe</span>
-                  <span class="read-time">7 phút đọc</span>
+                  <span>7 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="the-thao/suc-khoe-tamly-detail.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img src="../images/suckhoe3.png" alt="Story" class="story-img" />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Tầm quan trọng của việc chăm sóc sức khỏe tinh thần trong thời
-                  đại số đầy áp lực
+                  <a
+                    href="the-thao/suc-khoe-tamly-detail.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Tầm quan trọng của việc chăm sóc sức khỏe tinh thần trong
+                    thời đại số đầy áp lực
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Sức khỏe tinh thần là nền tảng cho hiệu suất và chất lượng
@@ -363,15 +318,12 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Tâm lý</span>
-                  <span class="read-time">8 phút đọc</span>
+                  <span>8 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="the-thao/the-thao-bong-chuyen.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/the-thao/volleyball.jpg"
                 alt="Story"
@@ -379,7 +331,13 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Cottafava và Dal Corso vô địch Challenge đầu tiên tại Nayarit
+                  <a
+                    href="the-thao/the-thao-bong-chuyen.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Cottafava và Dal Corso vô địch Challenge đầu tiên tại
+                    Nayarit
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Bộ đôi Italy tạo dấu ấn với chiến thắng 2-0 trước cặp hạt
@@ -387,15 +345,12 @@
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Bóng chuyền</span>
-                  <span class="read-time">5 phút đọc</span>
+                  <span>5 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a
-              href="the-thao/the-thao-messi-vo-dich.html"
-              class="story-card text-decoration-none text-reset col-12 col-md-6 col-lg-3 overflow-hidden"
-            >
+            <div class="story-card col-12 col-md-6 col-lg-3 overflow-hidden">
               <img
                 src="../images/the-thao/messi.jpg"
                 alt="Story"
@@ -403,18 +358,23 @@
               />
               <div class="story-content">
                 <h3 class="story-title mb-3">
-                  Messi và Argentina vô địch World Cup 2022: đêm hoàn tất giấc
-                  mơ
+                  <a
+                    href="the-thao/the-thao-messi-vo-dich.html"
+                    class="text-decoration-none text-reset"
+                  >
+                    Messi và Argentina vô địch World Cup 2022: đêm hoàn tất giấc
+                    mơ
+                  </a>
                 </h3>
                 <p class="story-excerpt mb-3">
                   Messi khép lại giải đấu lịch sử bằng loạt kỷ lục để đời.
                 </p>
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Bóng đá</span>
-                  <span class="read-time">6 phút đọc</span>
+                  <span>6 phút đọc</span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -426,7 +386,6 @@
             class="section-header d-flex justify-content-between align-items-center"
           >
             <h2 class="section-title">Tin tức thịnh hành</h2>
-            <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
           </div>
           <div class="trending-content row g-4 align-items-stretch">
             <div
@@ -464,14 +423,13 @@
               >
                 <div class="article-meta d-flex align-items-center gap-2">
                   <span class="category">Đua xe</span>
-                  <span class="read-time">9 phút đọc</span>
+                  <span>9 phút đọc</span>
                 </div>
                 <a
                   href="the-thao/the-thao-f1-detail.html"
                   class="btn-continue d-inline-flex align-items-center"
+                  >Đọc tiếp</a
                 >
-                  Đọc tiếp
-                </a>
               </div>
             </div>
           </div>
@@ -488,10 +446,9 @@
                 class="category-header d-flex justify-content-between align-items-center"
               >
                 <h3 class="category-title m-0">Bóng đá</h3>
-                <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
               </div>
               <img
-                src="../images/the-thao/football.png"
+                src="../images/denmark.png"
                 alt="Featured"
                 class="category-featured"
               />
@@ -541,7 +498,7 @@
                 <div class="category-divider my-3"></div>
                 <div class="article-list-item mb-3 d-flex gap-3">
                   <img
-                    src="../images/the-thao/football.png"
+                    src="../images/the-thao/barcelona-youth.jpg"
                     alt="Article"
                     class="list-img"
                   />
@@ -558,7 +515,7 @@
                 <div class="category-divider my-3"></div>
                 <div class="article-list-item mb-3 d-flex gap-3">
                   <img
-                    src="../images/the-thao/football.png"
+                    src="../images/the-thao/brazil.png"
                     alt="Article"
                     class="list-img"
                   />
@@ -580,11 +537,10 @@
               <div
                 class="category-header d-flex justify-content-between align-items-center"
               >
-                <h3 class="category-title m-0">Tốc độ &amp; Đua xe</h3>
-                <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
+                <h3 class="category-title m-0">Tốc độ & Đua xe</h3>
               </div>
               <img
-                src="../images/the-thao/F1.png"
+                src="../images/the-thao/Fomular1.png"
                 alt="Featured"
                 class="category-featured"
               />
@@ -671,7 +627,6 @@
                 class="category-header d-flex justify-content-between align-items-center"
               >
                 <h3 class="category-title m-0">Sức khỏe</h3>
-                <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
               </div>
               <img
                 src="../images/suckhoe2.png"
@@ -768,12 +723,11 @@
           class="section-header d-flex justify-content-between align-items-center"
         >
           <h2 class="section-title">Viral Videos</h2>
-          <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
         </div>
         <div class="viral-container row g-4 align-items-stretch">
           <div class="feature-card w-100 d-flex flex-column col-12 col-lg-6">
             <div class="feature-image position-relative overflow-hidden">
-              <img src="../images/the-thao/tennis.jpg" alt="Video" />
+              <img src="../images/the-thao/grand-slam.jpg" alt="Video" />
               <button
                 class="play-button position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center"
                 aria-label="Play video"
@@ -896,18 +850,19 @@
             class="section-header d-flex justify-content-between align-items-center"
           >
             <h2 class="section-title">
-              Tình hình hiện tại của thể thao &amp; sức khỏe
+              Tình hình hiện tại của thể thao & sức khỏe
             </h2>
-            <a href="thethao-suckhoe.html" class="see-all">Xem tất cả</a>
           </div>
-          <div class="condition-grid row g-4">
-            <article class="condition-featured col-12 col-lg-6">
+          <div class="condition-grid row g-4 align-items-stretch">
+            <article
+              class="condition-featured col-12 col-lg-6 d-flex flex-column"
+            >
               <img
-                src="../images/the-thao/football.png"
+                src="../images/denmark.png"
                 alt="Article"
-                class="condition-img mb-4"
+                class="condition-img"
               />
-              <div class="condition-content">
+              <div class="condition-content flex-grow-1 d-flex flex-column">
                 <h3 class="condition-title mb-3">
                   <a
                     href="the-thao/the-thao-football-detail.html"
@@ -923,101 +878,104 @@
               </div>
             </article>
 
-            <div class="condition-cards row g-4 col-12 col-lg-6">
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/suckhoe2.png"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="the-thao/suc-khoe-yoga-detail.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Yoga giúp cân bằng tinh thần và tăng sức bền
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Lộ trình luyện tập phù hợp cho người mới bắt đầu...<span
-                      class="fw-bold"
-                      >Đọc thêm</span
-                    ></span
-                  >
-                </div>
-              </article>
+            <div class="condition-cards col-12 col-lg-6 d-flex flex-column">
+              <div class="row gx-3 gy-2 flex-grow-1">
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/suckhoe2.png"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="the-thao/suc-khoe-yoga-detail.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Yoga giúp cân bằng tinh thần và tăng sức bền
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Lộ trình luyện tập phù hợp cho người mới bắt đầu...<span
+                        class="fw-bold"
+                        >Đọc thêm</span
+                      ></span
+                    >
+                  </div>
+                </article>
 
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/suckhoe3.png"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="the-thao/suc-khoe-tamly-detail.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Tâm lý học thể thao: nền tảng cho phong độ bền vững
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Kỹ thuật thở và phục hồi giúp giữ sự tập trung...<span
-                      class="fw-bold"
-                      >Đọc thêm</span
-                    ></span
-                  >
-                </div>
-              </article>
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/suckhoe3.png"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="the-thao/suc-khoe-tamly-detail.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Tâm lý học thể thao: nền tảng cho phong độ bền vững
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Kỹ thuật thở và phục hồi giúp giữ sự tập trung...<span
+                        class="fw-bold"
+                        >Đọc thêm</span
+                      ></span
+                    >
+                  </div>
+                </article>
 
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/the-thao/basketball.png"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="the-thao/the-thao-nba-detail.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    NBA Playoffs 2026: cuộc đua bám sát từng điểm số
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Những trận đấu cân bằng tạo nên mùa giải hấp dẫn...<span
-                      class="fw-bold"
-                      >Đọc thêm</span
-                    ></span
-                  >
-                </div>
-              </article>
-              <article class="condition-card col-12 col-sm-6 overflow-hidden">
-                <img
-                  src="../images/the-thao/volleyball.jpg"
-                  alt="Article"
-                  class="card-img"
-                />
-                <h4 class="card-title m-0 py-3">
-                  <a
-                    href="the-thao/the-thao-bong-chuyen.html"
-                    class="text-decoration-none text-reset"
-                  >
-                    Bóng chuyền bãi biển: cặp đôi Italy giành vàng Challenge
-                  </a>
-                </h4>
-                <div class="article-meta d-flex align-items-center gap-2">
-                  <span
-                    >Chiến thắng 2-0 trước hạt giống số một...<span
-                      class="fw-bold"
-                      >Đọc thêm</span
-                    ></span
-                  >
-                </div>
-              </article>
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/the-thao/nba.jpeg"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="the-thao/the-thao-nba-detail.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      NBA Playoffs 2026: cuộc đua bám sát từng điểm số
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Những trận đấu cân bằng tạo nên mùa giải hấp dẫn...<span
+                        class="fw-bold"
+                        >Đọc thêm</span
+                      ></span
+                    >
+                  </div>
+                </article>
+
+                <article class="condition-card col-12 col-sm-6 overflow-hidden">
+                  <img
+                    src="../images/the-thao/volleyball.jpg"
+                    alt="Article"
+                    class="card-img"
+                  />
+                  <h4 class="card-title mt-3 mb-3">
+                    <a
+                      href="the-thao/the-thao-bong-chuyen.html"
+                      class="text-decoration-none text-reset"
+                    >
+                      Bóng chuyền bãi biển: cặp đôi Italy giành vàng Challenge
+                    </a>
+                  </h4>
+                  <div class="article-meta d-flex align-items-center gap-2">
+                    <span
+                      >Chiến thắng 2-0 trước hạt giống số một...<span
+                        class="fw-bold"
+                        >Đọc thêm</span
+                      ></span
+                    >
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -1038,7 +996,7 @@
             class="latest-news-card d-flex flex-row flex-sm-column overflow-hidden col-12 col-md-6 col-lg-3"
           >
             <div class="latest-news-img-wrap overflow-hidden">
-              <img src="../images/the-thao/football.png" alt="World Cup" />
+              <img src="../images/the-thao/sweden-vs-poland.png" alt="World Cup" />
             </div>
             <div class="latest-news-body d-flex flex-column gap-2">
               <h3 class="latest-news-card-title m-0">
@@ -1094,7 +1052,7 @@
             class="latest-news-card d-flex flex-row flex-sm-column overflow-hidden col-12 col-md-6 col-lg-3"
           >
             <div class="latest-news-img-wrap overflow-hidden">
-              <img src="../images/the-thao/basketball.png" alt="NBA" />
+              <img src="../images/the-thao/kobe.jpg" alt="NBA" />
             </div>
             <div class="latest-news-body d-flex flex-column gap-2">
               <h3 class="latest-news-card-title m-0">
@@ -1121,7 +1079,7 @@
             class="latest-news-card d-flex flex-row flex-sm-column overflow-hidden col-12 col-md-6 col-lg-3"
           >
             <div class="latest-news-img-wrap overflow-hidden">
-              <img src="../images/the-thao/F1.png" alt="F1" />
+              <img src="../images/the-thao/Fomular1.png" alt="F1" />
             </div>
             <div class="latest-news-body d-flex flex-column gap-2">
               <h3 class="latest-news-card-title m-0">
@@ -1257,6 +1215,6 @@
         </div>
       </section>
     </main>
-    <div id="site-footer"></div>
+    <div id="site-footer" data-base="../"></div>
   </body>
 </html>
