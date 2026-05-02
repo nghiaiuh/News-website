@@ -100,10 +100,6 @@ body {
     height: 100%;
 }
 
-.a2-sidebar-featured {
-    flex: 1;
-}
-
 .a2-sb-img {
     width: 100%;
     aspect-ratio: 4/3;
@@ -183,7 +179,20 @@ body {
     min-height: 0;
     overflow: hidden;
     margin-bottom: 20px;
-    max-height: 55vh;
+    max-height: 50vh;
+}
+
+.a2-video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+@media (min-width: 992px) {
+    .a2-video-container {
+        height: 50vh;
+        max-height: 500px; /* Cap video height on large screens */
+    }
 }
 
 .a2-center-img {
@@ -205,7 +214,7 @@ body {
 .a2-center-desc {
     text-align: justify;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.5;
     color: var(--nw-muted-dark);
 }
 

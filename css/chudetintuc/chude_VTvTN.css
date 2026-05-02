@@ -268,27 +268,7 @@
   object-fit: cover;
 }
 
-.play-button {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
 
-.play-button:hover {
-  background-color: rgba(255, 255, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-.play-button svg {
-  width: 28px;
-  height: 28px;
-  margin-left: 4px;
-}
 
 .trending-title {
   font-size: 42px;
@@ -498,15 +478,7 @@
   display: block;
 }
 
-.viral-card .play-button {
-  width: 52px;
-  height: 52px;
-}
 
-.viral-card .play-button svg {
-  width: 18px;
-  height: 18px;
-}
 
 .viral-content {
   flex: 1;
