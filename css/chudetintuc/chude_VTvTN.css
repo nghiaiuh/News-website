@@ -834,7 +834,7 @@
 }
 
 /* ── iPhone 14 Pro Max & tương đương (≤ 430px) ── */
-@media (max-width: 430px) {
+@media (max-width: 576px) {
   /* --- Hero section --- */
   .hero-content {
     padding: 16px 14px 0;
