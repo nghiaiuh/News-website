@@ -9,8 +9,8 @@ $(() => {
                 { c: "I", hex: "#7a3bd6" },
                 { c: "G", hex: "#ff8a00" },
                 { c: "N", hex: "#1262ff" }];
-  const L_NAV = [{ h: "kinh-te-chinh-tri/kinh-te-chinh-tri-details.html", l: "Kinh tế &amp; Chính trị", k: "home" }, { h: "the-thao/the-thao-suc-khoe.html", l: "Thể thao &amp; Sức khoẻ", k: "sports" }];
-  const R_NAV = [{ h: "giai-tri-doi-song/GiaiTrivsDoiSong.html", l: "Giải trí &amp; Đời sống", k: "lifestyle" }, { h: "vu-tru-thien-nhien/vu-tru-va-thien-nhien.html", l: "Vũ trụ &amp; Thiên nhiên", k: "cosmos" }];
+  const L_NAV = [{ h: "kinhte-chinhtri.html", l: "Kinh tế &amp; Chính trị", k: "home" }, { h: "thethao-suckhoe.html", l: "Thể thao &amp; Sức khoẻ", k: "sports" }];
+  const R_NAV = [{ h: "giaitri-doisong.html", l: "Giải trí &amp; Đời sống", k: "lifestyle" }, { h: "vu-tru-thien-nhien/vu-tru-thien-nhien.html", l: "Vũ trụ &amp; Thiên nhiên", k: "cosmos" }];
 
   const $slot = $("#site-header");
   if (!$slot.length) return;
@@ -23,7 +23,6 @@ $(() => {
   if (htmlIndex !== -1) {
     depthFromHtml = pathParts.length - htmlIndex - 2; 
   } else {
-    // Fallback if 'html' folder isn't in URL, use data-base or default
     const fallbackBase = ($slot.data("base") || "./").replace(/\/?$/, "/");
     depthFromHtml = fallbackBase.split('../').length - 1;
     if (fallbackBase === "./") depthFromHtml = 0;
@@ -36,10 +35,10 @@ $(() => {
   const rRoot = (h) => rootBase + h.replace(/^\.?\//, "");
 
   const file = pathParts[pathParts.length - 1] || "index.html";
-  const activeKey = file === "index.html" ? "home" :
-                    file.match(/the-thao|suc-khoe/) ? "sports" :
+  const activeKey = file === "index.html" || file.match(/kinhte-chinhtri/) ? "home" :
+                    file.match(/the-thao|thethao|suc-khoe|suckhoe/) ? "sports" :
                     file.match(/vu-tru/) ? "cosmos" :
-                    file.match(/giai-tri|homeGTDS/) ? "lifestyle" : "";
+                    file.match(/giai-tri|giaitri|doisong|homeGTDS/) ? "lifestyle" : "";
 
   const buildNav = (links, cls) => `<ul class="navbar-nav mb-0 main-menu ${cls}">${links.map(({ h, l, k }) => 
     `<li class="nav-item menu-item${k === activeKey ? " active" : ""}"><a class="nav-link menu-link" href="${rHtml(h)}" ${k === activeKey ? 'aria-current="page"' : ''}>${l}</a></li>`
@@ -74,14 +73,24 @@ $(() => {
 
   // --- 1. Scroll Hide/Show ---
   let lastY = window.scrollY || 0;
+  let ticking = false;
+
   $(window).on("scroll", () => {
-    const y = window.scrollY || 0;
-    if (y <= 2 || ($mobileMenu.length && $mobileMenu.hasClass("show"))) {
-      $header.removeClass("header--hidden");
-    } else if (Math.abs(y - lastY) > 1) {
-      $header.toggleClass("header--hidden", y > lastY);
-    }
-    lastY = y;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY || 0;
+      const delta = y - lastY;
+
+      if (y <= 4 || ($mobileMenu.length && $mobileMenu.hasClass("show"))) {
+        $header.removeClass("header--hidden");
+      } else if (Math.abs(delta) > 4) {
+        $header.toggleClass("header--hidden", delta > 0);
+      }
+
+      lastY = y;
+      ticking = false;
+    });
   });
 
   if ($mobileMenu.length) {

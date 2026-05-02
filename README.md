@@ -135,7 +135,7 @@ News_website/
 │   │
 │   └── vu-tru-thien-nhien/            # Chuyên mục Vũ Trụ & Thiên Nhiên
 │       ├── vu-tru-thien-nhien-detail.html
-│       ├── vu-tru-va-thien-nhien.html
+│       ├── vu-tru-thien-nhien.html
 │       ...
 │
 ├── css/
@@ -358,7 +358,7 @@ scrollRestoration = "manual" + scrollBehavior = "auto"
 | `html/giai-tri-doi-song/typhu.html`                      | Tỷ phú                        | navbar.js, auth.js                                                                                                 |
 | `html/giai-tri-doi-song/worldcup.html`                   | World Cup                     | navbar.js, auth.js                                                                                                 |
 | `html/vu-tru-thien-nhien/vu-tru-thien-nhien-detail.html` | Chi tiết Vũ trụ & Thiên nhiên | navbar.js, auth.js                                                                                                 |
-| `html/vu-tru-thien-nhien/vu-tru-va-thien-nhien.html`     | Vũ trụ & Thiên nhiên          | navbar.js, auth.js                                                                                                 |
+| `html/vu-tru-thien-nhien/vu-tru-thien-nhien.html`     | Vũ trụ & Thiên nhiên          | navbar.js, auth.js                                                                                                 |
 | `html/vu-tru-thien-nhien/*`                              | Các trang khác                | navbar.js, auth.js                                                                                                 |
 
 > **Mọi trang phải có** `<div id="site-header"></div>` để navbar.js inject vào.

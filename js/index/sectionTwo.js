@@ -30,9 +30,9 @@ $(() => {
   });
 
   // Hover
-  $(".s2-lead-panel, .s2-data-panel").hover(
-    function() { $(this).addClass("s2-hover-active"); },
-    function() { $(this).removeClass("s2-hover-active"); }
+  $(".s2-col1, .s2-col2").hover(
+    function () { $(this).addClass("s2-hover-active"); },
+    function () { $(this).removeClass("s2-hover-active"); }
   );
 
   $(window).one("load", () => requestAnimationFrame(() => ScrollTrigger.refresh()));

@@ -5,7 +5,7 @@ $(() => {
     gsap.set(".s4-list .s4-item", { opacity: 0, y: 30 });
 
     ScrollTrigger.batch(".s4-list .s4-item", {
-      start: "top 85%",
+      start: "top 95%",
       onEnter: (batch) => {
         gsap.to(batch, {
           opacity: 1,

@@ -1,5 +1,4 @@
-/* SECTION 4: Sticky lead story + right rail list */
-.s4-section {
+.section-four {
   background: var(--news-white);
   padding: clamp(36px, 4.8vw, 72px) 0 clamp(42px, 5.2vw, 82px);
 }
@@ -34,30 +33,27 @@
   background: #e91e63;
   padding: 4px 12px;
   border-radius: 4px;
-  font-family: "Oswald", sans-serif;
-  font-size: 0.75rem;         /* ≈ 12px */
+  font-family: var(--nw-font-heading);
+  font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  opacity: 0.9;
 }
 
 .s4-feature-title {
   margin: clamp(6px, 0.9vw, 10px) 0 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: clamp(1.85rem, 3.3vw, 3.25rem);
   line-height: 1.1;
   font-weight: 800;
-  max-width: 20ch;
 }
 
 .s4-feature-excerpt {
   margin: clamp(10px, 1.2vw, 16px) 0 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--nw-font-sans);
   font-size: clamp(1rem, 1.25vw, 1.35rem);
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.88);
-  max-width: 62ch;
+  max-width: 69ch;
 }
 
 .s4-feature-meta {
@@ -65,15 +61,10 @@
   display: flex;
   gap: 0.7rem;
   flex-wrap: wrap;
-  font-family: "Oswald", sans-serif;
+  font-family: var(--nw-font-heading);
   font-size: clamp(0.95rem, 1vw, 1.1rem);
   font-weight: 600;
   letter-spacing: -0.01em;
-}
-
-.s4-feature-meta span+span::before {
-  content: "\2022";
-  margin-right: 0.7rem;
 }
 
 .s4-item {
@@ -107,7 +98,7 @@
 .s4-item-author {
   display: block;
   font-family: var(--nw-font-heading);
-  font-size: 0.6875rem;       /* 11px */
+  font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -120,7 +111,7 @@
   display: block;
   margin: 4px 0 0;
   font-family: var(--nw-font-sans);
-  font-size: 0.9375rem;       /* 15px */
+  font-size: 0.9375rem;
   line-height: 1.25;
   font-weight: 800;
 }
@@ -131,7 +122,7 @@
   gap: 0.35rem;
   margin-top: 8px;
   font-family: var(--nw-font-heading);
-  font-size: 0.75rem;         /* 12px */
+  font-size: 0.75rem;     
   font-weight: 500;
   color: var(--nw-subtle);
 }
@@ -143,4 +134,3 @@
   border: 1px solid currentColor;
   border-radius: 50%;
 }
-

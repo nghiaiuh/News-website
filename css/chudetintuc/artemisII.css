@@ -346,6 +346,7 @@ body {
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 991px) {
     .section-two {
+        display: block !important;
         height: auto;
     }
 

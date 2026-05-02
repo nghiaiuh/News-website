@@ -1,7 +1,13 @@
+/* PIN WRAP */
+.s5-wrap {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 /* Sắp xếp các item ảnh collage */
 .s5-gallery-item {
   border-radius: 14px;
-  transform-origin: center center;
 }
 
 /* CENTER MAIN: Ảnh chính - landscape rộng ở trung tâm */
@@ -10,7 +16,6 @@
   top: 29%;
   width: 48%;
   height: 43%;
-  transform: none;
   z-index: 2;
 }
 
@@ -70,11 +75,7 @@
   opacity: 1;
 }
 
-/* Nature Feed List ở dưới đáy */
-.s5-nature-feed {
-  pointer-events: auto;
-  /* Cho phép click & scroll */
-}
+
 
 .s5-feed-track::-webkit-scrollbar {
   display: none;
@@ -102,7 +103,6 @@
 }
 
 .s5-feed-img-wrap {
-  width: 100%;
   height: 200px;
 }
 
