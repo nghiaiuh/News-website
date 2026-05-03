@@ -37,7 +37,7 @@ $(() => {
     
     const $origFirst = $children.eq(0); 
     const $cloneRightFirst = $cloneRight.eq(0);
-    
+    //Tính vùng an toàn để ghìm thanh feed để nó ko có vượt quá 
     let wrapWidth = 0;
     const calculateWrap = () => {
        if (!$cloneRightFirst.length || !$origFirst.length) return;

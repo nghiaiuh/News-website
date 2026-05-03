@@ -14,7 +14,8 @@
 
   /* ── Navbar ──────────────────────────────────────────────── */
   .header {
-    position: fixed !important;  /* Giữ fixed để transform hide/show hoạt động đúng */
+    position: fixed !important;
+    /* Giữ fixed để transform hide/show hoạt động đúng */
     top: 0 !important;
     z-index: 1030 !important;
     background: #000 !important;
@@ -642,5 +643,14 @@
 
   .s4-feature-excerpt {
     display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ULTRA WIDE (≥ 1500px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1400px) {
+  .section-two {
+    display: none !important;
   }
 }

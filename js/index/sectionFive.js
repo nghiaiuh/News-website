@@ -17,7 +17,7 @@ $(() => {
         trigger: ".s5-wrap",
         pin: true,
         start: "top top",
-        end: "+=200%",
+        end: "+=200%", //Khoảng thời gian thực hiện hiệu ứng
         scrub: 1,
         invalidateOnRefresh: true,
       }

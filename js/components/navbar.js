@@ -40,8 +40,10 @@ $(() => {
                     file.match(/vu-tru/) ? "cosmos" :
                     file.match(/giai-tri|giaitri|doisong|homeGTDS/) ? "lifestyle" : "";
 
-  const buildNav = (links, cls) => `<ul class="navbar-nav mb-0 main-menu ${cls}">${links.map(({ h, l, k }) => 
-    `<li class="nav-item menu-item${k === activeKey ? " active" : ""}"><a class="nav-link menu-link" href="${rHtml(h)}" ${k === activeKey ? 'aria-current="page"' : ''}>${l}</a></li>`
+  const buildNav = (links, cls) => 
+    `<ul class="navbar-nav mb-0 main-menu ${cls}">${links.map(n => 
+    `<li class="nav-item menu-item ${n.k == activeKey ? 'active' : ''}">
+    <a class="nav-link menu-link" href="${rHtml(n.h)}">${n.l}</a></li>`
   ).join("")}</ul>`;
 
   $slot.html(`
