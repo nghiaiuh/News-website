@@ -102,24 +102,31 @@ News_website/
 │   ├── index.html                     # Trang chủ chính ← entry point
 │   ├── dang-nhap.html                 # Trang đăng nhập
 │   ├── dang-ky.html                   # Trang đăng ký
+│   ├── giaitri-doisong.html           # Hub Giải trí & Đời sống
+│   ├── kinhte-chinhtri.html           # Hub Kinh tế & Chính trị
+│   ├── thethao-suckhoe.html           # Hub Thể thao & Sức khỏe
 │   │
-│   ├── the-thao/                      # Chuyên mục Thể thao
-│   │   ├── the-thao-suc-khoe.html     # Trang hub Thể thao & Sức khỏe
-│   │   ├── the-thao-football-detail.html
+│   ├── the-thao/                      # Chi tiết chuyên mục Thể thao
+│   │   ├── the-thao-suc-khoe.html     
+│   │   ├── the-thao-bong-chuyen.html
+│   │   ├── the-thao-messi-vo-dich.html
 │   │   ├── the-thao-f1-detail.html
+│   │   ├── the-thao-football-detail.html
 │   │   ├── the-thao-nba-detail.html
 │   │   ├── the-thao-tennis-detail.html
-│   │   ├── bong-chuyen.html
-│   │   ├── messi-vo-dich.html
-│   │   ├── xe-dua-f1.html
-│   │   ...
+│   │   ├── the-thao-kobe.html
+│   │   ├── the-thao-max.html
+│   │   ├── the-thao-nadal.html
+│   │   ├── suc-khoe-cardio-detail.html
+│   │   ├── suc-khoe-tamly-detail.html
+│   │   └── suc-khoe-yoga-detail.html
 │   │
-│   ├── giai-tri-doi-song/             # Chuyên mục Giải trí & Đời sống
+│   ├── giai-tri-doi-song/             # Chi tiết chuyên mục Giải trí & Đời sống
 │   │   ├── an_uong.html
 │   │   ├── chuong-chinh-the-thao.html
+│   │   ├── Coachella-2026.html
 │   │   ├── concern_chayVE.html
 │   │   ├── Dune_PartTwo.html
-│   │   ├── GiaiTrivsDoiSong.html
 │   │   ├── le-hoi-he.html
 │   │   ├── loi-song.html
 │   │   ├── loiich-thethao.html
@@ -130,123 +137,82 @@ News_website/
 │   │   ├── song-toi-gian.html
 │   │   ├── top_phim.html
 │   │   ├── typhu.html
-│   │   ├── worldcup.html
-│   │   ...
+│   │   └── worldcup.html
 │   │
-│   └── vu-tru-thien-nhien/            # Chuyên mục Vũ Trụ & Thiên Nhiên
-│       ├── vu-tru-thien-nhien-detail.html
+│   ├── kinh-te-chinh-tri/             # Chi tiết chuyên mục Kinh tế & Chính trị
+│   │   ├── kinh-te-chinh-tri-details.html
+│   │   ├── bo-cong-thuong-khuyen-nghi-doanh-nghiep-giam-rui-ro-trung-dong.html
+│   │   ├── chu-tich-quoc-hoi-toa-dam-viet-nam-tho-nhi-ky.html
+│   │   ├── israel-iran-an-mieng-tra-mieng-thuong-vong-tang.html
+│   │   ├── my-cong-bo-300-nguoi-noi-tieng-trong-ho-so-epstein.html
+│   │   ├── my-tuyen-bo-thang-loi-iran-oman-thu-phi-hormuz.html
+│   │   ├── quoc-hoi-rut-ngan-nhiem-ky-khoa-xv.html
+│   │   ├── to-lam-du-le-ky-niem-120-nam-ha-huy-tap.html
+│   │   ├── to-lam-nang-tam-ket-noi-viet-trung.html
+│   │   ├── tong-thong-han-quoc-lee-jae-myung-tham-viet-nam.html
+│   │   ├── tuong-lai-bat-dinh-cua-tau-hang-iran-bi-my-bat.html
+│   │   ├── uav-iran-danh-trung-co-so-cia-arab-saudi.html
+│   │   └── viet-nam-binh-on-thi-truong-nang-luong-truoc-bien-dong-gia-dau.html
+│   │
+│   └── vu-tru-thien-nhien/            # Chi tiết chuyên mục Vũ Trụ & Thiên Nhiên
 │       ├── vu-tru-thien-nhien.html
-│       ...
+│       ├── artemisII.html
+│       ├── Chonkers.html
+│       ├── Storie.html
+│       └── X-59.html
 │
 ├── css/
 │   ├── components/                    # Global/shared styles
-│   │   ├── root.css                   # ★ Design tokens (variables) — đọc đây trước
+│   │   ├── root.css                   # ★ Design tokens (variables)
 │   │   ├── navbar.css                 # Navigation bar
 │   │   ├── footer.css                 # Footer
 │   │   ├── overlay-menu.css           # Overlay menu
-│   │   ├── account-overlay.css        # Account overlay
-│   │   ...
+│   │   └── account-overlay.css        # Account overlay
 │   │
 │   ├── index/                         # Styles riêng cho từng Section của trang chủ
-│   │   ├── horizontal-feed.css        # Section 1: Hero horizontal feed cards
-│   │   ├── section1.css               # Section 1: display title block
-│   │   ├── section2.css               # Section 2: GSAP horizontal scroll (Kinh tế)
-│   │   ├── section3.css               # Section 3: Sports gallery + feed carousel
-│   │   ├── section4.css               # Section 4: Sticky lead + news list rail
-│   │   ├── section5.css               # Section 5: ...
-│   │   ├── section6.css               # Section 6: ...
-│   │   ├── responsive.css             # Responsive styles
-│   │   ...
+│   │   ├── section1.css ... section6.css
+│   │   ├── horizontal-feed.css
+│   │   └── responsive.css
 │   │
-│   ├── chitiettintuc/                 # CSS chi tiết từng bài viết
+│   ├── chitiettintuc/                 # CSS cho bài viết chi tiết theo nhóm
 │   │   ├── article-GTvDS.css
 │   │   ├── article-KTvCT.css
 │   │   ├── article-TTvSK.css
-│   │   ├── article-VTvTN.css
-│   │   ...
+│   │   └── article-VTvTN.css
 │   │
-│   ├── chudetintuc/                   # CSS chủ đề tin tức
-│   │   ├── chude_GTvDS.css
-│   │   ├── chude_KTvCT.css
-│   │   ├── chude_TTvSK.css
+│   ├── chudetintuc/                   # CSS cho trang hub chuyên mục
 │   │   ├── chude_VTvTN.css
-│   │   ...
+│   │   └── artemisII.css
 │   │
-│   ├── local-fonts.css                # @font-face declarations (self-hosted)
-│   ├── login.css                      # Auth pages (đăng nhập / đăng ký)
-│   ├── article-detail.css             # Layout bài viết chi tiết
-│   ├── styles_giaitridoisong.css      # Styles riêng cho chuyên mục GTDS
-│   ├── styles_kinh-te-chinh-tri.css   # Styles riêng cho chuyên mục Kinh tế & Chính trị
-│   ├── bootstrap.min.css              # Bootstrap 5 (vendor, không chỉnh sửa)
-│   ├── bootstrap.css                  # (nếu có)
-│   ...
+│   ├── local-fonts.css                # Font-face declarations
+│   ├── login.css                      # Auth pages styling
+│   ├── article-detail.css             # Generic article layout
+│   ├── bootstrap.min.css              # Vendor: Bootstrap 5
+│   └── ...
 │
 ├── js/
-│   ├── components/
-│   │   ├── navbar.js                  # ★ Render navbar HTML vào #site-header (mọi trang)
-│   │   ├── account-overlay.js         # Account overlay logic
-│   │   ├── footer.js                  # Footer logic
-│   │   ├── overlay-menu.js            # Overlay menu logic
-│   │   ...
+│   ├── components/                    # Core UI components logic
+│   │   ├── navbar.js
+│   │   ├── footer.js
+│   │   ├── overlay-menu.js
+│   │   └── account-overlay.js
 │   │
-│   ├── index/                         # Scripts riêng cho từng Section trang chủ
-│   │   ├── horizontalFeed.js          # Section 1: drag-to-scroll feed
-│   │   ├── sectionTwo.js              # Section 2: GSAP horizontal pin scroll
-│   │   ├── sectionThree.js            # Section 3: sports button hover → gallery swap
-│   │   ├── sectionFour.js             # Section 4: ...
-│   │   ├── sectionFive.js             # Section 5: ...
-│   │   ├── section6.js                # Section 6: ...
-│   │   ...
+│   ├── index/                         # Scripts cho trang chủ
+│   │   ├── horizontalFeed.js
+│   │   ├── sectionTwo.js ... section6.js
+│   │   └── sectionFive.js
 │   │
-│   ├── auth.js                        # Quản lý session người dùng (localStorage)
-│   ├── login.js                       # Form validation & submit đăng nhập
-│   ├── dang-ky.js                     # Form validation & submit đăng ký
+│   ├── auth.js                        # User session logic
+│   ├── login.js                       # Login form handling
+│   ├── dang-ky.js                     # Register form handling
 │   │
-│   └── lib/                           # Thư viện vendor (không chỉnh sửa)
-│       ├── gsap/
-│       │   ├── gsap.min.js
-│       │   ├── ScrollTrigger.min.js
-│       │   ├── SplitText.min.js
-│       │   ...
-│       ├── jquery/
-│       │   └── jquery-4.0.0.js
-│       ├── bootstrap/
-│       │   ├── bootstrap.bundle.min.js
-│       │   ├── bootstrap.min.js
-│       │   ├── bootstrap.js
-│       │   ...
-│       ...
+│   └── lib/                           # Vendor libraries
+│       ├── gsap/                      # GSAP & ScrollTrigger
+│       ├── jquery/                    # jQuery 4.0.0
+│       └── bootstrap/                 # Bootstrap JS
 │
-├── fonts/                             # Font files nội bộ (self-hosted)
-│   └── google/                        # Inter, Oswald, Merriweather, Playfair Display, ...
-│       ├── Inter-Regular-400.ttf
-│       ├── Inter-SemiBold-600.ttf
-│       ├── Inter-Bold-700.ttf
-│       ├── Oswald-Regular-400.ttf
-│       ├── Oswald-Medium-500.ttf
-│       ├── Oswald-SemiBold-600.ttf
-│       ├── Oswald-Bold-700.ttf
-│       ├── Merriweather-Bold-700.ttf
-│       ├── Merriweather-BoldItalic-700.ttf
-│       ├── PlayfairDisplay-Bold.ttf
-│       ├── DancingScript-Regular.ttf
-│       ├── DancingScript-Medium.ttf
-│       ├── DancingScript-SemiBold.ttf
-│       ├── DancingScript-Bold.ttf
-│       ├── Newsreader_36pt-SemiBold.ttf
-│       ├── PPEditorialNew-Ultralight-BF644b21500d0c0.otf
-│       ...
-│
-├── images/                            # Ảnh minh hoạ bài viết, chuyên mục, icon, ...
-│   ├── doi-song-giai-tri/
-│   ├── footer/
-│   ├── index/
-│   ├── kinh-te-chinh-tri/
-│   ├── the-thao/
-│   ├── vu-tru-thien-nhien/
-│   ...
-│
-└── README.md
+├── fonts/                             # Local font files
+└── images/                            # Assets theo chuyên mục
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
